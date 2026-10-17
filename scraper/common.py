@@ -40,15 +40,43 @@ def session() -> requests.Session:
     return _session
 
 
-def get(url: str, **kw) -> Optional[requests.Response]:
-    """GET mit kleiner Pause und einem Retry. Gibt None bei Fehler zurück."""
+_browser_hosts = set()  # Hosts, die normale Requests blocken -> gleich als Browser anfragen
+
+
+def _browser_get(url: str):
+    """Fallback: Anfrage mit echtem Chrome-TLS-Fingerprint (hilft gegen Bot-Sperren)."""
+    try:
+        from curl_cffi import requests as cr
+    except ImportError:
+        return None
+    try:
+        r = cr.get(url, impersonate="chrome", timeout=25,
+                   headers={"Accept-Language": "de-AT,de;q=0.9"})
+        return r if r.status_code == 200 else None
+    except Exception as e:
+        print(f"  ! browser-fallback {type(e).__name__} {url}")
+        return None
+
+
+def get(url: str, **kw):
+    """GET mit kleiner Pause, Retry und Browser-Fallback. Gibt None bei Fehler zurück."""
+    host = url.split("/")[2]
     for attempt in range(2):
+        time.sleep(random.uniform(0.8, 1.8))
+        if host in _browser_hosts:
+            r = _browser_get(url)
+            if r is not None:
+                return r
+            print(f"  ! browser-fallback fehlgeschlagen {url}")
+            return None
         try:
-            time.sleep(random.uniform(0.8, 1.8))
             r = session().get(url, timeout=25, **kw)
             if r.status_code == 200:
                 return r
             print(f"  ! HTTP {r.status_code} {url}")
+            if r.status_code in (403, 429, 503):
+                _browser_hosts.add(host)
+                continue
         except requests.RequestException as e:
             print(f"  ! {type(e).__name__} {url}")
         time.sleep(3)
