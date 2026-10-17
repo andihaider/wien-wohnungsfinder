@@ -4,7 +4,12 @@ on:
   schedule:
     # Alle 30 Minuten von ca. 6 bis 23 Uhr Wiener Zeit (Cron läuft in UTC)
     - cron: "7,37 4-21 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      testmail:
+        description: "Test-Mail sofort senden"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -31,7 +36,7 @@ jobs:
           MAIL_USER: ${{ secrets.MAIL_USER }}
           MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
-        run: python scraper/notify.py
+        run: python scraper/notify.py ${{ inputs.testmail && '--force' || '' }}
       - name: Ergebnis speichern
         run: |
           git config user.name "wohnungsfinder-bot"
