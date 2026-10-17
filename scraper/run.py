@@ -133,6 +133,10 @@ def main():
 
     for name, mod in SOURCES.items():
         print(f"→ {name}")
+        if name == "immmo" and not status.get("derstandard", {}).get("count"):
+            # derStandard blockt Cloud-Server – dann deren Inserate über IMMMO mitnehmen
+            immmo.SKIP_HOSTS = tuple(h for h in immmo.SKIP_HOSTS if h != "derstandard.at")
+            print("  (derStandard direkt nicht erreichbar – nehme derStandard-Inserate über IMMMO)")
         try:
             res = mod.fetch()
             # Duplikate innerhalb einer Quelle entfernen

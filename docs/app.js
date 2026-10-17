@@ -229,7 +229,7 @@ function renderMeta() {
   const src = DATA.sources || {};
   const names = { willhaben: "willhaben", derstandard: "DER STANDARD", immoscout24: "ImmoScout24", immowelt: "immowelt", immmo: "IMMMO (inkl. Kurier, Bazar, Wohnkrone)" };
   $("#footer").innerHTML = "<b>Quellen beim letzten Lauf</b><ul>" + Object.entries(src).map(([k, v]) =>
-    `<li class="${v.ok && v.count ? "ok" : "fail"}">${names[k] || k}: ${v.ok ? v.count + " Inserate" : "Fehler"}</li>`).join("") +
+    `<li class="${v.ok && v.count ? "ok" : "fail"}">${names[k] || k}: ${v.ok && v.count ? v.count + " Inserate" : k === "derstandard" ? "gesperrt – Inserate kommen über IMMMO" : "nicht erreichbar"}</li>`).join("") +
     "</ul>Gesucht wird in Wien 4.–7. Bezirk, 2× täglich. Preise laut Inserat – bitte immer im Original prüfen.";
 }
 
