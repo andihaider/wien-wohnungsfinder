@@ -29,7 +29,7 @@ const DEFAULTS = {
   maxPrice: 650, minPrice: 0, minArea: 0,
   wgMaxPrice: 600, wgMinRoom: 15, wgMaxPeople: 4,
   districts: Object.keys(DISTRICTS),
-  hidePaywall: true, hideSublet: true, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
+  hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
   name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE,
   sort: "score", tab: "new",
 };
@@ -104,6 +104,7 @@ function visible(it) {
   if (S.hideBefristet && has(it, "befristet")) return false;
   if (S.hideMoebliert && !isWG(it) && has(it, "möbliert")) return false;
   if (isWG(it)) {
+    if (S.hideWomenOnly && has(it, "nur Frauen/FLINTA*")) return false;
     if (it.price_total > S.wgMaxPrice) return false;
     if ((it.area || 0) < S.wgMinRoom) return false;
     if (it.wg_size && it.wg_size > S.wgMaxPeople) return false;
@@ -359,7 +360,7 @@ const RANGES = [
   ["#s-wgroom", "wgMinRoom", "#o-wgroom", v => v ? v + " m²" : "egal"],
   ["#s-wgpeople", "wgMaxPeople", "#o-wgpeople", v => v >= 8 ? "egal" : "max. " + v + "er WG"],
 ];
-const CHECKS = { "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
+const CHECKS = { "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
 const TEXTS = { "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
 
 function bindSettings() {

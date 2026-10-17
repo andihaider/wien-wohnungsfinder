@@ -81,6 +81,7 @@ FLAG_RULES = [
     (r"neubau|erstbezug", "Neubau/Erstbezug"),
     (r"saniert|renoviert", "saniert"),
     (r"genossenschaft", "Genossenschaft"),
+    (r"flinta|frauen-?wg|mädl|mädels-?wg|\bnur (für )?(frauen|mädchen)|female only|women only|mitbewohnerin (gesucht|für)|suchen (eine )?mitbewohnerin", "nur Frauen/FLINTA*"),
     (r"(?<!keine )(?<!ohne )ablöse(?!frei)", "Ablöse"),
 ]
 
