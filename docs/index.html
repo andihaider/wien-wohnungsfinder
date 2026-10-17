@@ -26,8 +26,10 @@
     </div>
     <nav class="tabs" role="tablist">
       <button class="tab active" data-tab="new">Neu <b id="cnt-new">0</b></button>
-      <button class="tab" data-tab="all">Alle <b id="cnt-all">0</b></button>
-      <button class="tab" data-tab="fav">Gemerkt <b id="cnt-fav">0</b></button>
+      <button class="tab" data-tab="flats">Wohnungen <b id="cnt-flats">0</b></button>
+      <button class="tab" data-tab="wg">WG <b id="cnt-wg">0</b></button>
+      <button class="tab" data-tab="mine">Meine <b id="cnt-mine">0</b></button>
+      <button class="tab" data-tab="out">Aussortiert <b id="cnt-out">0</b></button>
     </nav>
     <div class="sortbar">
       <label>Sortieren
@@ -42,6 +44,7 @@
     </div>
   </header>
 
+  <div id="banner" class="banner" hidden></div>
   <main id="list" aria-live="polite"></main>
   <footer id="footer" class="muted"></footer>
 
@@ -64,9 +67,19 @@
       </section>
 
       <section>
+        <h3>WG-Zimmer</h3>
+        <label class="row">Max. Miete <output id="o-wgmax"></output></label>
+        <input type="range" id="s-wgmax" min="300" max="800" step="10">
+        <label class="row">Min. Zimmergröße <output id="o-wgroom"></output></label>
+        <input type="range" id="s-wgroom" min="0" max="30" step="1">
+        <label class="row">WG-Größe <output id="o-wgpeople"></output></label>
+        <input type="range" id="s-wgpeople" min="2" max="8" step="1">
+      </section>
+
+      <section>
         <h3>Ausblenden</h3>
         <label class="check"><input type="checkbox" id="h-paywall"> Bezahlportale (Kontakt nur gegen Gebühr)</label>
-        <label class="check"><input type="checkbox" id="h-gemeinde"> Gemeindebau / Direktvergabe (Wohn-Ticket nötig)</label>
+        <label class="check"><input type="checkbox" id="h-sublet"> Zwischenmiete / nur für ein paar Monate</label>
         <label class="check"><input type="checkbox" id="h-befristet"> Befristete Mietverträge</label>
         <label class="check"><input type="checkbox" id="h-moebliert"> Möblierte Wohnungen</label>
         <label class="check"><input type="checkbox" id="h-estimated"> Inserate ohne bekannte Gesamtmiete</label>
@@ -79,9 +92,11 @@
         <label>Name<input type="text" id="p-name" autocomplete="name"></label>
         <label>Telefon<input type="tel" id="p-phone" autocomplete="tel"></label>
         <label>Kurz über mich<textarea id="p-about" rows="3" placeholder="z. B. Student/in, Nichtraucher/in, unbefristetes Einkommen …"></textarea></label>
-        <label>Mail-Vorlage<textarea id="p-template" rows="10"></textarea></label>
+        <label>Vorlage für Wohnungen<textarea id="p-template" rows="10"></textarea></label>
+        <label>Vorlage für WGs<textarea id="p-wgtemplate" rows="8"></textarea></label>
         <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich}</p>
-        <button type="button" class="link-btn" id="btn-reset-template">Vorlage zurücksetzen</button>
+        <button type="button" class="link-btn" id="btn-reset-template">Vorlagen zurücksetzen</button>
+        <p class="muted small">Gemeindebau-Wohnungen (Wohn-Ticket nötig) werden automatisch aussortiert.</p>
       </section>
     </form>
   </dialog>
@@ -106,6 +121,8 @@
           <summary>Beschreibung</summary>
           <p class="desc"></p>
         </details>
+        <div class="status" role="group" aria-label="Status"></div>
+        <p class="status-note muted small"></p>
         <div class="actions"></div>
         <p class="src muted small"></p>
       </div>

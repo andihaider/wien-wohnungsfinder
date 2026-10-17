@@ -12,47 +12,65 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(__file__))
 
 from common import COLLECT_MAX_PRICE, DISTRICTS, Listing  # noqa: E402
-from sources import derstandard, immmo, immoscout, immowelt, willhaben  # noqa: E402
+from scoring import score  # noqa: E402
+from sources import derstandard, immmo, immoscout, immowelt, wggesucht, willhaben  # noqa: E402
 
 SOURCES = {
     "willhaben": willhaben,
     "derstandard": derstandard,
     "immoscout24": immoscout,
     "immowelt": immowelt,
+    "wggesucht": wggesucht,
     "immmo": immmo,
 }
 SOURCE_LABELS = {
     "willhaben": "willhaben", "derstandard": "DER STANDARD", "immoscout24": "ImmoScout24",
-    "immowelt": "immowelt", "immmo": "IMMMO",
+    "immowelt": "immowelt", "wggesucht": "WG-Gesucht", "immmo": "IMMMO",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
 
+# Empfindliche Quellen seltener abfragen (Stunden zwischen zwei Abrufen)
+SOURCE_INTERVAL_H = {"wggesucht": 4}
+
 ENRICH_MAX_PRICE = 750      # nur für diese Inserate Detailseiten laden
 ENRICH_LIMIT = 60           # max. Detailseiten pro Lauf
 EXPIRE_DAYS = 4             # Inserat verschwindet, wenn so lange nicht mehr gesehen
 
-# Harte Ausschlüsse – Titel
+# Gründe, die gar nicht erst gespeichert werden (sonst wäre "Aussortiert" voller teurer Wohnungen)
+SILENT_REASONS = {"kein Preis", "zu teuer", "falscher Bezirk"}
+
+WG_RX = re.compile(
+    r"WG-?Zimmer|Zimmer in (einer |der |unserer |meiner |netter |schöner )?(\d+er[- ]?)?(WG|Wohngemeinschaft)"
+    r"|\bin (einer |der )?\d+er[- ]?WG\b|Wohngemeinschaft|Mitbewohner|\bWG\b", re.I)
+WG_NOT = re.compile(
+    r"WG[- ]?(geeignet|tauglich|fähig|eignung|gründung)|(geeignet|ideal|perfekt|passend|optimal)\s+(für|als)\s+(eine\s+)?WG"
+    r"|(für|als)\s+(eine\s+)?(\d+er[- ]?)?WG\b", re.I)
+
 EXCLUDE_TITLE = [
-    (r"\bWG\b(?![- ]?(geeignet|tauglich|fähig))|WG-Zimmer|Mitbewohner|\bZimmer in\b|Zimmer zu vermieten|Untermiet.*Zimmer", "WG-Zimmer"),
     (r"tausch", "Wohnungstausch"),
-    (r"\b(Lager|Garage|Stellplatz|Parkplatz|Büro|Geschäftslokal|Gewerbe|Kellerabteil|Praxis|Ordination)", "keine Wohnung"),
     (r"kurzzeit|short[- ]?term|ferienwohnung|tageweise|wochenweise|monteur|airbnb", "Kurzzeitmiete"),
-    (r"^\s*\(?(reserviert|vergeben|vermietet)\)?|\b(reserviert|vergeben)\b", "reserviert/vergeben"),
-    (r"^\s*(suche|gesucht|wir suchen|ich suche)\b", "Gesuch"),
+    (r"^\W*(reserviert|vergeben|vermietet)\b|\((reserviert|vergeben|vermietet)\)|\b(reserviert|vergeben|vermietet)\W*$",
+     "reserviert/vergeben"),
+    (r"studentenheim|wohnheim|heimplatz|doppelzimmer", "Wohnheim"),
+    (r"^\W*(suche|gesucht|wir suchen|ich suche)\b(?!.*nach(mieter|folger))", "Gesuch"),
 ]
-# Harte Ausschlüsse – Beschreibung (Bad/Küche fehlt)
+NON_FLAT_RX = r"\b(Lager|Garage|Stellplatz|Parkplatz|Büro|Geschäftslokal|Gewerbe|Kellerabteil|Praxis|Ordination)"
+FLAT_WORDS_RX = r"wohnung|zimmer|garconn|garçonn|apartment|appartement|loft|maisonette|dachgescho|studio|\bWG\b"
+GEMEINDE_RX = r"gemeinde-?(bau|wohnung)|wiener wohnen|direktvergabe|wohn-?ticket"
+# Nur für ganze Wohnungen: Bad/Küche muss in der Wohnung sein (in WGs ist Teilen normal)
 EXCLUDE_DESC = [
-    (r"WC am Gang|Gang[- ]?WC|Etagen[- ]?(WC|dusche)|Kategorie D|ohne (Bad|Dusche)|kein (Bad|Badezimmer)|Gemeinschafts(bad|küche|dusche)", "kein eigenes Bad/WC"),
+    (r"WC am Gang|Gang[- ]?WC|Etagen[- ]?(WC|dusche)|Kategorie D|ohne (Bad|Dusche)|kein (Bad|Badezimmer)|Gemeinschafts(bad|küche|dusche)",
+     "kein eigenes Bad/WC"),
     (r"ohne Küche|keine Küche", "keine Küche"),
 ]
 
 FLAG_RULES = [
-    (r"gemeinde(bau|wohnung)|wiener wohnen|direktvergabe|wohn-?ticket", "Gemeindebau – Wohn-Ticket nötig"),
     (r"\bbefristet|befristung", "befristet"),
     (r"unbefristet", "unbefristet"),
     (r"möbliert|furnished", "möbliert"),
+    (r"zwischenmiete|untermiete bis|\b\d+\s*months?\b|für \d+ monate\b|(november|dezember|jänner|januar)-untermiete", "Zwischenmiete"),
     (r"provisionsfrei|ohne provision|keine provision", "provisionsfrei"),
     (r"balkon", "Balkon"),
     (r"terrasse", "Terrasse"),
@@ -61,42 +79,54 @@ FLAG_RULES = [
     (r"\blift\b|aufzug", "Lift"),
     (r"altbau", "Altbau"),
     (r"neubau|erstbezug", "Neubau/Erstbezug"),
+    (r"saniert|renoviert", "saniert"),
     (r"genossenschaft", "Genossenschaft"),
-    (r"(?<!keine )(?<!ohne )(?<!keine\n)ablöse(?!frei)", "Ablöse"),
+    (r"(?<!keine )(?<!ohne )ablöse(?!frei)", "Ablöse"),
 ]
+
+
+def _hours_since(iso):
+    return (datetime.now(timezone.utc) - datetime.fromisoformat(iso)).total_seconds() / 3600
 
 
 def now_iso():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
+def classify(l: Listing) -> str:
+    if l.category == "wg":
+        return "wg"
+    t = l.title or ""
+    return "wg" if WG_RX.search(t) and not WG_NOT.search(t) else "wohnung"
+
+
 def exclusion_reason(l: Listing):
+    t, d = l.title or "", l.description or ""
     if l.price is None or l.price < 100:
         return "kein Preis"
     if l.price > COLLECT_MAX_PRICE:
         return "zu teuer"
     if l.zip not in DISTRICTS:
         return "falscher Bezirk"
-    if l.area is not None and l.area < 15:
-        return "zu klein (Zimmer?)"
+    if re.search(GEMEINDE_RX, t + " " + d, re.I):
+        return "Gemeindebau (Wohn-Ticket nötig)"
+    if re.search(NON_FLAT_RX, t, re.I) and not re.search(FLAT_WORDS_RX, t, re.I):
+        return "keine Wohnung"
     for rx, why in EXCLUDE_TITLE:
-        # "unbefristet vergeben" o. ä. in Beschreibungen ignorieren – nur Titel prüfen
-        if re.search(rx, l.title or "", re.I):
-            if why == "reserviert/vergeben" and re.search(r"wird vergeben|zu vergeben", l.title, re.I):
-                continue
+        if re.search(rx, t, re.I):
             return why
-    for rx, why in EXCLUDE_DESC:
-        if re.search(rx, l.description or "", re.I):
-            return why
+    if l.category == "wohnung":
+        if l.area is not None and l.area < 15:
+            return "zu klein"
+        for rx, why in EXCLUDE_DESC:
+            if re.search(rx, d, re.I):
+                return why
     return None
 
 
-def flags_for(l: Listing, prev_flags=None):
+def flags_for(l: Listing):
     text = " ".join([l.title or "", l.description or "", " ".join(l.tags or [])]).lower()
-    flags = []
-    for rx, name in FLAG_RULES:
-        if re.search(rx, text, re.I) and name not in flags:
-            flags.append(name)
+    flags = [name for rx, name in FLAG_RULES if re.search(rx, text, re.I)]
     if "unbefristet" in flags and "befristet" in flags:
         flags.remove("befristet")
     if l.private:
@@ -107,7 +137,7 @@ def flags_for(l: Listing, prev_flags=None):
 
 
 def same_flat(a: dict, l: Listing) -> bool:
-    if a["zip"] != l.zip or not a.get("price") or not l.price:
+    if a.get("category", "wohnung") != l.category or a["zip"] != l.zip or not a.get("price") or not l.price:
         return False
     if abs(a["price"] - l.price) > max(5, 0.02 * l.price):
         return False
@@ -123,41 +153,59 @@ def load():
     return {"items": []}
 
 
-def main():
-    data = load()
-    items = {it["id"]: it for it in data.get("items", [])}
-    key_to_item = {k: it["id"] for it in items.values() for k in it.get("keys", [])}
-    run_at = now_iso()
-    status = {}
-    collected = []
-
+def fetch_all(prev_sources):
+    status, collected = {}, []
     for name, mod in SOURCES.items():
         print(f"→ {name}")
+        prev = prev_sources.get(name) or {}
+        interval = SOURCE_INTERVAL_H.get(name)
+        if interval and prev.get("last_ok") and _hours_since(prev["last_ok"]) < interval:
+            print(f"  übersprungen (läuft nur alle {interval} h)")
+            status[name] = dict(prev, skipped=True)
+            continue
         if name == "immmo" and not status.get("derstandard", {}).get("count"):
             # derStandard blockt Cloud-Server – dann deren Inserate über IMMMO mitnehmen
             immmo.SKIP_HOSTS = tuple(h for h in immmo.SKIP_HOSTS if h != "derstandard.at")
             print("  (derStandard direkt nicht erreichbar – nehme derStandard-Inserate über IMMMO)")
         try:
             res = mod.fetch()
-            # Duplikate innerhalb einer Quelle entfernen
             seen, uniq = set(), []
             for l in res:
                 if l.key not in seen:
                     seen.add(l.key)
                     uniq.append(l)
             collected += [(name, l) for l in uniq]
-            status[name] = {"ok": True, "count": len(uniq)}
+            st = {"ok": True, "count": len(uniq), "last_ok": now_iso() if uniq else prev.get("last_ok")}
             print(f"  {len(uniq)} Inserate")
         except Exception as e:  # eine kaputte Quelle soll den Rest nicht stoppen
-            traceback.print_exc()
-            status[name] = {"ok": False, "count": 0, "error": f"{type(e).__name__}: {e}"[:200]}
+            if type(e).__name__ == "Blocked":
+                print(f"  {e}")
+            else:
+                traceback.print_exc()
+            msg = str(e) if type(e).__name__ == "Blocked" else f"{type(e).__name__}: {e}"
+            st = {"ok": False, "count": 0, "error": msg[:200], "last_ok": prev.get("last_ok")}
+        prev_streak = prev.get("empty_streak", 0)
+        st["empty_streak"] = prev_streak + 1 if not st["count"] else 0
+        status[name] = st
+    if not status["derstandard"]["count"] and status["immmo"]["count"]:
+        status["derstandard"]["via"] = "immmo"
+    return status, collected
 
-    excluded = {}
+
+def main():
+    data = load()
+    items = {it["id"]: it for it in data.get("items", [])}
+    key_to_item = {k: it["id"] for it in items.values() for k in it.get("keys", [])}
+    run_at = now_iso()
+    status, collected = fetch_all(data.get("sources") or {})
+
+    excluded_counts = {}
+    run_ok, run_why = set(), {}
     enrich_budget = ENRICH_LIMIT
     for name, l in collected:
+        l.category = classify(l)
         why = exclusion_reason(l)
-        if why:
-            excluded[why] = excluded.get(why, 0) + 1
+        if why in SILENT_REASONS:
             continue
 
         item_id = key_to_item.get(l.key)
@@ -168,13 +216,16 @@ def main():
         if item_id is None:
             item_id = hashlib.sha1(l.key.encode()).hexdigest()[:12]
             items[item_id] = {
-                "id": item_id, "keys": [], "links": [], "first_seen": run_at,
+                "id": item_id, "keys": [], "links": [], "first_seen": run_at, "category": l.category,
                 "title": l.title, "price": l.price, "price_note": l.price_note, "zip": l.zip,
                 "district": DISTRICTS.get(l.zip, ""), "area": l.area, "rooms": l.rooms,
                 "address": l.address, "image": l.image, "description": "", "published": l.published,
                 "advertiser": l.advertiser, "email": "", "phone": "", "tags": [], "flags": [],
             }
         it = items[item_id]
+        it.setdefault("category", l.category)
+        # Ausschluss, der erst auf der Detailseite erkannt wurde, bleibt bestehen
+        why = why or (it.get("key_excl") or {}).get(l.key)
         key_to_item[l.key] = item_id
         if l.key not in it["keys"]:
             it["keys"].append(l.key)
@@ -182,23 +233,26 @@ def main():
             it["links"].append({"source": name, "label": SOURCE_LABELS[name], "url": l.url})
         it["last_seen"] = run_at
 
-        # Detailseite laden, wenn neu und im Budget-Umfeld
-        if is_new_key and l.price <= ENRICH_MAX_PRICE and enrich_budget > 0 and not it.get("email"):
+        if not why and is_new_key and l.price <= ENRICH_MAX_PRICE and enrich_budget > 0 and not it.get("email"):
             enrich_budget -= 1
             try:
                 SOURCES[name].enrich(l)
             except Exception:
                 traceback.print_exc()
-            # Nach dem Anreichern nochmal auf Ausschluss prüfen (z. B. "WC am Gang" in Beschreibung)
             why = exclusion_reason(l)
             if why:
-                excluded[why] = excluded.get(why, 0) + 1
-                it["excluded"] = why
+                it.setdefault("key_excl", {})[l.key] = why
+
+        if why:
+            run_why.setdefault(item_id, why)
+            excluded_counts[why] = excluded_counts.get(why, 0) + 1
+        else:
+            run_ok.add(item_id)
 
         # Felder ergänzen – bessere Werte gewinnen
         if l.price_note == "Gesamtmiete" and it.get("price_note") != "Gesamtmiete":
             it["price"], it["price_note"] = l.price, l.price_note
-        for k in ("area", "rooms", "image", "address", "advertiser", "published"):
+        for k in ("area", "rooms", "image", "address", "advertiser", "published", "wg_size"):
             if not it.get(k) and getattr(l, k):
                 it[k] = getattr(l, k)
         if len(l.description or "") > len(it.get("description") or ""):
@@ -220,22 +274,34 @@ def main():
         if it.get("area"):
             it["ppsqm"] = round(it["price_total"] / it["area"], 2)
 
-    # Abgelaufene entfernen
+    # Ausschluss pro Lauf neu bewerten: sobald eine Quelle das Inserat "sauber" liefert, gilt es
+    for iid in run_ok | set(run_why):
+        if iid in run_ok:
+            items[iid].pop("excluded", None)
+        else:
+            items[iid]["excluded"] = run_why[iid]
+
     cutoff = (datetime.now(timezone.utc) - timedelta(days=EXPIRE_DAYS)).isoformat()
     kept = [it for it in items.values() if it.get("last_seen", "") >= cutoff]
+    for it in kept:
+        it["score"] = score(it)
     kept.sort(key=lambda it: it["first_seen"], reverse=True)
 
     out = {
         "updated": run_at,
         "sources": status,
-        "excluded": excluded,
+        "excluded": excluded_counts,
+        "last_digest": data.get("last_digest"),
         "items": kept,
     }
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    in_budget = sum(1 for it in kept if it["price_total"] <= 650 and not it.get("excluded"))
-    print(f"\n✓ {len(kept)} Wohnungen gespeichert ({in_budget} ≤ 650 €). Ausgeschlossen: {excluded}")
+
+    flats = [it for it in kept if it["category"] == "wohnung" and not it.get("excluded") and it["price_total"] <= 650]
+    wgs = [it for it in kept if it["category"] == "wg" and not it.get("excluded")]
+    print(f"\n✓ {len(kept)} gespeichert: {len(flats)} Wohnungen ≤ 650 €, {len(wgs)} WG-Zimmer. "
+          f"Aussortiert: {excluded_counts}")
 
 
 if __name__ == "__main__":

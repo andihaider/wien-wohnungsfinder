@@ -103,6 +103,8 @@ class Listing:
     phone: str = ""
     private: Optional[bool] = None
     tags: List[str] = field(default_factory=list)
+    category: str = "wohnung"       # "wohnung" oder "wg"
+    wg_size: Optional[int] = None   # Personen in der WG
 
     @property
     def key(self) -> str:

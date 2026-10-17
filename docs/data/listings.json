@@ -1,36 +1,51 @@
 {
- "updated": "2026-10-17T14:01:50+00:00",
+ "updated": "2026-10-17T15:35:57+00:00",
  "sources": {
   "willhaben": {
    "ok": true,
-   "count": 18
+   "count": 18,
+   "last_ok": "2026-10-17T15:35:59+00:00",
+   "empty_streak": 0
   },
   "derstandard": {
    "ok": true,
-   "count": 0
+   "count": 158,
+   "last_ok": "2026-10-17T15:36:19+00:00",
+   "empty_streak": 0
   },
   "immoscout24": {
    "ok": true,
-   "count": 11
+   "count": 11,
+   "last_ok": "2026-10-17T15:36:25+00:00",
+   "empty_streak": 0
   },
   "immowelt": {
    "ok": true,
-   "count": 118
+   "count": 118,
+   "last_ok": "2026-10-17T15:36:45+00:00",
+   "empty_streak": 0
+  },
+  "wggesucht": {
+   "ok": false,
+   "count": 0,
+   "error": "Prüfseite (Captcha) – später erneut",
+   "last_ok": null,
+   "empty_streak": 1
   },
   "immmo": {
    "ok": true,
-   "count": 54
+   "count": 52,
+   "last_ok": "2026-10-17T15:37:47+00:00",
+   "empty_streak": 0
   }
  },
  "excluded": {
-  "reserviert/vergeben": 5,
-  "zu klein (Zimmer?)": 1,
-  "keine Wohnung": 3,
-  "Wohnungstausch": 4,
-  "zu teuer": 110,
-  "WG-Zimmer": 3,
-  "Gesuch": 1
+  "Gemeindebau (Wohn-Ticket nötig)": 5,
+  "reserviert/vergeben": 4,
+  "keine Wohnung": 1,
+  "Wohnungstausch": 4
  },
+ "last_digest": null,
  "items": [
   {
    "id": "100f91f7b904",
@@ -41,11 +56,12 @@
     {
      "source": "willhaben",
      "label": "willhaben",
-     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/direktvergabe-gemeindebauwohnung-im-matteotti-hof-1584814161/"
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/anfragestopp-direktvergabe-gemeindebauwohnung-im-matteotti-hof-1584814161/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
-   "title": "Direktvergabe - Gemeindebauwohnung im Matteotti-Hof",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "ANFRAGESTOPP! Direktvergabe - Gemeindebauwohnung im Matteotti-Hof",
    "price": 420.28,
    "price_note": "Gesamtmiete",
    "zip": "1050",
@@ -54,22 +70,62 @@
    "rooms": 1.0,
    "address": "Siebenbrunnenfeldgasse",
    "image": "https://cache.willhaben.at/mmo/1/158/481/4161_-1439158535.jpg",
-   "description": "Die Wohnung liegt sehr ruhig. Vom Schlafzimmer sieht man in den ruhigen grünen Innenhof, Bad und Küche liegen Richtung Einsiedlergassse (selten befahrene Einbahn). Ca 3 min Fußweg zur Straßenbahnstation Eichenstraße (BB, 62, 18, 6), ca 10 min Fußweg zum Matzleinsdorferplatz. Ein Billa, Hofer, Spar, Apotheke sind zu Fuß erreichbar. Bitte nur mit WIENER WOHNEN TICKET melden. Es sind mindestens 15 Punkte notwendig. Zur Direktvergabe steht eine 1 Zimmer-Gemeindewohnung im Matteotti-Hof im 5. Bezirk. Die Wohnung befindet sich im 3. Stock mit Lift. Es gibt ein Kellerabteil und eine riesige Waschküche. Zimmeraufteilung (siehe auch Grundriss) • Vorzimmer • großes Badezimmer mit Toilette, Dusche, Waschbecken und Waschmaschinenanschluss • Küche mit Einbauküche (Kochfeld, Backofen, Geschirrspüler) • Schlafzimmer • Kellerabteil Im Matteotti-Hof gibt es auch eine Tiefgarage, für freie Parkplätze muss man sich bitte selber informieren. In der Ablöse von € 2600,- (nicht verhandelbar) ist folgendes enthalten: • Küche: Neue Einbauküche (2 Jahre alt) E-Herd Backofen Geschirrspüler 4 Eket Wandregale (überm Esstisch) Achtung! NICHT enthalten: Kühlschrank und Mikrowelle • Schlafzimmer: IKEA Paxschrank • Bad: Waschbeckenunterschrank • Vorzimmer: Garderobe Die Miete inklusive Betriebskosten beträgt 420,28 €. Strom,- Fernwärme-, Wasserkosten je nach Verbrauch. Bei Interesse bitte melden!",
+   "description": "Bitte nur mit WIENER WOHNEN TICKET melden. Es sind mindestens 15 Punkte notwendig. Zur Direktvergabe steht eine 1 Zimmer-Gemeindewohnung im Matteotti-Hof im 5. Bezirk. Die Wohnung befindet sich im 3. Stock mit Lift. Es gibt ein Kellerabteil und eine...",
    "published": "2026-10-16T19:48:08Z",
    "advertiser": "Privat",
    "email": "",
    "phone": "",
    "tags": [],
    "flags": [
-    "Ablöse",
-    "Gemeindebau – Wohn-Ticket nötig",
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 420.28,
    "price_estimated": false,
-   "ppsqm": 11.06
+   "ppsqm": 11.06,
+   "excluded": "Gemeindebau (Wohn-Ticket nötig)",
+   "score": 77
+  },
+  {
+   "id": "a1cf1ee531fe",
+   "keys": [
+    "willhaben:1655499240"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/1-zimmer-wohnung-mit-fischgraetparkett-und-kleiner-privatenterrasse-1655499240/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "(reserviert) 1-Zimmer-Wohnung mit Fischgrätparkett und kleiner privatenTerrasse",
+   "price": 745.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 32.0,
+   "rooms": 1.0,
+   "address": "Spengergasse",
+   "image": "https://cache.willhaben.at/mmo/0/165/549/9240_-680959386.jpg",
+   "description": "Diese helle 1-Zimmer-Wohnung bietet eine kompakte, gut aufgeteilte Wohnfläche und eignet sich ideal für Singles oder Paare. Am Ende des Flurs befindet sich eine Küchenzeile mit mobilem Kochfeld, Spüle, Kühlschrank und Stauraum, die den Kochbereich...",
+   "published": "2026-10-16T14:11:36Z",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Terrasse",
+    "privat"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 745.0,
+   "price_estimated": false,
+   "ppsqm": 23.28,
+   "excluded": "reserviert/vergeben",
+   "score": 25
   },
   {
    "id": "2b0035618123",
@@ -89,7 +145,8 @@
      "url": "https://www.immobilienscout24.at/expose/6aac6dfcb0b273cdbdb69b57"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Erfolgreich studieren in Wien! Leben in 1050 (Videos im Textteil)",
    "price": 789.71,
    "price_note": "Gesamtmiete",
@@ -106,10 +163,11 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 789.71,
    "price_estimated": false,
-   "ppsqm": 17.55
+   "ppsqm": 17.55,
+   "score": 36
   },
   {
    "id": "5b71dd73768f",
@@ -123,7 +181,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1070-neubau/all-inclusive-gemuetliche-1-zimmer-wohnung-im-herzen-wiens-1198925762/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "All-inclusive gemütliche 1-Zimmer-Wohnung im Herzen Wiens",
    "price": 800.0,
    "price_note": "Gesamtmiete",
@@ -140,10 +199,11 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 800.0,
    "price_estimated": false,
-   "ppsqm": 40.0
+   "ppsqm": 40.0,
+   "score": 15
   },
   {
    "id": "262aac4fc301",
@@ -163,7 +223,8 @@
      "url": "https://www.immobilienscout24.at/expose/6ad0d50b831505646b847f42"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "orea | Schöne 1-Zimmer Wohnung nähe Hauptbahnhof | Smart besichtigen · Online anmieten",
    "price": 659.0,
    "price_note": "Gesamtmiete",
@@ -182,10 +243,11 @@
    "flags": [
     "Garten"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 659.0,
    "price_estimated": false,
-   "ppsqm": 22.72
+   "ppsqm": 22.72,
+   "score": 23
   },
   {
    "id": "4ecef9378270",
@@ -199,7 +261,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/charmante-wohnung-und-kuechenbereich-1838542669/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Charmante Wohnung und Küchenbereich",
    "price": 476.94,
    "price_note": "Gesamtmiete",
@@ -218,10 +281,50 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 476.94,
    "price_estimated": false,
-   "ppsqm": 15.9
+   "ppsqm": 15.9,
+   "score": 50
+  },
+  {
+   "id": "77c566125369",
+   "keys": [
+    "willhaben:1274850164"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1070-neubau/gemeindebauwohung-in-wien-zur-direktvergabe-1274850164/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "(reserviert) Gemeindebauwohung in Wien zur Direktvergabe",
+   "price": 155.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1070",
+   "district": "Neubau",
+   "area": 27.0,
+   "rooms": 1.0,
+   "address": "Neustiftgasse 143/02/16",
+   "image": "https://cache.willhaben.at/mmo/4/127/485/0164_953435948.png",
+   "description": "Liebevoll eingerichtete Gemeindewohnung in Direktvergabe – 27 m² | Neustiftgasse 143 | 155 € Gesamtmiete Schweren Herzens vergebe ich meine liebevoll eingerichtete Gemeindewohnung im Rahmen der Direktvergabe, da sie für mich mittlerweile zu klein...",
+   "published": "2026-10-13T13:07:44Z",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "privat"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 155.0,
+   "price_estimated": false,
+   "ppsqm": 5.74,
+   "excluded": "Gemeindebau (Wohn-Ticket nötig)",
+   "score": 71
   },
   {
    "id": "fb49afae281f",
@@ -235,7 +338,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1060-mariahilf/befristete-untermiete-ruhige-wohnung-2111653386/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "BEFRISTETE UNTERMIETE! RUHIGE WOHNUNG!",
    "price": 690.0,
    "price_note": "Gesamtmiete",
@@ -255,10 +359,11 @@
     "befristet",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 690.0,
    "price_estimated": false,
-   "ppsqm": 18.65
+   "ppsqm": 18.65,
+   "score": 22
   },
   {
    "id": "6a4a98ba1668",
@@ -272,7 +377,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1040-wieden/garconniere-in-citylage-naechst-wiedner-hauptstrasse-2019233907/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "GARCONNIERE IN CITYLAGE NÄCHST WIEDNER HAUPTSTRAßE",
    "price": 653.16,
    "price_note": "Gesamtmiete",
@@ -292,10 +398,93 @@
     "Altbau",
     "Garten"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 653.16,
    "price_estimated": false,
-   "ppsqm": 19.79
+   "ppsqm": 19.79,
+   "score": 26
+  },
+  {
+   "id": "11d3d5aa2660",
+   "keys": [
+    "willhaben:1895234891"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/zimmer-in-2er-wg-dachgeschoss-mit-terrasse-1895234891/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wg",
+   "title": "Zimmer in 2er WG_Dachgeschoss mit Terrasse",
+   "price": 573.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 12.0,
+   "rooms": 3.0,
+   "address": "Kohlgasse",
+   "image": "https://cache.willhaben.at/mmo/1/189/523/4891_-996386699.jpg",
+   "description": "Wer auf der Suche nach einem WG-Zimmer im Herzen von Margareten mit toller Dachterrasse ist, hat hier das richtige Inserat angeklickt. Die Dachgeschosswohnung (4.Stock mit Lift) befindet sich in der Kohlgasse auf der Höhe Arbeitergasse, wo beide Schlafzimmer straßenseitig (Einbahnstraße) ausgerichtet sind. Das zu vermietende Zimmer hat gute 12m2, einen Parkettboden und ist wie die gesamte Wohnung frisch ausgemalt. Zum Zimmer zugehörig ist Tür an Tür ein Stauraum, der als begehbarer Kleiderschrank dient. Bzgl. der Kommode und TV auf den Fotos, diese wurden mittlerweile rausgeräumt. Die Wohnung baut sich folgendermaßen auf: Die beiden Schlafzimmer und das Wohnzimmer mit voll ausgestatteter Küche, von wo man direkt die Terrasse (hofseitig) begeht, sind mit einem langen Flur verbunden. Vom Flur aus hat man Zugang zum Bad (Badewanne, Dusche, Waschmaschine) und separatem WC. Zudem ist ein Kellerabteil vorhanden und es kann in der Wohnung geraucht werden. In der Miete sind alle BK enthalten (Strom/Gas, Internet, Haushaltsversicherung). Man teilt sich lediglich einmal im Jahr die Thermenwartung. Die Kaution beträgt EUR 1.700,- Praktisch vor der Haustüre fährt der Bus 14A/59A und in wenigen Gehminuten erreicht man die U4 Station Margaretenstraße/Pilgramgasse sowie Straßenbahn 6/18 und den 13A Bus. Ebenfalls um die Ecke sind Spar, Billa, Apotheke, Bäckereien, alles mögliche zu finden. Kurz zu meiner Person: Bin 41 Jahre jung, berufstätig, outgoing, gerne auf Reisen und unternehmungslustig. Falls dein Interesse geweckt wurde, gib einfach Bescheid und schau vorbei!",
+   "published": "2026-10-12T11:06:17Z",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "06504300413",
+   "tags": [
+    "Dachterrasse"
+   ],
+   "flags": [
+    "Lift",
+    "Terrasse",
+    "privat"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 573.0,
+   "price_estimated": false,
+   "ppsqm": 47.75,
+   "score": 25
+  },
+  {
+   "id": "3031fc452bf4",
+   "keys": [
+    "willhaben:1365738931"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1060-mariahilf/22-m-wohnung-mit-separater-kueche-direkt-bei-der-u6-gumpendorfer-strasse-1365738931/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "(reserviert) 22 m² Wohnung mit separater Küche - direkt bei der U6 Gumpendorfer Straße",
+   "price": 680.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1060",
+   "district": "Mariahilf",
+   "area": 22.0,
+   "rooms": 1.0,
+   "address": "Mariahilfer Gürtel 6",
+   "image": "https://cache.willhaben.at/mmo/1/136/573/8931_-141289201.jpg",
+   "description": "22 m² Wohnung mit separater Küche – direkt bei der U6 Gumpendorfer Straße Ab sofort wird eine westlich ausgerichtete 22 m² Wohnung am Mariahilfer Gürtel 6 im 6. Wiener Bezirk vermietet. Die Wohnung liegt im 4. Stock und ist bequem mit dem Lift...",
+   "published": "2026-10-11T18:12:33Z",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Lift",
+    "privat"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 680.0,
+   "price_estimated": false,
+   "ppsqm": 30.91,
+   "excluded": "reserviert/vergeben",
+   "score": 17
   },
   {
    "id": "4c3088872e71",
@@ -309,7 +498,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/ohne-provision-frisch-saniert-ruhige-wohnung-mit-guter-verkehrsanbindung-in-1050-807264647/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Ohne Provision/ frisch saniert: Ruhige Wohnung mit guter Verkehrsanbindung in 1050",
    "price": 615.0,
    "price_note": "Gesamtmiete",
@@ -327,12 +517,14 @@
    "tags": [],
    "flags": [
     "privat",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 615.0,
    "price_estimated": false,
-   "ppsqm": 19.84
+   "ppsqm": 19.84,
+   "score": 28
   },
   {
    "id": "3405ce83d370",
@@ -346,7 +538,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/nachmieter-gesucht-fuer-1-zimmer-wohnung-1450930994/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Nachmieter gesucht für 1 Zimmer Wohnung",
    "price": 720.0,
    "price_note": "Gesamtmiete",
@@ -368,10 +561,11 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 720.0,
    "price_estimated": false,
-   "ppsqm": 18.95
+   "ppsqm": 18.95,
+   "score": 25
   },
   {
    "id": "cb51ffc56550",
@@ -385,7 +579,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/ideale-single-paarwohnung-2-zimmer-ab-hell-ruhig-787987654/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Ideale Single/ Paarwohnung: 2 Zimmer AB, hell, ruhig",
    "price": 614.93,
    "price_note": "Gesamtmiete",
@@ -404,10 +599,89 @@
    "flags": [
     "Lift"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 614.93,
    "price_estimated": false,
-   "ppsqm": 13.67
+   "ppsqm": 13.67,
+   "score": 53
+  },
+  {
+   "id": "ba9d8193f6e9",
+   "keys": [
+    "willhaben:1843275104"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1060-mariahilf/2-zimmer-wohnung-in-ruhiger-hoflage-1060-wien-sonnenuhrgasse-6-1843275104/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "(reserviert) 2-Zimmer-Wohnung in ruhiger Hoflage - 1060 Wien, Sonnenuhrgasse 6",
+   "price": 750.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1060",
+   "district": "Mariahilf",
+   "area": 45.0,
+   "rooms": 2.0,
+   "address": "Sonnenuhrgasse 6",
+   "image": "https://cache.willhaben.at/mmo/4/184/327/5104_1547084004.jpg",
+   "description": "Zur Vermietung gelangt eine 2-Zimmer-Wohnung im Hochparterre in der Sonnenuhrgasse 6 im 6. Wiener Gemeindebezirk . Die Wohnung ist hofseitig gelegen und verbindet den Charakter eines Wiener Altbaus mit einer funktionalen, modernen Ausstattung. Besonders...",
+   "published": "2026-10-02T09:31:39Z",
+   "advertiser": "",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Altbau"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 750.0,
+   "price_estimated": false,
+   "ppsqm": 16.67,
+   "excluded": "reserviert/vergeben",
+   "score": 38
+  },
+  {
+   "id": "83298377bc8a",
+   "keys": [
+    "willhaben:1266520447"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/moderne-kleinwohnung-stylish-1266520447/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "(reserviert) Moderne Kleinwohnung, stylish",
+   "price": 553.78,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 35.0,
+   "rooms": 2.0,
+   "address": "Stolberggasse",
+   "image": "https://cache.willhaben.at/mmo/7/126/652/0447_-1292832577.jpg",
+   "description": "Stolberggasse 1 1/2 Zimmer-Wohnung, 35 m², hell und ruhig, Hochparterre uneinsehbar, Thermo-Schallschutzfenster, 2 Fenster gehen auf die Stolberggasse, 2 Fenster gehen in einen teilbegrünten Innenhof. Die Wohnung in einem Gründerzeithaus besteht aus...",
+   "published": "2026-09-30T20:38:28Z",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "privat"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 553.78,
+   "price_estimated": false,
+   "ppsqm": 15.82,
+   "excluded": "reserviert/vergeben",
+   "score": 45
   },
   {
    "id": "e91ee1b73477",
@@ -421,7 +695,8 @@
      "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/wiener-wohnen-direktvergabe-2-zimmer-wohnung-im-5-bezirk-48-24m-521-45-miete-1791178424/"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wiener Wohnen Direktvergabe - 2-Zimmer-Wohnung im 5. Bezirk | 48,24m² | 521,45€ Miete",
    "price": 521.45,
    "price_note": "Gesamtmiete",
@@ -431,22 +706,61 @@
    "rooms": 2.0,
    "address": "Margaretengürtel 122-124",
    "image": "https://cache.willhaben.at/mmo/4/179/117/8424_-2017013831.jpg",
-   "description": "Wiener Wohnen Direktvergabe – 2-Zimmer-Wohnung im 5. Bezirk | 48,24m² | 521,45€ Miete Zur Direktvergabe gelangt eine gepflegte 2-Zimmer-Wohnung von Wiener Wohnen in sehr guter Lage im 5. Wiener Gemeindebezirk, 1050 Wien, Margaretengürtel 122–124. Die Wohnung befindet sich im 5. Stock eines Hauses mit Lift und bietet auf ca. 50 m² eine praktische Raumaufteilung. Eckdaten: 2 Zimmer ca. 50 m² Wohnfläche 5. Stock Lift vorhanden Miete inkl. Betriebskosten: ca. 521,45€ monatlich Ablöse: 5.000 € Verfügbar ab 01.10.2026 Bad und WC getrennt Dusche vorhanden Heizung vorhanden Ausstattung & Ablöse: Die Wohnung wird mit der auf den Fotos ersichtlichen Ausstattung übergeben. In der Wohnung verbleiben unter anderem: Einbauküche Sofa – erst vor wenigen Monaten gekauft, Rechnung vorhanden Bett Kleiderschrank sowie die weitere auf den Fotos ersichtliche Einrichtung Die Ablöse beträgt 5.000 €. Lage & Verkehrsanbindung: Die Wohnung befindet sich direkt am Margaretengürtel im 5. Bezirk. Die Straßenbahnhaltestelle Arbeitergasse/Gürtel mit den Linien 6 und 18 befindet sich nur wenige Gehminuten entfernt. Die Haltestelle liegt laut verfügbaren Lageangaben rund 180 m entfernt. Auch die U4-Station Margaretengürtel ist gut zu Fuß erreichbar. Durch die zentrale Lage sind Einkaufsmöglichkeiten, öffentliche Verkehrsmittel und Einrichtungen des täglichen Bedarfs bequem erreichbar. Wichtig – Wiener Wohnen Direktvergabe Die Wohnung wird ausschließlich im Rahmen einer Direktvergabe über Wiener Wohnen weitergegeben. Interessent:innen müssen die Voraussetzungen für eine Direktvergabe bzw. die entsprechenden Voraussetzungen von Wiener Wohnen erfüllen. Wiener Wohnticket für 2-Zimmer-Wohnung und 15 Punkte erforderlich. Bei ernsthaftem Interesse bitte um eine kurze Nachricht mit folgenden Angaben: Name Telefonnummer vorhandenes Wiener Wohn-Ticket bzw. Berechtigung kurze Information zur aktuellen Wohnsituation Besichtigungen nach Vereinbarung. Bitte nur ernst gemeinte Anfragen.",
+   "description": "Wiener Wohnen Direktvergabe – 2-Zimmer-Wohnung im 5. Bezirk | 48,24m² | 521,45€ Miete Zur Direktvergabe gelangt eine gepflegte 2-Zimmer-Wohnung von Wiener Wohnen in sehr guter Lage im 5. Wiener Gemeindebezirk, 1050 Wien, Margaretengürtel 122–124. Die...",
    "published": "2026-09-25T17:05:42Z",
    "advertiser": "Privat",
    "email": "",
    "phone": "",
    "tags": [],
    "flags": [
-    "Ablöse",
-    "Gemeindebau – Wohn-Ticket nötig",
-    "Lift",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 521.45,
    "price_estimated": false,
-   "ppsqm": 10.86
+   "ppsqm": 10.86,
+   "excluded": "Gemeindebau (Wohn-Ticket nötig)",
+   "score": 72
+  },
+  {
+   "id": "4778408a7959",
+   "keys": [
+    "willhaben:1946189555"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1050-margareten/lager-und-raum-bacherplatz-u5-1946189555/"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "LAGER -und__RAUM__Bacherplatz(U5)",
+   "price": 430.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 51.0,
+   "rooms": 2.0,
+   "address": "Bacherplatz 9",
+   "image": "https://cache.willhaben.at/mmo/5/194/618/9555_1845150871.jpg",
+   "description": "Nutzfläche: 51,26 m2 KEIN WOHNEN möglich sind. -) Stromanschluss vorhanden, kein Wasser anschluss -) straßenseitiger Zugang über Spengergas Se -) befristetet auf 3 ahre 430 Brutto Kaution: € 1.300,00 Vergebührung:155,00 Bacherplatz",
+   "published": "2026-09-20T10:51:00Z",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "befristet",
+    "privat"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 430.0,
+   "price_estimated": false,
+   "ppsqm": 8.43,
+   "excluded": "keine Wohnung",
+   "score": 82
   },
   {
    "id": "ebbb891c3d23",
@@ -466,7 +780,8 @@
      "url": "https://www.immobilienscout24.at/expose/6ac36855d5a40fb28cd4bc41"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "GemeindeWohnung 2 Zimmer",
    "price": 631.87,
    "price_note": "Gesamtmiete",
@@ -479,7 +794,7 @@
    "description": "",
    "published": "2026-10-05T17:24:00.000Z",
    "advertiser": "Privatanbieter Kuersat -",
-   "email": "kuersat.akyel@be-x.at",
+   "email": "",
    "phone": "",
    "tags": [
     "Garten",
@@ -490,35 +805,74 @@
    ],
    "flags": [
     "Garten",
-    "Gemeindebau – Wohn-Ticket nötig",
     "Lift",
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 631.87,
    "price_estimated": false,
-   "ppsqm": 10.67
+   "ppsqm": 10.67,
+   "excluded": "Gemeindebau (Wohn-Ticket nötig)",
+   "score": 72
+  },
+  {
+   "id": "756c32112c43",
+   "keys": [
+    "derstandard:14680037"
+   ],
+   "links": [
+    {
+     "source": "derstandard",
+     "label": "DER STANDARD",
+     "url": "https://immobilien.derstandard.at/detail/14680037"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wg",
+   "title": "mehrere WG-Zimmer in großer WG # Erasmus/Internship? # direkt bei U4 Margaretengürtel",
+   "price": 695.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 16,
+   "rooms": null,
+   "address": "1050 Wien",
+   "image": "https://ic.ds.at/EirrQw/plain/private-ads/93c2df77-f7ea-4eb1-a149-1fbd9ee5587d/38d336cf-8e2a-4836-ac07-3a55bf742bd1.jpeg",
+   "description": "",
+   "published": "2026-09-30T12:49:00.000Z",
+   "advertiser": "",
+   "email": "wiltrud.schoefnagel@gmail.com",
+   "phone": "",
+   "tags": [
+    "Küche",
+    "möbliert",
+    "provisionsfrei"
+   ],
+   "flags": [
+    "möbliert",
+    "provisionsfrei"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 695.0,
+   "price_estimated": false,
+   "ppsqm": 43.44,
+   "score": 24
   },
   {
    "id": "bf2a50a6f613",
    "keys": [
-    "derstandard:15279994",
-    "immmo:1587524627"
+    "derstandard:15279994"
    ],
    "links": [
     {
      "source": "derstandard",
      "label": "DER STANDARD",
      "url": "https://immobilien.derstandard.at/detail/15279994"
-    },
-    {
-     "source": "immmo",
-     "label": "IMMMO",
-     "url": "https://www.immmo.at/detail/1587524627?c=0"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Tolle 30m2 Wohnung für Student im 7. Bezirk",
    "price": 720.0,
    "price_note": "Gesamtmiete",
@@ -528,27 +882,25 @@
    "rooms": 1,
    "address": "1070 Wien",
    "image": "https://ic.ds.at/t4_Bmg/plain/private-ads/6d2de62b-5f17-473c-9a95-fee09e9abc27/7e8e5dda-a079-4307-94b1-c5343d080d41.jpeg",
-   "description": "# Garconniere # Altbau # möbliert Einzimmerwohnung nahe Lerchenfelderstrasse in Autofreie ruhige Strasse. Die Wohnung liegt im Erdgeschoss und ist renovierter Altbau. Das Wohnzimmer hat eine Nische wo das Bett hingestellt werden kann. Die Küche ist eingerichtet mit Kühlschrank, Herd und Kochplatte, Waschtrockner und kleiner Geschirrspüler. Die Gardinen, Lampen und Couch im Wohnzimmer können wenn gewünscht da bleiben. Ein Abstellschrank gibt es ausserhalb der Wohnung . Die Wohnung hat Wandheizung und elektrische Heizung unter dem Laminat. Die Miete beträgt 720€ inkl Betriebskosten und exkl Gas und Elektrizität, geschätzt auf 110€. Bei Interesse eineMail an: [Email] ... [ Mehr ]",
+   "description": "",
    "published": "2026-10-15T14:18:00.000Z",
-   "advertiser": "immobilien.derstandard.at",
+   "advertiser": "",
    "email": "metselaer1@gmail.com",
    "phone": "",
    "tags": [
-    "Altbau",
-    "Garconniere",
     "Küche",
     "möbliert",
     "provisionsfrei"
    ],
    "flags": [
-    "Altbau",
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 720.0,
    "price_estimated": false,
-   "ppsqm": 24.0
+   "ppsqm": 24.0,
+   "score": 26
   },
   {
    "id": "3dce157e3fbe",
@@ -562,7 +914,8 @@
      "url": "https://www.immobilienscout24.at/expose/6ab41361a4b1e97e86f266d8"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "1040 Wien, Nähe Hauptbahnhof und Alois-Drasche-Park - klimatisiertes, ruhiges Appartement",
    "price": 762,
    "price_note": "Gesamtmiete",
@@ -581,10 +934,48 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 762,
    "price_estimated": false,
-   "ppsqm": 21.77
+   "ppsqm": 21.77,
+   "score": 22
+  },
+  {
+   "id": "461c1a455f88",
+   "keys": [
+    "immoscout24:6acb0cebcc251842f7b8c445"
+   ],
+   "links": [
+    {
+     "source": "immoscout24",
+     "label": "ImmoScout24",
+     "url": "https://www.immobilienscout24.at/expose/6acb0cebcc251842f7b8c445"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "TAUSCHWOHNUNG 55 m² Wohnung in Wien, Wieden, 784 € Miete",
+   "price": 784,
+   "price_note": "Gesamtmiete",
+   "zip": "1040",
+   "district": "Wieden",
+   "area": 55,
+   "rooms": 2,
+   "address": "1040 Wien",
+   "image": "https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.001P900000ScbEZ-1791699146-7eba53fcdbc341e8ade463bc46a65f3b",
+   "description": "",
+   "published": "2026-10-10T04:34:31.183Z",
+   "advertiser": "Tauschwohnung GmbH Tauschwohnung",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 784,
+   "price_estimated": false,
+   "ppsqm": 14.25,
+   "excluded": "Wohnungstausch",
+   "score": 52
   },
   {
    "id": "3e6455c0692f",
@@ -598,7 +989,8 @@
      "url": "https://www.immobilienscout24.at/expose/6ad0cabb831505646b84726f"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Moderne 2-Zimmer-Wohnung mit Loggia",
    "price": 745,
    "price_note": "Gesamtmiete",
@@ -621,10 +1013,11 @@
     "Loggia",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 745,
    "price_estimated": false,
-   "ppsqm": 20.69
+   "ppsqm": 20.69,
+   "score": 27
   },
   {
    "id": "31d80436e0db",
@@ -638,7 +1031,8 @@
      "url": "https://www.immobilienscout24.at/expose/6acf84d607a1bf6370d0671c"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Cozy Loft close to Wien Oper",
    "price": 573,
    "price_note": "Gesamtmiete",
@@ -660,10 +1054,89 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 573,
    "price_estimated": false,
-   "ppsqm": 19.1
+   "ppsqm": 19.1,
+   "score": 29
+  },
+  {
+   "id": "a5e2514b3ada",
+   "keys": [
+    "immoscout24:6ac5c6dcd7a07dee81410e25"
+   ],
+   "links": [
+    {
+     "source": "immoscout24",
+     "label": "ImmoScout24",
+     "url": "https://www.immobilienscout24.at/expose/6ac5c6dcd7a07dee81410e25"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "TAUSCHWOHNUNG Optimal für Singles in Wien, Margareten",
+   "price": 270,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 28,
+   "rooms": 1,
+   "address": "1050 Wien",
+   "image": "https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.001P900000ScbEZ-1791353541-26754313023242cb9da62e0edf802b8c",
+   "description": "",
+   "published": "2026-10-07T04:13:16.837Z",
+   "advertiser": "Tauschwohnung GmbH Tauschwohnung",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 270,
+   "price_estimated": false,
+   "ppsqm": 9.64,
+   "excluded": "Wohnungstausch",
+   "score": 72
+  },
+  {
+   "id": "45b030207f05",
+   "keys": [
+    "immoscout24:6aae099003b8437226641f9b"
+   ],
+   "links": [
+    {
+     "source": "immoscout24",
+     "label": "ImmoScout24",
+     "url": "https://www.immobilienscout24.at/expose/6aae099003b8437226641f9b"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "TAUSCHWOHNUNG 2,5-Zimmer- Wohnung in 1050 Wien",
+   "price": 680,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 53,
+   "rooms": 2.5,
+   "address": "1050 Wien",
+   "image": "https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.001P900000ScbEZ-1789797748-27e5387d34d34518ad89cb333a453ca2",
+   "description": "",
+   "published": "2026-09-19T04:03:33.406Z",
+   "advertiser": "Tauschwohnung GmbH Tauschwohnung",
+   "email": "",
+   "phone": "",
+   "tags": [
+    "Balkon"
+   ],
+   "flags": [
+    "Balkon"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 680,
+   "price_estimated": false,
+   "ppsqm": 12.83,
+   "excluded": "Wohnungstausch",
+   "score": 60
   },
   {
    "id": "2888c6782c75",
@@ -677,7 +1150,8 @@
      "url": "https://www.immobilienscout24.at/expose/6aa16be54f7547c13862ec77"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wohnung in 1050",
    "price": 730,
    "price_note": "Gesamtmiete",
@@ -699,10 +1173,50 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 730,
    "price_estimated": false,
-   "ppsqm": 20.86
+   "ppsqm": 20.86,
+   "score": 22
+  },
+  {
+   "id": "dbe95e1dbf53",
+   "keys": [
+    "immoscout24:6ace853d7e120aae468d034b"
+   ],
+   "links": [
+    {
+     "source": "immoscout24",
+     "label": "ImmoScout24",
+     "url": "https://www.immobilienscout24.at/expose/6ace853d7e120aae468d034b"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "TAUSCHWOHNUNG 47 m² Wohnung in Wien, KG Neubau, 2 Zimmer",
+   "price": 780,
+   "price_note": "Gesamtmiete",
+   "zip": "1070",
+   "district": "Neubau",
+   "area": 47,
+   "rooms": 2,
+   "address": "1070 Wien",
+   "image": "https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.001P900000ScbEZ-1791926550-156348b1385e421a9c28d78001658092",
+   "description": "",
+   "published": "2026-10-13T19:23:41.535Z",
+   "advertiser": "Tauschwohnung GmbH Tauschwohnung",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Neubau/Erstbezug"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 780,
+   "price_estimated": false,
+   "ppsqm": 16.6,
+   "excluded": "Wohnungstausch",
+   "score": 40
   },
   {
    "id": "a368031eb309",
@@ -716,7 +1230,8 @@
      "url": "https://www.immowelt.at/expose/a3fd3842-53fa-450f-a997-8e4e1a1ba8d9"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne 1-Zimmer Wohnung nähe Hauptbahnhof",
    "price": 517.75,
    "price_note": "Nettokaltmiete",
@@ -726,17 +1241,18 @@
    "rooms": 1.0,
    "address": "Goldeggasse 1040 Wien",
    "image": "https://mms.immowelt.de/0/3/9/1/039165ea-2e34-43bd-b50b-a8c4f1345a7f.jpg",
-   "description": "Diese Wohnung und viele weitere werden ab sofort auf&nbsp;orea-home.com [http://www.orea-home.com/]&nbsp;angeboten: Die neue Art, Wohnungen und Parkplätze zu mieten. Smart besichtigen&nbsp;· Online a...",
+   "description": "Wohnung 29.05 m² 659 € zur Miete Goldeggasse,Wien (1040)",
    "published": "2026-10-15T14:27:47.26Z",
    "advertiser": "orea GmbH",
    "email": "",
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 611,
    "price_estimated": true,
-   "ppsqm": 21.0
+   "ppsqm": 21.0,
+   "score": 19
   },
   {
    "id": "82761c9e3b50",
@@ -750,7 +1266,8 @@
      "url": "https://www.immowelt.at/expose/cf7de584-8ca1-4f45-9e55-666e4d25c753"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "WOHNEN MITTEN IN DER STADT! Mostgasse 2/2/34",
    "price": 771.31,
    "price_note": "Nettokaltmiete",
@@ -769,10 +1286,11 @@
    "flags": [
     "befristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 925,
    "price_estimated": true,
-   "ppsqm": 19.27
+   "ppsqm": 19.27,
+   "score": 25
   },
   {
    "id": "bc08d6f1f74f",
@@ -786,7 +1304,8 @@
      "url": "https://www.immowelt.at/expose/fab86b8b-76a0-40e0-9c39-7a736402fa44"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "ab 1.1.2027: perfekte Single- und Stadtwohnung inkl. südseitiger Loggia im Projekt Schön102 nahe U4",
    "price": 775.73,
    "price_note": "Nettokaltmiete",
@@ -805,10 +1324,11 @@
    "flags": [
     "Loggia"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 884,
    "price_estimated": true,
-   "ppsqm": 26.23
+   "ppsqm": 26.23,
+   "score": 23
   },
   {
    "id": "c96742e08c92",
@@ -822,7 +1342,8 @@
      "url": "https://www.immowelt.at/expose/fe3ab28f-e653-4547-b239-d67545a678da"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne 2-Zimmer-Wohnung mit Balkon im 5. Bezirk!",
    "price": 764.3,
    "price_note": "Nettokaltmiete",
@@ -841,10 +1362,11 @@
    "flags": [
     "Balkon"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 929,
    "price_estimated": true,
-   "ppsqm": 18.0
+   "ppsqm": 18.0,
+   "score": 41
   },
   {
    "id": "0e401c11ddd2",
@@ -858,7 +1380,8 @@
      "url": "https://www.immowelt.at/expose/5901d525-8b23-4af2-bdd5-9128894ef4e5"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "2-ZIMMER-DACHGESCHOSS-WOHNUNG - NÄHE MATZLEINSDORFER PLATZ",
    "price": 700.0,
    "price_note": "Nettokaltmiete",
@@ -868,20 +1391,18 @@
    "rooms": 2.0,
    "address": "1050 Wien",
    "image": "https://mms.immowelt.de/4/4/d/0/44d0d1b7-598d-41d5-bf4e-a901912eb656.jpg",
-   "description": "Dachgeschoß (= 4. Obergeschoß mit Lift), befristete Vermietung (5 Jahre), sofort verfügbar! INFRASTRUKTUR: S-Bahn, Straßenbahn 1, 6, 18, 62, Badner Bahn, Bus 12A, 14A, Regionalbuslinien RAUMAUFTEILUN...",
+   "description": "Wohnung 57 m² 990 € zur Miete ,Wien (1050)",
    "published": "2026-09-30T17:02:07.753Z",
    "advertiser": "Dr. Alexandra Gabriel Realitätenvermittlungs GmbH",
    "email": "",
    "phone": "",
    "tags": [],
-   "flags": [
-    "Lift",
-    "befristet"
-   ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "flags": [],
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 882,
    "price_estimated": true,
-   "ppsqm": 15.47
+   "ppsqm": 15.47,
+   "score": 46
   },
   {
    "id": "2bb91ede09fa",
@@ -895,7 +1416,8 @@
      "url": "https://www.immowelt.at/expose/db4f06c4-127c-40ba-9d79-e0ff6e4d286d"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Erfolgreich studieren in Wien! Leben in 1050 (Videos im Textteil)",
    "price": 582.58,
    "price_note": "Nettokaltmiete",
@@ -905,17 +1427,93 @@
    "rooms": 1.0,
    "address": "Siebenbrunnenfeldgasse 1050 Wien",
    "image": "https://mms.immowelt.de/7/f/3/1/7f31fb25-d86c-4c14-961e-c27ee9507676.jpg",
-   "description": "Besichtigungsvideo: hier klicken [https://youtu.be/U_1MK9cBWqE?si=jrFaBc4udRc6qf3S] Info-Video: Immobilie erben: hier erben ;-) [https://youtu.be/UdGci5S-cPg?si=0ZHyHqqN4P-3NFVP] Sehr gute Anbindung ...",
+   "description": "Wohnung 45 m² 789.71 € zur Miete Siebenbrunnenfeldgasse,Wien (1050)",
    "published": "2025-07-11T12:15:37.263Z",
    "advertiser": "Wertimmobilien Consulting KG",
    "email": "",
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 727,
    "price_estimated": true,
-   "ppsqm": 16.16
+   "ppsqm": 16.16,
+   "score": 37
+  },
+  {
+   "id": "2fd8cd09e3ec",
+   "keys": [
+    "immowelt:26V441EJFBYH"
+   ],
+   "links": [
+    {
+     "source": "immowelt",
+     "label": "immowelt",
+     "url": "https://www.immowelt.at/expose/c281b5d2-8ba7-4d07-97c6-bbe5cb2361c4"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "Charmante Neubauwohnung - 2 Zimmer - Terrassentraum - Hofruhelage - Garagenstellplatz im Haus möglich - Grenze zum 4. Wiener Gemeindebezirks",
+   "price": 783.96,
+   "price_note": "Nettokaltmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 61.3,
+   "rooms": 2.0,
+   "address": "1050 Wien",
+   "image": "https://mms.immowelt.de/a/4/9/0/a4901f64-c0c6-43c9-9271-ae7b0f043f47.jpg",
+   "description": "Zur Vermietung gelangt eine charmante 2-Zimmer-Neubauwohnung mit exklusiver Terrasse in zentraler Lage im Herzen des 5. Wiener Gemeindebezirks. Optional besteht die Möglichkeit, einen Garagenstellpla...",
+   "published": "2026-08-05T09:56:41.803Z",
+   "advertiser": "Neutor Real GmbH",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Neubau/Erstbezug",
+    "Terrasse"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 980,
+   "price_estimated": true,
+   "ppsqm": 15.99,
+   "score": 49
+  },
+  {
+   "id": "31237cf0c60e",
+   "keys": [
+    "immowelt:26LAHZ6RDD5K"
+   ],
+   "links": [
+    {
+     "source": "immowelt",
+     "label": "immowelt",
+     "url": "https://www.immowelt.at/expose/1b45abdf-e844-4b4a-a30d-608d0ece9433"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "Charmante 1-Zimmer-Wohnung im beliebten 5. Bezirk  Garagenplatz inklusive!",
+   "price": 515.9,
+   "price_note": "Nettokaltmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 39.2,
+   "rooms": 1.0,
+   "address": "Krongasse 15 1050 Wien",
+   "image": "https://mms.immowelt.de/0/3/d/b/03dbfa86-c45e-46dd-af77-7bc456222a46.jpg",
+   "description": "Wohnung 39.22 m² 963.58 € zur Miete Krongasse 15,Wien (1050)",
+   "published": "2026-06-08T09:12:39.177Z",
+   "advertiser": "IMV Makler GmbH",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 641,
+   "price_estimated": true,
+   "ppsqm": 16.35,
+   "score": 33
   },
   {
    "id": "eee637a1e310",
@@ -929,7 +1527,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/3304a15b-Fleischmanngasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Mietwohnung mit Loggia, Nähe Karlsplatz, 1040 Wien",
    "price": 786.0,
    "price_note": "",
@@ -956,10 +1555,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 786.0,
    "price_estimated": false,
-   "ppsqm": 9.7
+   "ppsqm": 9.7,
+   "score": 60
   },
   {
    "id": "ab7276597e21",
@@ -973,7 +1573,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/8b8c1793-Naschmarkt-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "1 Zimmer Loft- Wohnung mit Balkon in der nähe vom Naschmarkt!",
    "price": 647.0,
    "price_note": "",
@@ -1001,10 +1602,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 647.0,
    "price_estimated": false,
-   "ppsqm": 11.55
+   "ppsqm": 11.55,
+   "score": 58
   },
   {
    "id": "ff4da0553ddd",
@@ -1018,7 +1620,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/7a39b380-Phorusgasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "3 Zimmer Balkonwohnung",
    "price": 747.0,
    "price_note": "",
@@ -1045,10 +1648,11 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 747.0,
    "price_estimated": false,
-   "ppsqm": 9.22
+   "ppsqm": 9.22,
+   "score": 62
   },
   {
    "id": "b068ebceacb9",
@@ -1062,7 +1666,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/da12bc81-Waaggasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Sehr schöne 2-Zimmer- Wohnung mit großem Balkon in zentraler Lage!",
    "price": 725.0,
    "price_note": "",
@@ -1086,12 +1691,14 @@
     "Balkon",
     "Bezahlportal",
     "befristet",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 725.0,
    "price_estimated": false,
-   "ppsqm": 11.89
+   "ppsqm": 11.89,
+   "score": 49
   },
   {
    "id": "d30f5122abce",
@@ -1105,7 +1712,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/54b3fa06-Waltergasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Perfekte Lage, Moderne 2-Zimmer Wohnung mit Balkon, unmöbliert",
    "price": 675.0,
    "price_note": "",
@@ -1136,10 +1744,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 675.0,
    "price_estimated": false,
-   "ppsqm": 13.78
+   "ppsqm": 13.78,
+   "score": 40
   },
   {
    "id": "decd33c1c279",
@@ -1153,7 +1762,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/2243eefc-Kolschitzkygasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wunderschöne Wohnung in zentraler Lage",
    "price": 692.0,
    "price_note": "",
@@ -1180,10 +1790,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 692.0,
    "price_estimated": false,
-   "ppsqm": 14.12
+   "ppsqm": 14.12,
+   "score": 45
   },
   {
    "id": "652dc9a4a26a",
@@ -1197,7 +1808,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/8833ab00-Weyringergasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "74 m2 Altbauwohnung Nähe U1-Station",
    "price": 775.0,
    "price_note": "",
@@ -1222,10 +1834,11 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 775.0,
    "price_estimated": false,
-   "ppsqm": 10.47
+   "ppsqm": 10.47,
+   "score": 54
   },
   {
    "id": "acf51a65d31e",
@@ -1239,7 +1852,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/59ab1d9a-Pl-lgasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Helle 3-Zimmer-Altbau- Wohnung im 4. Bezirk mit großem Balkon",
    "price": 769.0,
    "price_note": "",
@@ -1266,12 +1880,59 @@
     "Balkon",
     "Bezahlportal",
     "befristet",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 769.0,
    "price_estimated": false,
-   "ppsqm": 9.61
+   "ppsqm": 9.61,
+   "score": 55
+  },
+  {
+   "id": "7035bee8d87e",
+   "keys": [
+    "immmo:1573835352"
+   ],
+   "links": [
+    {
+     "source": "immmo",
+     "label": "IMMMO",
+     "url": "https://www.flatbee.at/properties/property_detail/f5523f8f-Blechturmgasse-Wien-1040"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wg",
+   "title": "Provisionsfreie moderne 3-Zimmer-Neubauwohnung (Fernwärme) - geeignet für Singles, WG oder Familien",
+   "price": 767.0,
+   "price_note": "",
+   "zip": "1040",
+   "district": "Wieden",
+   "area": 66.0,
+   "rooms": 3.0,
+   "address": "1040 Wien",
+   "image": "https://static.immmo.at/ccf/400/300/b78cbc75a3a61ba0fd9018ee26142c36.jpeg",
+   "description": "# WG-geeignet # Kellerabteil Objektbeschreibung Privatvermietung - Vermietung ab sofort möglich Das moderne Wohnhaus befindet sich im 4. Bezirk nahe der Wiedner Hauptstraße in bester Lage und verfügt über direkten Anschluss an öffentliche Verkehrsmittel - nur 8 Minuten zum Karlsplatz, 10 Minuten zum Hauptbahnhof. Aufgrund des exzellenten Grundrisses der zu vermietenden Wohnung mit zwei getrennt begehbaren Schlafzimmern sowie einer zentralen Wohnküche, ist diese insbesondere für eine Studenten-WG oder für junge Familien geeignet. Das großzügig geschnittene Badezimmer ist mit einem großen Spiegel, Doppelwaschbecken mit Unterschrank und Badewanne ausgestattet. Das WC ist getrennt. Die beiden Schlafzimmer sind annähernd gleich groß. Ein geräumiger Abstellraum ist ebenso vorhanden. Die Wohnung wird per Fußbodenheizung über Fernwärme geheizt. Die Küche verfügt über Backofen, Herd, Kühl- und Gefrierschrank sowie Geschirrspüler. Die genaue Raumaufteilung findet sich im bereitgestellten Grundrissplan. Der Wohnung ist ein Kellerabteil zugeordnet, welches in der Miete inkludiert ist. Im hauseigenen Hof gibt es einen Kinder- und Jugendspielzimmer und einen Sandkasten. ECKDATEN: Neubau -1. Liftstock -66,39m² Wohnfläche -3 Zimmer - 2 Schlafzimmer getrennt begehbar -Bad mit Badewanne, 2 Waschbecken und Waschmaschinenanschluss -WC getrennt -Vorraum sowie Abstellraum -Küche mit Backofen, Herd, Kühl- und Gefrierschrank sowie Geschirrspüler -Kellerabteil zugehörig (2,4m²) -Fahrradkeller vorhanden -Befristung auf 5 Jahre mit Verlängerungsmöglichkeit Lage Für den täglichen Bedarf: -SPAR GOURMET ca. 160m -BILLA ca. 300m -HOFER ca. 350m -Bäckerei Grimm ca. 230 m -FITINN ca. 170m Öffentliche Anbindung: 3 Gehminuten zur Haltestelle \"Johann-Strauß-Gasse\": - Straßenbahnlinien 1, 62, WLB - Buslinie 13A 10 Gehminuten zur U-Bahn-Station \"Taubstummengasse\" - U1 10 Gehminuten zum Hauptbahnhof Energieausweis/Heizung HWB (kWh/m²/Jahr): 21,3 HWB Energieklasse: A fGEE: 0,76 fGEE Energieklasse: A Heizung: Fernwärme ... [ Mehr ]",
+   "published": "",
+   "advertiser": "flatbee.at",
+   "email": "",
+   "phone": "",
+   "tags": [
+    "Kellerabteil",
+    "WG-geeignet",
+    "provisionsfrei"
+   ],
+   "flags": [
+    "Bezahlportal",
+    "Neubau/Erstbezug",
+    "befristet",
+    "provisionsfrei"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 767.0,
+   "price_estimated": false,
+   "ppsqm": 11.62,
+   "score": 29
   },
   {
    "id": "a60a94b9a771",
@@ -1285,7 +1946,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/37581050-Viktorgasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "1 Zimmer Garconniere",
    "price": 467.0,
    "price_note": "",
@@ -1312,10 +1974,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 467.0,
    "price_estimated": false,
-   "ppsqm": 15.06
+   "ppsqm": 15.06,
+   "score": 41
   },
   {
    "id": "e56af5448b6a",
@@ -1329,7 +1992,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/fd2b2d07-M-hlgasse-Wien-1040"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "provisionsfrei, privat! helle 2 Zimmer wohnung nähe naschmarkt!",
    "price": 482.0,
    "price_note": "",
@@ -1357,12 +2021,14 @@
     "Bezahlportal",
     "möbliert",
     "provisionsfrei",
+    "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 482.0,
    "price_estimated": false,
-   "ppsqm": 11.76
+   "ppsqm": 11.76,
+   "score": 68
   },
   {
    "id": "a848b00a1037",
@@ -1376,7 +2042,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/1bd8649e-Sch-nbrunner-Stra-e-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Hochwertige Dachgeschosswohnung",
    "price": 672.0,
    "price_note": "",
@@ -1404,10 +2071,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 672.0,
    "price_estimated": false,
-   "ppsqm": 9.46
+   "ppsqm": 9.46,
+   "score": 52
   },
   {
    "id": "e257038512eb",
@@ -1421,7 +2089,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/0dea23fc-Fendigasse-Wohnung-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wohnung zu vermieten",
    "price": 480.0,
    "price_note": "",
@@ -1451,10 +2120,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 480.0,
    "price_estimated": false,
-   "ppsqm": 11.71
+   "ppsqm": 11.71,
+   "score": 61
   },
   {
    "id": "c10764218261",
@@ -1468,7 +2138,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/ecac2f6c-Schlossgasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wohnung beim Schlossquadrat",
    "price": 656.0,
    "price_note": "",
@@ -1496,10 +2167,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 656.0,
    "price_estimated": false,
-   "ppsqm": 12.86
+   "ppsqm": 12.86,
+   "score": 53
   },
   {
    "id": "f3c764f36d14",
@@ -1513,7 +2185,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/9b2abd50-Siebenbrunnengasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Tolle, kürzlich sanierte Single Wohnung im 5. Bezirk",
    "price": 527.0,
    "price_note": "",
@@ -1538,12 +2211,14 @@
     "Bezahlportal",
     "Lift",
     "provisionsfrei",
+    "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 527.0,
    "price_estimated": false,
-   "ppsqm": 11.71
+   "ppsqm": 11.71,
+   "score": 63
   },
   {
    "id": "34241ee37d33",
@@ -1557,7 +2232,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/a0b3df57-Hauslabgasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Top 2 Zimmer Wohnung",
    "price": 643.0,
    "price_note": "",
@@ -1586,10 +2262,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 643.0,
    "price_estimated": false,
-   "ppsqm": 12.61
+   "ppsqm": 12.61,
+   "score": 54
   },
   {
    "id": "16464e46cee8",
@@ -1603,7 +2280,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/f80c4334-Scheupark-Margaretenstr-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne helle Dachgeschoßwohnung mit Terrasse / Provisionsfrei",
    "price": 590.0,
    "price_note": "",
@@ -1635,10 +2313,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 590.0,
    "price_estimated": false,
-   "ppsqm": 8.31
+   "ppsqm": 8.31,
+   "score": 73
   },
   {
    "id": "98e8576cf7b3",
@@ -1652,7 +2331,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/d1fce2ac-Diehlgasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "schöne Altbausinglewohnung ohne Provision im 5ten Bezirk",
    "price": 412.0,
    "price_note": "",
@@ -1679,10 +2359,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 412.0,
    "price_estimated": false,
-   "ppsqm": 9.36
+   "ppsqm": 9.36,
+   "score": 73
   },
   {
    "id": "6fe11cab1225",
@@ -1696,7 +2377,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/3b694139-Gr-ngasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Sanierte Wohnung , 2 Zimmer, privat",
    "price": 443.0,
    "price_note": "",
@@ -1717,12 +2399,14 @@
    "flags": [
     "Bezahlportal",
     "befristet",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 443.0,
    "price_estimated": false,
-   "ppsqm": 8.69
+   "ppsqm": 8.69,
+   "score": 70
   },
   {
    "id": "82f637f1ead9",
@@ -1736,7 +2420,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/e81ed868-Gie-aufgasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Provisionfreie Mietwohnung in Margareten such Nachmieter!",
    "price": 433.0,
    "price_note": "",
@@ -1762,10 +2447,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 433.0,
    "price_estimated": false,
-   "ppsqm": 10.82
+   "ppsqm": 10.82,
+   "score": 62
   },
   {
    "id": "c35778ba5922",
@@ -1779,7 +2465,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/67505364-R-digergasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Renovierte Altbauwohnung - 3 Zimmer - Hofseite",
    "price": 797.0,
    "price_note": "",
@@ -1802,12 +2489,14 @@
    "flags": [
     "Altbau",
     "Bezahlportal",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 797.0,
    "price_estimated": false,
-   "ppsqm": 10.63
+   "ppsqm": 10.63,
+   "score": 53
   },
   {
    "id": "df569d85eaeb",
@@ -1821,7 +2510,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/2cb0f6c7-Bacherplatz-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Provisionsfreie Dachgeschosswohnung mit Terrasse, 1050 Margareten",
    "price": 756.0,
    "price_note": "",
@@ -1847,10 +2537,11 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 756.0,
    "price_estimated": false,
-   "ppsqm": 9.33
+   "ppsqm": 9.33,
+   "score": 55
   },
   {
    "id": "e5a72dff02ec",
@@ -1864,7 +2555,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/dd228e10-Spengergasse-Wien-1050"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Charmante schöne ruhige 2 Zi Wohnung provisionsfrei ab sofort zu vermieten !",
    "price": 624.0,
    "price_note": "",
@@ -1888,12 +2580,62 @@
     "Bezahlportal",
     "Lift",
     "befristet",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 624.0,
    "price_estimated": false,
-   "ppsqm": 11.56
+   "ppsqm": 11.56,
+   "score": 50
+  },
+  {
+   "id": "578ce1ec487e",
+   "keys": [
+    "immmo:1570743916"
+   ],
+   "links": [
+    {
+     "source": "immmo",
+     "label": "IMMMO",
+     "url": "https://www.flatbee.at/properties/property_detail/acd93a21-PILGRAMGASSE-Wien-1050"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "U4 nähe Pilgramgasse, Altbauwohnung, WG Eignung",
+   "price": 785.0,
+   "price_note": "",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 73.0,
+   "rooms": 3.0,
+   "address": "1050 Wien",
+   "image": "https://static.immmo.at/ccf/400/300/a3adfd4498c0e1806ba5ac6c34fafaa6.jpeg",
+   "description": "# WG-geeignet # Altbau # Balkon # unbefristet Zur unbefristeten Vermietung gelangt diese 3-Zimmer Altbauwohnung im 2. Obergeschoss. Sie befindet sich in zentraler Lage nähe Margaretenplatz und Naschmarkt in der nähe der Pilgramgasse Raumaufteilung und Ausstattung: 2 große Zimmer, ein kleiners Schlafzimmer, getrennt begehbar, vom Vorzimmer gelangen Sie über eine Schiebetür in die schöne Küche mit fertiger Einbauküche, von der Küche gelangen Sie in ein kleines Zimmer, welches zum Beispiel als Arbeitszimmer benutzt werden kann. Das Bad mit Dusche und Toilette ist ebenfalls vom Vortimmer aus begehbar. Die Wohnung verfügt auch über einen Balkon, welchen Sie vom Schlafzimmer betreten können Die Eichenparkettböden, sowie Türen zeigen den Charm der Altbauwohnung Weiters gibt es im Haus einen Kellerraum. Miete + Betriebskosten: 758,- € ... [ Mehr ]",
+   "published": "",
+   "advertiser": "flatbee.at",
+   "email": "",
+   "phone": "",
+   "tags": [
+    "Altbau",
+    "Balkon",
+    "WG-geeignet",
+    "provisionsfrei",
+    "unbefristet"
+   ],
+   "flags": [
+    "Altbau",
+    "Balkon",
+    "Bezahlportal",
+    "provisionsfrei",
+    "unbefristet"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 785.0,
+   "price_estimated": false,
+   "ppsqm": 10.75,
+   "score": 62
   },
   {
    "id": "2374809089a9",
@@ -1907,7 +2649,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/16c2a196-Webgasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "1-Zimmer- Wohnung ganz in Fußnähe der Mariahilferstraße",
    "price": 439.0,
    "price_note": "",
@@ -1930,12 +2673,14 @@
     "Balkon",
     "Bezahlportal",
     "befristet",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 439.0,
    "price_estimated": false,
-   "ppsqm": 12.54
+   "ppsqm": 12.54,
+   "score": 57
   },
   {
    "id": "e4e600f13f1c",
@@ -1949,7 +2694,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/5297b230-Webgasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne Altbauwohnung mit Balkon in top Lage zu vermieten",
    "price": 759.0,
    "price_note": "",
@@ -1978,12 +2724,14 @@
     "Bezahlportal",
     "Garten",
     "Lift",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 759.0,
    "price_estimated": false,
-   "ppsqm": 11.68
+   "ppsqm": 11.68,
+   "score": 57
   },
   {
    "id": "fbb67ddeb24f",
@@ -1997,7 +2745,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/2016346a-Schmalzhofgasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Uneinsichtige Dachgeschosswohnung",
    "price": 785.0,
    "price_note": "",
@@ -2024,10 +2773,11 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 785.0,
    "price_estimated": false,
-   "ppsqm": 10.61
+   "ppsqm": 10.61,
+   "score": 60
   },
   {
    "id": "905442f39b51",
@@ -2041,7 +2791,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/8229823a-Liniengasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Moderne 2-Zi.-Dachgeschosswohnung mit TERRASSE",
    "price": 535.0,
    "price_note": "",
@@ -2068,10 +2819,11 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 535.0,
    "price_estimated": false,
-   "ppsqm": 9.55
+   "ppsqm": 9.55,
+   "score": 73
   },
   {
    "id": "2bf1b29c17d5",
@@ -2085,7 +2837,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/7ac22035-Mollardgasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "2-Zimmer Wohnung mit Balkon",
    "price": 688.0,
    "price_note": "",
@@ -2115,10 +2868,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 688.0,
    "price_estimated": false,
-   "ppsqm": 13.23
+   "ppsqm": 13.23,
+   "score": 41
   },
   {
    "id": "b822b702fcd5",
@@ -2132,7 +2886,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/24ca7834-Kaunitzgasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wohnung Nähe Naschmarkt - unmöbliert",
    "price": 728.0,
    "price_note": "",
@@ -2156,10 +2911,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 728.0,
    "price_estimated": false,
-   "ppsqm": 13.24
+   "ppsqm": 13.24,
+   "score": 45
   },
   {
    "id": "2953a589fbbb",
@@ -2173,7 +2929,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/91ebd81a-Laimgrubengasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "DG Wohnung Naschmarkt und Museumsquartier in Gehweite",
    "price": 612.0,
    "price_note": "",
@@ -2198,10 +2955,11 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 612.0,
    "price_estimated": false,
-   "ppsqm": 11.33
+   "ppsqm": 11.33,
+   "score": 60
   },
   {
    "id": "ab889f4c83fc",
@@ -2215,7 +2973,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/f6594f7d-Liniengasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "vermiete top Wohnung , 86m2, 3 Zi, Balkon, neu renoviert",
    "price": 790.0,
    "price_note": "",
@@ -2243,12 +3002,14 @@
     "Lift",
     "Neubau/Erstbezug",
     "möbliert",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 790.0,
    "price_estimated": false,
-   "ppsqm": 9.19
+   "ppsqm": 9.19,
+   "score": 62
   },
   {
    "id": "300873488c2e",
@@ -2262,7 +3023,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/169ea8c7-Millergasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "3 Zimmer Wohnung ab sofort zu vemieten",
    "price": 724.0,
    "price_note": "",
@@ -2287,12 +3049,14 @@
    "flags": [
     "Bezahlportal",
     "Neubau/Erstbezug",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 724.0,
    "price_estimated": false,
-   "ppsqm": 10.2
+   "ppsqm": 10.2,
+   "score": 54
   },
   {
    "id": "4431ebb674e3",
@@ -2306,7 +3070,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/0beb6018-Webgasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "MIETWOHNUNG 1060 Wien , Provisionsfrei, ab sofort beziehbar, WG-tauglich",
    "price": 715.0,
    "price_note": "",
@@ -2336,12 +3101,14 @@
     "Lift",
     "Neubau/Erstbezug",
     "möbliert",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 715.0,
    "price_estimated": false,
-   "ppsqm": 9.41
+   "ppsqm": 9.41,
+   "score": 62
   },
   {
    "id": "2fc47420e9fc",
@@ -2355,7 +3122,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/56462b23-Stumpergasse-Wien-1060"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Helle Wohnung in Super Lage, provisionsfrei, 6. Bezirk, Balkon",
    "price": 485.0,
    "price_note": "",
@@ -2379,12 +3147,14 @@
     "Ablöse",
     "Balkon",
     "Bezahlportal",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 485.0,
    "price_estimated": false,
-   "ppsqm": 9.33
+   "ppsqm": 9.33,
+   "score": 72
   },
   {
    "id": "8b5cdc724698",
@@ -2398,7 +3168,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/d1e14b2d-Neubaugasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Modernisierte 1 Zimmer Wohnung im Erstbezug",
    "price": 422.0,
    "price_note": "",
@@ -2423,12 +3194,58 @@
     "Bezahlportal",
     "Neubau/Erstbezug",
     "befristet",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 422.0,
    "price_estimated": false,
-   "ppsqm": 11.11
+   "ppsqm": 11.11,
+   "score": 65
+  },
+  {
+   "id": "8eb9a213ed0b",
+   "keys": [
+    "immmo:1585782398"
+   ],
+   "links": [
+    {
+     "source": "immmo",
+     "label": "IMMMO",
+     "url": "https://www.flatbee.at/properties/property_detail/b0c919eb-Neubaugasse-Wien-1070"
+    }
+   ],
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
+   "title": "Suche Nachmieter für 2 Zimmer Wohnung nähe Neubaugasse! WG geeignet",
+   "price": 656.0,
+   "price_note": "",
+   "zip": "1070",
+   "district": "Neubau",
+   "area": 52.0,
+   "rooms": 2.0,
+   "address": "1070 Wien",
+   "image": "https://static.immmo.at/ccf/400/300/fbaea6dc549be155dab30c70a1fd8de7.jpeg",
+   "description": "# WG-geeignet Ich biete meine geräumige Wohnung im 7 Bezrik Neubau zur Vermietung an. Die Wohnung ist ruhig, verfügt über 2 geräumige Zimmer, ein Badezimmer, eine Küche mit Esstisch und einen kleinen Vorraum; sie liegt außerdem in der Nähe von allen nötigen Geschäften, viele tolle Lokale in Laufnähe! Es gibt keinen Lift! Das Badezimmer ist geräumig und mit einer Badewanne versehen. Die Mariahilfer Straße ist ganz in der Nähe und kann in zwei 3 zu Fuß erreicht werden. Die U-Bahn-Station Neubaugasse. ist ebenfalls in der Nähe und kann in 2 Minuten erreicht werden. ... [ Mehr ]",
+   "published": "",
+   "advertiser": "flatbee.at",
+   "email": "",
+   "phone": "",
+   "tags": [
+    "WG-geeignet",
+    "provisionsfrei"
+   ],
+   "flags": [
+    "Bezahlportal",
+    "Lift",
+    "Neubau/Erstbezug",
+    "provisionsfrei"
+   ],
+   "last_seen": "2026-10-17T15:35:57+00:00",
+   "price_total": 656.0,
+   "price_estimated": false,
+   "ppsqm": 12.62,
+   "score": 47
   },
   {
    "id": "46e31e83a78d",
@@ -2442,7 +3259,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/b6fc8b59-Kirchengasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Helle Altbauwohnung",
    "price": 747.0,
    "price_note": "",
@@ -2469,12 +3287,14 @@
     "Bezahlportal",
     "Neubau/Erstbezug",
     "provisionsfrei",
+    "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 747.0,
    "price_estimated": false,
-   "ppsqm": 11.15
+   "ppsqm": 11.15,
+   "score": 56
   },
   {
    "id": "54eef4070e02",
@@ -2488,7 +3308,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/29e74940-Seidengasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Moderne 2-Zimmer Wohnung in zentraler Lage",
    "price": 746.0,
    "price_note": "",
@@ -2515,10 +3336,11 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 746.0,
    "price_estimated": false,
-   "ppsqm": 12.86
+   "ppsqm": 12.86,
+   "score": 43
   },
   {
    "id": "d54e85b2353d",
@@ -2532,7 +3354,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/d4653b01-Lindengasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne Wohnung in Wien Neubau!",
    "price": 788.0,
    "price_note": "",
@@ -2562,10 +3385,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 788.0,
    "price_estimated": false,
-   "ppsqm": 10.37
+   "ppsqm": 10.37,
+   "score": 65
   },
   {
    "id": "cfb76b565f14",
@@ -2579,7 +3403,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/00f20722-Kaiserstra-e-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Provisonsfreie Neubauwohnung mit Balkon",
    "price": 778.0,
    "price_note": "",
@@ -2605,10 +3430,11 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 778.0,
    "price_estimated": false,
-   "ppsqm": 10.66
+   "ppsqm": 10.66,
+   "score": 60
   },
   {
    "id": "2ebb32fbe553",
@@ -2622,7 +3448,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/9b2bf16f-Kirchengasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Wunderschöne 2-Zimmer- Wohnung mit Balkon in Top Lage",
    "price": 744.0,
    "price_note": "",
@@ -2652,10 +3479,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 744.0,
    "price_estimated": false,
-   "ppsqm": 13.78
+   "ppsqm": 13.78,
+   "score": 54
   },
   {
    "id": "171e9f849fdb",
@@ -2669,7 +3497,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/2ad5634f-Siebensterngasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Helle, schöne 1 Zimmer Wohnung mit Balkon",
    "price": 486.0,
    "price_note": "",
@@ -2702,10 +3531,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 486.0,
    "price_estimated": false,
-   "ppsqm": 12.46
+   "ppsqm": 12.46,
+   "score": 66
   },
   {
    "id": "db3d042c372f",
@@ -2719,7 +3549,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/55bcb280-Neustiftgasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne Altbauwohnung in zentraler Lage zu vermieten",
    "price": 672.0,
    "price_note": "",
@@ -2747,10 +3578,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 672.0,
    "price_estimated": false,
-   "ppsqm": 14.3
+   "ppsqm": 14.3,
+   "score": 39
   },
   {
    "id": "fd4a249140c4",
@@ -2764,7 +3596,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/49c79877-Siebensterngasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Renovierte 1 Zimmer Wohnung in 1070 Wien",
    "price": 475.0,
    "price_note": "",
@@ -2786,12 +3619,14 @@
     "Bezahlportal",
     "Lift",
     "möbliert",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 475.0,
    "price_estimated": false,
-   "ppsqm": 12.18
+   "ppsqm": 12.18,
+   "score": 59
   },
   {
    "id": "0f4103a77cce",
@@ -2805,7 +3640,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/3021ee4e-Halbgasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "3 Zimmer Altbauwohnung",
    "price": 789.0,
    "price_note": "",
@@ -2832,10 +3668,11 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 789.0,
    "price_estimated": false,
-   "ppsqm": 11.11
+   "ppsqm": 11.11,
+   "score": 47
   },
   {
    "id": "0d589c986d21",
@@ -2849,7 +3686,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/4c86164e-Bernardgasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "neu adaptierte Altbauwohnung mit Innenhof",
    "price": 742.0,
    "price_note": "",
@@ -2877,10 +3715,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 742.0,
    "price_estimated": false,
-   "ppsqm": 10.31
+   "ppsqm": 10.31,
+   "score": 58
   },
   {
    "id": "27bb6281f6ec",
@@ -2894,7 +3733,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/e9a9d409-Bandgasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Schöne helle Altbauwohnug nähe Neubaugasse! Provisionsfrei! Keine Ablöse!",
    "price": 483.0,
    "price_note": "",
@@ -2926,10 +3766,11 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 483.0,
    "price_estimated": false,
-   "ppsqm": 8.94
+   "ppsqm": 8.94,
+   "score": 84
   },
   {
    "id": "4c67dbec6b95",
@@ -2943,7 +3784,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/64a7fe4d-Seidengasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "1-Zimmerapartment in 1A-Lage - 7. Bezirk!",
    "price": 646.0,
    "price_note": "",
@@ -2971,10 +3813,11 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 646.0,
    "price_estimated": false,
-   "ppsqm": 17.94
+   "ppsqm": 17.94,
+   "score": 24
   },
   {
    "id": "431febec8566",
@@ -2988,7 +3831,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/76701c05-Seidengasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Perfekte Pärchen oder Single Wohnung im 7. Bezirk",
    "price": 723.0,
    "price_note": "",
@@ -3015,10 +3859,11 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 723.0,
    "price_estimated": false,
-   "ppsqm": 13.64
+   "ppsqm": 13.64,
+   "score": 45
   },
   {
    "id": "d9d224484279",
@@ -3032,7 +3877,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/66dfd130-Zieglergasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Provisionsfreie Wohnung zum Wohlfühlen",
    "price": 765.0,
    "price_note": "",
@@ -3057,10 +3903,11 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 765.0,
    "price_estimated": false,
-   "ppsqm": 10.77
+   "ppsqm": 10.77,
+   "score": 58
   },
   {
    "id": "e77c9f2f441f",
@@ -3074,7 +3921,8 @@
      "url": "https://www.flatbee.at/properties/property_detail/cf94f548-Zieglergasse-Wien-1070"
     }
    ],
-   "first_seen": "2026-10-17T13:52:56+00:00",
+   "first_seen": "2026-10-17T15:35:57+00:00",
+   "category": "wohnung",
    "title": "Generalsaniertes City-Apartment mit Balkon",
    "price": 412.0,
    "price_note": "",
@@ -3098,12 +3946,14 @@
     "Balkon",
     "Bezahlportal",
     "möbliert",
-    "provisionsfrei"
+    "provisionsfrei",
+    "saniert"
    ],
-   "last_seen": "2026-10-17T14:01:50+00:00",
+   "last_seen": "2026-10-17T15:35:57+00:00",
    "price_total": 412.0,
    "price_estimated": false,
-   "ppsqm": 13.29
+   "ppsqm": 13.29,
+   "score": 59
   }
  ]
 }
