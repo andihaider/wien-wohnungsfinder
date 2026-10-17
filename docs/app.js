@@ -8,8 +8,7 @@ ich interessiere mich sehr für Ihre Wohnung „{titel}“ ({adresse}, {preis}, 
 
 {ueber_mich}
 
-Sie erreichen mich am besten unter {telefon} oder per Mail.
-
+Telefon: {telefon}
 Inserat: {link}
 
 Mit freundlichen Grüßen
@@ -106,7 +105,9 @@ function fillTemplate(tpl, it) {
     flaeche: it.area ? num(it.area) + " m²" : "", link,
     name: S.name || "", telefon: S.phone || "", ueber_mich: S.about || "",
   };
-  return tpl.replace(/\{(\w+)\}/g, (m, k) => (k in map ? map[k] : m)).replace(/\n{3,}/g, "\n\n");
+  return tpl.replace(/\{(\w+)\}/g, (m, k) => (k in map ? map[k] : m))
+    .replace(/^[^\n:]{1,20}:[ \t]*$/gm, "")   // leere Felder wie "Telefon: " weglassen
+    .replace(/\n{3,}/g, "\n\n");
 }
 function mailto(it) {
   const subject = "Anfrage: " + it.title.slice(0, 90);
