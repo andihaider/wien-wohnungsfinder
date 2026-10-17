@@ -217,7 +217,11 @@ def main():
 
     if flats or wgs or probs:
         subject, body = build_mail(flats, wgs, probs)
-        send(subject, body, text_mail(flats, wgs, probs))
+        try:
+            send(subject, body, text_mail(flats, wgs, probs))
+        except Exception as e:  # Mail-Probleme dürfen die Suche nie blockieren
+            detail = e.read()[:300].decode(errors="replace") if hasattr(e, "read") else ""
+            print(f"  ! Mail fehlgeschlagen: {type(e).__name__}: {e} {detail}")
     else:
         print("  nichts Neues – keine Mail.")
     data["last_digest"] = now.replace(microsecond=0).isoformat()
