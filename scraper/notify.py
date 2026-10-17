@@ -1,20 +1,21 @@
 """E-Mail mit neuen Treffern – höchstens 2× täglich (07:00 und 18:00 Wiener Zeit), nur wenn es Neues gibt.
 
-Zugangsdaten kommen aus Umgebungsvariablen (GitHub Secrets), nie aus dem Repo:
-  MAIL_USER      Absender-Adresse (z. B. Gmail)
-  MAIL_PASSWORD  App-Passwort (bei Gmail: myaccount.google.com/apppasswords)
-  MAIL_TO        Empfänger (optional, Standard = MAIL_USER)
-  MAIL_HOST / MAIL_PORT  optional, Standard smtp.gmail.com:465
+Einstellungen kommen aus Umgebungsvariablen (GitHub Secrets), nie aus dem Repo:
+  MAIL_TO        Empfänger – reicht allein: dann wird über ntfy.sh verschickt (Text-Mail, ohne Konto)
+  MAIL_USER / MAIL_PASSWORD  optional: eigenes Gmail-Konto + App-Passwort für schöne HTML-Mails
+  MAIL_HOST / MAIL_PORT      optional, Standard smtp.gmail.com:465
 
   python scraper/notify.py            # sendet nur im Zeitfenster
   python scraper/notify.py --preview  # schreibt mail-preview.html, sendet nichts
   python scraper/notify.py --force    # sendet sofort (Test)
 """
+import hashlib
 import html
 import json
 import os
 import smtplib
 import sys
+import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -131,12 +132,46 @@ def build_mail(flats, wgs, probs):
     return subj, body
 
 
-def send(subject, body):
+def text_mail(flats, wgs, probs):
+    """Kompakte Text-Version (ntfy.sh erlaubt max. ~4 KB pro Nachricht)."""
+    def line(it):
+        wg = it.get("category") == "wg"
+        area = f"{(it.get('area') or 0):g} m²".replace(".", ",") + (" Zimmer" if wg else "") if it.get("area") else ""
+        extra = f"{it['wg_size']}er WG" if wg and it.get("wg_size") else ""
+        facts = " · ".join(x for x in [eur(it["price_total"]) + (" ca." if it.get("price_estimated") else ""), area, extra,
+                                        (it.get("district") or it["zip"])] if x)
+        return f"• {facts}\n  {it['title'][:70]}\n  {it['links'][0]['url']}"
+    parts = []
+    if probs:
+        parts.append("⚠ " + " ".join(probs))
+    if flats:
+        parts.append(f"🏠 WOHNUNGEN ({len(flats)})\n" + "\n".join(line(i) for i in flats[:8]))
+    if wgs:
+        parts.append(f"👥 WG-ZIMMER ({len(wgs)})\n" + "\n".join(line(i) for i in wgs[:8]))
+    parts.append("Alle Treffer in der App: " + APP_URL)
+    text = "\n\n".join(parts)
+    return text[:3900]
+
+
+def send_ntfy(to, subject, text):
+    # Thema aus der Adresse ableiten, damit es nicht erratbar ist und nicht im Repo steht
+    topic = "wohnungsfinder-" + hashlib.sha256(to.encode()).hexdigest()[:20]
+    payload = {"topic": topic, "title": subject, "message": text, "email": to, "click": APP_URL, "tags": ["house"]}
+    req = urllib.request.Request("https://ntfy.sh/", data=json.dumps(payload).encode(),
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    with urllib.request.urlopen(req, timeout=30) as r:
+        print(f"  ✉︎ Mail über ntfy.sh verschickt (HTTP {r.status}): {subject}")
+    return True
+
+
+def send(subject, body, text=""):
     user, pw = os.environ.get("MAIL_USER"), os.environ.get("MAIL_PASSWORD")
     to = os.environ.get("MAIL_TO") or user
-    if not (user and pw):
-        print("  (keine Mail-Zugangsdaten gesetzt – Mail wird übersprungen)")
+    if not to:
+        print("  (keine Empfängeradresse gesetzt – Mail wird übersprungen)")
         return False
+    if not (user and pw):
+        return send_ntfy(to, subject, text)
     msg = MIMEMultipart("alternative")
     msg["Subject"], msg["From"], msg["To"] = subject, f"Wohnungsfinder <{user}>", to
     msg.attach(MIMEText("Neue Treffer: " + APP_URL, "plain", "utf-8"))
@@ -177,12 +212,12 @@ def main():
         out = os.path.join(ROOT, "mail-preview.html")
         with open(out, "w", encoding="utf-8") as f:
             f.write(body)
-        print(f"  Vorschau: {out}\n  Betreff: {subject}")
+        print(f"  Vorschau: {out}\n  Betreff: {subject}\n--- Text-Version ({len(text_mail(flats, wgs, probs).encode())} Bytes) ---\n{text_mail(flats, wgs, probs)}")
         return
 
     if flats or wgs or probs:
         subject, body = build_mail(flats, wgs, probs)
-        send(subject, body)
+        send(subject, body, text_mail(flats, wgs, probs))
     else:
         print("  nichts Neues – keine Mail.")
     data["last_digest"] = now.replace(microsecond=0).isoformat()

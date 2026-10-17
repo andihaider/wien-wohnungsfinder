@@ -7,13 +7,9 @@ Handy-Web-App. Um 7 und 18 Uhr kommt eine E-Mail mit den neuen Treffern (nur wen
 
 ## E-Mail einrichten
 
-Im Repo unter *Settings → Secrets and variables → Actions* drei Secrets anlegen:
-
-| Secret | Inhalt |
-|---|---|
-| `MAIL_USER` | Gmail-Adresse, von der gesendet wird |
-| `MAIL_PASSWORD` | Gmail-App-Passwort (myaccount.google.com/apppasswords, braucht 2-Faktor-Anmeldung) |
-| `MAIL_TO` | Empfänger (optional, sonst = `MAIL_USER`) |
+Es reicht ein GitHub-Secret `MAIL_TO` mit der Empfängeradresse (*Settings → Secrets and variables → Actions*).
+Verschickt wird dann kostenlos und ohne Konto über ntfy.sh als Text-Mail.
+Optional für HTML-Mails mit Fotos: zusätzlich `MAIL_USER` + `MAIL_PASSWORD` (Gmail-App-Passwort).
 
 Test: `python scraper/notify.py --preview` erzeugt eine Vorschau, `--force` sendet sofort.
 
