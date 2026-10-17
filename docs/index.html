@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wohnungsfinder Wien</title>
+  <meta name="theme-color" content="#0f766e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Wohnungen">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <div>
+        <h1>Wohnungsfinder <span>Wien</span></h1>
+        <p class="meta" id="meta">Lade …</p>
+      </div>
+      <button class="icon-btn" id="btn-settings" aria-label="Einstellungen">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+      </button>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="new">Neu <b id="cnt-new">0</b></button>
+      <button class="tab" data-tab="all">Alle <b id="cnt-all">0</b></button>
+      <button class="tab" data-tab="fav">Gemerkt <b id="cnt-fav">0</b></button>
+    </nav>
+    <div class="sortbar">
+      <label>Sortieren
+        <select id="sort">
+          <option value="score">Beste zuerst</option>
+          <option value="new">Neueste zuerst</option>
+          <option value="price">Günstigste zuerst</option>
+          <option value="ppsqm">€/m² aufsteigend</option>
+        </select>
+      </label>
+      <span id="filter-summary" class="muted"></span>
+    </div>
+  </header>
+
+  <main id="list" aria-live="polite"></main>
+  <footer id="footer" class="muted"></footer>
+
+  <dialog id="settings">
+    <form method="dialog" class="sheet">
+      <div class="sheet-head">
+        <h2>Einstellungen</h2>
+        <button class="icon-btn" value="close" aria-label="Schließen">✕</button>
+      </div>
+
+      <section>
+        <h3>Suche</h3>
+        <label class="row">Max. Gesamtmiete <output id="o-max"></output></label>
+        <input type="range" id="s-max" min="300" max="800" step="10">
+        <label class="row">Min. Gesamtmiete <output id="o-min"></output></label>
+        <input type="range" id="s-min" min="0" max="700" step="10">
+        <label class="row">Min. Wohnfläche <output id="o-area"></output></label>
+        <input type="range" id="s-area" min="0" max="80" step="5">
+        <div class="chips" id="s-districts"></div>
+      </section>
+
+      <section>
+        <h3>Ausblenden</h3>
+        <label class="check"><input type="checkbox" id="h-paywall"> Bezahlportale (Kontakt nur gegen Gebühr)</label>
+        <label class="check"><input type="checkbox" id="h-gemeinde"> Gemeindebau / Direktvergabe (Wohn-Ticket nötig)</label>
+        <label class="check"><input type="checkbox" id="h-befristet"> Befristete Mietverträge</label>
+        <label class="check"><input type="checkbox" id="h-moebliert"> Möblierte Wohnungen</label>
+        <label class="check"><input type="checkbox" id="h-estimated"> Inserate ohne bekannte Gesamtmiete</label>
+        <button type="button" class="link-btn" id="btn-unhide">Ausgeblendete Wohnungen wieder anzeigen (<span id="cnt-hidden">0</span>)</button>
+      </section>
+
+      <section>
+        <h3>Deine Daten für Anfragen</h3>
+        <p class="muted small">Bleiben nur auf diesem Handy gespeichert.</p>
+        <label>Name<input type="text" id="p-name" autocomplete="name"></label>
+        <label>Telefon<input type="tel" id="p-phone" autocomplete="tel"></label>
+        <label>Kurz über mich<textarea id="p-about" rows="3" placeholder="z. B. Student/in, Nichtraucher/in, unbefristetes Einkommen …"></textarea></label>
+        <label>Mail-Vorlage<textarea id="p-template" rows="10"></textarea></label>
+        <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich}</p>
+        <button type="button" class="link-btn" id="btn-reset-template">Vorlage zurücksetzen</button>
+      </section>
+    </form>
+  </dialog>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="media">
+        <img loading="lazy" referrerpolicy="no-referrer" alt="">
+        <span class="score"></span>
+        <span class="badge-new">NEU</span>
+        <button class="fav" aria-label="Merken">☆</button>
+      </div>
+      <div class="body">
+        <div class="price-row">
+          <span class="price"></span>
+          <span class="facts"></span>
+        </div>
+        <h3 class="title"></h3>
+        <p class="where"></p>
+        <div class="flags"></div>
+        <details>
+          <summary>Beschreibung</summary>
+          <p class="desc"></p>
+        </details>
+        <div class="actions"></div>
+        <p class="src muted small"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+name: Wohnungssuche
+
+on:
+  schedule:
+    # 05:00 und 16:00 UTC = 07:00/18:00 Sommerzeit bzw. 06:00/17:00 Winterzeit in Wien
+    - cron: "0 5,16 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: suche
+  cancel-in-progress: false
+
+jobs:
+  suche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Quellen durchsuchen
+        run: python scraper/run.py
+      - name: Ergebnis speichern
+        run: |
+          git config user.name "wohnungsfinder-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/listings.json
+          git diff --cached --quiet || git commit -m "Neue Suche $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push
