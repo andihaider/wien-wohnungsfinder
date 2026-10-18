@@ -89,6 +89,8 @@ def _arwag():
         lon, lat = f["geometry"]["coordinates"]
         if not (lat0 <= lat <= lat1 and lon0 <= lon <= lon1):
             continue
+        if f["properties"].get("title", "").startswith("#"):
+            continue  # Projekt-Platzhalter ohne eigene Detailseite
         d_r = get(ARWAG_DETAIL.format(id=f["id"]))
         if not d_r or "miete" not in d_r.url or "gewerbe" in d_r.url:
             continue
