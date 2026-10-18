@@ -219,8 +219,15 @@ def main():
         print(f"  Vorschau: {out}\n  Betreff: {subject}\n--- Text-Version ({len(text_mail(flats, wgs, probs).encode())} Bytes) ---\n{text_mail(flats, wgs, probs)}")
         return
 
+    if force and not (flats or wgs):
+        # Testmodus: aktuelle Top-Treffer schicken, damit man sieht, wie die Nachricht aussieht
+        current = sorted([i for i in data["items"] if matches_default(i)], key=lambda i: -i.get("score", 0))
+        flats = [i for i in current if i.get("category") != "wg"][:3]
+        wgs = [i for i in current if i.get("category") == "wg"][:3]
     if flats or wgs or probs:
         subject, body = build_mail(flats, wgs, probs)
+        if force:
+            subject = "TEST – " + subject
         try:
             best = max(flats or wgs, key=lambda i: i.get("score", 0)) if (flats or wgs) else None
             send(subject, body, text_mail(flats, wgs, probs), best["links"][0]["url"] if best else "")
@@ -229,6 +236,8 @@ def main():
             print(f"  ! Mail fehlgeschlagen: {type(e).__name__}: {e} {detail}")
     else:
         print("  nichts Neues – keine Mail.")
+    if force:
+        return  # Test zählt nicht als Zusammenfassung
     data["last_digest"] = now.replace(microsecond=0).isoformat()
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
