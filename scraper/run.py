@@ -4,6 +4,7 @@ import json
 import os
 import re
 import sys
+import time
 import traceback
 import warnings
 from datetime import datetime, timedelta, timezone
@@ -34,8 +35,12 @@ SOURCE_LABELS = {
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
 
-# Empfindliche Quellen seltener abfragen (Stunden zwischen zwei Abrufen)
-SOURCE_INTERVAL_H = {"wggesucht": 4}
+# Die Suche läuft alle 5 Min. Schnelle Quellen (willhaben: 1 Anfrage, ImmoScout24: 4) jedes Mal,
+# schwere bzw. empfindliche seltener – sonst drohen Sperren. Minuten seit dem letzten VERSUCH.
+SOURCE_INTERVAL_MIN = {"immowelt": 30, "immmo": 30, "makler": 60, "gewofinder": 120, "wggesucht": 240}
+# Nach einem Fehlschlag (z. B. derStandard sperrt Cloud-Server) erst so viel später erneut versuchen
+FAIL_RETRY_MIN = {"derstandard": 360}
+SAVE_EVERY_MIN = 30         # ohne inhaltliche Änderung höchstens so oft speichern (GitHub Pages: ~10 Builds/Std.)
 
 GONE = "nicht mehr online"
 CHECK_LIMIT = 15            # direkte Link-Prüfungen pro Lauf
@@ -166,10 +171,13 @@ def mark_gone(items, status, run_at):
                 for n, st in status.items()}
     wg_ran = bool(status.get("wggesucht", {}).get("count")) and not status.get("wggesucht", {}).get("skipped")
     checks, gone = 0, 0
+    skipped = {n for n, st in status.items() if st.get("skipped")}
     for it in items.values():
         if it.get("last_seen") == run_at or it.get("excluded"):
             continue
         srcs = {l["source"] for l in it["links"]}
+        if srcs & skipped:
+            continue  # Quelle wurde diesmal nicht abgefragt – fehlt also nicht wirklich
         # IMMMO-Inserate von Portalen, die IMMMO diesmal übersprungen hat, sagen nichts aus
         skipped_host = "immmo" in srcs and any(h in (it.get("advertiser") or "") for h in immmo.SKIP_HOSTS)
         if not skipped_host and all(complete.get(s) for s in srcs):
@@ -198,14 +206,31 @@ def load():
     return {"items": []}
 
 
+def _due(name, prev):
+    """Soll die Quelle in diesem Lauf abgefragt werden?
+
+    Uhrzeitbasiert statt über gespeicherte Zeitstempel, weil nicht jeder Lauf speichert:
+    eine Quelle mit 30-Min.-Abstand läuft im Fenster :00–:05 und :30–:35 (UTC-Minuten seit 1970).
+    Sicherheitsnetz: wurde das Fenster verpasst, läuft sie, sobald der letzte Versuch zu lange her ist.
+    """
+    interval = SOURCE_INTERVAL_MIN.get(name) or 0
+    if prev and prev.get("last_attempt_ok") is False and name in FAIL_RETRY_MIN:
+        interval = max(interval, FAIL_RETRY_MIN[name])
+    if not interval:
+        return True
+    if int(time.time() // 60) % interval < 5:
+        return True
+    last = prev.get("last_try") or prev.get("last_ok")
+    return not last or _hours_since(last) * 60 >= interval + 10
+
+
 def fetch_all(prev_sources):
     status, collected = {}, []
     for name, mod in SOURCES.items():
         print(f"→ {name}")
         prev = prev_sources.get(name) or {}
-        interval = SOURCE_INTERVAL_H.get(name)
-        if interval and prev.get("last_ok") and _hours_since(prev["last_ok"]) < interval:
-            print(f"  übersprungen (läuft nur alle {interval} h)")
+        if not _due(name, prev):
+            print("  übersprungen (seltener abgefragt, um Sperren zu vermeiden)")
             status[name] = dict(prev, skipped=True)
             continue
         if name == "immmo" and not status.get("derstandard", {}).get("count"):
@@ -220,7 +245,8 @@ def fetch_all(prev_sources):
                     seen.add(l.key)
                     uniq.append(l)
             collected += [(name, l) for l in uniq]
-            st = {"ok": True, "count": len(uniq), "last_ok": now_iso() if uniq else prev.get("last_ok")}
+            st = {"ok": True, "count": len(uniq), "last_ok": now_iso() if uniq else prev.get("last_ok"), "last_try": now_iso(),
+                  "last_attempt_ok": bool(uniq) or name in ("makler", "gewofinder")}
             print(f"  {len(uniq)} Inserate")
         except Exception as e:  # eine kaputte Quelle soll den Rest nicht stoppen
             if type(e).__name__ == "Blocked":
@@ -228,7 +254,8 @@ def fetch_all(prev_sources):
             else:
                 traceback.print_exc()
             msg = str(e) if type(e).__name__ == "Blocked" else f"{type(e).__name__}: {e}"
-            st = {"ok": False, "count": 0, "error": msg[:200], "last_ok": prev.get("last_ok")}
+            st = {"ok": False, "count": 0, "error": msg[:200], "last_ok": prev.get("last_ok"), "last_try": now_iso(),
+                  "last_attempt_ok": False}
         prev_streak = prev.get("empty_streak", 0)
         raw = getattr(mod, "STATE", {}).get("raw")
         if raw is not None and st["ok"]:
@@ -337,8 +364,18 @@ def main():
         it["score"] = score(it)
     kept.sort(key=lambda it: it["first_seen"], reverse=True)
 
+    fingerprint = hashlib.sha1(json.dumps(sorted(
+        (it["id"], it.get("price_total"), it.get("excluded"), it.get("email"), len(it.get("links", [])))
+        for it in kept), ensure_ascii=False).encode()).hexdigest()[:16]
+    saved_at = data.get("updated")
+    changed = fingerprint != data.get("fingerprint")
+    if not changed and saved_at and _hours_since(saved_at) * 60 < SAVE_EVERY_MIN and os.path.exists(DATA_FILE):
+        print(f"\n= Keine inhaltliche Änderung – nicht gespeichert (zuletzt vor {round(_hours_since(saved_at) * 60)} Min.)")
+        return
+
     out = {
         "updated": run_at,
+        "fingerprint": fingerprint,
         "sources": status,
         "excluded": excluded_counts,
         "last_push": data.get("last_push") or data.get("last_digest"),

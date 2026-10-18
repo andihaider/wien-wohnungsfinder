@@ -118,6 +118,7 @@ def main():
             data["last_problem_push"] = now.replace(microsecond=0).isoformat()
 
     topic = os.environ.get("NTFY_TOPIC")
+    sent = False
     for title, text, click, items in messages:
         if force:
             title = "TEST – " + title
@@ -129,11 +130,14 @@ def main():
             break
         try:
             push(topic, title, text, click, items)
+            sent = True
         except Exception as e:  # Push-Probleme dürfen die Suche nie blockieren
             print(f"  ! Push fehlgeschlagen: {type(e).__name__}: {e}")
 
     if preview or force:
         return  # Test/Vorschau zählt nicht als Push
+    if not sent and now - parse(data["updated"]) > timedelta(minutes=10):
+        return  # Suche hat diesmal nichts gespeichert (keine Änderung) – dann auch hier nichts schreiben
     data["last_push"] = now.replace(microsecond=0).isoformat()
     data.pop("last_digest", None)
     with open(DATA_FILE, "w", encoding="utf-8") as f:

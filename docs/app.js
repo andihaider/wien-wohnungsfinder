@@ -294,7 +294,7 @@ function render() {
   }
   if (!items.length) {
     const msg = {
-      new: ["Seit gestern nichts Neues", "Gesucht wird alle 30 Minuten. Unter „Wohnungen“ und „WG“ findest du alle aktuellen Treffer."],
+      new: ["Seit gestern nichts Neues", "Gesucht wird alle 5 Minuten. Unter „Wohnungen“ und „WG“ findest du alle aktuellen Treffer."],
       flats: ["Keine Treffer", "Probier in den Einstellungen ein höheres Budget oder weniger Ausschlüsse."],
       wg: ["Keine passenden WG-Zimmer", "Die Kriterien (Preis, Zimmergröße, WG-Größe) kannst du in den Einstellungen ändern."],
       mine: ["Noch nichts hier", "Tippe auf ☆ oder setze einen Status (Angefragt, Besichtigung), um Wohnungen hier zu sammeln."],
@@ -426,7 +426,7 @@ function sourceProblems() {
 
 function renderMeta() {
   const u = DATA.updated;
-  $("#meta").textContent = u ? "Zuletzt gesucht " + ago(u) + " · " +
+  $("#meta").textContent = u ? "Aktualisiert " + ago(u) + " · " +
     new Date(u).toLocaleString("de-AT", { weekday: "short", hour: "2-digit", minute: "2-digit" }) : "Noch keine Daten";
 
   const probs = sourceProblems();
@@ -438,14 +438,16 @@ function renderMeta() {
   const line = (k, v) => {
     let txt, cls = "ok";
     if (v.via) txt = "gesperrt – Inserate kommen über IMMMO";
-    else if (v.skipped) txt = `${v.count} Inserate (wird nur alle 4 Std. abgefragt, zuletzt ${ago(v.last_ok)})`;
+    else if (v.skipped) txt = `${v.count} Inserate (seltener abgefragt, zuletzt ${ago(v.last_try || v.last_ok)})`;
     else if (v.ok && v.raw != null) txt = `${v.count} im 4.–7. Bezirk (von ${v.raw} Angeboten insgesamt)`;
     else if (v.ok && v.count) txt = v.count + " Inserate";
     else { txt = v.error || "keine Inserate"; cls = "fail"; }
     return `<li class="${cls}">${SOURCE_NAMES[k] || k}: ${escapeHtml(txt)}</li>`;
   };
   $("#footer").innerHTML = "<b>Quellen beim letzten Lauf</b><ul>" + Object.entries(src).map(([k, v]) => line(k, v)).join("") +
-    "</ul>Gesucht wird in Wien 4.–7. Bezirk alle 30 Minuten (6–23 Uhr). Preise laut Inserat – bitte immer im Original prüfen.";
+    "</ul>Gesucht wird in Wien 4.–7. Bezirk alle 5 Minuten (6–23 Uhr): willhaben und ImmoScout24 jedes Mal, " +
+    "immowelt und IMMMO alle 30 Min., Makler stündlich, Genossenschaften alle 2 Std., WG-Gesucht alle 4 Std. " +
+    "Gespeichert wird nur, wenn sich etwas ändert (spätestens alle 30 Min.). Preise laut Inserat – bitte immer im Original prüfen.";
 }
 
 /* ---------- Einstellungen ---------- */
