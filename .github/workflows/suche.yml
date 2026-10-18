@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       testmail:
-        description: "Test-Mail sofort senden"
+        description: "Test-Benachrichtigung sofort senden"
         type: boolean
         default: false
 
@@ -31,11 +31,12 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Quellen durchsuchen
         run: python scraper/run.py
-      - name: E-Mail (nur um 7 und 18 Uhr, nur wenn es Neues gibt)
+      - name: Benachrichtigung (nur um 7 und 18 Uhr, nur wenn es Neues gibt)
         env:
           MAIL_USER: ${{ secrets.MAIL_USER }}
           MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: python scraper/notify.py ${{ inputs.testmail && '--force' || '' }}
       - name: Ergebnis speichern
         run: |

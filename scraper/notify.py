@@ -1,15 +1,14 @@
 """E-Mail mit neuen Treffern – höchstens 2× täglich (07:00 und 18:00 Wiener Zeit), nur wenn es Neues gibt.
 
 Einstellungen kommen aus Umgebungsvariablen (GitHub Secrets), nie aus dem Repo:
-  MAIL_TO        Empfänger – reicht allein: dann wird über ntfy.sh verschickt (Text-Mail, ohne Konto)
-  MAIL_USER / MAIL_PASSWORD  optional: eigenes Gmail-Konto + App-Passwort für schöne HTML-Mails
+  NTFY_TOPIC     geheimes Thema für Push-Nachrichten über die ntfy-App (kostenlos, ohne Konto)
+  MAIL_USER / MAIL_PASSWORD / MAIL_TO  optional: zusätzlich HTML-Mail über ein eigenes Gmail-Konto
   MAIL_HOST / MAIL_PORT      optional, Standard smtp.gmail.com:465
 
   python scraper/notify.py            # sendet nur im Zeitfenster
   python scraper/notify.py --preview  # schreibt mail-preview.html, sendet nichts
   python scraper/notify.py --force    # sendet sofort (Test)
 """
-import hashlib
 import html
 import json
 import os
@@ -153,25 +152,30 @@ def text_mail(flats, wgs, probs):
     return text[:3900]
 
 
-def send_ntfy(to, subject, text):
-    # Thema aus der Adresse ableiten, damit es nicht erratbar ist und nicht im Repo steht
-    topic = "wohnungsfinder-" + hashlib.sha256(to.encode()).hexdigest()[:20]
-    payload = {"topic": topic, "title": subject, "message": text, "email": to, "click": APP_URL, "tags": ["house"]}
+def send_push(topic, subject, text, top_url=""):
+    """Push aufs Handy über die ntfy-App (kostenlos, ohne Konto). Das Thema ist geheim (GitHub-Secret)."""
+    actions = [{"action": "view", "label": "App öffnen", "url": APP_URL, "clear": True}]
+    if top_url:
+        actions.insert(0, {"action": "view", "label": "Bester Treffer", "url": top_url})
+    payload = {"topic": topic, "title": subject, "message": text, "click": APP_URL,
+               "tags": ["house"], "actions": actions}
     req = urllib.request.Request("https://ntfy.sh/", data=json.dumps(payload).encode(),
                                  headers={"Content-Type": "application/json"}, method="POST")
     with urllib.request.urlopen(req, timeout=30) as r:
-        print(f"  ✉︎ Mail über ntfy.sh verschickt (HTTP {r.status}): {subject}")
+        print(f"  📲 Push verschickt (HTTP {r.status}): {subject}")
     return True
 
 
-def send(subject, body, text=""):
+def send(subject, body, text="", top_url=""):
+    topic = os.environ.get("NTFY_TOPIC")
+    if topic:
+        send_push(topic, subject, text, top_url)
     user, pw = os.environ.get("MAIL_USER"), os.environ.get("MAIL_PASSWORD")
     to = os.environ.get("MAIL_TO") or user
-    if not to:
-        print("  (keine Empfängeradresse gesetzt – Mail wird übersprungen)")
-        return False
     if not (user and pw):
-        return send_ntfy(to, subject, text)
+        if not topic:
+            print("  (weder NTFY_TOPIC noch Mail-Zugang gesetzt – keine Benachrichtigung)")
+        return bool(topic)
     msg = MIMEMultipart("alternative")
     msg["Subject"], msg["From"], msg["To"] = subject, f"Wohnungsfinder <{user}>", to
     msg.attach(MIMEText("Neue Treffer: " + APP_URL, "plain", "utf-8"))
@@ -218,7 +222,8 @@ def main():
     if flats or wgs or probs:
         subject, body = build_mail(flats, wgs, probs)
         try:
-            send(subject, body, text_mail(flats, wgs, probs))
+            best = max(flats or wgs, key=lambda i: i.get("score", 0)) if (flats or wgs) else None
+            send(subject, body, text_mail(flats, wgs, probs), best["links"][0]["url"] if best else "")
         except Exception as e:  # Mail-Probleme dürfen die Suche nie blockieren
             detail = e.read()[:300].decode(errors="replace") if hasattr(e, "read") else ""
             print(f"  ! Mail fehlgeschlagen: {type(e).__name__}: {e} {detail}")

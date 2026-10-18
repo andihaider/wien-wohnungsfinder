@@ -5,11 +5,11 @@ Durchsucht alle 30 Minuten (6–23 Uhr) Mietwohnungen und WG-Zimmer in Wien 4.�
 WG-Gesucht und IMMMO (inkl. Kurier Immo, Bazar, Wohnkrone) und zeigt die besten Treffer in einer
 Handy-Web-App. Um 7 und 18 Uhr kommt eine E-Mail mit den neuen Treffern (nur wenn es welche gibt).
 
-## E-Mail einrichten
+## Benachrichtigungen
 
-Es reicht ein GitHub-Secret `MAIL_TO` mit der Empfängeradresse (*Settings → Secrets and variables → Actions*).
-Verschickt wird dann kostenlos und ohne Konto über ntfy.sh als Text-Mail.
-Optional für HTML-Mails mit Fotos: zusätzlich `MAIL_USER` + `MAIL_PASSWORD` (Gmail-App-Passwort).
+Um 7 und 18 Uhr kommt eine Push-Nachricht über die kostenlose **ntfy**-App (iOS/Android), nur wenn es Neues gibt.
+Das Thema ist geheim und liegt im GitHub-Secret `NTFY_TOPIC`; in der ntfy-App einfach dieses Thema abonnieren.
+Optional zusätzlich HTML-Mail: Secrets `MAIL_USER`, `MAIL_PASSWORD` (Gmail-App-Passwort), `MAIL_TO`.
 
 Test: `python scraper/notify.py --preview` erzeugt eine Vorschau, `--force` sendet sofort.
 
