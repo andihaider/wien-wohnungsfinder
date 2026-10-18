@@ -95,7 +95,7 @@
         <label>Kurz über mich<textarea id="p-about" rows="3" placeholder="z. B. Student/in, Nichtraucher/in, unbefristetes Einkommen …"></textarea></label>
         <label>Vorlage für Wohnungen<textarea id="p-template" rows="10"></textarea></label>
         <label>Vorlage für WGs<textarea id="p-wgtemplate" rows="8"></textarea></label>
-        <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich}</p>
+        <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich} {mietervorstellung}</p>
         <button type="button" class="link-btn" id="btn-reset-template">Vorlagen zurücksetzen</button>
       </section>
 
@@ -104,6 +104,7 @@
         <p class="muted small">Link deines Google-Skripts (endet auf <code>/exec</code>). Bleibt nur auf diesem Handy gespeichert.
           <a href="https://github.com/andihaider/wien-wohnungsfinder/blob/main/google-apps-script/ANLEITUNG.md" target="_blank" rel="noopener">Anleitung</a></p>
         <input type="url" id="p-docscript" placeholder="https://script.google.com/macros/s/…/exec" autocomplete="off">
+        <label>Schlüssel (wie im Skript)<input type="text" id="p-dockey" autocomplete="off" spellcheck="false"></label>
         <p class="muted small">Gemeindebau-Wohnungen (Wohn-Ticket nötig) werden automatisch aussortiert.</p>
       </section>
     </form>

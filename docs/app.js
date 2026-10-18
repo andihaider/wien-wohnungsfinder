@@ -9,6 +9,7 @@ ich interessiere mich sehr für Ihr Inserat „{titel}“ ({adresse}, {preis}, {
 {ueber_mich}
 
 Telefon: {telefon}
+Meine Mietervorstellung: {mietervorstellung}
 Inserat: {link}
 
 Mit freundlichen Grüßen
@@ -21,16 +22,38 @@ euer Zimmer „{titel}“ ({preis}, {flaeche}) klingt richtig gut – ich würde
 {ueber_mich}
 
 Telefon: {telefon}
+Meine Mietervorstellung: {mietervorstellung}
 
 Liebe Grüße
 {name}`;
+// Frühere Standard-Vorlagen – werden automatisch auf die neue Version gehoben
+const OLD_TEMPLATES = [`Sehr geehrte Damen und Herren,
+
+ich interessiere mich sehr für Ihr Inserat „{titel}“ ({adresse}, {preis}, {flaeche}) und würde die Wohnung gerne so bald wie möglich besichtigen.
+
+{ueber_mich}
+
+Telefon: {telefon}
+Inserat: {link}
+
+Mit freundlichen Grüßen
+{name}`, `Hallo!
+
+euer Zimmer „{titel}“ ({preis}, {flaeche}) klingt richtig gut – ich würde euch gerne kennenlernen und es mir anschauen.
+
+{ueber_mich}
+
+Telefon: {telefon}
+
+Liebe Grüße
+{name}`];
 
 const DEFAULTS = {
   maxPrice: 650, minPrice: 0, minArea: 0,
   wgMaxPrice: 600, wgMinRoom: 15, wgMaxPeople: 4,
   districts: Object.keys(DISTRICTS),
   hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
-  name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE, docScript: "",
+  name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE, docScript: "", docKey: "",
   sort: "score", tab: "new",
 };
 const TABS = ["new", "flats", "wg", "mine", "out"];
@@ -42,6 +65,9 @@ const store = {
   set(k, v) { try { localStorage.setItem("wf_" + k, JSON.stringify(v)); } catch {} },
 };
 let S = Object.assign({}, DEFAULTS, store.get("settings", {}));
+if (S.template === OLD_TEMPLATES[0]) S.template = DEFAULT_TEMPLATE;
+if (S.wgTemplate === OLD_TEMPLATES[1]) S.wgTemplate = DEFAULT_WG_TEMPLATE;
+let docLinks = store.get("docLinks", {});         // Adresse -> PDF-Link der Mietervorstellung
 if (!TABS.includes(S.tab)) S.tab = "new";
 let favs = new Set(store.get("favs", []));
 let hidden = new Set(store.get("hidden", []));
@@ -143,16 +169,17 @@ function defaultAddress(it) {
   if (!a || /^\d{4}\s*Wien$/.test(a)) return `${it.zip} Wien`;
   return /\b1\d{3}\b/.test(a) ? a : `${a}, ${it.zip} Wien`;
 }
-function fillTemplate(it, address) {
+function fillTemplate(it, address, docLink) {
   const tpl = isWG(it) ? S.wgTemplate : S.template;
   const map = {
     titel: it.title, adresse: address || defaultAddress(it),
     preis: eur(it.price_total) + (it.price_estimated ? " (geschätzt)" : ""),
     flaeche: it.area ? num(it.area) + " m²" : "", link: (it.links[0] || {}).url || "",
     name: S.name || "", telefon: S.phone || "", ueber_mich: S.about || "",
+    mietervorstellung: docLink || "",
   };
   return tpl.replace(/\{(\w+)\}/g, (m, k) => (k in map ? map[k] : m))
-    .replace(/^[^\n:]{1,20}:[ \t]*$/gm, "")   // leere Felder wie "Telefon: " weglassen
+    .replace(/^[^\n:]{1,30}:[ \t]*$/gm, "")   // leere Felder wie "Telefon: " weglassen
     .replace(/\n{3,}/g, "\n\n");
 }
 function mailto(it, text) {
@@ -161,14 +188,23 @@ function mailto(it, text) {
 }
 
 /* ---------- Anfrage-Fenster: Text und Adresse anpassen, Mietervorstellung erstellen ---------- */
+function insertDocLink(text, link) {
+  const line = "Meine Mietervorstellung: " + link;
+  if (/^Meine Mietervorstellung:.*$/m.test(text)) return text.replace(/^Meine Mietervorstellung:.*$/m, line);
+  // vor der Grußformel einfügen, sonst ans Ende
+  const m = text.match(/\n(Mit freundlichen Grüßen|Liebe Grüße|Viele Grüße|Beste Grüße|LG|Lg)\b/);
+  return m ? text.slice(0, m.index) + "\n" + line + "\n" + text.slice(m.index) : text.trimEnd() + "\n\n" + line;
+}
+
 function openAsk(it, onAsked) {
-  const dlg = $("#ask"), addr = $("#a-address"), text = $("#a-text"), box = $(".ask-actions", dlg);
+  const dlg = $("#ask"), addr = $("#a-address"), text = $("#a-text"), box = $(".ask-actions", dlg), hint = $("#a-hint");
   $(".ask-title", dlg).textContent = `${it.title} · ${eur(it.price_total)}`;
   addr.value = defaultAddress(it);
-  text.value = fillTemplate(it, addr.value);
+  const linkFor = () => docLinks[addr.value.trim()] || "";
+  text.value = fillTemplate(it, addr.value, linkFor());
   let edited = false;
   text.oninput = () => { edited = true; };
-  addr.oninput = () => { if (!edited) text.value = fillTemplate(it, addr.value); };
+  addr.oninput = () => { if (!edited) text.value = fillTemplate(it, addr.value, linkFor()); syncDocBtn(); };
 
   box.innerHTML = "";
   const btn = (label, cls, fn) => {
@@ -178,20 +214,38 @@ function openAsk(it, onAsked) {
   };
   const copy = () => navigator.clipboard?.writeText(text.value).catch(() => {});
   const open = url => window.open(url, "_blank", "noopener");
-  const listing = it.links[0].url;
 
   if (it.email) btn("✉︎ Per Mail senden", "primary", () => { onAsked(); location.href = mailto(it, text.value); });
-  btn("Text kopieren & Inserat öffnen", it.email ? "" : "primary", () => {
-    copy(); onAsked(); open(listing);
+  btn("Text kopieren & Inserat öffnen", it.email ? "" : "primary", () => { copy(); onAsked(); open(it.links[0].url); });
+
+  const docBtn = btn("", "", async () => {
+    const a = addr.value.trim();
+    if (!S.docScript || !S.docKey) {
+      hint.textContent = "Zuerst in den Einstellungen Skript-Link und Schlüssel eintragen (siehe Anleitung).";
+      return;
+    }
+    if (!/\d/.test(a)) { hint.textContent = "Bitte zuerst die genaue Adresse mit Hausnummer eintragen."; addr.focus(); return; }
+    docBtn.disabled = true; docBtn.textContent = "📄 Wird in Google erstellt … (ca. 5–10 Sek.)"; hint.textContent = "";
+    try {
+      const url = S.docScript + (S.docScript.includes("?") ? "&" : "?") +
+        "key=" + encodeURIComponent(S.docKey) + "&adresse=" + encodeURIComponent(a);
+      const res = await (await fetch(url, { redirect: "follow" })).json();
+      if (!res.ok) throw new Error(res.error || "Unbekannter Fehler");
+      docLinks[a] = res.pdfUrl; store.set("docLinks", docLinks);
+      text.value = edited ? insertDocLink(text.value, res.pdfUrl) : fillTemplate(it, a, res.pdfUrl);
+      hint.innerHTML = (res.platzhalter ? "" : "⚠︎ In deiner Vorlage fehlt {{ADRESSE}} – die Adresse wurde nicht eingesetzt. ") +
+        `Link eingefügt. <a href="${escapeHtml(res.pdfUrl)}" target="_blank" rel="noopener">PDF ansehen</a>`;
+    } catch (e) {
+      hint.textContent = "Mietervorstellung fehlgeschlagen: " + e.message + " – Skript-Link/Schlüssel prüfen.";
+    }
+    docBtn.disabled = false; syncDocBtn();
   });
-  const docBtn = btn("📄 Mietervorstellung für diese Adresse", "", () => {
-    if (!S.docScript) { $("#a-hint").textContent = "Zuerst in den Einstellungen den Link deines Google-Skripts eintragen."; return; }
-    open(S.docScript + (S.docScript.includes("?") ? "&" : "?") + "adresse=" + encodeURIComponent(addr.value.trim()));
-    docBtn.textContent = "📄 Wird in Google erstellt …";
-    $("#a-hint").textContent = "Das Dokument öffnet sich in einem neuen Tab (PDF + Teilen-Link).";
-  });
+  const syncDocBtn = () => {
+    docBtn.textContent = linkFor() ? "📄 Mietervorstellung ✓ (neu erstellen)" : "📄 Mietervorstellung erstellen & Link einfügen";
+  };
+  syncDocBtn();
   btn("Nur Text kopieren", "ghost", e => { copy(); e.target.textContent = "✓ Kopiert"; });
-  $("#a-hint").textContent = it.email ? "" :
+  hint.textContent = it.email ? "" :
     "Dieses Portal zeigt keine Mail-Adresse: Text wird kopiert, im Kontaktformular einfach einfügen.";
   dlg.showModal();
 }
@@ -395,7 +449,7 @@ const RANGES = [
   ["#s-wgpeople", "wgMaxPeople", "#o-wgpeople", v => v >= 8 ? "egal" : "max. " + v + "er WG"],
 ];
 const CHECKS = { "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
-const TEXTS = { "#p-docscript": "docScript", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
+const TEXTS = { "#p-docscript": "docScript", "#p-dockey": "docKey", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
 
 function bindSettings() {
   const dlg = $("#settings");

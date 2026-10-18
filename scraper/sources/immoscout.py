@@ -50,7 +50,12 @@ def _find_hits(o):
     return None
 
 
+# Ob der letzte Abruf alle Inserate erfasst hat (dann heißt "fehlt in der Suche" = offline)
+STATE = {"complete": True}
+
+
 def fetch():
+    STATE["complete"] = True
     out = []
     for zip_, slug in SLUGS.items():
         for page in range(1, 5):
@@ -59,6 +64,7 @@ def fetch():
                 url += f"&pageNumber={page}"
             r = get(url)
             if not r:
+                STATE["complete"] = False
                 break
             st = _state(r.text)
             hits = _find_hits(st) or []
@@ -89,6 +95,8 @@ def fetch():
                 ))
             if len(hits) < 20:
                 break
+            if page == 4:
+                STATE["complete"] = False  # Seitenlimit erreicht
     return out
 
 

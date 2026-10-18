@@ -14,6 +14,8 @@ LISTS = [
     ("wg", BASE + "/wg-zimmer-in-Wien.163.0.1.{p}.html", 8),
     ("wohnung", BASE + "/wohnungen-in-Wien.163.2.1.{p}.html", 4),
 ]
+# Es werden nur die neuesten Seiten gelesen – ältere, noch aktive Inserate fehlen also in der Liste.
+STATE = {"complete": False}
 DETAIL_LIMIT = 15  # Detailseiten pro Lauf, um fehlende Bezirke nachzuschlagen
 
 

@@ -172,3 +172,32 @@ def next_f_payload(html: str) -> str:
     """Setzt die Next.js-App-Router-Datenblöcke (self.__next_f.push) zu einem String zusammen."""
     chunks = re.findall(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)</script>', html, re.S)
     return "".join(json.loads('"' + c + '"') for c in chunks)
+
+
+def check_alive(url: str, source: str):
+    """Ist das Inserat noch online? True/False, None = weiß nicht (z. B. gesperrt).
+
+    Nur eindeutige Signale – Textsuche auf der ganzen Seite ist zu unzuverlässig
+    (derStandard hat z. B. "Inserat nicht mehr verfügbar" als Übersetzungstext auf jeder Seite).
+    """
+    try:
+        time.sleep(random.uniform(0.8, 1.6))
+        r = session().get(url, timeout=20, allow_redirects=True)
+    except requests.RequestException:
+        return None
+    if r.status_code in (404, 410):
+        return False
+    if r.status_code != 200 or "cuba.html" in r.url:
+        return None
+    if "fromExpiredAdId" in r.url:
+        return False
+    if source == "willhaben":
+        m = re.search(r'"advertStatus":\{"id":"(\w+)"', r.text)
+        if m:
+            return m.group(1) == "active"
+        return None
+    if source == "wggesucht":
+        head = r.text[:60000]
+        if re.search(r"Anzeige ist (deaktiviert|nicht mehr aktiv)|Angebot ist (deaktiviert|nicht mehr verfügbar)", head):
+            return False
+    return True

@@ -13,12 +13,18 @@ SLUGS = {"1040": "Wien-4-Wieden", "1050": "Wien-5-Margareten", "1060": "Wien-6-M
 SKIP_HOSTS = ("willhaben.at", "immobilienscout24.at", "immowelt.at", "derstandard.at")
 
 
+# Ob der letzte Abruf alle Inserate erfasst hat (dann heißt "fehlt in der Suche" = offline)
+STATE = {"complete": True}
+
+
 def fetch():
+    STATE["complete"] = True
     out = []
     for zip_, slug in SLUGS.items():
         for page in range(1, 13):
             r = get(f"{BASE}/{slug}" + (f"/{page}" if page > 1 else ""))
             if not r:
+                STATE["complete"] = False
                 break
             soup = BeautifulSoup(r.text, "lxml")
             items = soup.select("li.wrapper-result")
@@ -63,6 +69,8 @@ def fetch():
                 ))
             if len(items) < 12:
                 break
+            if page == 12:
+                STATE["complete"] = False  # Seitenlimit erreicht
     return out
 
 

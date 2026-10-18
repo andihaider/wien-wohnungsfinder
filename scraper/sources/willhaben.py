@@ -13,7 +13,12 @@ def _next_data(html):
     return json.loads(m.group(1)) if m else None
 
 
+# Ob der letzte Abruf alle Inserate erfasst hat (dann heißt "fehlt in der Suche" = offline)
+STATE = {"complete": True}
+
+
 def fetch():
+    STATE["complete"] = True
     areas = "&".join(f"areaId={a}" for a in AREA_IDS.values())
     out = []
     for page in range(1, 6):
@@ -21,6 +26,7 @@ def fetch():
                f"&PRICE_TO={COLLECT_MAX_PRICE}&rows=90&sort=1&page={page}")
         r = get(url)
         if not r:
+            STATE["complete"] = False
             break
         d = _next_data(r.text)
         try:
@@ -28,6 +34,7 @@ def fetch():
             ads = sr["advertSummaryList"]["advertSummary"]
         except (TypeError, KeyError):
             print("  ! willhaben: Struktur unerwartet")
+            STATE["complete"] = False
             break
         for a in ads:
             at = {x["name"]: x["values"] for x in a["attributes"]["attribute"]}
@@ -53,6 +60,8 @@ def fetch():
             ))
         if len(ads) < 90:
             break
+        if page == 5:
+            STATE["complete"] = False  # Seitenlimit erreicht
     return out
 
 

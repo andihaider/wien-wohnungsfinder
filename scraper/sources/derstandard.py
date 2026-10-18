@@ -24,12 +24,18 @@ def _entries(html):
     return o.get("entries") or [], o.get("totalEntries") or 0
 
 
+# Ob der letzte Abruf alle Inserate erfasst hat (dann heißt "fehlt in der Suche" = offline)
+STATE = {"complete": True}
+
+
 def fetch():
+    STATE["complete"] = True
     out = []
     for zip_, slug in SLUGS.items():
         for page in range(1, 8):
             r = get(f"{BASE}/suche/{slug}/mieten-wohnung" + (f"?page={page}" if page > 1 else ""))
             if not r:
+                STATE["complete"] = False
                 break
             entries, total = _entries(r.text)
             for e in entries:
@@ -65,6 +71,8 @@ def fetch():
                 ))
             if not entries or page * 15 >= total:
                 break
+            if page == 7:
+                STATE["complete"] = False  # Seitenlimit erreicht
     return out
 
 

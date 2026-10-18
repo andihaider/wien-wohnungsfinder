@@ -29,16 +29,23 @@ def _clean_title(t):
     return max(parts, key=len) if parts else t
 
 
+# Ob der letzte Abruf alle Inserate erfasst hat (dann heißt "fehlt in der Suche" = offline)
+STATE = {"complete": True}
+
+
 def fetch():
+    STATE["complete"] = True
     out = []
     for zip_, path in PATHS.items():
         for page in range(1, 6):
             r = get(f"{BASE}/suche/mieten/wohnung/wien-1010/{path}?order=DateDesc&page={page}")
             if not r:
+                STATE["complete"] = False
                 break
             pp = _page_props(r.text)
             if not pp:
                 print("  ! immowelt: Struktur unerwartet")
+                STATE["complete"] = False
                 break
             data = pp.get("classifiedsData") or {}
             for cid in pp.get("classifieds") or []:
@@ -71,6 +78,8 @@ def fetch():
             total = pp.get("totalCount") or 0
             if page * 30 >= total:
                 break
+            if page == 5:
+                STATE["complete"] = False  # Seitenlimit erreicht
     return out
 
 

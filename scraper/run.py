@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(__file__))
 
-from common import COLLECT_MAX_PRICE, DISTRICTS, Listing  # noqa: E402
+from common import COLLECT_MAX_PRICE, DISTRICTS, Listing, check_alive  # noqa: E402
 from scoring import score  # noqa: E402
 from sources import derstandard, immmo, immoscout, immowelt, wggesucht, willhaben  # noqa: E402
 
@@ -33,6 +33,10 @@ DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
 
 # Empfindliche Quellen seltener abfragen (Stunden zwischen zwei Abrufen)
 SOURCE_INTERVAL_H = {"wggesucht": 4}
+
+GONE = "nicht mehr online"
+CHECK_LIMIT = 15            # direkte Link-Prüfungen pro Lauf
+CHECK_EVERY_H = 3           # dasselbe Inserat höchstens alle 3 Std. direkt prüfen
 
 ENRICH_MAX_PRICE = 750      # nur für diese Inserate Detailseiten laden
 ENRICH_LIMIT = 60           # max. Detailseiten pro Lauf
@@ -145,6 +149,43 @@ def same_flat(a: dict, l: Listing) -> bool:
     if a.get("area") and l.area:
         return abs(a["area"] - l.area) <= 1.5
     return False
+
+
+def mark_gone(items, status, run_at):
+    """Inserate, die nicht mehr online sind, als "nicht mehr online" aussortieren.
+
+    1. Eine Quelle hat diesmal ALLE Inserate geliefert und das Inserat fehlt darin → offline.
+    2. Sonst (z. B. WG-Gesucht liest nur die neuesten Seiten) → Link direkt prüfen.
+    Taucht es später wieder auf, hebt die normale Logik den Ausschluss automatisch auf.
+    """
+    complete = {n: bool(st.get("ok") and st.get("count") and not st.get("skipped")
+                        and getattr(SOURCES[n], "STATE", {}).get("complete"))
+                for n, st in status.items()}
+    wg_ran = bool(status.get("wggesucht", {}).get("count")) and not status.get("wggesucht", {}).get("skipped")
+    checks, gone = 0, 0
+    for it in items.values():
+        if it.get("last_seen") == run_at or it.get("excluded"):
+            continue
+        srcs = {l["source"] for l in it["links"]}
+        # IMMMO-Inserate von Portalen, die IMMMO diesmal übersprungen hat, sagen nichts aus
+        skipped_host = "immmo" in srcs and any(h in (it.get("advertiser") or "") for h in immmo.SKIP_HOSTS)
+        if not skipped_host and all(complete.get(s) for s in srcs):
+            it["excluded"], it["gone_at"] = GONE, run_at
+            gone += 1
+            continue
+        if checks >= CHECK_LIMIT or it.get("price_total", 9999) > COLLECT_MAX_PRICE:
+            continue
+        if it.get("checked_at") and _hours_since(it["checked_at"]) < CHECK_EVERY_H:
+            continue
+        link = it["links"][0]
+        if link["source"] == "wggesucht" and not wg_ran:
+            continue  # WG-Gesucht nur prüfen, wenn es diesmal ohnehin abgefragt wurde (Captcha-Schutz)
+        checks += 1
+        it["checked_at"] = run_at
+        if check_alive(link["url"], link["source"]) is False:
+            it["excluded"], it["gone_at"] = GONE, run_at
+            gone += 1
+    print(f"  Verfügbarkeit: {gone} nicht mehr online, {checks} Links direkt geprüft")
 
 
 def load():
@@ -281,6 +322,8 @@ def main():
             items[iid].pop("excluded", None)
         else:
             items[iid]["excluded"] = run_why[iid]
+
+    mark_gone(items, status, run_at)
 
     cutoff = (datetime.now(timezone.utc) - timedelta(days=EXPIRE_DAYS)).isoformat()
     kept = [it for it in items.values() if it.get("last_seen", "") >= cutoff]
