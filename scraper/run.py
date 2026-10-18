@@ -292,7 +292,8 @@ def main():
         "updated": run_at,
         "sources": status,
         "excluded": excluded_counts,
-        "last_digest": data.get("last_digest"),
+        "last_push": data.get("last_push") or data.get("last_digest"),
+        "last_problem_push": data.get("last_problem_push"),
         "items": kept,
     }
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)

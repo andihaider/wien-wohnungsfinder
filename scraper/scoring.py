@@ -1,7 +1,7 @@
 """Bewertung und Standard-Kriterien – gleiche Logik wie in docs/app.js (dort mit deinen App-Einstellungen)."""
 from datetime import datetime, timezone
 
-# Standard-Kriterien (für die E-Mail; in der App pro Handy einstellbar)
+# Standard-Kriterien (für die Push-Nachricht; in der App pro Handy einstellbar)
 FLAT_MAX_PRICE = 650
 WG_MAX_PRICE = 600
 WG_MIN_ROOM = 15      # m²

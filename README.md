@@ -3,15 +3,14 @@
 Durchsucht alle 30 Minuten (6–23 Uhr) Mietwohnungen und WG-Zimmer in Wien 4.–7. Bezirk
 (Wieden, Margareten, Mariahilf, Neubau) auf willhaben, DER STANDARD, ImmoScout24, immowelt,
 WG-Gesucht und IMMMO (inkl. Kurier Immo, Bazar, Wohnkrone) und zeigt die besten Treffer in einer
-Handy-Web-App. Um 7 und 18 Uhr kommt eine E-Mail mit den neuen Treffern (nur wenn es welche gibt).
+Handy-Web-App. Jeder neue passende Treffer kommt sofort als Push-Nachricht aufs Handy.
 
 ## Benachrichtigungen
 
-Um 7 und 18 Uhr kommt eine Push-Nachricht über die kostenlose **ntfy**-App (iOS/Android), nur wenn es Neues gibt.
+Neue passende Treffer kommen sofort nach der Suche als Push über die kostenlose **ntfy**-App (iOS/Android).
 Das Thema ist geheim und liegt im GitHub-Secret `NTFY_TOPIC`; in der ntfy-App einfach dieses Thema abonnieren.
-Optional zusätzlich HTML-Mail: Secrets `MAIL_USER`, `MAIL_PASSWORD` (Gmail-App-Passwort), `MAIL_TO`.
 
-Test: `python scraper/notify.py --preview` erzeugt eine Vorschau, `--force` sendet sofort.
+Test: `python scraper/notify.py --preview` zeigt die Nachricht an, `--force` pusht sofort die aktuellen Top-Treffer.
 
 - **App:** `docs/` (wird über GitHub Pages ausgeliefert)
 - **Suche:** `scraper/run.py`, läuft über `.github/workflows/suche.yml`
