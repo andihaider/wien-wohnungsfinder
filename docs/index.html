@@ -97,8 +97,29 @@
         <label>Vorlage für WGs<textarea id="p-wgtemplate" rows="8"></textarea></label>
         <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich}</p>
         <button type="button" class="link-btn" id="btn-reset-template">Vorlagen zurücksetzen</button>
+      </section>
+
+      <section>
+        <h3>Mietervorstellung (Google Doc)</h3>
+        <p class="muted small">Link deines Google-Skripts (endet auf <code>/exec</code>). Bleibt nur auf diesem Handy gespeichert.
+          <a href="https://github.com/andihaider/wien-wohnungsfinder/blob/main/google-apps-script/ANLEITUNG.md" target="_blank" rel="noopener">Anleitung</a></p>
+        <input type="url" id="p-docscript" placeholder="https://script.google.com/macros/s/…/exec" autocomplete="off">
         <p class="muted small">Gemeindebau-Wohnungen (Wohn-Ticket nötig) werden automatisch aussortiert.</p>
       </section>
+    </form>
+  </dialog>
+
+  <dialog id="ask">
+    <form method="dialog" class="sheet">
+      <div class="sheet-head">
+        <h2>Anfrage</h2>
+        <button class="icon-btn" value="close" aria-label="Schließen">✕</button>
+      </div>
+      <p class="ask-title"></p>
+      <label>Adresse der Wohnung<input type="text" id="a-address" autocomplete="off"></label>
+      <label>Nachricht<textarea id="a-text" rows="11"></textarea></label>
+      <div class="ask-actions"></div>
+      <p class="muted small" id="a-hint"></p>
     </form>
   </dialog>
 

@@ -30,7 +30,7 @@ const DEFAULTS = {
   wgMaxPrice: 600, wgMinRoom: 15, wgMaxPeople: 4,
   districts: Object.keys(DISTRICTS),
   hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
-  name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE,
+  name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE, docScript: "",
   sort: "score", tab: "new",
 };
 const TABS = ["new", "flats", "wg", "mine", "out"];
@@ -138,10 +138,15 @@ const FLAG_CLASS = {
 const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 /* ---------- Anfrage-Text ---------- */
-function fillTemplate(it) {
+function defaultAddress(it) {
+  const a = (it.address || "").trim();
+  if (!a || /^\d{4}\s*Wien$/.test(a)) return `${it.zip} Wien`;
+  return /\b1\d{3}\b/.test(a) ? a : `${a}, ${it.zip} Wien`;
+}
+function fillTemplate(it, address) {
   const tpl = isWG(it) ? S.wgTemplate : S.template;
   const map = {
-    titel: it.title, adresse: it.address || DISTRICTS[it.zip] || "Wien",
+    titel: it.title, adresse: address || defaultAddress(it),
     preis: eur(it.price_total) + (it.price_estimated ? " (geschätzt)" : ""),
     flaeche: it.area ? num(it.area) + " m²" : "", link: (it.links[0] || {}).url || "",
     name: S.name || "", telefon: S.phone || "", ueber_mich: S.about || "",
@@ -150,9 +155,45 @@ function fillTemplate(it) {
     .replace(/^[^\n:]{1,20}:[ \t]*$/gm, "")   // leere Felder wie "Telefon: " weglassen
     .replace(/\n{3,}/g, "\n\n");
 }
-function mailto(it) {
+function mailto(it, text) {
   return "mailto:" + encodeURIComponent(it.email) +
-    "?subject=" + encodeURIComponent("Anfrage: " + it.title.slice(0, 90)) + "&body=" + encodeURIComponent(fillTemplate(it));
+    "?subject=" + encodeURIComponent("Anfrage: " + it.title.slice(0, 90)) + "&body=" + encodeURIComponent(text);
+}
+
+/* ---------- Anfrage-Fenster: Text und Adresse anpassen, Mietervorstellung erstellen ---------- */
+function openAsk(it, onAsked) {
+  const dlg = $("#ask"), addr = $("#a-address"), text = $("#a-text"), box = $(".ask-actions", dlg);
+  $(".ask-title", dlg).textContent = `${it.title} · ${eur(it.price_total)}`;
+  addr.value = defaultAddress(it);
+  text.value = fillTemplate(it, addr.value);
+  let edited = false;
+  text.oninput = () => { edited = true; };
+  addr.oninput = () => { if (!edited) text.value = fillTemplate(it, addr.value); };
+
+  box.innerHTML = "";
+  const btn = (label, cls, fn) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "btn " + (cls || ""); b.textContent = label;
+    b.onclick = fn; box.appendChild(b); return b;
+  };
+  const copy = () => navigator.clipboard?.writeText(text.value).catch(() => {});
+  const open = url => window.open(url, "_blank", "noopener");
+  const listing = it.links[0].url;
+
+  if (it.email) btn("✉︎ Per Mail senden", "primary", () => { onAsked(); location.href = mailto(it, text.value); });
+  btn("Text kopieren & Inserat öffnen", it.email ? "" : "primary", () => {
+    copy(); onAsked(); open(listing);
+  });
+  const docBtn = btn("📄 Mietervorstellung für diese Adresse", "", () => {
+    if (!S.docScript) { $("#a-hint").textContent = "Zuerst in den Einstellungen den Link deines Google-Skripts eintragen."; return; }
+    open(S.docScript + (S.docScript.includes("?") ? "&" : "?") + "adresse=" + encodeURIComponent(addr.value.trim()));
+    docBtn.textContent = "📄 Wird in Google erstellt …";
+    $("#a-hint").textContent = "Das Dokument öffnet sich in einem neuen Tab (PDF + Teilen-Link).";
+  });
+  btn("Nur Text kopieren", "ghost", e => { copy(); e.target.textContent = "✓ Kopiert"; });
+  $("#a-hint").textContent = it.email ? "" :
+    "Dieses Portal zeigt keine Mail-Adresse: Text wird kopiert, im Kontaktformular einfach einfügen.";
+  dlg.showModal();
 }
 
 /* ---------- Listen ---------- */
@@ -279,17 +320,10 @@ function card(it, tpl) {
   const markAsked = () => {
     if (!statuses[it.id]) { statuses[it.id] = { s: "asked", t: new Date().toISOString() }; store.set("status", statuses); syncStatus(); }
   };
-  if (it.email) add("✉︎ Anfrage per Mail", mailto(it), "primary").addEventListener("click", markAsked);
-  const main = it.links[0];
-  add(it.email ? "Inserat öffnen" : "Zum Inserat & anfragen", main.url, it.email ? "" : "primary", true);
+  const ask = add("Anfragen", "#", "primary");
+  ask.onclick = e => { e.preventDefault(); openAsk(it, markAsked); };
+  add("Inserat öffnen", it.links[0].url, "", true);
   if (it.phone) add("☎ Anrufen", "tel:" + it.phone.replace(/[^\d+]/g, ""), "");
-  if (!it.email) {
-    const copy = add("Text kopieren", "#", "");
-    copy.onclick = e => {
-      e.preventDefault();
-      navigator.clipboard?.writeText(fillTemplate(it)).then(() => { copy.textContent = "✓ Kopiert"; });
-    };
-  }
   if (!it.excluded) {
     const hide = add("Ausblenden", "#", "ghost");
     hide.onclick = e => {
@@ -361,7 +395,7 @@ const RANGES = [
   ["#s-wgpeople", "wgMaxPeople", "#o-wgpeople", v => v >= 8 ? "egal" : "max. " + v + "er WG"],
 ];
 const CHECKS = { "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
-const TEXTS = { "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
+const TEXTS = { "#p-docscript": "docScript", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
 
 function bindSettings() {
   const dlg = $("#settings");
