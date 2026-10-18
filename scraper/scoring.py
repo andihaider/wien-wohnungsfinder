@@ -73,6 +73,8 @@ def score(it, flat_max=FLAT_MAX_PRICE, wg_max=WG_MAX_PRICE):
         s -= 15
     if _has(it, "Zwischenmiete"):
         s -= 10
+    if it.get("eigenmittel"):
+        s -= min(12, it["eigenmittel"] / 2500)   # z. B. 15.000 € Eigenmittel → −6
     return round(_clamp(s, 0, 100))
 
 

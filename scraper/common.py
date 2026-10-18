@@ -104,6 +104,8 @@ class Listing:
     private: Optional[bool] = None
     tags: List[str] = field(default_factory=list)
     category: str = "wohnung"       # "wohnung" oder "wg"
+    eigenmittel: Optional[float] = None  # Finanzierungsbeitrag / Eigenmittel (Genossenschaften)
+    source_label: str = ""          # Anzeigename der Quelle, z. B. Maklername
     wg_size: Optional[int] = None   # Personen in der WG
 
     @property
@@ -201,3 +203,49 @@ def check_alive(url: str, source: str):
         if re.search(r"Anzeige ist (deaktiviert|nicht mehr aktiv)|Angebot ist (deaktiviert|nicht mehr verfügbar)", head):
             return False
     return True
+
+
+# ---------- Allgemeiner Detailseiten-Leser (für Makler-/Genossenschaftsseiten) ----------
+
+_NUM = r"(\d{1,3}(?:[.\s]\d{3})*(?:,\d{1,2})?|\d+(?:[.,]\d{1,2})?)"
+
+
+def _num_after(text, keys, lo, hi):
+    """Erste plausible Zahl nach einem der Schlüsselwörter (max. 60 Zeichen Abstand)."""
+    for k in keys:
+        for m in re.finditer(k + r"[^\d€]{0,60}(?:€\s*)?" + _NUM, text, re.I):
+            v = parse_number(m.group(1))
+            if v is not None and lo <= v <= hi:
+                return v
+    return None
+
+
+def parse_detail_text(text: str) -> dict:
+    """Liest Preis, Fläche, Zimmer, PLZ und Eigenmittel aus dem sichtbaren Text einer Inseratsseite."""
+    t = re.sub(r"[\u00ad\u200b]", "", text)          # weiche Trennstriche (z. B. "Gesamt­belastung")
+    t = re.sub(r"\s+", " ", t)
+    out = {}
+    gross = _num_after(t, [r"Gesamtmiete", r"Gesamtbelastung brutto", r"monatliche Gesamtbelastung",
+                           r"Bruttomiete", r"Miete (?:inkl|brutto)[^\d€]{0,20}", r"monatl(?:iche)? Miete"], 100, 5000)
+    net = _num_after(t, [r"Gesamtbelastung netto", r"Miete netto", r"Nettomiete"], 100, 5000)
+    plain = _num_after(t, [r"\bMiete\b"], 100, 5000)
+    if gross:
+        out["price"], out["price_note"] = gross, "Gesamtmiete"
+    elif net:
+        out["price"], out["price_note"] = round(net * 1.1, 2), "ca. brutto (netto + 10 % USt.)"
+    elif plain:
+        out["price"], out["price_note"] = plain, "Miete"
+    area = _num_after(t, [r"Wohnfläche", r"Nutzfläche", r"Fläche"], 10, 300)
+    if area is None:
+        m = re.search(_NUM + r"\s*m\s?(?:²|2)\b", t)
+        area = parse_number(m.group(1)) if m else None
+    out["area"] = area
+    m = re.search(r"(\d(?:,5)?)\s*-?\s*Zimmer|Zimmer[^\d]{0,12}(\d(?:,5)?)\b", t)
+    if m:
+        out["rooms"] = parse_number(m.group(1) or m.group(2))
+    out["zip"] = zip_from_text(t)
+    out["eigenmittel"] = _num_after(t, [r"Finanzierungsbeitrag", r"Eigenmittel(?:anteil|beitrag)?", r"Grundkostenbeitrag",
+                                        r"Baukostenbeitrag"], 300, 200000)
+    out["email"] = (find_emails(t) or [""])[0]
+    out["phone"] = find_phone(t)
+    return out

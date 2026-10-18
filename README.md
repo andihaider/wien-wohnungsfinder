@@ -2,7 +2,9 @@
 
 Durchsucht alle 30 Minuten (6–23 Uhr) Mietwohnungen und WG-Zimmer in Wien 4.–7. Bezirk
 (Wieden, Margareten, Mariahilf, Neubau) auf willhaben, DER STANDARD, ImmoScout24, immowelt,
-WG-Gesucht und IMMMO (inkl. Kurier Immo, Bazar, Wohnkrone) und zeigt die besten Treffer in einer
+WG-Gesucht und IMMMO (inkl. Kurier Immo, Bazar, Wohnkrone), dazu direkt auf Makler-Websites
+(Brezina, TICON, ARWAG, Siedlungsunion) und bei Genossenschaften über GEWOFinder
+(Sozialbau, GESIBA, Wien-Süd, ÖSW, ÖVW, BWSG, EBG, Familienwohnbau, Frieden, Neues Leben, Heimat Österreich, WBV-GPA, GEWOG) und zeigt die besten Treffer in einer
 Handy-Web-App. Jeder neue passende Treffer kommt sofort als Push-Nachricht aufs Handy.
 
 ## Benachrichtigungen
@@ -23,3 +25,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scraper/run.py
 python3 -m http.server 5190 --directory docs
 ```
+
+## Weitere Makler ergänzen
+
+Makler mit justimmo-Website (Links wie `/objekt/12345`) lassen sich in `scraper/sources/makler.py`
+mit einer Zeile in `JUSTIMMO` hinzufügen: Name + URL der Mietwohnungs-Liste.

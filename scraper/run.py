@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from common import COLLECT_MAX_PRICE, DISTRICTS, Listing, check_alive  # noqa: E402
 from scoring import score  # noqa: E402
-from sources import derstandard, immmo, immoscout, immowelt, wggesucht, willhaben  # noqa: E402
+from sources import derstandard, gewofinder, immmo, immoscout, immowelt, makler, wggesucht, willhaben  # noqa: E402
 
 SOURCES = {
     "willhaben": willhaben,
@@ -21,11 +21,14 @@ SOURCES = {
     "immoscout24": immoscout,
     "immowelt": immowelt,
     "wggesucht": wggesucht,
+    "makler": makler,
+    "gewofinder": gewofinder,
     "immmo": immmo,
 }
 SOURCE_LABELS = {
     "willhaben": "willhaben", "derstandard": "DER STANDARD", "immoscout24": "ImmoScout24",
     "immowelt": "immowelt", "wggesucht": "WG-Gesucht", "immmo": "IMMMO",
+    "makler": "Makler-Website", "gewofinder": "GEWOFinder",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -227,7 +230,10 @@ def fetch_all(prev_sources):
             msg = str(e) if type(e).__name__ == "Blocked" else f"{type(e).__name__}: {e}"
             st = {"ok": False, "count": 0, "error": msg[:200], "last_ok": prev.get("last_ok")}
         prev_streak = prev.get("empty_streak", 0)
-        st["empty_streak"] = prev_streak + 1 if not st["count"] else 0
+        raw = getattr(mod, "STATE", {}).get("raw")
+        if raw is not None and st["ok"]:
+            st["raw"] = raw   # Makler/Genossenschaften: 0 Treffer im 4.–7. ist normal, 0 Inserate insgesamt nicht
+        st["empty_streak"] = prev_streak + 1 if not (st.get("raw") if raw is not None else st["count"]) else 0
         status[name] = st
     if not status["derstandard"]["count"] and status["immmo"]["count"]:
         status["derstandard"]["via"] = "immmo"
@@ -272,7 +278,7 @@ def main():
         if l.key not in it["keys"]:
             it["keys"].append(l.key)
         if not any(x["source"] == name for x in it["links"]):
-            it["links"].append({"source": name, "label": SOURCE_LABELS[name], "url": l.url})
+            it["links"].append({"source": name, "label": l.source_label or SOURCE_LABELS[name], "url": l.url})
         it["last_seen"] = run_at
 
         if not why and is_new_key and l.price <= ENRICH_MAX_PRICE and enrich_budget > 0 and not it.get("email"):
@@ -294,7 +300,7 @@ def main():
         # Felder ergänzen – bessere Werte gewinnen
         if l.price_note == "Gesamtmiete" and it.get("price_note") != "Gesamtmiete":
             it["price"], it["price_note"] = l.price, l.price_note
-        for k in ("area", "rooms", "image", "address", "advertiser", "published", "wg_size"):
+        for k in ("area", "rooms", "image", "address", "advertiser", "published", "wg_size", "eigenmittel"):
             if not it.get(k) and getattr(l, k):
                 it[k] = getattr(l, k)
         if len(l.description or "") > len(it.get("description") or ""):

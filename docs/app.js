@@ -50,7 +50,7 @@ Liebe Grüße
 
 const DEFAULTS = {
   maxPrice: 650, minPrice: 0, minArea: 0,
-  wgMaxPrice: 600, wgMinRoom: 15, wgMaxPeople: 4,
+  wgMaxPrice: 600, wgMinRoom: 15, wgMaxPeople: 4, maxEigenmittel: 50000,
   districts: Object.keys(DISTRICTS),
   hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
   name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE, docScript: "", docKey: "",
@@ -118,12 +118,14 @@ function score(it) {
   }
   if (has(it, "Bezahlportal")) s -= 15;
   if (has(it, "Zwischenmiete")) s -= 10;
+  if (it.eigenmittel) s -= Math.min(12, it.eigenmittel / 2500);
   return Math.round(clamp(s, 0, 100));
 }
 
 function visible(it) {
   if (it.excluded || hidden.has(it.id)) return false;
   if ((statuses[it.id] || {}).s === "no") return false;
+  if (S.maxEigenmittel < 50000 && (it.eigenmittel || 0) > S.maxEigenmittel) return false;
   if (!S.districts.includes(it.zip)) return false;
   if (S.hidePaywall && has(it, "Bezahlportal")) return false;
   if (S.hideSublet && has(it, "Zwischenmiete")) return false;
@@ -159,7 +161,7 @@ function ago(iso) {
 const FLAG_CLASS = {
   "provisionsfrei": "good", "unbefristet": "good", "Balkon": "good", "Terrasse": "good", "Loggia": "good", "Garten": "good",
   "befristet": "warn", "Ablöse": "warn", "möbliert": "warn", "Zwischenmiete": "warn",
-  "Bezahlportal": "bad",
+  "Bezahlportal": "bad", "Genossenschaft": "good",
 };
 const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -330,6 +332,10 @@ function card(it, tpl) {
     ? [it.area && num(it.area) + " m² Zimmer", it.wg_size && it.wg_size + "er WG"]
     : [it.area && num(it.area) + " m²", it.rooms && num(it.rooms) + " Zi.", it.ppsqm && "€ " + num(it.ppsqm) + "/m²"]
   ).filter(Boolean).join(" · ");
+  if (it.eigenmittel) {
+    $(".flags", el).insertAdjacentHTML("beforebegin",
+      `<p class="eigenmittel">+ ${eur(it.eigenmittel)} Eigenmittel / Finanzierungsbeitrag (einmalig)</p>`);
+  }
   $(".title", el).textContent = it.title;
   $(".where", el).textContent = [DISTRICTS[it.zip], it.address && !/^\d{4}\s*Wien$/.test(it.address) ? it.address : "", ago(it.first_seen)]
     .filter(Boolean).join(" · ");
@@ -397,6 +403,8 @@ function card(it, tpl) {
 const SOURCE_NAMES = {
   willhaben: "willhaben", derstandard: "DER STANDARD", immoscout24: "ImmoScout24", immowelt: "immowelt",
   wggesucht: "WG-Gesucht", immmo: "IMMMO (inkl. Kurier, Bazar, Wohnkrone)",
+  makler: "Makler-Websites (Brezina, TICON, ARWAG, Siedlungsunion)",
+  gewofinder: "Genossenschaften (GEWOFinder: Sozialbau, GESIBA, ÖSW, …)",
 };
 
 function sourceProblems() {
@@ -431,6 +439,7 @@ function renderMeta() {
     let txt, cls = "ok";
     if (v.via) txt = "gesperrt – Inserate kommen über IMMMO";
     else if (v.skipped) txt = `${v.count} Inserate (wird nur alle 4 Std. abgefragt, zuletzt ${ago(v.last_ok)})`;
+    else if (v.ok && v.raw != null) txt = `${v.count} im 4.–7. Bezirk (von ${v.raw} Angeboten insgesamt)`;
     else if (v.ok && v.count) txt = v.count + " Inserate";
     else { txt = v.error || "keine Inserate"; cls = "fail"; }
     return `<li class="${cls}">${SOURCE_NAMES[k] || k}: ${escapeHtml(txt)}</li>`;
@@ -447,6 +456,7 @@ const RANGES = [
   ["#s-wgmax", "wgMaxPrice", "#o-wgmax", eur],
   ["#s-wgroom", "wgMinRoom", "#o-wgroom", v => v ? v + " m²" : "egal"],
   ["#s-wgpeople", "wgMaxPeople", "#o-wgpeople", v => v >= 8 ? "egal" : "max. " + v + "er WG"],
+  ["#s-eigen", "maxEigenmittel", "#o-eigen", v => v >= 50000 ? "egal" : v ? "bis " + eur(v) : "keine"],
 ];
 const CHECKS = { "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
 const TEXTS = { "#p-docscript": "docScript", "#p-dockey": "docKey", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
