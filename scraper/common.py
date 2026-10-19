@@ -15,10 +15,15 @@ UA = (
 
 # Bezirke, die gesammelt werden (PLZ -> Name). In der App kann man daraus weiter filtern.
 DISTRICTS = {
+    "1010": "Innere Stadt",
+    "1030": "Landstraße",
     "1040": "Wieden",
     "1050": "Margareten",
     "1060": "Mariahilf",
     "1070": "Neubau",
+    "1080": "Josefstadt",
+    "1120": "Meidling",
+    "1150": "Rudolfsheim-Fünfhaus",
 }
 
 # Obergrenze beim Sammeln. Etwas über dem Budget, damit der Preis-Regler in der App Spielraum hat.

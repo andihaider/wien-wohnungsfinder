@@ -6,7 +6,9 @@ from bs4 import BeautifulSoup
 from common import Listing, find_emails, find_phone, get, next_f_payload
 
 BASE = "https://immobilien.derstandard.at"
-SLUGS = {"1040": "wien-wieden", "1050": "wien-margareten", "1060": "wien-mariahilf", "1070": "wien-neubau"}
+SLUGS = {"1010": "wien-innere-stadt", "1030": "wien-landstrasse", "1040": "wien-wieden", "1050": "wien-margareten",
+         "1060": "wien-mariahilf", "1070": "wien-neubau", "1080": "wien-josefstadt", "1120": "wien-meidling",
+         "1150": "wien-rudolfsheim-fuenfhaus"}
 
 AMENITY_TAGS = {
     "BALCONY": "Balkon", "TERRACE": "Terrasse", "LOGGIA": "Loggia", "GARDEN": "Garten",

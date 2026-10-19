@@ -1,7 +1,6 @@
 # Wohnungsfinder Wien
 
-Durchsucht alle 5 Minuten (6–23 Uhr, schwere Quellen seltener) Mietwohnungen und WG-Zimmer in Wien 4.–7. Bezirk
-(Wieden, Margareten, Mariahilf, Neubau) auf willhaben, DER STANDARD, ImmoScout24, immowelt,
+Durchsucht alle 5 Minuten (6–23 Uhr, schwere Quellen seltener) Mietwohnungen und WG-Zimmer in Wien (1., 3., 4., 5., 6., 7., 8., 12. und 15. Bezirk) auf willhaben, DER STANDARD, ImmoScout24, immowelt,
 WG-Gesucht und IMMMO (inkl. Kurier Immo, Bazar, Wohnkrone), dazu direkt auf Makler-Websites
 (Brezina, TICON, ARWAG, Siedlungsunion) und bei Genossenschaften über GEWOFinder
 (Sozialbau, GESIBA, Wien-Süd, ÖSW, ÖVW, BWSG, EBG, Familienwohnbau, Frieden, Neues Leben, Heimat Österreich, WBV-GPA, GEWOG) und zeigt die besten Treffer in einer

@@ -2,7 +2,7 @@
 from datetime import datetime, timezone
 
 # Standard-Kriterien (für die Push-Nachricht; in der App pro Handy einstellbar)
-FLAT_MAX_PRICE = 650
+FLAT_MAX_PRICE = 700
 WG_MAX_PRICE = 600
 WG_MIN_ROOM = 15      # m²
 WG_MAX_PEOPLE = 4     # "4er WG" inkl. dir

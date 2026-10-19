@@ -7,7 +7,9 @@ from bs4 import BeautifulSoup
 from common import COLLECT_MAX_PRICE, Listing, get, parse_number, zip_from_text
 
 BASE = "https://www.immmo.at/immo/Wohnung-mieten/Wien"
-SLUGS = {"1040": "Wien-4-Wieden", "1050": "Wien-5-Margareten", "1060": "Wien-6-Mariahilf", "1070": "Wien-7-Neubau"}
+SLUGS = {"1010": "Wien-1-Innere-Stadt", "1030": "Wien-3-Landstrasse", "1040": "Wien-4-Wieden",
+         "1050": "Wien-5-Margareten", "1060": "Wien-6-Mariahilf", "1070": "Wien-7-Neubau",
+         "1080": "Wien-8-Josefstadt", "1120": "Wien-12-Meidling", "1150": "Wien-15-Rudolfsheim-Fuenfhaus"}
 
 # Diese Portale scrapen wir schon direkt – von IMMMO nehmen wir nur die anderen Anbieter.
 SKIP_HOSTS = ("willhaben.at", "immobilienscout24.at", "immowelt.at", "derstandard.at")

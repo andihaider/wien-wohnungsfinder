@@ -7,6 +7,9 @@ from common import Listing, find_emails, find_phone, get, parse_number
 
 BASE = "https://www.immowelt.at"
 PATHS = {
+    "1010": "innere-stadt-1010/ad09at1", "1030": "landstrasse-1030/ad09at3",
+    "1080": "josefstadt-1080/ad09at8", "1120": "meidling-1120/ad09at12",
+    "1150": "rudolfsheim-funfhaus-1150/ad09at15",
     "1040": "wieden-1040/ad09at4", "1050": "margareten-1050/ad09at5",
     "1060": "mariahilf-1060/ad09at6", "1070": "neubau-1070/ad09at7",
 }

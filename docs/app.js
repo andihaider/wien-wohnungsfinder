@@ -1,6 +1,11 @@
 "use strict";
 
-const DISTRICTS = { "1040": "4. Wieden", "1050": "5. Margareten", "1060": "6. Mariahilf", "1070": "7. Neubau" };
+const DISTRICTS = {
+  "1010": "1. Innere Stadt", "1030": "3. Landstraße", "1040": "4. Wieden", "1050": "5. Margareten",
+  "1060": "6. Mariahilf", "1070": "7. Neubau", "1080": "8. Josefstadt", "1120": "12. Meidling",
+  "1150": "15. Rudolfsheim-Fünfhaus",
+};
+const OLD_DEFAULT_DISTRICTS = ["1040", "1050", "1060", "1070"];
 
 const DEFAULT_TEMPLATE = `Sehr geehrte Damen und Herren,
 
@@ -49,7 +54,7 @@ Liebe Grüße
 {name}`];
 
 const DEFAULTS = {
-  maxPrice: 650, minPrice: 0, minArea: 0,
+  maxPrice: 700, minPrice: 0, minArea: 0,
   wgMaxPrice: 600, wgMinRoom: 15, wgMaxPeople: 4, maxEigenmittel: 50000,
   districts: Object.keys(DISTRICTS),
   hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
@@ -66,6 +71,11 @@ const store = {
 };
 let S = Object.assign({}, DEFAULTS, store.get("settings", {}));
 if (S.template === OLD_TEMPLATES[0]) S.template = DEFAULT_TEMPLATE;
+// Umstellung Okt. 2026: mehr Bezirke und 700 € – alte Standardwerte automatisch mitziehen
+if (S.maxPrice === 650) S.maxPrice = 700;
+if (S.districts && S.districts.length === 4 && OLD_DEFAULT_DISTRICTS.every(z => S.districts.includes(z))) {
+  S.districts = Object.keys(DISTRICTS);
+}
 if (S.wgTemplate === OLD_TEMPLATES[1]) S.wgTemplate = DEFAULT_WG_TEMPLATE;
 let docLinks = store.get("docLinks", {});         // Adresse -> PDF-Link der Mietervorstellung
 if (!TABS.includes(S.tab)) S.tab = "new";
@@ -283,7 +293,8 @@ function render() {
   if (S.tab === "mine") items.sort((a, b) => STATUS_ORDER[(statuses[a.id] || {}).s] - STATUS_ORDER[(statuses[b.id] || {}).s]);
   if (S.tab === "out") items.sort(SORTERS.new);
 
-  const d = S.districts.length === 4 ? "4.–7. Bezirk" : S.districts.map(z => z.slice(1, 3) * 1 + ".").join(" ");
+  const all = Object.keys(DISTRICTS).every(z => S.districts.includes(z));
+  const d = all ? `${S.districts.length} Bezirke` : S.districts.map(z => z.slice(1, 3) * 1 + ".").sort((a, b) => parseInt(a) - parseInt(b)).join(" ");
   $("#filter-summary").textContent = S.tab === "wg" ? `WG bis ${eur(S.wgMaxPrice)} · ab ${S.wgMinRoom} m²` : `bis ${eur(S.maxPrice)} · ${d}`;
   $(".sortbar label").style.visibility = ["mine", "out"].includes(S.tab) ? "hidden" : "";
 
@@ -439,14 +450,14 @@ function renderMeta() {
     let txt, cls = "ok";
     if (v.via) txt = "gesperrt – Inserate kommen über IMMMO";
     else if (v.skipped) txt = `${v.count} Inserate (seltener abgefragt, zuletzt ${ago(v.last_try || v.last_ok)})`;
-    else if (v.ok && v.raw != null) txt = `${v.count} im 4.–7. Bezirk (von ${v.raw} Angeboten insgesamt)`;
+    else if (v.ok && v.raw != null) txt = `${v.count} in deinen Bezirken (von ${v.raw} Angeboten insgesamt)`;
     else if (v.ok && v.count) txt = v.count + " Inserate";
     else { txt = v.error || "keine Inserate"; cls = "fail"; }
     return `<li class="${cls}">${SOURCE_NAMES[k] || k}: ${escapeHtml(txt)}</li>`;
   };
   $("#footer").innerHTML = "<b>Quellen beim letzten Lauf</b><ul>" + Object.entries(src).map(([k, v]) => line(k, v)).join("") +
-    "</ul>Gesucht wird in Wien 4.–7. Bezirk alle 5 Minuten (6–23 Uhr): willhaben und ImmoScout24 jedes Mal, " +
-    "immowelt und IMMMO alle 30 Min., Makler stündlich, Genossenschaften alle 2 Std., WG-Gesucht alle 4 Std. " +
+    "</ul>Gesucht wird im 1., 3.–8., 12. und 15. Bezirk alle 5 Minuten (6–23 Uhr): willhaben jedes Mal, ImmoScout24 alle 15 Min., " +
+    "immowelt, IMMMO und Makler stündlich, Genossenschaften alle 2 Std., WG-Gesucht alle 4 Std. " +
     "Gespeichert wird nur, wenn sich etwas ändert (spätestens alle 30 Min.). Preise laut Inserat – bitte immer im Original prüfen.";
 }
 

@@ -1,7 +1,7 @@
 """Einzelne Makler und Bauträger, deren Wohnungen (meist) NICHT auf den großen Portalen stehen.
 
 - justimmo-Makler: Brezina, TICON (weitere justimmo-Seiten einfach in JUSTIMMO ergänzen)
-- ARWAG: nur Objekte, deren Koordinaten im 4.–7. Bezirk liegen
+- ARWAG: nur Objekte, deren Koordinaten im Suchgebiet liegen und die laut Link Mietwohnungen sind
 - Siedlungsunion: "Sofort wohnen"-Liste (PLZ steht im Link)
 """
 import re
@@ -9,7 +9,7 @@ import re
 from bs4 import BeautifulSoup
 
 from common import (COLLECT_MAX_PRICE, DISTRICTS, Listing, find_emails, find_phone, get,
-                    parse_detail_text, zip_from_text)
+                    parse_detail_text, session, zip_from_text)
 
 # Name, Listen-URL (Mietwohnungen) – alle laufen auf der Makler-Software justimmo
 JUSTIMMO = [
@@ -18,8 +18,8 @@ JUSTIMMO = [
 ]
 ARWAG_GEO = "https://www.arwag.at/immobiliensuche/realties-geo.json"
 ARWAG_DETAIL = "https://www.arwag.at/immobiliensuche/lazylist/link/Realties/{id}"
-# grobes Rechteck um Wieden, Margareten, Mariahilf, Neubau (PLZ wird danach auf der Detailseite geprüft)
-BOX = (48.180, 48.207, 16.330, 16.375)
+# grobes Rechteck um die gesuchten Bezirke (1., 3.–8., 12., 15.); PLZ wird danach auf der Detailseite geprüft
+BOX = (48.160, 48.225, 16.295, 16.415)
 SIEDLUNGSUNION = "https://www.siedlungsunion.at/wohnen/sofort"
 
 # Makler-Listen werden nur auf der ersten Seite gelesen → "fehlt in der Liste" heißt nicht offline
@@ -91,8 +91,17 @@ def _arwag():
             continue
         if f["properties"].get("title", "").startswith("#"):
             continue  # Projekt-Platzhalter ohne eigene Detailseite
-        d_r = get(ARWAG_DETAIL.format(id=f["id"]))
-        if not d_r or "miete" not in d_r.url or "gewerbe" in d_r.url:
+        # Erst nur die Weiterleitung ansehen: der Ziel-Link verrät PLZ und Miete/Kauf/Gewerbe
+        try:
+            head = session().head(ARWAG_DETAIL.format(id=f["id"]), allow_redirects=False, timeout=15)
+            target = head.headers.get("Location", "")
+        except Exception:
+            continue
+        zm = re.search(r"-(1\d{2}0)-wien", target)
+        if "miete" not in target or "gewerbe" in target or (zm and zm.group(1) not in DISTRICTS):
+            continue
+        d_r = get(target if target.startswith("http") else "https://www.arwag.at" + target)
+        if not d_r:
             continue
         soup = BeautifulSoup(d_r.text, "lxml")
         title = (soup.title.get_text(strip=True) if soup.title else f["properties"].get("title", "ARWAG")).split("|")[0]

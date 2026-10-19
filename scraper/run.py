@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(__file__))
 
 from common import COLLECT_MAX_PRICE, DISTRICTS, Listing, check_alive  # noqa: E402
-from scoring import score  # noqa: E402
+from scoring import FLAT_MAX_PRICE, score  # noqa: E402
 from sources import derstandard, gewofinder, immmo, immoscout, immowelt, makler, wggesucht, willhaben  # noqa: E402
 
 SOURCES = {
@@ -37,7 +37,7 @@ DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
 
 # Die Suche läuft alle 5 Min. Schnelle Quellen (willhaben: 1 Anfrage, ImmoScout24: 4) jedes Mal,
 # schwere bzw. empfindliche seltener – sonst drohen Sperren. Minuten seit dem letzten VERSUCH.
-SOURCE_INTERVAL_MIN = {"immowelt": 30, "immmo": 30, "makler": 60, "gewofinder": 120, "wggesucht": 240}
+SOURCE_INTERVAL_MIN = {"immoscout24": 15, "immowelt": 60, "immmo": 60, "makler": 60, "gewofinder": 120, "wggesucht": 240}
 # Nach einem Fehlschlag (z. B. derStandard sperrt Cloud-Server) erst so viel später erneut versuchen
 FAIL_RETRY_MIN = {"derstandard": 360}
 SAVE_EVERY_MIN = 30         # ohne inhaltliche Änderung höchstens so oft speichern (GitHub Pages: ~10 Builds/Std.)
@@ -213,6 +213,8 @@ def _due(name, prev):
     eine Quelle mit 30-Min.-Abstand läuft im Fenster :00–:05 und :30–:35 (UTC-Minuten seit 1970).
     Sicherheitsnetz: wurde das Fenster verpasst, läuft sie, sobald der letzte Versuch zu lange her ist.
     """
+    if os.environ.get("FORCE_ALL"):
+        return True  # zum Testen: alle Quellen abfragen
     interval = SOURCE_INTERVAL_MIN.get(name) or 0
     if prev and prev.get("last_attempt_ok") is False and name in FAIL_RETRY_MIN:
         interval = max(interval, FAIL_RETRY_MIN[name])
@@ -259,7 +261,7 @@ def fetch_all(prev_sources):
         prev_streak = prev.get("empty_streak", 0)
         raw = getattr(mod, "STATE", {}).get("raw")
         if raw is not None and st["ok"]:
-            st["raw"] = raw   # Makler/Genossenschaften: 0 Treffer im 4.–7. ist normal, 0 Inserate insgesamt nicht
+            st["raw"] = raw   # Makler/Genossenschaften: 0 Treffer in den gesuchten Bezirken ist normal, 0 Inserate insgesamt nicht
         st["empty_streak"] = prev_streak + 1 if not (st.get("raw") if raw is not None else st["count"]) else 0
         status[name] = st
     if not status["derstandard"]["count"] and status["immmo"]["count"]:
@@ -386,9 +388,9 @@ def main():
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
 
-    flats = [it for it in kept if it["category"] == "wohnung" and not it.get("excluded") and it["price_total"] <= 650]
+    flats = [it for it in kept if it["category"] == "wohnung" and not it.get("excluded") and it["price_total"] <= FLAT_MAX_PRICE]
     wgs = [it for it in kept if it["category"] == "wg" and not it.get("excluded")]
-    print(f"\n✓ {len(kept)} gespeichert: {len(flats)} Wohnungen ≤ 650 €, {len(wgs)} WG-Zimmer. "
+    print(f"\n✓ {len(kept)} gespeichert: {len(flats)} Wohnungen ≤ {FLAT_MAX_PRICE} €, {len(wgs)} WG-Zimmer. "
           f"Aussortiert: {excluded_counts}")
 
 

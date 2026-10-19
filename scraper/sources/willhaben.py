@@ -4,7 +4,8 @@ import re
 from common import COLLECT_MAX_PRICE, Listing, find_emails, find_phone, get, parse_number
 
 # willhaben-areaIds der Wiener Bezirke
-AREA_IDS = {"1040": 117226, "1050": 117227, "1060": 117228, "1070": 117229}
+AREA_IDS = {"1010": 117223, "1030": 117225, "1040": 117226, "1050": 117227, "1060": 117228,
+            "1070": 117229, "1080": 117230, "1120": 117234, "1150": 117237}
 BASE = "https://www.willhaben.at"
 
 

@@ -3,13 +3,13 @@ import re
 
 from bs4 import BeautifulSoup
 
-from common import COLLECT_MAX_PRICE, Listing, find_emails, find_phone, get
+from common import COLLECT_MAX_PRICE, DISTRICTS, Listing, find_emails, find_phone, get
 
 BASE = "https://www.immobilienscout24.at"
-SLUGS = {
-    "1040": "4-bezirk-wieden", "1050": "5-bezirk-margareten",
-    "1060": "6-bezirk-mariahilf", "1070": "7-bezirk-neubau",
-}
+# Eine Suche für ganz Wien (mit Preisfilter) – die Bezirke werden danach lokal gefiltert.
+SEARCH = BASE + "/regional/wien/wien/wohnung-mieten{page}?primaryPriceTo={price}"
+PER_PAGE = 15
+MAX_PAGES = 20
 
 BADGE_TAGS = {
     "BALCONY": "Balkon", "TERRACE": "Terrasse", "GARDEN": "Garten", "LOGGIA": "Loggia",
@@ -57,46 +57,44 @@ STATE = {"complete": True}
 def fetch():
     STATE["complete"] = True
     out = []
-    for zip_, slug in SLUGS.items():
-        for page in range(1, 5):
-            url = f"{BASE}/regional/wien/wien/{slug}/wohnung-mieten?primaryPriceTo={COLLECT_MAX_PRICE}"
-            if page > 1:
-                url += f"&pageNumber={page}"
-            r = get(url)
-            if not r:
-                STATE["complete"] = False
-                break
-            st = _state(r.text)
-            hits = _find_hits(st) or []
-            for h in hits:
-                if (h.get("meta") or {}).get("transferType") not in (None, "RENT"):
-                    continue
-                pic = (h.get("primaryPictureImageProps") or {}).get("src") or ""
-                badges = [((b.get("details") or {}).get("value")) for b in (h.get("typedBadges") or [])]
-                addr = h.get("addressString") or ""
-                rc = h.get("realtorContact") or {}
-                out.append(Listing(
-                    source="immoscout24",
-                    source_id=h["exposeId"],
-                    url=f"{BASE}/expose/{h['exposeId']}",
-                    title=h.get("headline") or "",
-                    price=h.get("primaryPrice"),
-                    price_note="Gesamtmiete",
-                    zip=(re.search(r"\b1\d{3}\b", addr) or [zip_])[0],
-                    area=h.get("primaryArea"),
-                    rooms=h.get("numberOfRooms"),
-                    address=addr,
-                    image=pic,
-                    published=h.get("dateCreated") or "",
-                    advertiser=" ".join(x for x in [rc.get("company"), rc.get("name")] if x),
-                    private=h.get("isPrivate"),
-                    tags=[BADGE_TAGS[b] for b in badges if b in BADGE_TAGS]
-                    + (["Gemeinde/gefördert"] if h.get("isSocialHousing") else []),
-                ))
-            if len(hits) < 20:
-                break
-            if page == 4:
-                STATE["complete"] = False  # Seitenlimit erreicht
+    for page in range(1, MAX_PAGES + 1):
+        r = get(SEARCH.format(page=f"/seite-{page}" if page > 1 else "", price=COLLECT_MAX_PRICE))
+        if not r:
+            STATE["complete"] = False
+            break
+        hits = _find_hits(_state(r.text)) or []
+        for h in hits:
+            if (h.get("meta") or {}).get("transferType") not in (None, "RENT"):
+                continue
+            addr = h.get("addressString") or ""
+            m = re.search(r"\b(1\d{2}0)\b", addr)
+            if not m or m.group(1) not in DISTRICTS:
+                continue
+            pic = (h.get("primaryPictureImageProps") or {}).get("src") or ""
+            badges = [((b.get("details") or {}).get("value")) for b in (h.get("typedBadges") or [])]
+            rc = h.get("realtorContact") or {}
+            out.append(Listing(
+                source="immoscout24",
+                source_id=h["exposeId"],
+                url=f"{BASE}/expose/{h['exposeId']}",
+                title=h.get("headline") or "",
+                price=h.get("primaryPrice"),
+                price_note="Gesamtmiete",
+                zip=m.group(1),
+                area=h.get("primaryArea"),
+                rooms=h.get("numberOfRooms"),
+                address=addr,
+                image=pic,
+                published=h.get("dateCreated") or "",
+                advertiser=" ".join(x for x in [rc.get("company"), rc.get("name")] if x),
+                private=h.get("isPrivate"),
+                tags=[BADGE_TAGS[b] for b in badges if b in BADGE_TAGS]
+                + (["Gemeinde/gefördert"] if h.get("isSocialHousing") else []),
+            ))
+        if len(hits) < PER_PAGE or f"/seite-{page + 1}?" not in r.text:
+            break
+        if page == MAX_PAGES:
+            STATE["complete"] = False  # Seitenlimit erreicht
     return out
 
 

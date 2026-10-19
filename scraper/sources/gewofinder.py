@@ -20,8 +20,10 @@ def _zip(item):
     # PLZ fehlt oft – im Adress-/Linktext nach "1050" suchen (aber nicht nach dem Wort "Neubau",
     # das steckt in vielen Projektnamen)
     text = " ".join(str(item.get(k) or "") for k in ("address", "source_url"))
-    m = re.search(r"(?<!\d)(10[4-7]0)(?!\d)", text)
-    return m.group(1) if m else None
+    for m in re.finditer(r"(?<!\d)(1\d{2}0)(?!\d)", text):
+        if m.group(1) in DISTRICTS:
+            return m.group(1)
+    return None
 
 
 def fetch():
