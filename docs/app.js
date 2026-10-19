@@ -555,8 +555,24 @@ async function load() {
   await runP;
   renderMeta();
   render();
+  openFromLink();
   store.set("lastVisit", new Date().toISOString());
 }
+// Push-Button "Jetzt anfragen" öffnet die App mit #anfrage=<id> → Anfrage-Fenster direkt anzeigen
+function openFromLink() {
+  const m = location.hash.match(/anfrage=([\w-]+)/);
+  if (!m) return;
+  history.replaceState(null, "", location.pathname + location.search);
+  const it = DATA.items.find(x => x.id === m[1]);
+  if (!it) { $("#meta").textContent = "Diese Wohnung ist nicht mehr in der Liste – vermutlich schon weg."; return; }
+  it._score = score(it);
+  const markAsked = () => {
+    if (!statuses[it.id]) { statuses[it.id] = { s: "asked", t: new Date().toISOString() }; store.set("status", statuses); }
+  };
+  if (!$("#ask").open) openAsk(it, markAsked);
+}
+window.addEventListener("hashchange", openFromLink);
+
 load();
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") load(); });
 

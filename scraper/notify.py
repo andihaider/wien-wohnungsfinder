@@ -83,38 +83,73 @@ def facts(it):
     return " · ".join(x for x in [price, area, extra, it.get("district") or it["zip"]] if x)
 
 
-def build(flats, wgs, probs):
-    """Titel, Text, Klick-Ziel und Treffer der Push-Nachricht."""
-    items = sorted(flats + wgs, key=lambda i: -i.get("score", 0))
-    if len(items) == 1:
-        it = items[0]
-        kind = "WG-Zimmer" if it.get("category") == "wg" else "Wohnung"
-        title = f"Neue {kind}: {facts(it)}"
-        text = f"{it['title'][:120]}\n{it['links'][0]['label']} · {it.get('score', 0)} Punkte"
-        return title, text, it["links"][0]["url"], items
-    if items:
-        n_f, n_w = len(flats), len(wgs)
-        what = " + ".join(x for x in [f"{n_f} Wohnung{'en' if n_f > 1 else ''}" if n_f else "",
-                                      f"{n_w} WG-Zimmer" if n_w else ""] if x)
-        title = f"{what} neu – z. B. {facts(items[0])}"
-        lines = [f"• {facts(i)}\n  {i['title'][:70]}\n  {i['links'][0]['url']}" for i in items[:8]]
-        if len(items) > 8:
-            lines.append(f"… und {len(items) - 8} weitere in der App")
-        return title, "\n".join(lines)[:3800], APP_URL, items
-    return "⚠︎ Wohnungsfinder: eine Quelle funktioniert nicht", " ".join(probs), APP_URL, []
+MAX_SINGLE = 10             # bis zu so vielen Einzel-Pushes pro Lauf, der Rest kommt gesammelt
+SHOW_FLAGS = ("provisionsfrei", "unbefristet", "Balkon", "Terrasse", "Loggia", "Garten", "Altbau", "Lift",
+              "befristet", "Ablöse", "möbliert", "Genossenschaft")
 
 
-def push(topic, title, text, click, items):
-    actions = [{"action": "view", "label": "App öffnen", "url": APP_URL, "clear": True}]
-    if items:
-        actions.insert(0, {"action": "view", "label": "Zum Inserat", "url": items[0]["links"][0]["url"]})
-    best = max((i.get("score", 0) for i in items), default=0)
-    payload = {"topic": topic, "title": title, "message": text, "click": click, "tags": ["house"],
-               "actions": actions, "priority": 4 if best >= 50 else 3}
+def level(score):
+    """Priorität, Emoji und ntfy-Tag nach Punktzahl. 5 = höchste Stufe (lautester Ton, kann "Nicht stören" durchbrechen)."""
+    if score >= 60:      # etwa die besten 20 %
+        return 5, "🔥", "fire"
+    if score >= 40:
+        return 4, "✨", "sparkles"
+    return 3, "🏠", "house"
+
+
+def listing_msg(it, kind="new"):
+    """Eine Push-Nachricht für genau eine Wohnung (neu / Preis gesenkt / wieder online)."""
+    sc = it.get("score", 0)
+    prio, emoji, tag = level(sc)
+    label = "WG-Zimmer" if it.get("category") == "wg" else "Wohnung"
+    if kind == "drop":
+        d = it["price_drop"]
+        head = f"💸 Preis gesenkt {eur(d['from'])} → {eur(d['to'])}"
+    elif kind == "back":
+        head = f"🔁 Wieder online ({label})"
+    else:
+        head = f"{emoji} " + ("Neues WG-Zimmer" if label == "WG-Zimmer" else "Neue Wohnung")
+    flags = [f for f in it.get("flags") or [] if f in SHOW_FLAGS]
+    lines = [it["title"][:140]]
+    if flags:
+        lines.append(" · ".join(flags))
+    if it.get("eigenmittel"):
+        lines.append(f"+ {eur(it['eigenmittel'])} Eigenmittel (einmalig)")
+    lines.append(f"{sc} Punkte · {it['links'][0]['label']}" + (f" · {it['advertiser'][:40]}" if it.get("advertiser") else ""))
+    url = it["links"][0]["url"]
+    return {
+        "title": f"{head}: {facts(it)}",
+        "message": "\n".join(lines),
+        "click": url,
+        "priority": prio,
+        "tags": [tag],
+        "actions": [
+            {"action": "view", "label": "Jetzt anfragen", "url": f"{APP_URL}#anfrage={it['id']}", "clear": True},
+            {"action": "view", "label": "Inserat öffnen", "url": url},
+        ],
+    }
+
+
+def batch_msg(items):
+    """Sammel-Nachricht für alles, was über MAX_SINGLE hinausgeht."""
+    lines = [f"• {facts(i)} ({i.get('score', 0)} Pkt)\n  {i['links'][0]['url']}" for i in items[:12]]
+    if len(items) > 12:
+        lines.append(f"… und {len(items) - 12} weitere in der App")
+    return {"title": f"🏠 {len(items)} weitere Treffer", "message": "\n".join(lines)[:3800], "click": APP_URL,
+            "priority": 3, "tags": ["house"], "actions": [{"action": "view", "label": "App öffnen", "url": APP_URL}]}
+
+
+def info_msg(title, text):
+    return {"title": title, "message": text, "click": APP_URL, "priority": 4, "tags": ["warning"],
+            "actions": [{"action": "view", "label": "App öffnen", "url": APP_URL}]}
+
+
+def push(topic, msg):
+    payload = dict(msg, topic=topic)
     req = urllib.request.Request("https://ntfy.sh/", data=json.dumps(payload).encode(),
                                  headers={"Content-Type": "application/json"}, method="POST")
     with urllib.request.urlopen(req, timeout=30) as r:
-        print(f"  📲 Push verschickt (HTTP {r.status}): {title}")
+        print(f"  📲 Push (Prio {msg.get('priority')}, HTTP {r.status}): {msg['title']}")
 
 
 def main():
@@ -125,45 +160,54 @@ def main():
     # Übergang vom alten 2×-täglich-Versand; beim allerersten Mal nicht alles auf einmal pushen
     since = parse(data.get("last_push")) or parse(data.get("last_digest")) or now
 
-    fresh = [it for it in data["items"] if parse(it["first_seen"]) > since and matches_default(it)]
+    after = lambda iso: bool(iso) and parse(iso) > since
+    fresh = [it for it in data["items"] if after(it["first_seen"]) and matches_default(it)]
+    new_ids = {it["id"] for it in fresh}
+    drops = [it for it in data["items"] if it["id"] not in new_ids and matches_default(it)
+             and after((it.get("price_drop") or {}).get("at"))]
+    back = [it for it in data["items"] if it["id"] not in new_ids and matches_default(it) and after(it.get("back_at"))]
     if force and not fresh:
-        # Test: aktuelle Top-Treffer schicken, damit man sieht, wie die Nachricht aussieht
-        fresh = sorted([i for i in data["items"] if matches_default(i)], key=lambda i: -i.get("score", 0))[:4]
-    flats = [i for i in fresh if i.get("category") != "wg"]
-    wgs = [i for i in fresh if i.get("category") == "wg"]
+        # Test: aktuelle Top-Treffer schicken, damit man sieht, wie die Nachrichten aussehen
+        fresh = sorted([i for i in data["items"] if matches_default(i)], key=lambda i: -i.get("score", 0))[:3]
 
     last_prob = parse(data.get("last_problem_push"))
     probs = problems(data) if (force or not last_prob or now - last_prob > timedelta(hours=PROBLEM_PUSH_EVERY_H)) else []
-    print(f"Push: {len(flats)} Wohnungen, {len(wgs)} WG-Zimmer neu seit {since.isoformat(timespec='minutes')}; "
-          f"Warnungen: {len(probs)}")
+    print(f"Push: {len(fresh)} neu, {len(drops)} Preis gesenkt, {len(back)} wieder online seit "
+          f"{since.isoformat(timespec='minutes')}; Warnungen: {len(probs)}")
 
     messages = []
     gap = None if (preview or force) else search_gap_minutes()
     if gap and gap > MAX_GAP_MIN:
         print(f"  ! Pause zwischen zwei Suchläufen: {gap:.0f} Min.")
-        messages.append((f"⚠︎ Wohnungssuche hatte {gap:.0f} Min. Pause",
-                         "Zwischen zwei Suchläufen lagen mehr als 20 Minuten. Die Suche läuft jetzt wieder – "
-                         "falls das öfter passiert, cron-job.org und GitHub Actions prüfen.", APP_URL, []))
-    if flats or wgs:
-        messages.append(build(flats, wgs, []))
+        messages.append(info_msg(f"⚠︎ Wohnungssuche hatte {gap:.0f} Min. Pause",
+                                 "Zwischen zwei Suchläufen lagen mehr als 20 Minuten. Die Suche läuft jetzt wieder – "
+                                 "falls das öfter passiert, cron-job.org und GitHub Actions prüfen."))
+    # beste zuerst, damit die wichtigsten Nachrichten oben liegen
+    events = sorted([(it, "new") for it in fresh] + [(it, "drop") for it in drops] + [(it, "back") for it in back],
+                    key=lambda e: -e[0].get("score", 0))
+    for it, kind in events[:MAX_SINGLE]:
+        messages.append(listing_msg(it, kind))
+    if len(events) > MAX_SINGLE:
+        messages.append(batch_msg([it for it, _ in events[MAX_SINGLE:]]))
     if probs:
-        messages.append(build([], [], probs))
+        messages.append(info_msg("⚠︎ Wohnungsfinder: eine Quelle funktioniert nicht", " ".join(probs)))
         if not (force or preview):
             data["last_problem_push"] = now.replace(microsecond=0).isoformat()
 
     topic = os.environ.get("NTFY_TOPIC")
     sent = False
-    for title, text, click, items in messages:
+    for msg in messages:
         if force:
-            title = "TEST – " + title
+            msg["title"] = "TEST – " + msg["title"]
         if preview:
-            print(f"--- {title}\n{text}\n(Klick → {click})")
+            print(f"--- [Prio {msg['priority']}] {msg['title']}\n{msg['message']}\n(Klick → {msg['click']}; "
+                  f"Buttons: {[x['label'] for x in msg['actions']]})")
             continue
         if not topic:
             print("  (NTFY_TOPIC nicht gesetzt – keine Push-Nachricht)")
             break
         try:
-            push(topic, title, text, click, items)
+            push(topic, msg)
             sent = True
         except Exception as e:  # Push-Probleme dürfen die Suche nie blockieren
             print(f"  ! Push fehlgeschlagen: {type(e).__name__}: {e}")

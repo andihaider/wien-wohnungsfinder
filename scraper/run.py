@@ -67,6 +67,7 @@ EXCLUDE_TITLE = [
     (r"^\W*(reserviert|vergeben|vermietet)\b|\((reserviert|vergeben|vermietet)\)|\b(reserviert|vergeben|vermietet)\W*$",
      "reserviert/vergeben"),
     (r"studentenheim|wohnheim|heimplatz|doppelzimmer", "Wohnheim"),
+    (r"\bnur\b.{0,30}?\bmieter(?:innen|\*innen|:innen)?\b", "nur für bestimmte Mieter"),
     (r"^\W*(suche|gesucht|wir suchen|ich suche)\b(?!.*nach(mieter|folger))", "Gesuch"),
 ]
 NON_FLAT_RX = r"\b(Lager|Garage|Stellplatz|Parkplatz|Büro|Geschäftslokal|Gewerbe|Kellerabteil|Praxis|Ordination)"
@@ -330,8 +331,11 @@ def main():
             run_ok.add(item_id)
 
         # Felder ergänzen – bessere Werte gewinnen
+        prev_total = it.get("price_total")
         if l.price_note == "Gesamtmiete" and it.get("price_note") != "Gesamtmiete":
-            it["price"], it["price_note"] = l.price, l.price_note
+            it["price"], it["price_note"], it["price_key"] = l.price, l.price_note, l.key
+        elif it.get("price_key", it["keys"][0]) == l.key and l.price and abs(l.price - (it.get("price") or 0)) >= 1:
+            it["price"] = l.price          # Preis hat sich im Inserat geändert
         for k in ("area", "rooms", "image", "address", "advertiser", "published", "wg_size", "eigenmittel"):
             if not it.get(k) and getattr(l, k):
                 it[k] = getattr(l, k)
@@ -353,10 +357,15 @@ def main():
             it["price_estimated"] = False
         if it.get("area"):
             it["ppsqm"] = round(it["price_total"] / it["area"], 2)
+        if prev_total and it["price_total"] < prev_total - max(5, 0.03 * prev_total):
+            it["price_drop"] = {"from": prev_total, "to": it["price_total"], "at": run_at}
+            print(f"  Preis gesenkt: {prev_total} → {it['price_total']} € – {it['title'][:50]}")
 
     # Ausschluss pro Lauf neu bewerten: sobald eine Quelle das Inserat "sauber" liefert, gilt es
     for iid in run_ok | set(run_why):
         if iid in run_ok:
+            if items[iid].get("excluded") == GONE:
+                items[iid]["back_at"] = run_at   # war offline, ist wieder da
             items[iid].pop("excluded", None)
         else:
             items[iid]["excluded"] = run_why[iid]
