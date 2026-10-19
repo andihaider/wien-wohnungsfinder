@@ -421,9 +421,10 @@ const SOURCE_NAMES = {
 function sourceProblems() {
   const out = [];
   const lastSearch = LAST_RUN || DATA.updated;
-  if (lastSearch && hours(lastSearch) > (LAST_RUN ? 1 : 3)) {
+  // Tagsüber läuft die Suche alle 5 Min. – mehr als 20 Min. ohne Lauf ist ein Problem
+  if (lastSearch && hours(lastSearch) > (LAST_RUN ? 20 / 60 : 1)) {
     const h = new Date().getHours();
-    if (h >= 8 && h <= 23) out.push(`Die automatische Suche ist seit ${ago(lastSearch).replace("vor ", "")} nicht mehr gelaufen.`);
+    if (h >= 6 && h < 23) out.push(`Die automatische Suche ist seit ${ago(lastSearch).replace("vor ", "")} nicht mehr gelaufen!`);
   }
   for (const [k, v] of Object.entries(DATA.sources || {})) {
     if (v.via) continue;
@@ -518,9 +519,14 @@ $("#sort").value = S.sort;
 $("#sort").onchange = e => { S.sort = e.target.value; saveSettings(); render(); };
 bindSettings();
 
-// Daten direkt aus dem Repo laden (max. 5 Min. zwischengespeichert, GitHub Pages bis zu 10 Min. + Build-Zeit)
+// Daten über die GitHub-Schnittstelle laden: aktuell (max. 60 s Cache). raw.githubusercontent.com hing im
+// Test bis zu 12 Min. hinterher, GitHub Pages bis zu 10 Min. + Build-Zeit – die bleiben nur als Ersatz.
 const REPO = "andihaider/wien-wohnungsfinder";
-const DATA_URLS = [`https://raw.githubusercontent.com/${REPO}/main/docs/data/listings.json`, "data/listings.json"];
+const DATA_URLS = [
+  `https://api.github.com/repos/${REPO}/contents/docs/data/listings.json?ref=main`,
+  `https://raw.githubusercontent.com/${REPO}/main/docs/data/listings.json`,
+  "data/listings.json",
+];
 let LAST_RUN = null;
 
 async function fetchLastRun() {
@@ -537,7 +543,8 @@ async function load() {
   let loaded = false;
   for (const url of DATA_URLS) {
     try {
-      const r = await fetch(url + (url.startsWith("http") ? "" : "?t=" + Date.now()), { cache: "no-store" });
+      const opts = url.includes("api.github.com") ? { headers: { Accept: "application/vnd.github.raw+json" } } : { cache: "no-store" };
+      const r = await fetch(url + (url.startsWith("http") ? "" : "?t=" + Date.now()), opts);
       if (!r.ok) continue;
       DATA = await r.json();
       loaded = true;

@@ -11,6 +11,7 @@ import os
 import sys
 import urllib.request
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(__file__))
 from scoring import matches_default  # noqa: E402
@@ -19,6 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
 APP_URL = "https://andihaider.github.io/wien-wohnungsfinder/"
 PROBLEM_PUSH_EVERY_H = 24   # Warnungen über kaputte Quellen höchstens 1× am Tag
+MAX_GAP_MIN = 20            # tagsüber mehr Pause zwischen zwei Suchläufen → Alarm-Push
 SOURCE_NAMES = {
     "willhaben": "willhaben", "derstandard": "DER STANDARD", "immoscout24": "ImmoScout24",
     "immowelt": "immowelt", "wggesucht": "WG-Gesucht", "immmo": "IMMMO",
@@ -41,6 +43,32 @@ def problems(data):
         elif v.get("empty_streak", 0) >= 2:
             out.append(f"{SOURCE_NAMES.get(k, k)} liefert seit {v['empty_streak']} Läufen keine Inserate.")
     return out
+
+
+def search_gap_minutes():
+    """Minuten seit dem letzten erfolgreichen Suchlauf vor diesem (über die GitHub-Schnittstelle).
+
+    Gibt None zurück, wenn das nicht prüfbar ist oder die Pause die normale Nachtruhe (23–6 Uhr) war.
+    """
+    repo, token = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_TOKEN")
+    if not repo or not token:
+        return None
+    try:
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/actions/workflows/suche.yml/runs?status=success&per_page=1",
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
+        runs = json.load(urllib.request.urlopen(req, timeout=20)).get("workflow_runs") or []
+    except Exception as e:
+        print(f"  (Pausen-Check nicht möglich: {type(e).__name__})")
+        return None
+    if not runs:
+        return None
+    prev = parse(runs[0]["updated_at"])
+    now = datetime.now(timezone.utc)
+    vienna = ZoneInfo("Europe/Vienna")
+    if prev.astimezone(vienna).hour >= 22 or now.astimezone(vienna).hour < 7:
+        return None   # Nachtpause bzw. erster Lauf am Morgen
+    return (now - prev).total_seconds() / 60
 
 
 def eur(n):
@@ -110,6 +138,12 @@ def main():
           f"Warnungen: {len(probs)}")
 
     messages = []
+    gap = None if (preview or force) else search_gap_minutes()
+    if gap and gap > MAX_GAP_MIN:
+        print(f"  ! Pause zwischen zwei Suchläufen: {gap:.0f} Min.")
+        messages.append((f"⚠︎ Wohnungssuche hatte {gap:.0f} Min. Pause",
+                         "Zwischen zwei Suchläufen lagen mehr als 20 Minuten. Die Suche läuft jetzt wieder – "
+                         "falls das öfter passiert, cron-job.org und GitHub Actions prüfen.", APP_URL, []))
     if flats or wgs:
         messages.append(build(flats, wgs, []))
     if probs:

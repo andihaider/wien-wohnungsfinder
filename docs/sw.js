@@ -1,5 +1,5 @@
 // App-Hülle offline verfügbar machen; Daten immer zuerst frisch aus dem Netz.
-const CACHE = "wf-v10";
+const CACHE = "wf-v11";
 const SHELL = ["./", "index.html", "style.css", "app.js", "manifest.json", "icon-192.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener("activate", e => {
