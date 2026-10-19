@@ -420,9 +420,10 @@ const SOURCE_NAMES = {
 
 function sourceProblems() {
   const out = [];
-  if (DATA.updated && hours(DATA.updated) > 3) {
+  const lastSearch = LAST_RUN || DATA.updated;
+  if (lastSearch && hours(lastSearch) > (LAST_RUN ? 1 : 3)) {
     const h = new Date().getHours();
-    if (h >= 8 && h <= 23) out.push(`Die automatische Suche ist seit ${ago(DATA.updated).replace("vor ", "")} nicht mehr gelaufen.`);
+    if (h >= 8 && h <= 23) out.push(`Die automatische Suche ist seit ${ago(lastSearch).replace("vor ", "")} nicht mehr gelaufen.`);
   }
   for (const [k, v] of Object.entries(DATA.sources || {})) {
     if (v.via) continue;
@@ -437,8 +438,11 @@ function sourceProblems() {
 
 function renderMeta() {
   const u = DATA.updated;
-  $("#meta").textContent = u ? "Aktualisiert " + ago(u) + " · " +
-    new Date(u).toLocaleString("de-AT", { weekday: "short", hour: "2-digit", minute: "2-digit" }) : "Noch keine Daten";
+  const t = iso => new Date(iso).toLocaleTimeString("de-AT", { hour: "2-digit", minute: "2-digit" });
+  // "Gesucht" = letzter Suchlauf (von GitHub), "Stand" = letzte inhaltliche Änderung der Liste
+  $("#meta").textContent = LAST_RUN
+    ? `Zuletzt gesucht ${ago(LAST_RUN)}` + (u ? ` · Liste vom ${t(u)}` : "")
+    : (u ? "Aktualisiert " + ago(u) + " · " + t(u) : "Noch keine Daten");
 
   const probs = sourceProblems();
   const banner = $("#banner");
@@ -514,13 +518,34 @@ $("#sort").value = S.sort;
 $("#sort").onchange = e => { S.sort = e.target.value; saveSettings(); render(); };
 bindSettings();
 
-async function load() {
+// Daten direkt aus dem Repo laden (max. 5 Min. zwischengespeichert, GitHub Pages bis zu 10 Min. + Build-Zeit)
+const REPO = "andihaider/wien-wohnungsfinder";
+const DATA_URLS = [`https://raw.githubusercontent.com/${REPO}/main/docs/data/listings.json`, "data/listings.json"];
+let LAST_RUN = null;
+
+async function fetchLastRun() {
+  // Zeitpunkt des letzten erfolgreichen Suchlaufs – kommt von GitHub, ohne dass gespeichert werden muss
   try {
-    const r = await fetch("data/listings.json?t=" + Date.now(), { cache: "no-store" });
-    DATA = await r.json();
-  } catch (e) {
-    $("#meta").textContent = "Daten konnten nicht geladen werden – offline?";
+    const r = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/suche.yml/runs?per_page=1&status=success`,
+      { headers: { Accept: "application/vnd.github+json" } });
+    if (r.ok) LAST_RUN = ((await r.json()).workflow_runs || [])[0]?.updated_at || LAST_RUN;
+  } catch (e) { /* offline oder Limit erreicht – dann gilt der Listen-Stand */ }
+}
+
+async function load() {
+  const runP = fetchLastRun();
+  let loaded = false;
+  for (const url of DATA_URLS) {
+    try {
+      const r = await fetch(url + (url.startsWith("http") ? "" : "?t=" + Date.now()), { cache: "no-store" });
+      if (!r.ok) continue;
+      DATA = await r.json();
+      loaded = true;
+      break;
+    } catch (e) { /* nächste Quelle versuchen */ }
   }
+  if (!loaded) $("#meta").textContent = "Daten konnten nicht geladen werden – offline?";
+  await runP;
   renderMeta();
   render();
   store.set("lastVisit", new Date().toISOString());

@@ -34,6 +34,7 @@ SOURCE_LABELS = {
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
+SAVED_MARKER = os.path.join(ROOT, ".saved-this-run")   # sagt notify.py, ob diesmal gespeichert wurde
 
 # Die Suche läuft alle 5 Min. Schnelle Quellen (willhaben: 1 Anfrage, ImmoScout24: 4) jedes Mal,
 # schwere bzw. empfindliche seltener – sonst drohen Sperren. Minuten seit dem letzten VERSUCH.
@@ -270,6 +271,8 @@ def fetch_all(prev_sources):
 
 
 def main():
+    if os.path.exists(SAVED_MARKER):
+        os.remove(SAVED_MARKER)
     data = load()
     items = {it["id"]: it for it in data.get("items", [])}
     key_to_item = {k: it["id"] for it in items.values() for k in it.get("keys", [])}
@@ -387,6 +390,7 @@ def main():
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
+    open(SAVED_MARKER, "w").close()
 
     flats = [it for it in kept if it["category"] == "wohnung" and not it.get("excluded") and it["price_total"] <= FLAT_MAX_PRICE]
     wgs = [it for it in kept if it["category"] == "wg" and not it.get("excluded")]

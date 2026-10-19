@@ -136,7 +136,7 @@ def main():
 
     if preview or force:
         return  # Test/Vorschau zählt nicht als Push
-    if not sent and now - parse(data["updated"]) > timedelta(minutes=10):
+    if not sent and not os.path.exists(os.path.join(ROOT, ".saved-this-run")):
         return  # Suche hat diesmal nichts gespeichert (keine Änderung) – dann auch hier nichts schreiben
     data["last_push"] = now.replace(microsecond=0).isoformat()
     data.pop("last_digest", None)
