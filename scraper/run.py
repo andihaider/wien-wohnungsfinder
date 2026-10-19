@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(__file__))
 
 from common import COLLECT_MAX_PRICE, DISTRICTS, Listing, check_alive  # noqa: E402
-from scoring import FLAT_MAX_PRICE, score  # noqa: E402
+from scoring import FLAT_MAX_PRICE, matches_default, score  # noqa: E402
 from sources import derstandard, gewofinder, immmo, immoscout, immowelt, makler, wggesucht, willhaben  # noqa: E402
 
 SOURCES = {
@@ -392,9 +392,11 @@ def main():
         json.dump(out, f, ensure_ascii=False, indent=1)
     open(SAVED_MARKER, "w").close()
 
-    flats = [it for it in kept if it["category"] == "wohnung" and not it.get("excluded") and it["price_total"] <= FLAT_MAX_PRICE]
-    wgs = [it for it in kept if it["category"] == "wg" and not it.get("excluded")]
-    print(f"\n✓ {len(kept)} gespeichert: {len(flats)} Wohnungen ≤ {FLAT_MAX_PRICE} €, {len(wgs)} WG-Zimmer. "
+    # gezählt wird, was die App mit Standard-Einstellungen zeigt (ohne Bezahlportale, Zwischenmieten usw.)
+    flats = [it for it in kept if it["category"] == "wohnung" and matches_default(it)]
+    wgs = [it for it in kept if it["category"] == "wg" and matches_default(it)]
+    print(f"\n✓ {len(kept)} gespeichert: {len(flats)} passende Wohnungen ≤ {FLAT_MAX_PRICE} €, {len(wgs)} passende WG-Zimmer "
+          f"(ohne Bezahlportale/Zwischenmieten). "
           f"Aussortiert: {excluded_counts}")
 
 
