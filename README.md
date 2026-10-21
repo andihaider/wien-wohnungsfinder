@@ -4,7 +4,7 @@ Durchsucht alle 5 Minuten (6–23 Uhr, schwere Quellen seltener) Mietwohnungen u
 WG-Gesucht und IMMMO (inkl. Kurier Immo, Bazar, Wohnkrone), dazu direkt auf Makler-Websites
 (Brezina, TICON, ARWAG, Siedlungsunion) und bei Genossenschaften über GEWOFinder
 (Sozialbau, GESIBA, Wien-Süd, ÖSW, ÖVW, BWSG, EBG, Familienwohnbau, Frieden, Neues Leben, Heimat Österreich, WBV-GPA, GEWOG) und zeigt die besten Treffer in einer
-Handy-Web-App. Jeder neue passende Treffer kommt sofort als Push-Nachricht aufs Handy.
+Handy-Web-App. Jeder neue passende Treffer kommt sofort als Push-Nachricht aufs Handy. Nachtruhe 23–6 Uhr: keine Suche, der erste Lauf um 6:00 schickt alles Neue.
 
 ## Benachrichtigungen
 

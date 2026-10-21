@@ -24,20 +24,36 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
+      # Nachtruhe 23:00–6:00 (Wiener Zeit): sofort beenden, egal wer den Lauf anstößt.
+      # Test-Pushes (testmail) laufen trotzdem.
+      - name: Nachtruhe prüfen
+        id: zeit
+        run: |
+          H=$(TZ=Europe/Vienna date +%H)
+          if [ "$H" -ge 23 ] || [ "$H" -lt 6 ]; then
+            echo "Nachtruhe ($(TZ=Europe/Vienna date +%H:%M) Uhr) – keine Suche bis 6:00."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
+        if: steps.zeit.outputs.skip != 'true' || inputs.testmail
       - uses: actions/setup-python@v5
+        if: steps.zeit.outputs.skip != 'true' || inputs.testmail
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+        if: steps.zeit.outputs.skip != 'true' || inputs.testmail
       - name: Quellen durchsuchen
+        if: steps.zeit.outputs.skip != 'true' || inputs.testmail
         run: python scraper/run.py
       - name: Push bei neuen Treffern
+        if: steps.zeit.outputs.skip != 'true' || inputs.testmail
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           GITHUB_TOKEN: ${{ github.token }}
         run: python scraper/notify.py ${{ inputs.testmail && '--force' || '' }}
       - name: Ergebnis speichern
+        if: steps.zeit.outputs.skip != 'true' || inputs.testmail
         run: |
           git config user.name "wohnungsfinder-bot"
           git config user.email "actions@users.noreply.github.com"

@@ -21,6 +21,21 @@ DATA_FILE = os.path.join(ROOT, "docs", "data", "listings.json")
 APP_URL = "https://andihaider.github.io/wien-wohnungsfinder/"
 PROBLEM_PUSH_EVERY_H = 24   # Warnungen über kaputte Quellen höchstens 1× am Tag
 MAX_GAP_MIN = 20            # tagsüber mehr Pause zwischen zwei Suchläufen → Alarm-Push
+VIENNA = ZoneInfo("Europe/Vienna")
+QUIET_FROM, QUIET_UNTIL = (23, 0), (6, 0)    # Nachtruhe: keine Suche, keine Pushes; um 6:00 wird alles nachgeholt
+
+
+def in_quiet_hours(now):
+    t = now.astimezone(VIENNA)
+    minutes = t.hour * 60 + t.minute
+    return minutes >= QUIET_FROM[0] * 60 + QUIET_FROM[1] or minutes < QUIET_UNTIL[0] * 60 + QUIET_UNTIL[1]
+
+
+def is_morning_catchup(now, since):
+    """Erster Versand nach der Nachtruhe: der letzte Push war vor heute 6:00."""
+    t = now.astimezone(VIENNA)
+    wake = t.replace(hour=QUIET_UNTIL[0], minute=QUIET_UNTIL[1], second=0, microsecond=0)
+    return since.astimezone(VIENNA) < wake <= t
 SOURCE_NAMES = {
     "willhaben": "willhaben", "derstandard": "DER STANDARD", "immoscout24": "ImmoScout24",
     "immowelt": "immowelt", "wggesucht": "WG-Gesucht", "immmo": "IMMMO",
@@ -175,6 +190,14 @@ def main():
     print(f"Push: {len(fresh)} neu, {len(drops)} Preis gesenkt, {len(back)} wieder online seit "
           f"{since.isoformat(timespec='minutes')}; Warnungen: {len(probs)}")
 
+    events = sorted([(it, "new") for it in fresh] + [(it, "drop") for it in drops] + [(it, "back") for it in back],
+                    key=lambda e: -e[0].get("score", 0))
+    if in_quiet_hours(now) and not (preview or force):
+        # Nachts nichts schicken und last_push NICHT weiterschieben → alles wird um 6:00 nachgeholt
+        print(f"  Nachtruhe bis 6:00: {len(events)} Treffer gesammelt, werden morgens geschickt")
+        return
+    morning = is_morning_catchup(now, since) and not (preview or force)
+
     messages = []
     gap = None if (preview or force) else search_gap_minutes()
     if gap and gap > MAX_GAP_MIN:
@@ -182,13 +205,19 @@ def main():
         messages.append(info_msg(f"⚠︎ Wohnungssuche hatte {gap:.0f} Min. Pause",
                                  "Zwischen zwei Suchläufen lagen mehr als 20 Minuten. Die Suche läuft jetzt wieder – "
                                  "falls das öfter passiert, cron-job.org und GitHub Actions prüfen."))
-    # beste zuerst, damit die wichtigsten Nachrichten oben liegen
-    events = sorted([(it, "new") for it in fresh] + [(it, "drop") for it in drops] + [(it, "back") for it in back],
-                    key=lambda e: -e[0].get("score", 0))
-    for it, kind in events[:MAX_SINGLE]:
-        messages.append(listing_msg(it, kind))
+    if morning and events:
+        print(f"  Morgen-Nachlieferung: {len(events)} Treffer aus der Nacht")
+    # Sammel-Nachricht zuerst, dann die schwächeren, die beste zuletzt –
+    # so liegt die wichtigste Nachricht oben in der Mitteilungsliste
+    listing_msgs = []
     if len(events) > MAX_SINGLE:
-        messages.append(batch_msg([it for it, _ in events[MAX_SINGLE:]]))
+        listing_msgs.append(batch_msg([it for it, _ in events[MAX_SINGLE:]]))
+    for it, kind in reversed(events[:MAX_SINGLE]):
+        m = listing_msg(it, kind)
+        if morning:
+            m["title"] = "🌅 Über Nacht – " + m["title"]
+        listing_msgs.append(m)
+    messages += listing_msgs
     if probs:
         messages.append(info_msg("⚠︎ Wohnungsfinder: eine Quelle funktioniert nicht", " ".join(probs)))
         if not (force or preview):

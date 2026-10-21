@@ -441,7 +441,11 @@ function renderMeta() {
   const u = DATA.updated;
   const t = iso => new Date(iso).toLocaleTimeString("de-AT", { hour: "2-digit", minute: "2-digit" });
   // "Gesucht" = letzter Suchlauf (von GitHub), "Stand" = letzte inhaltliche Änderung der Liste
-  $("#meta").textContent = LAST_RUN
+  const viennaHour = +new Date().toLocaleString("de-AT", { timeZone: "Europe/Vienna", hour: "2-digit", hour12: false });
+  const night = viennaHour >= 23 || viennaHour < 6;
+  $("#meta").textContent = night
+    ? "Nachtruhe – nächste Suche um 6:00" + (u ? ` · Liste vom ${t(u)}` : "")
+    : LAST_RUN
     ? `Zuletzt gesucht ${ago(LAST_RUN)}` + (u ? ` · Liste vom ${t(u)}` : "")
     : (u ? "Aktualisiert " + ago(u) + " · " + t(u) : "Noch keine Daten");
 
@@ -461,7 +465,7 @@ function renderMeta() {
     return `<li class="${cls}">${SOURCE_NAMES[k] || k}: ${escapeHtml(txt)}</li>`;
   };
   $("#footer").innerHTML = "<b>Quellen beim letzten Lauf</b><ul>" + Object.entries(src).map(([k, v]) => line(k, v)).join("") +
-    "</ul>Gesucht wird im 1., 3.–8., 12. und 15. Bezirk alle 5 Minuten (6–23 Uhr): willhaben jedes Mal, ImmoScout24 alle 15 Min., " +
+    "</ul>Gesucht wird im 1., 3.–8., 12. und 15. Bezirk alle 5 Minuten von 6 bis 23 Uhr (nachts Pause, Treffer kommen um 6:00): willhaben jedes Mal, ImmoScout24 alle 15 Min., " +
     "immowelt, IMMMO und Makler stündlich, Genossenschaften alle 2 Std., WG-Gesucht alle 4 Std. " +
     "Gespeichert wird nur, wenn sich etwas ändert (spätestens alle 30 Min.). Preise laut Inserat – bitte immer im Original prüfen.";
 }
