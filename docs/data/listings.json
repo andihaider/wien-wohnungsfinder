@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-03T11:49:23+00:00",
- "fingerprint": "e42425decfa8f015",
+ "updated": "2026-11-03T12:01:09+00:00",
+ "fingerprint": "f99657eba1792b8b",
  "sources": {
   "willhaben": {
    "ok": true,
    "count": 81,
-   "last_ok": "2026-11-03T11:49:25+00:00",
-   "last_try": "2026-11-03T11:49:25+00:00",
+   "last_ok": "2026-11-03T12:01:12+00:00",
+   "last_try": "2026-11-03T12:01:12+00:00",
    "last_attempt_ok": true,
    "empty_streak": 0
   },
@@ -14,37 +14,34 @@
    "ok": true,
    "count": 0,
    "last_ok": "2026-10-31T18:02:05+00:00",
-   "last_try": "2026-11-03T06:01:21+00:00",
+   "last_try": "2026-11-03T12:01:25+00:00",
    "last_attempt_ok": false,
-   "empty_streak": 11,
-   "via": "immmo",
-   "skipped": true
+   "empty_streak": 12,
+   "via": "immmo"
   },
   "immoscout24": {
    "ok": true,
    "count": 23,
-   "last_ok": "2026-11-03T11:49:42+00:00",
-   "last_try": "2026-11-03T11:49:42+00:00",
+   "last_ok": "2026-11-03T12:01:47+00:00",
+   "last_try": "2026-11-03T12:01:47+00:00",
    "last_attempt_ok": true,
    "empty_streak": 0
   },
   "immowelt": {
    "ok": true,
    "count": 254,
-   "last_ok": "2026-11-03T11:02:14+00:00",
-   "last_try": "2026-11-03T11:02:14+00:00",
+   "last_ok": "2026-11-03T12:02:53+00:00",
+   "last_try": "2026-11-03T12:02:53+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   },
   "wggesucht": {
    "ok": true,
-   "count": 23,
-   "last_ok": "2026-11-03T08:04:48+00:00",
-   "last_try": "2026-11-03T08:04:48+00:00",
+   "count": 26,
+   "last_ok": "2026-11-03T12:05:35+00:00",
+   "last_try": "2026-11-03T12:05:35+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   },
   "makler": {
    "ok": true,
@@ -79,14 +76,257 @@
  "excluded": {
   "Gemeindebau (Wohn-Ticket nötig)": 11,
   "reserviert/vergeben": 10,
-  "keine Küche": 1,
-  "Kurzzeitmiete": 1,
+  "keine Küche": 2,
+  "Kurzzeitmiete": 2,
   "keine Wohnung": 2,
   "Wohnungstausch": 8
  },
- "last_push": "2026-11-03T11:49:42+00:00",
+ "last_push": "2026-11-03T12:06:16+00:00",
  "last_problem_push": null,
  "items": [
+  {
+   "id": "a55c5655fb12",
+   "keys": [
+    "wggesucht:14311571"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-04-Bezirk-Wieden.14311571.html"
+    }
+   ],
+   "first_seen": "2026-11-03T12:01:09+00:00",
+   "category": "wg",
+   "title": "Großes WG Zimmer im 4. Bezirk",
+   "price": 540.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1040",
+   "district": "Wieden",
+   "area": 26.0,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Ich vermiete ein Zimmer in einer großen Wohnung im 4. Bezirk (Wieden). Die Lage ist super zentral und perfekt angebunden – die U1 und der Hauptbahnhof sind schnell erreichbar, sodass man überall easy hinkommt. Aktuell wohnen drei Jungs in der WG, die alle super locker, lieb und unkompliziert sind. Uns ist ein nettes Miteinander wichtig – wir sind also keine Zweck-WG, sondern freuen uns, wenn man sich gut versteht, gerne mal zusammen quatscht und ein angenehmes Zusammenleben hat. 😊 Die Wohnung ist schön groß und bietet genug Platz für alle, um sich wohlzufühlen. Auch die Lage ist top, mit allem Wichtigen in der Nähe. Wenn du Lust auf eine entspannte WG mit netten Mitbewohnern hast, schreib mir gerne! Wir freuen uns, dich kennenzulernen. 🫶",
+   "published": "2026-11-03T11:54:03.882313+00:00",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "privat"
+   ],
+   "last_seen": "2026-11-03T12:01:09+00:00",
+   "price_total": 540.0,
+   "price_estimated": false,
+   "ppsqm": 20.77,
+   "score": 54
+  },
+  {
+   "id": "80cb4e3290b8",
+   "keys": [
+    "wggesucht:14311439"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-07-Bezirk-Neubau.14311439.html"
+    }
+   ],
+   "first_seen": "2026-11-03T12:01:09+00:00",
+   "category": "wg",
+   "title": "Tolles WG-Zimmer zur Zwischenmiete (Zeitraum flexibel)",
+   "price": 750.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1070",
+   "district": "Neubau",
+   "area": 27.0,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Da es mich Anfang des Jahres für ca. 2 Monate in den Süden verschlägt, wird mein tolles Zimmer mitten in Wien für diesen Zeitraum frei. Das Zimmer ist ca. 27m2 groß, wird komplett möbliert vermietet und ist durch die zwei großen Fenster wirklich schön hell. Die Fenster gehen auf eine Seitenstraße der Burggasse, daher ist es für die Lage dennoch recht ruhig. Unsere WG ist einfach ein Traum! Wir leben in einer riesigen Altbauwohnung in bester Lage im 7. Bezirk, mit großem Wohnzimmer mit Beamer und Snacks, einer Küche mit allem Schnickschnack und sogar einem kleinem Gästezimmer. Die Wohnung ist voll ausgestattet und du kannst während deiner Zeit natürlich alles mitverwenden. Die Wohnung befindet sich direkt im hippen 7. Bezirk in direkter Nähe zu allem was man zum Überleben und sich-gut-gehen-lassen so braucht. Die neue U2 Station und die U3 Station Volkstheater und die Bim-Linien am Ring sind in 5 Minuten zu erreichen, ein Bus fährt direkt vor der Haustür und der 7. Bezirk mit all seinen Cafes, Restaurants, Lädchen, kleinen Gassen, Galerien und der Shoppingstraße MaHü liegt direkt vor der Tür. Auch das Museumsquartier (u.a. Mumok, Kunsthalle, Leopold Museum) und das Volkstheater sind keine 10 Minuten entfernt. Wir lieben die Lage und wir hoffen du auch! :) Wir sind eine berufstätige 4-er WG, die es sehr genießt auch mal was zusammen zu machen, gemeinsam Abend zu essen, zum Pub Quiz zu gehen oder am Wochenende in unserem großen Wohnzimmer zu brunchen oder auszugehen. Wir würden uns daher sehr freuen, wenn auch du Interesse an einem schönen WG Zusammenleben hast, nach dem Motto \"alles kann, nichts muss\". Deine Mitbewohner*innen wären: Lennard ist 31, arbeitet im Luftfahrtbereich, geht gern ins Museum, hier und da auch mal feiern, macht viel Sport und geht am Wochenende gerne mal Eisbaden. Maren ist 26, macht ihr PHD an der Boku und kann daher beim Pubquiz die Fragen beantworten die sonst niemand weiß. Sie kocht gerne gemeinsam, ist für jede Unternehmung zu haben und pünktlich zum Winter wieder im Strick-Fieber. Alisha ist 29, arbeitet bei der UN und ist dementsprechend gerne mal in exotischen Ländern unterwegs. Auch neben der Arbeit ist sie immer auf dem Sprung, ob Yoga, bouldern, Filmeabend oder Dinnerpartys. Du siehst, im Wesentlichen stehen wir alle relativ fest im Leben und sind der Phase einer reinen Party-WG mehr oder weniger entwachsen. Abgesehen davon sind wir aber noch lange nicht erwachsen und freuen uns über gemeinsame Party-, Spiel- und Kochabende.",
+   "published": "2026-11-03T11:33:23.826876+00:00",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Altbau",
+    "Zwischenmiete",
+    "möbliert",
+    "privat"
+   ],
+   "last_seen": "2026-11-03T12:01:09+00:00",
+   "price_total": 750.0,
+   "price_estimated": false,
+   "ppsqm": 27.78,
+   "score": 39
+  },
+  {
+   "id": "8c37ea1c1eea",
+   "keys": [
+    "wggesucht:11764097"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-04-Bezirk-Wieden.11764097.html"
+    }
+   ],
+   "first_seen": "2026-11-03T12:01:09+00:00",
+   "category": "wg",
+   "title": "Zwischenmiete in 4er-WG im 4. Bezirk",
+   "price": 565.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1040",
+   "district": "Wieden",
+   "area": 22.0,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Hey hey! Ich bin für ein Praktikum außer Landes und suche bis 31.1. eine Zwischenmiete für mein Zimmer in unserer 4er-WG. Das freie Zimmer ist möbliert, 22 qm groß und geht in Richtung Südwesten, deshalb kann man (auch in den kalten Monaten) tagsüber super viel Sonne und Tageslicht genießen! :) Außerdem gibt es in unserer renovierten Altbauwohnung eine große Küche, einen netten Balkon zum Innenhof, ein großes Badezimmer, 2 WCs, Fußbodenheizung und auch sonst eigentlich alles, was man so zum Leben braucht. Die Lage ist top. Die U1 und der 13A fahren direkt vor der Tür, der Hauptbahnhof ist zu Fuß erreichbar. Ansonsten ist es eine tolle Gegend (oder Grätzl, wie man hierzulande sagt). Man hat die eine oder andere Bar um die Ecke, drei Supermärkte, eine Trafik und einen Humana in Gehdistanz. Es gibt das Schloss Belvedere für kleine Spaziergänge und den Karlsplatz für ein Kaltgetränk am Abend. Insgesamt ist der vierte Bezirk ja der schönste Teil der Stadt, das sagen wirklich alle. In der WG würden Amelia, Esther und Julius mit dir wohnen: Wir, das sind: - Amelia (24) : ist viel unterwegs wegen Uni & Arbeit & für Gespräche über Politik, ein Bierchen und Events zu begeistern” - Esther (20): ist seit März in der WG und Wien, fühlt sich aber schon ganz heimelig. Sie ist recht viel unterwegs mit Uni, Arbeit, Freund*innen, mags gern in der Küche zu quatschen und ist begeistert von Kaffee, Scrabble und Witzchen reißen - Julius (25): ranted gerne über Reiter-tragende BWLer, studiert aber selbst VWL. Er liebt Kneipen mit Dartsscheiben, Abende vor dem Beamer und ausgiebige Sporteinheiten. Außerdem freut er sich riesig über alle, die mit ihm Skat spielen.",
+   "published": "2026-11-03T11:03:48.675800+00:00",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Altbau",
+    "Balkon",
+    "Zwischenmiete",
+    "möbliert",
+    "privat",
+    "saniert"
+   ],
+   "last_seen": "2026-11-03T12:01:09+00:00",
+   "price_total": 565.0,
+   "price_estimated": false,
+   "ppsqm": 25.68,
+   "score": 43
+  },
+  {
+   "id": "c3863ebbb564",
+   "keys": [
+    "wggesucht:14311429"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-06-Bezirk-Mariahilf.14311429.html"
+    }
+   ],
+   "first_seen": "2026-11-03T12:01:09+00:00",
+   "category": "wg",
+   "title": "Zwischenmiete Nov. Dez. - in bester Lage",
+   "price": 560.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1060",
+   "district": "Mariahilf",
+   "area": 10.0,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Tolle große altbau wohnung mitten in Wien. Ich bin quasi schon ausgezogen, der Mietvertrag läuft aber noch bis Ende Dezember, deshalb will ich die Wohnung noch zwischenvermieten. Das Zimmer ist nicht so groß, aber dafür haben wir ein großes Wohnzimmer, wo auch mein Arbeitstisch steht. Hofmühlgasse mit super Anbindungen. Sarah ist eine gute Freundin von mir und wünscht sich für die restliche Zeit eine respektvolle und nette Person.",
+   "published": "2026-11-03T11:03:54.470333+00:00",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Altbau",
+    "Zwischenmiete",
+    "privat"
+   ],
+   "last_seen": "2026-11-03T12:01:09+00:00",
+   "price_total": 560.0,
+   "price_estimated": false,
+   "ppsqm": 56.0,
+   "score": 15
+  },
+  {
+   "id": "d0844aa86a07",
+   "keys": [
+    "wggesucht:14311139"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-03-Bezirk-Landstrasse.14311139.html"
+    }
+   ],
+   "first_seen": "2026-11-03T12:01:09+00:00",
+   "category": "wg",
+   "title": "Helles 30 m2 Altbau-WG-Zimmer mit Ankleide, Landtraße 1030",
+   "price": 730.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1030",
+   "district": "Landstraße",
+   "area": 30.0,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Das Zimmer hat ca. 30 m2 und wird unmöbliert vermietet. Es liegt zur Straße Richtung Osten und hat hohe Altbaudecken, Doppelflügeltüren und Fischgrät-Parkett. Dadurch ist es hell und das, was man sich unter einem Wiener Altbau vorstellt. Direkt am Zimmer liegt eine kleine Kammer, in der du dir eine begehbare Ankleide einrichten kannst. Die Wohnung ist im 2. Stock eines Altbaus mit Aufzug. Ein Meldezettel ist problemlos möglich. Die Wohnung liegt in der Gärtnergasse im Weißgerberviertel im 3. Bezirk, einer Seitenstraße mit schönen Gründerzeithäusern. Die Station Landstraße ist ganz in der Nähe: Mit U3, U4 und S1 bist du schnell in der Innenstadt, an der Uni oder am Bahnhof. Stadtpark und Rochusmarkt erreichst du zu Fuß, Einkaufsmöglichkeiten gibt es in der Nähe. Im Haus gibt es einen Fahrradkeller. Hey! Ich bin der Einzige in der WG, du hättest also die Wohnung mit mir und viel Platz. Ich bin viel im Homeoffice oder an der Uni, tagsüber ist es also meistens ruhig, und man trifft sich auf einen Kaffee in der Küche. Ich gehe eigentlich täglich ins Gym, schwinge mich hin und wieder mal aufs Rennrad und bin viel in Wien unterwegs, vor allem im Theater oder Kino. Abends koche ich gern, und manchmal werden es lange Abende mit Freunden. Ich freue mich auf jemanden, mit dem man sich gut versteht und auch mal spontan etwas macht, zum Beispiel ins Kino gehen, Sport machen, im Stadtpark spazieren oder einfach zusammen kochen. Das ist aber nie Pflicht, jeder darf in seinem Zimmer auch seine Ruhe haben. Wichtig sind mir gegenseitige Rücksicht und ein Putzplan, bei dem jeder mal dran ist. Rauchen und Haustiere sind leider nicht möglich. Du solltest zwischen 20 und 30 sein, egal ob Student:in oder berufstätig, und egal, ob du aus Wien kommst oder neu in der Stadt bist. Ich zeige dir gern meine Lieblingsorte im Grätzl. Wenn du neugierig bist, wie ich so drauf bin: Du findest mich auf Instagram unter @paulschmidt.1 Die Miete beträgt 720 € warm (inkl. Betriebskosten, Strom und Internet), die Kaution 3 Monatsmieten. Für die neue Waschmaschine im Bad fallen 150 € Ablöse an. Das Zimmer ist ab 1. Januar 2027 frei, gerne auch schon ab Dezember. Die Küche ist voll ausgestattet (Spülmaschine, Mikrowelle, Wasserkocher, Toaster, Geschirr, Töpfe, Pfannen). Es gibt WLAN, Kellerabteil und Fahrradkeller für beide, ein Bad mit Wanne und Dusche sowie ein Gäste-WC. Der Vermieter verlangt einen Gehaltsnachweis, nur im Ausnahmefall reicht eine Bürgschaft. Schreib mir gern, wie du dir ein gute",
+   "published": "2026-11-03T09:04:36.686579+00:00",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Ablöse",
+    "Altbau",
+    "Lift",
+    "möbliert",
+    "privat"
+   ],
+   "last_seen": "2026-11-03T12:01:09+00:00",
+   "price_total": 730.0,
+   "price_estimated": false,
+   "ppsqm": 24.33,
+   "score": 49
+  },
+  {
+   "id": "8fb65ac8e13d",
+   "keys": [
+    "wggesucht:14311503"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wohnungen-in-Wien-05-Bezirk-Margareten.14311503.html"
+    }
+   ],
+   "first_seen": "2026-11-03T12:01:09+00:00",
+   "category": "wohnung",
+   "title": "Wohnung zur Untermiete Februar bis Juni im 5. Bezirk",
+   "price": 700.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1050",
+   "district": "Margareten",
+   "area": 50.0,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "NUR FLINTA-VOLKE Ich vermiete meine gemütliche Wohnung im 5. Bezirk, da ich nächstes Semester auf Erasmus sein werde. Die Wohnung ist ab spätestens 1. Februar frei und Sie können mindestens bis Ende Juni bleiben. Ich lebe alleine, also wirst du die Wohnung nicht teilen. Die Wohnung besteht aus einer Küche, Bad mit Dusche, Wohnzimmer und Schlafzimmer. Sie können meine Waschmaschine, alle Küchengeräte und mein WLAN (38 € pro Monat) verwenden. Ich rauche nicht und habe keine tiere und ich suche auch einen nichtraucher. ! Der Eigentümer benötigt einen Einkommensnachweis, eine Kopie des Ausweises und ein Registrierungsformular. Schreib mir nur, wenn du mir das geben kannst. Fühlen Sie sich frei, über alle Fragen zu erreichen !! ONLY FLINTA PEOPLE I am renting out my cozy apartment in the 5th district, since i will be on Erasmus next semester. The apartment will be free from 1st of February latest and you can stay at least until the end of June. I live alone, so you will not share the apartment. The apartment consists of a kitchen, bathroom with shower, living room and bed room. You can use my washing machine, all the kitchen gadgets and my wifi (38€ per month). I dont smoke and have no animals and i am also looking for a non-smoker. ! The owner will need a proof of income, copy of ID and a registration form. Only text me if you can provide that Feel free to reach out regarding any questions!! Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen Die Wohnung i direkt bei U4 und mehrere Buslines, Supermärkte, Apotheke, Cafés, Post ... alles, was Sie brauchen, ist in der Nähe The apartment i located directly at U4 and multiple Buslines, supermarkets, pharmacy, cafes, post ... everything you need is close by ;) Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen",
+   "published": "2026-11-03T11:40:15.691280+00:00",
+   "advertiser": "Privat",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "nur Frauen/FLINTA*",
+    "privat"
+   ],
+   "last_seen": "2026-11-03T12:01:09+00:00",
+   "price_total": 700.0,
+   "price_estimated": false,
+   "ppsqm": 14.0,
+   "score": 50
+  },
   {
    "id": "3796e9a7a1b7",
    "keys": [
@@ -120,7 +360,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 718.57,
    "price_estimated": false,
    "ppsqm": 12.18,
@@ -204,7 +444,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 506.0,
    "price_estimated": false,
    "ppsqm": 24.1,
@@ -244,7 +484,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 28.57,
@@ -284,7 +524,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 23.2,
@@ -322,7 +562,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 375.0,
    "price_estimated": false,
    "ppsqm": 34.09,
@@ -369,7 +609,7 @@
    "price_estimated": false,
    "ppsqm": 33.93,
    "score": 47,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "7fdd3eaced75",
@@ -410,7 +650,7 @@
    "price_estimated": false,
    "ppsqm": 10.0,
    "score": 49,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "4bf34d2ef703",
@@ -451,7 +691,7 @@
    "price_estimated": false,
    "ppsqm": 39.47,
    "score": 41,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "108ded337a82",
@@ -485,7 +725,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 579.0,
    "price_estimated": false,
    "ppsqm": 5.26,
@@ -525,7 +765,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 530.0,
    "price_estimated": false,
    "ppsqm": 44.17,
@@ -565,7 +805,7 @@
     "Terrasse",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 42.31,
@@ -608,7 +848,7 @@
    "price_estimated": false,
    "ppsqm": 26.92,
    "score": 47,
-   "checked_at": "2026-11-03T08:01:03+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "3bc9ed6305ff",
@@ -660,7 +900,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 648.0,
    "price_estimated": false,
    "ppsqm": 23.14,
@@ -706,7 +946,7 @@
    "flags": [
     "Lift"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 778.99,
    "price_estimated": false,
    "ppsqm": 19.47,
@@ -867,7 +1107,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_key": "makler:justimmo-17278984",
    "price_total": 676.58,
    "price_estimated": false,
@@ -904,11 +1144,11 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 639,
    "price_estimated": true,
    "ppsqm": 20.68,
-   "score": 22
+   "score": 16
   },
   {
    "id": "12e90bbacbc6",
@@ -944,11 +1184,11 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-02T12:01:07+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 510.0,
    "price_estimated": false,
    "ppsqm": 23.18,
-   "score": 57,
+   "score": 51,
    "checked_at": "2026-11-03T05:09:51+00:00"
   },
   {
@@ -989,8 +1229,8 @@
    "price_total": 480.0,
    "price_estimated": false,
    "ppsqm": 21.82,
-   "score": 59,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "score": 53,
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "3bee08bc8634",
@@ -1028,8 +1268,8 @@
    "price_total": 762.0,
    "price_estimated": false,
    "ppsqm": 76.2,
-   "score": 15,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "score": 9,
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "28b3c3379879",
@@ -1069,7 +1309,7 @@
    "flags": [
     "Garten"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 689.0,
    "price_estimated": false,
    "ppsqm": 22.23,
@@ -1149,7 +1389,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 435.0,
    "price_estimated": false,
    "ppsqm": 7.91,
@@ -1205,7 +1445,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 717.66,
    "price_estimated": false,
    "ppsqm": 10.11,
@@ -1251,7 +1491,7 @@
     "Garten",
     "Terrasse"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 748.0,
    "price_estimated": false,
    "score": 17
@@ -1374,7 +1614,7 @@
     "Neubau/Erstbezug",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 680,
    "price_estimated": false,
    "ppsqm": 20.81,
@@ -1416,7 +1656,7 @@
    "flags": [
     "Balkon"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 680,
    "price_estimated": false,
    "ppsqm": 12.83,
@@ -1456,7 +1696,7 @@
     "Zwischenmiete",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 36.25,
@@ -1499,7 +1739,7 @@
    "price_estimated": false,
    "ppsqm": 27.08,
    "score": 37,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "caf6c6c71bc3",
@@ -1535,7 +1775,7 @@
     "Zwischenmiete",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 600.0,
    "price_estimated": false,
    "ppsqm": 24.0,
@@ -1579,7 +1819,7 @@
    "price_estimated": false,
    "ppsqm": 48.33,
    "score": 15,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "3805a34a281c",
@@ -1617,7 +1857,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 500.0,
    "price_estimated": false,
    "ppsqm": 23.81,
@@ -1658,7 +1898,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 22.5,
@@ -1710,7 +1950,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 17.44,
@@ -1748,7 +1988,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 674.25,
    "price_estimated": false,
    "ppsqm": 15.32,
@@ -1788,7 +2028,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 6.63,
@@ -1828,7 +2068,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 540.0,
    "price_estimated": false,
    "ppsqm": 10.38,
@@ -1868,7 +2108,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 21.43,
@@ -1949,7 +2189,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 600.0,
    "price_estimated": false,
    "ppsqm": 26.09,
@@ -2040,7 +2280,7 @@
    "price_estimated": false,
    "ppsqm": 50.0,
    "score": 15,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "5a2b93256c9e",
@@ -2084,7 +2324,7 @@
    "price_total": 699.0,
    "price_estimated": false,
    "score": 9,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "805abf60011b",
@@ -2166,7 +2406,7 @@
    "price_estimated": false,
    "ppsqm": 33.75,
    "score": 23,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "bb258f439135",
@@ -2207,7 +2447,7 @@
    "price_estimated": false,
    "ppsqm": 34.29,
    "score": 31,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "d0306884400c",
@@ -2244,7 +2484,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 553.0,
    "price_estimated": false,
    "ppsqm": 29.11,
@@ -2291,7 +2531,7 @@
    "price_estimated": false,
    "ppsqm": 20.17,
    "score": 32,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "4f6dcb9aee76",
@@ -2327,7 +2567,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 45.0,
@@ -2367,7 +2607,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 719.0,
    "price_estimated": false,
    "ppsqm": 23.97,
@@ -2377,7 +2617,8 @@
    "id": "b8153f4b56c9",
    "keys": [
     "wggesucht:14186153",
-    "wggesucht:9281057"
+    "wggesucht:9281057",
+    "wggesucht:14311501"
    ],
    "links": [
     {
@@ -2404,10 +2645,12 @@
    "phone": "",
    "tags": [],
    "flags": [
+    "Balkon",
     "Terrasse",
+    "möbliert",
     "privat"
    ],
-   "last_seen": "2026-10-31T20:00:58+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 540.0,
    "price_estimated": false,
    "ppsqm": 31.76,
@@ -2451,7 +2694,7 @@
    "price_estimated": false,
    "ppsqm": 18.35,
    "score": 57,
-   "checked_at": "2026-11-03T05:09:51+00:00"
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "40fe7b85c2e1",
@@ -2538,8 +2781,8 @@
    "price_total": 470.0,
    "price_estimated": false,
    "ppsqm": 39.17,
-   "score": 32,
-   "checked_at": "2026-11-02T20:01:08+00:00"
+   "score": 27,
+   "checked_at": "2026-11-03T12:01:09+00:00"
   },
   {
    "id": "4f4bf83610b4",
@@ -2579,7 +2822,7 @@
    "price_total": 650.0,
    "price_estimated": false,
    "ppsqm": 26.0,
-   "score": 45,
+   "score": 40,
    "checked_at": "2026-11-03T08:01:03+00:00"
   },
   {
@@ -2623,7 +2866,7 @@
    "price_total": 615.0,
    "price_estimated": false,
    "ppsqm": 51.25,
-   "score": 19,
+   "score": 14,
    "checked_at": "2026-11-03T08:01:03+00:00"
   },
   {
@@ -2660,7 +2903,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 699,
    "price_estimated": true,
    "ppsqm": 13.98,
@@ -2744,7 +2987,7 @@
     "privat",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 616.0,
    "price_estimated": false,
    "ppsqm": 25.67,
@@ -2786,7 +3029,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 21.35,
@@ -2917,7 +3160,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 744.4,
    "price_estimated": false,
    "ppsqm": 27.57,
@@ -3042,7 +3285,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 500.0,
    "price_estimated": false,
    "ppsqm": 22.73,
@@ -3054,91 +3297,6 @@
    },
    "gone_at": "2026-11-01T21:05:32+00:00",
    "back_at": "2026-11-01T21:20:30+00:00"
-  },
-  {
-   "id": "6a4985358df9",
-   "keys": [
-    "wggesucht:14287302"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-08-Bezirk-Josefstadt.14287302.html"
-    }
-   ],
-   "first_seen": "2026-10-30T08:01:05+00:00",
-   "category": "wg",
-   "title": "WG-Zimmer in Nähe Rathaus (nur FLINTA gesucht)",
-   "price": 350.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1080",
-   "district": "Josefstadt",
-   "area": 12.0,
-   "rooms": null,
-   "address": "Wien 08. Bezirk Josefstadt · Florianigasse",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/3b5a3af70365319fc65ab11b3f87e24d33c8fda26e949ad1456250870fd3dd9d_Zimmer_1.small.jpeg",
-   "description": "*Wir suchen eine FLINTA Person* Das Zimmer ist 12m2 groß (genau wie alle anderen), unmöbliert, und nach Norden ausgerichtet. Durch den Blick auf eine Seitenstraße ist das Zimmer trotzdem relativ hell. Der Boden besteht aus eindrucksvollen alten Dielen, die allerdings schon ein wenig knarzen. Durch die teilweise dünnen Wände sind das Zimmer, wie auch die Wohnung generell, eher hellhörig. Die Altbauweise hat definitiv Charme, aber im Winter wird’s schon mal kälter und im Sommer ziemlich warm. In der Wohnung gibt es keinen großen Gemeinschaftsraum, der Eingangsbereich ist dafür Küche und Aufenthaltsort gleichzeitig, weshalb wir uns hier oft über den Weg laufen. Im Bad sind eine Dusche und eine Toilette. Ein bisschen Stauraum gibt‘s im Gang, insgesamt ist es aber eher kuschelig als geräumig. Im Keller ist mehr Platz für sporadisch genutzte Sachen. Die Wohnung liegt am östlichen Ende des 8. Bezirks. In unmittelbarer Nähe gibt’s den Schönborn-Park und etwas weiter weg das Alte AKH als grüne Inseln in einem sonst eher grauen Bezirk. Unsere Straße ist keine Durchfahrtsstraße, durch die Cafés und Restaurants abends allerdings gerne mal belebt. Die U2 (Rathaus) ist in 5 Minuten erreichbar, genau wie die Bim (2, 5, 12) und der Bus 13A. Zur U6 sind es 10-15 Minuten zu Fuß. Mit dem Rad geht’s von hier aus eigentlich immer am schnellsten. Zum Einkaufen gibt’s Billa, Spar, Denns, und den netten aber recht teuren Samstagsmarkt in der Langen Gasse. In der WG wohnen Romana, Maria und Sebi. Sebi (30 er/ihm) studiert im Master Sozialwissenschaften, ist politisch aktiv, spielt gern Fußball und sitzt viel am Fahrrad. Romana (24 sie/ihr) studiert Chemie im Master und spielt gerne Klavier (mit Kopfhörer ;)). Maria (27 sie/ihr) studiert Kunstgeschichte im Master, mag schöne Sachen (Kleidung, Make-up, Bücher und Kirchen aus dem Mittelalter :-)) Wir sind alle am Ende unseres Studiums, lohnarbeiten und wochenends auch öfters mal unterwegs. Wir sind keine Zweck WG und uns ist das Miteinander in der WG wichtig. Gemeinsame Zeit verbringen wir durch unsere recht unterschiedlichen Alltage momentan eher spontan als regelmäßig. Eingekauft wird bis auf ein paar Sachen für sich selbst, gekocht grundsätzlich auch (vegan/vegetarisch mit einzelnen Ausnahmen). Wir freuen uns aber immer, wenn wir‘s dann manchmal doch schaffen, gemeinsam zu kochen und zu essen. Es gibt WG Treffen und einen Putzplan. Grundsätzlich verstehen wir die Wohnung als unseren Ort zum Runterkommen und weniger als Ort zum Par",
-   "published": "2026-10-30T07:57:27.467922+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "möbliert",
-    "nur Frauen/FLINTA*",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 4,
-   "price_total": 350.0,
-   "price_estimated": false,
-   "ppsqm": 29.17,
-   "score": 41,
-   "checked_at": "2026-11-03T08:01:03+00:00"
-  },
-  {
-   "id": "2ad0f3a12378",
-   "keys": [
-    "wggesucht:14296909"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.14296909.html"
-    }
-   ],
-   "first_seen": "2026-10-30T08:01:05+00:00",
-   "category": "wg",
-   "title": "WG Zimmer ab Februar frei!",
-   "price": 500.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 14.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Ullmannstraße 59",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/2f68e20cb39baa7ed237476ffd6d96cf6c8c2da03981804d863e878537db31fc_IMG_8073.small.jpeg",
-   "description": "Wir haben von Februar bis Juni ein Zimmer frei in unserer 3er-Altbau WG! Dein zukünftiges Zimmer ist ca. 14 m2 groß und möbliert! Also perfekt für ein Praktikum oder ein Auslandssemester in Wien! . Die Nachbarn im Haus sind sehr freundlich und ruhig, sodass du hier eine wunderbare Wohlfühlatmosphäre zum Entspannen, Lernen oder Arbeiten finden wirst! Die Lage der Wohnung ist absolut genial! Du erreichst die U-Bahn-Stationen Längenfeldgasse (U4 und U6) und Meidlinger Hauptstraße U4 in nur wenigen Gehminuten, womit du perfekt angebunden bist. Egal ob Universität, Innenstadt oder Westbahnhof, du bist überall sehr schnell. Direkt in der Umgebung gibt es zahlreiche Supermärkte, Bäckereien, Apotheken und Geschäfte des täglichen Bedarfs. Auch nette Cafés und Parks für Spaziergänge oder Sport im Freien sind schnell zu Fuß erreichbar. Du wirst Nicos Zimmer übernehmen, weil er auf Erasmus ist und mit Laura und Philipp zusammenwohnen. Philipp (30) studiert Jus am Juridicum, arbeitet nebenbei in der Hollerei, ist nur ab und zu da und schläft eigentlich nie in der Wohnung. Nico (24) studiert Medizin und macht ein Auslandssemester in Madrid. Laura (24) studiert ebenfalls Medizin, ist aber oft bei ihren Eltern in Wördern. Du hast also angenehm viel Ruhe und Platz für dich, kannst dich aber jederzeit auf nette Gespräche in der Küche freuen. Bei uns herrscht ein entspanntes, respektvolles Miteinander. Unsere WG ist absolut queerfriendly! Homophobie oder Diskriminierung jeglicher Art haben bei uns absolut keinen Platz! Das Zimmer ist vom 01.02.2027 bis 31.05.2027 frei!. Ein paar Tage später ausziehen ist auch kein Problem, Nico ist am 08.06 wieder da. Wir können leider keine Haustiere aufnehmen. Wir suchen eine sympathische, ordentliche, saubere und aufgeschlossene Person, die gut zu uns passt, egal ob im Studium, Erasmus oder bereits im Berufsleben. Falls du dich angesprochen fühlst, schreib uns gerne eine Nachricht und erzähl uns ein bisschen was über dich (was du machst, wie dein Alltag aussieht und ab wann du einziehen möchtest). Besichtigungen machen wir gerne flexibel. Wir freuen uns darauf, von dir zu hören!",
-   "published": "2026-10-30T07:14:27.469133+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 500.0,
-   "price_estimated": false,
-   "ppsqm": 35.71,
-   "score": 34,
-   "checked_at": "2026-11-03T08:01:03+00:00"
   },
   {
    "id": "2a6c144b9309",
@@ -3176,7 +3334,7 @@
     "Balkon",
     "Terrasse"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 230,
    "price_estimated": false,
    "ppsqm": 6.76,
@@ -3219,7 +3377,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 25.77,
@@ -3280,91 +3438,6 @@
    }
   },
   {
-   "id": "ce9cb2e1068f",
-   "keys": [
-    "wggesucht:13171171"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.13171171.html"
-    }
-   ],
-   "first_seen": "2026-10-30T05:08:40+00:00",
-   "category": "wg",
-   "title": "ruhiges WG Zimmer mit Blick auf den Park",
-   "price": 510.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 26.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Pouthongasse",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/384a7ec6dce1c465689f6e01039e08477ca6c6ec9a1fbbf3a80741a317765fb3_IMG_0918.small.jpeg",
-   "description": "Schönes Zimmer mit Blick auf den Reithoffer Park. +++ Bitte nur Anfragen wenn ihr als Hauptmieter in Frage kommt (fixes Einkommen oder Bürgschaft) +++ Ich habe selbst 3,5 Jahre hier gewohnt und werde nun diese nette WG verlassen. Da ich Hauptmieter war, suchen wir jemand die/der ein fixes Einkommen hat oder Bürgschaft. Die Verpflichtungen sind sehr gering und wir haben immer alles untereinander aufgeteilt, es fallen außer am Papier also nicht wirklich Mehraufwand oder besondere Verpflichtungen an. Das helle Zimmer ist zum Park ausgerichtet und ist daher frei von Autolärm, sodass man gut mit offenem Fenster schlafen kan. Mit 26 Quadratmetern ist es groß genug, um auch ein paar Freunde einzuladen. Im Sommer bleibt es im Zimmer vergleichsweise kühl, weil es nach Norden ausgerichtet ist. Ich habe hier die letzten 3,5 Jahre gelebt und genossen - es lässt sich sehr gut aushalten :) Besonders der Garten im Innenhof des Hauses ist eine Oase. Das Gebäude stammt aus der Gründerzeit und hat daher schöne hohe Decken. Die Lage ist top. Entfernungen zu Fuß: 1 min - U3/Schweglerstraße 5 min - Westbahnhof Der 15. Bezirk ist sehr belebt in seinen Cafes, Bars und Parks. Ich finde den Bezirk sehr lebenswert und trotz Nähe zum Stadtzentrum auch erstaunlich grün. Nutze die Chance, den 15. Bezirk in seinem jetzigen Zustand zu erleben, bevor er komplett der Gentrifizierung erliegt. Die Zimmer sind mit ziemlich Dicken Wänden getrennt, deshalb hört man überraschend wenig wenn man die Türe zumacht. Wir kochen und trinken oft zusammen Kaffee, aber im Allgemeinen gibt es keine regelmäßigen WG-Aktivitä-ten. Es ist keine Zweck-WG, ein freundschaftliches Miteinander ist Voraussetzung. Dazu gehört auch die Einhaltung des Putzplans und der Grundsauberkeit Julian (25) besticht durch seinen dunklen Humor und lebt seit rund 7 Monaten in der WG. Er ist ein sehr unkomplizierter Mitbewohner. Als gelernter Mechatroniker kann er zur fast alles reparieren. Mittlerweile studiert er Pharmazie und malt sehr viel. Christoph (27) ist gerade von einem halbjährigen Rad- und Segelabenteuer zurück in Wien und seit September WG-Mitglied. Neben seinem UBRM-Studium an der BOKU arbeitet er Teilzeit im Bereich der Erneuerbaren Energien. In seiner Freizeit ist er viel unterwegs, liebt es Sport zu machen und kocht auch gerne. Es wird eine kleine Ablöse (ca. 250 €) geben, weil wir im letzten Jahr Wasch- und Spülmaschine neu gekauft, und die Küche renoviert haben. Möbel im Zimmer kann man sich extra ausmachen, da m",
-   "published": "2026-10-29T23:10:24.495999+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Ablöse",
-    "Garten",
-    "privat",
-    "saniert"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 510.0,
-   "price_estimated": false,
-   "ppsqm": 19.62,
-   "score": 64,
-   "checked_at": "2026-11-03T08:01:03+00:00"
-  },
-  {
-   "id": "d0957f12e5c2",
-   "keys": [
-    "wggesucht:12538379"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-12-Bezirk-Meidling.12538379.html"
-    }
-   ],
-   "first_seen": "2026-10-30T05:08:40+00:00",
-   "category": "wg",
-   "title": "Möbliertes Zimmer in 3er-Frauen-WG mit Wohnzimmer",
-   "price": 500.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1120",
-   "district": "Meidling",
-   "area": 11.0,
-   "rooms": null,
-   "address": "Wien 12. Bezirk Meidling · Hanauskagasse 4",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/8e7aaed74439a167ecc1128902ecea1a62fc02d2ed26a0e2a6ed8b98d72c4a29_85155100_1096480064022889_4581797942309945344_n.small.jpg",
-   "description": "Hallo! Eines der 3 Einzelzimmer dieser schönen WG in Meidling ist ab 15.11.2026 frei. Das Zimmer ist mit einem Doppelbett, Tisch und Schrank möbliert. Es ist 11m^2 groß und der Bewohnerin steht ein eigenes Badezimmer zur exklusiven Nutzung zur Verfügung (als Abtausch für ein geringfügig kleineres Zimmer als die anderen). Eine voll ausgestattete Küche mit anschließendem großem Wohnzimmer sind vorhanden. Das zweite Badezimmer ist zur Nutzung der weiteren Bewohnerinnen vorgesehen. Beide Badezimmer haben Dusche, Toilette und Waschbecken, aber die Waschmaschine ist für alle im großen untergebracht. Das Zimmer wird um 500€ vermietet mit allem inklusive Betriebskosten, Heizung, Warmwasser, Strom, Internet und Versicherung. Nur die ORF-Abgabe bei Hauptwohnsitz pro Haushalt (zu 3t geteilt ca. 5€/Monat) ist selbst zu begleichen. Jede Mieterin hat ihren eigenen Vertrag. Keine Hauptmieterin notwendig! Ab 15.11.2026 jederzeit verfügbar und beziehbar. Bitte lasst mich in der ersten Nachricht wissen, wann ihr einziehen könntet. Danke! Liebe Grüße Peter -------- Hello, One of the three single rooms in this lovely shared apartment in Meidling will become available on 15 Nov 2026. The room is furnished with a double bed, desk, and wardrobe. It is 11 m2 in size, and the tenant has a private bathroom for exclusive use (as a trade-off for the room being slightly smaller than the others). A fully equipped kitchen with an adjoining spacious living room is available. The second bathroom is intended for use by the other residents. Both bathrooms have a shower, toilet, and sink; the washing machine is located in the larger bathroom and is shared by everyone. The room is rented for €500, all inclusive (operating costs, heating, hot water, electricity, internet, and insurance). Only the Austrian broadcasting fee (ORF contribution), if registered as a primary residence, must be paid separately by the household (shared among three people, approx. €5/month). Each tenant has their own contract. No main tenant required. Available anyday on or after the 15 November 2026. Please let me know in your first message when you would be able to move in. Thank you. Kind regards, Peter Die WG liegt in Meidling, zwischen Bahnhof Meidling und Matzleinsdorfer Platz. In der Nachbarschaft gibt es einen Billa und Hofer, sowie einen DM. Der Bahnhof Meidling ist 10 Minuten entfernt und innerhalb von 3 Minuten ist man bei Stationen von 63A (zu U6, Niederhofstraße) und 62 und Badner Bahn (zu Karlsplatz in 20 ",
-   "published": "2026-10-29T22:10:40.575753+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "möbliert",
-    "nur Frauen/FLINTA*",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 500.0,
-   "price_estimated": false,
-   "ppsqm": 45.45,
-   "score": 25,
-   "checked_at": "2026-11-03T08:01:03+00:00"
-  },
-  {
    "id": "2f7afb11e5ff",
    "keys": [
     "wggesucht:11912179"
@@ -3406,47 +3479,6 @@
    "price_estimated": false,
    "ppsqm": 30.88,
    "score": 36,
-   "checked_at": "2026-11-03T08:01:03+00:00"
-  },
-  {
-   "id": "b604898de384",
-   "keys": [
-    "wggesucht:12117088"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-12-Bezirk-Meidling.12117088.html"
-    }
-   ],
-   "first_seen": "2026-10-29T20:01:03+00:00",
-   "category": "wg",
-   "title": "Berufstätigen-WG mit Balkon - 75 m2, hell & ruhig",
-   "price": 800.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1120",
-   "district": "Meidling",
-   "area": 12.0,
-   "rooms": null,
-   "address": "Wien 12. Bezirk Meidling · Schallergasse",
-   "image": "https://img.wg-gesucht.de/media/up/2025/25/121d4830b64cf649c1bce435ef333230dd2fe86f7877ae1efbb89412a5e84316_1.small.jpg",
-   "description": "",
-   "published": "2026-10-29T17:02:47.560641+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Balkon",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 2,
-   "price_total": 800.0,
-   "price_estimated": false,
-   "ppsqm": 66.67,
-   "score": 20,
    "checked_at": "2026-11-03T08:01:03+00:00"
   },
   {
@@ -3527,7 +3559,7 @@
     "Terrasse",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 590.0,
    "price_estimated": false,
    "ppsqm": 29.5,
@@ -3608,97 +3640,11 @@
     "befristet",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 350.0,
    "price_estimated": false,
    "ppsqm": 17.5,
    "score": 53
-  },
-  {
-   "id": "c2ec6bce81c7",
-   "keys": [
-    "wggesucht:14293754"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-08-Bezirk-Josefstadt.14293754.html"
-    }
-   ],
-   "first_seen": "2026-10-29T12:01:10+00:00",
-   "category": "wg",
-   "title": "Sommer 2027 in Wien",
-   "price": 550.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1080",
-   "district": "Josefstadt",
-   "area": 20.0,
-   "rooms": null,
-   "address": "Wien 08. Bezirk Josefstadt · Pfeilgasse 10-12",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/c686dab372a4d429066aabf5c84b695c60c19165a841bd2f9cc1dc2837b5fee1_179327295704094672575704042880.small.JPEG",
-   "description": "Ich vermiete für die Sommermonate (Juli bis Ende September) meine voll möblierte Wohnung im Herzen des 8. Bezirks. Der Zeitraum ist nach Absprache flexibel gestaltbar – ideal für Praktikant:innen, Summer-School-Teilnehmende oder alle, die den Wiener Sommer zentral erleben wollen. Die Wohnung: Größe: ca. 15–20 m2, kompakt und effizient geschnitten. Ausstattung: Voll möbliert (Bett, Schreibtisch, Schrank etc.) – du musst nur mit deinem Koffer einziehen. Highlights: Die Wohnung liegt im 3. Stock (mit Lift). Im Haus gibt es eine Waschküche sowie ein hauseigenes Fitnessstudio, das mitgenutzt werden kann. Lage: Besser geht es kaum! Die Wohnung liegt in einer der begehrtesten Gegenden Wiens: Öffis: 2 Min. zur Straßenbahn, 5 Min. zur U2, auch die U6 ist schnell erreichbar. Umgebung: Das Rathaus, die Hauptuniversität und der Ring sind in wenigen Minuten zu Fuß erreichbar. Supermärkte, Cafés und Parks befinden sich in unmittelbarer Nachbarschaft. Konditionen: Miete: ALL INLUSIVE 550€ pro Monat (alles inklusive: Strom, Heizung, Internet, monatliche Zimmerreinigungen). Kaution: 2 Monatsmieten. Zeitraum: 01. Juli bis Ende September (Flexibilität nach Absprache). Bei Interesse schreib mir doch eine kurze Nachricht mit ein paar Infos zu dir. Ich freue mich auf deine Anfrage! Es ist eine A++ Zimmerkategorie, also ein Einzelzimmer Garconierre :)",
-   "published": "2026-10-29T11:23:49.223796+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Lift",
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 2,
-   "price_total": 550.0,
-   "price_estimated": false,
-   "ppsqm": 27.5,
-   "score": 40,
-   "checked_at": "2026-11-03T08:01:03+00:00"
-  },
-  {
-   "id": "75bd19df5de5",
-   "keys": [
-    "wggesucht:14293705"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-12-Bezirk-Meidling.14293705.html"
-    }
-   ],
-   "first_seen": "2026-10-29T12:01:10+00:00",
-   "category": "wg",
-   "title": "Angenehmes WG Zimmer in 12. – 2er WG",
-   "price": 560.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1120",
-   "district": "Meidling",
-   "area": 20.0,
-   "rooms": null,
-   "address": "Wien 12. Bezirk Meidling · Rothkirchgasse 12",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/3e29d26216354a83a22612f6631d67f554774fedbae024fee13852fe6a21284e_179327127320594672407320582251.small.JPEG",
-   "description": "Hallo zusammen, Ich ziehe aus und übergebe mein gemütliches Zimmer im ruhigen 12ten Bezirk. Die Lage ist sehr angenehm. Vor der Tür fährt direkt die Badner-Bahn und die 62. Zur Längenfeldgasse (U4 & U6) sind es ca. 7 min. zu Fuß... Perfekt um ein paar Schritte zu sammeln. Im Umkreis gibt es sämtlich Lebensmittelmärkte (Billa, Penny, Hofer, Spar, DM + Apotheke). Alle innerhalb von 5 Minuten zu Fuß erreichbar. Das Zimmer hat sehr hohe Decken. Dadurch fühlen sich die 20m2 noch größer an als sie eh schon sind. Durch das große Fenster kommt angenehm viel Licht ins Zimmer (nicht zu viel, nicht zu wenig). Auch Anwohner sind sehr entspannt. Zimmer wird unmöbliert überlassen. Es handelt sich um eine 2er WG. Vor allem Willkommen sind Fußballinteressierte... natürlich aber kein muss ;) Jeder ist Willkommen! Dein Mitbewohner ist 27 Jahre alt, sehr entspannt und immer für ein Bier zu haben. Hauptsache Locker. Die Wohnung hat ein vor kurzem saniertes Bad und eine vollausgestattete Küche. Also alles was man braucht. Falls du noch weiter Bilder oder Informationen brauchst, melde dich! Schreibe gerne wer du bist, was du machst und worauf es für dich ankommt.",
-   "published": "2026-10-29T11:02:49.225437+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "möbliert",
-    "privat",
-    "saniert"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 2,
-   "price_total": 560.0,
-   "price_estimated": false,
-   "ppsqm": 28.0,
-   "score": 42,
-   "checked_at": "2026-11-02T08:01:06+00:00",
-   "excluded": "nicht mehr online",
-   "gone_at": "2026-11-02T08:01:06+00:00"
   },
   {
    "id": "280af65e7c80",
@@ -3742,47 +3688,6 @@
    "checked_at": "2026-11-03T08:01:03+00:00"
   },
   {
-   "id": "3c39da9e8757",
-   "keys": [
-    "wggesucht:14293580"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.14293580.html"
-    }
-   ],
-   "first_seen": "2026-10-29T12:01:10+00:00",
-   "category": "wg",
-   "title": "Helles, gemütliches Zimmer in entspannter 3er-Frauen-WG gesucht!",
-   "price": 390.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 11.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Schwendergasse",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/e10793efe04913fa2e9ddb970fd0d0ddb7546377a8707ac38b212230dced75a2_Screenshot_20261029_103747.small.jpg",
-   "description": "Helles, gemütliches Zimmer in entspannter 3er-Frauen-WG gesucht! (25–28 Jahre) Über das Zimmer: Zur Untermiete steht ein helles und praktisch geschnittenes Zimmer. Es bietet trotz kompakter Größe ausreichend Platz für ein Bett, einen Schreibtisch und ein bisschen Stauraum. Ein großes Fenster sorgt für viel natürliches Tageslicht und einen Ausblick auf die Mariahilferstrasse! Über uns & das WG-Leben: Wir sind aktuell eine 3er-Frauen-WG im Alter zwischen 25 und 28 Jahren. Da ich ausziehe, suchen wir eine neue liebe Mitbewohnerin. Deine zukünftigen Mitbewohnerinnen sind herzlich und kommunikativ:) Uns ist ein harmonisches Zusammenleben wichtig: Wir sind absolut ruhig und gut organisiert. Bei uns gibt es kein anonymes Nebeneinanderwohnen – wir quatschen gerne mal in der Küche oder trinken einen Kaffee zusammen, respektieren aber auch vollkommen die Privatsphäre und Ruhezeiten der anderen. Ein sauberes und ordentliches Zuhause ist uns wichtig, weshalb wir uns den Alltag gut strukturiert aufteilen. Wen wir suchen: Wenn du ebenfalls zwischen 25 und 30 Jahre alt bist, eine gesunde Mischung aus Geselligkeit und Sinn für Ordnung mitbringst und Lust auf ein entspanntes, faires Miteinander hast, freuen wir uns von dir zu hören! Schreib uns einfach ein paar Zeilen über dich.",
-   "published": "2026-10-29T11:02:55.094646+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "nur Frauen/FLINTA*",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 390.0,
-   "price_estimated": false,
-   "ppsqm": 35.45,
-   "score": 41,
-   "checked_at": "2026-11-02T08:01:06+00:00"
-  },
-  {
    "id": "fdc861bb2095",
    "keys": [
     "wggesucht:14293544"
@@ -3814,7 +3719,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 470.0,
    "price_estimated": false,
    "ppsqm": 11.75,
@@ -3963,50 +3868,6 @@
    "checked_at": "2026-11-02T08:01:06+00:00"
   },
   {
-   "id": "e66c6bf0a182",
-   "keys": [
-    "wggesucht:11019497"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-03-Bezirk-Landstrasse.11019497.html"
-    }
-   ],
-   "first_seen": "2026-10-28T20:01:02+00:00",
-   "category": "wg",
-   "title": "(NUR 2 WOCHEN von 16.11-30.11) Wunderschönes Altbau WG Zimmer mitten im Fasanviertel",
-   "price": 266.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1030",
-   "district": "Landstraße",
-   "area": 25.0,
-   "rooms": null,
-   "address": "Wien 03. Bezirk Landstraße · Mohsgasse 4",
-   "image": "https://img.wg-gesucht.de/media/up/2024/21/8d8054847ed86fcea061e8f8aa1beaaf818ed2f3b1c588d5a5732992df79eb68_tempImage1fuPgg.small.jpg",
-   "description": "FAHRE AUF URLAUB UND VERMIETE MEIN ZIMMER FÜR DIE LETZTEN 2 WOCHEN VON NOVEMBER 2026 (16.11-30.11) BITTE NUR REAGIEREN WENN IHR GENAU IN DIESER PERIODE EIN ZIMMER BRAUCHT! Hallo, wir sind zwei Studenten (Olivier und Paul) die zwei freie Zimmer in einer 4er WG haben. Die Wohnung ist ziemlich groß und hell, hat hohe Räume und mehrere Gemeinschaftszimmer. Wohnzimmer, Esszimmer, Vorraum, Balkon und eine große Küche. Die Zimmer haben Holzparkett und sind sehr geräumig (25m^2), haben also genug Platz für alle Bedürfnisse! ;) FAHRE AUF URLAUB UND VERMIETE MEIN ZIMMER FÜR DIE LETZTEN 2 WOCHEN VON NOVEMBER 2026 (16.11-30.11) BITTE NUR REAGIEREN WENN IHR GENAU IN DIESER PERIODE EIN ZIMMER BRAUCHT! Die Lage ist echt super, man hat drei verschiedene Parks (Schweizergarten, Botanischer Garten und Belvedere), den Hauptbahnhof und die S-Bahn Station Rennweg in der Nähe und Pizzeria Pozzuoli. Auch um zu Fuß oder mit dem Rad die Innenstadt zu erreichen liegt es sehr gut. Man ist schon in 5 Minuten am Karlsplatz mim Rad! FAHRE AUF URLAUB UND VERMIETE MEIN ZIMMER FÜR DIE LETZTEN 2 WOCHEN VON NOVEMBER 2026 (16.11-30.11) BITTE NUR REAGIEREN WENN IHR GENAU IN DIESER PERIODE EIN ZIMMER BRAUCHT! Wir verbringen gerne Zeit miteinander, kochen zusammen und stricken gerne (1 Mal gemacht). Grundsätzlich war es bis jetzt so das wir gerne immer Sachen miteinander gemacht haben, wir ham aber auch alle ein Studium und Dinge zu tun. Freuen uns auf coole Leute. :))) Olivier ist ein cooler holländischer Berglieberhaber, gönnt sich gerne ein lecker Bierchen, liebt zu musizieren, und dumme Sachen zu machen (geschrieben durch Paul). Paul ist ein sehr kommunikationsbedürftiger Mensch aus Wien. Er redet über Gott und die Welt und liebt es Leute voll mit interessanten Ideen voll zu reden. Manchmal ist es sogar wirklich interessant :D. (geschrieben durch Olivier) FAHRE AUF URLAUB UND VERMIETE MEIN ZIMMER FÜR DIE LETZTEN 2 WOCHEN VON NOVEMBER 2026 (16.11-30.11) BITTE NUR REAGIEREN WENN IHR GENAU IN DIESER PERIODE EIN ZIMMER BRAUCHT! 4. Stock ohne Lift bedeutet dass man sich die Gym-Membership sparen kann! Die Zimmer sind dafür hell, man kann gut den Himmel sehen und sich träumend aus seinem Fenster lehnen und denken wie schön das Leben doch ist! Wir freuen uns auf eure Nachrichten/Fragen und würden euch gerne auch persönlich treffen! :)",
-   "published": "2026-10-28T19:02:25.109093+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "Balkon",
-    "Garten",
-    "Lift",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 4,
-   "price_total": 266.0,
-   "price_estimated": false,
-   "ppsqm": 10.64,
-   "score": 77,
-   "checked_at": "2026-11-02T08:01:06+00:00"
-  },
-  {
    "id": "f355a061e4e4",
    "keys": [
     "willhaben:1712609091"
@@ -4040,7 +3901,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 22.57,
@@ -4076,7 +3937,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 700,
    "price_estimated": false,
    "ppsqm": 18.42,
@@ -4167,213 +4028,6 @@
    "ppsqm": 25.22,
    "score": 36,
    "checked_at": "2026-11-02T08:01:06+00:00"
-  },
-  {
-   "id": "4c0f0107d383",
-   "keys": [
-    "wggesucht:14287348"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-06-Bezirk-Mariahilf.14287348.html"
-    }
-   ],
-   "first_seen": "2026-10-28T16:01:08+00:00",
-   "category": "wg",
-   "title": "Zimmer in 3er-WG (Dez - März)",
-   "price": 525.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1060",
-   "district": "Mariahilf",
-   "area": 21.0,
-   "rooms": null,
-   "address": "Wien 06. Bezirk Mariahilf · Magdalenenstraße",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/8b1f312132c20f76e1c1ffd837d3b0462fc68689bf33e1190e94d0a2cb0465c9_20753179312748363770343.small.JPEG",
-   "description": "Das Zimmer ist 21m und es ist möbliert. Die Miete beträgt 525 € pro Monat mit allen Rechnungen (Strom, Internet, Heizung, Kesselwartung, ORF). Die Kaution ist eine Monatsmiete und es gibt eine Ablöse von 160 €, die alles auf den Bildern Ihres Zimmers abdeckt, außer vom Sofa und dem schwarzen Schrank mit Glastüren. Das Zimmer ist vom 1. Dezember bis zum 31. März verfügbar, es besteht die Möglichkeit, den Zeitraum zu verlängern, aber noch nicht sicher. Bauen mit Aufzug. Es gibt Lagerung im Keller (Keller) Und für Fahrräder gibt es Platz im Innenhof, aber es ist nicht vor Regen oder Sonne geschützt. The room is 21m and it comes furnished. The rent is 525€ per month with all bills included (electricity, internet, heating, boiler maintenance, ORF). The deposit is one month’s rent, and there’s a transfer fee (Ablöse) of 160€, which covers everything in the pictures of your room except from the sofa and the black cabinet with glass doors. The room is available from 1st of December until 31st of March, there is the possibility of extending the period, but not certain yet. Building with lift. There is storage in the basement (Keller) And for bikes, there is space in the inner courtyard, but it's not sheltered from the rain or sun. Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen 5 Minuten zur Station Pilgramgasse U4 1 Minute bis zur Bushaltestelle 13A Spar, Hofer und andere Supermärkte innerhalb von 3 bis 10 Minuten zu Fuß 5 minutes to Pilgramgasse U4 station 1 minute to the 13A bus stop Spar, Hofer and other supermarkets within a 3 to 10 minute walk Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen Wir sind Daniel (Spanien) und Laura (UK). Ich (Daniel) arbeite in der Nähe einer IT-Firma, und Laura arbeitet in einem Labor und in einem Hotel und beendet gleichzeitig ihren Master in Biologie. Wir sind beide ziemlich oft draußen, ich morgens bei der Arbeit und danach mache ich normalerweise Sport oder treffe mich mit Freunden, und Laura verbringt viel Zeit entweder im Labor, studiert oder ist auch mit Freunden unterwegs. Wir sind ein ruhiger flatshare, wir unterhalten uns normalerweise gerne ein bisschen, wenn wir uns in der küche begegnen, manchmal bei einer tasse tee oder kaffee. Da wir beide unter der Woche früh und manchmal auch am Wochenende arbeiten, ist die Wohnung abends ruhig und wir versuchen, nicht zu viel Lärm zu machen, damit wir uns alle gut ausruhen können. Die Wohnung ist nicht die größte, sie hat Vor- und Nachteile",
-   "published": "2026-10-28T14:03:45.285576+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Ablöse",
-    "Lift",
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 525.0,
-   "price_estimated": false,
-   "ppsqm": 25.0,
-   "score": 42,
-   "checked_at": "2026-11-02T08:01:06+00:00"
-  },
-  {
-   "id": "b63ddd723072",
-   "keys": [
-    "wggesucht:14290308"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-05-Bezirk-Margareten.14290308.html"
-    }
-   ],
-   "first_seen": "2026-10-28T12:01:10+00:00",
-   "category": "wg",
-   "title": "WG-Zimmer Untermiete",
-   "price": 584.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1050",
-   "district": "Margareten",
-   "area": 21.0,
-   "rooms": null,
-   "address": "Wien 05. Bezirk Margareten · Embelgasse 5-7/6 8",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/248f67609b6b2dbc720469a2425be7f0644aeefeb2cff4bc5a2c03af7aae642f_20261028_123556.small.jpg",
-   "description": "Unsere WG liegt im 2. Stock und das Zimmer hat ein Fenster, welches zur Straße rausgeht. Da aber relativ wenige Autos fahren, kann man auch in der Nacht das Fenster offen lassen. Das Zimmer ist mit 21 Quadratmeter recht geräumig, und es hat einen Parkettboden. Alles bis auf persönliche Gegenstände bleiben im Zimmer. Eventuell bleibt sogar der Fernseher. Unsere WG liegt im westlichen Teil von Margareten, wo es eher ruhig ist. Es gibt direkt vor der Haustüre auf der gegenüberliegenden Straßenseite einen Spar. Öffis: - Straßenbahnen 18/6/62/BB: 5 min - S-Bahn Matzleinsdorfer Platz: 10 min - U4: 15 min Bahnhöfe - Hauptbahnhof: 13min - Meidling: 18 min - Westbahnhof: 18 min Michael, 28: Ich bin 28 Jahre alt und habe diesen Sommer mein Masterstudium an der WU abgeschlossen. Jetzt arbeite ich bei KPMG in der Beratung. In meiner Freizeit gehe ich gern raus, treffe Freunde und schaue leidenschaftlich gern Fußball. Ich bin unkompliziert, offen und freue mich auf ein entspanntes WG-Zusammenleben. Samuel, 25: Ich bin Samuel, lebe seit rund zwei Jahren in der WG und arbeite hier in Wien bei einer Filmproduktion. In meiner Freizeit mache ich sehr gerne Sport (vorwiegend Gym oder Fußball), treffe mich mit Freunden in der Stadt oder gehe ins Kino. Generell würde ich mich als großen Fußball-Fan bezeichnen und freue mich daher immer über einen spontanen Kick oder die ein oder andere hitzige diskussionen😜 Vielleicht ja bald mit dir;) Wenn du Interesse hast und die WG kennenlernen möchtest schreib uns gerne eine Nachricht, in der du ein bisschen etwas über dich erzählst. Neben dem Üblichen (warum du eine WG in Wien suchst) freuen wir und sehr etwas über deinen Charakter, deine Hobbys und deinen Alltag generell zu hören :) Besichtigungen sind vor Ort und online möglich. Eventuell besteht auch die Möglichkeit bis Ende September in der WG zu bleiben, das stellt sich aber noch in den nächsten Monaten heraus. Also falls du flexible mit der Mietdauer bist, wäre das eine Option.",
-   "published": "2026-10-28T11:53:49.302436+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 584.0,
-   "price_estimated": false,
-   "ppsqm": 27.81,
-   "score": 34,
-   "checked_at": "2026-11-01T08:00:58+00:00"
-  },
-  {
-   "id": "f03a38f86f63",
-   "keys": [
-    "wggesucht:13888194"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-12-Bezirk-Meidling.13888194.html"
-    }
-   ],
-   "first_seen": "2026-10-28T12:01:10+00:00",
-   "category": "wg",
-   "title": "3er-Studenten-WG in Wien Meidling, Nähe Meidlinger Bahnhof",
-   "price": 740.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1120",
-   "district": "Meidling",
-   "area": 22.0,
-   "rooms": null,
-   "address": "Wien 12. Bezirk Meidling · Fockygasse 27",
-   "image": "https://img.wg-gesucht.de/media/up/2026/31/4f7a3a49c5c2e4abc63ca283ad0f814dcf0f10ccc204c53027dd2e031b234588_Foto_Schlafzimmer.small.jpg",
-   "description": "Großzügiges Zimmer mit ca. 22m2. Bett, Kasten und ein Schreibtisch sind bereits im Zimmer, zwei Fenster mit Vorhängen. Bis auf Nägel in den Wänden kann das Zimmer frei gestaltet werden. Wir haben vor 3 Jahren renoviert, die Wohnung ist sehr schön. Es gibt ein WC, ein Bad mit Waschmaschine, und eine Wohnküche. Wir haben einen Geschirrspüler, Kühlschrank, Tiefkühler, Mikrowelle... Direkt vor dem Haus ist eine Bushaltestelle (Linie 59A) Weitere Busse, Straßenbahnen (6,18 + BB) und die U4 sind in 5-10min zu Fuß erreichbar. Der Hauptbahnhof ist mit der Straßenbahnlinie 18 in ca. 20min erreichbar. Zum Bahnhof Meidling kommt man mit dem Bus direkt vor der Haustür in ca. 10min. Wir beide (Lorenz und Marcel) studieren Architektur - Green Building an der Hochschule Campus Wien. Beide 23 Jahre alt, leben seit ca. 2 Jahren gemeinsam in der WG. Wir sind viel in der Wohnküche, kochen und Putzen wird aufgeteilt. Wir haben immer viel Spaß und freuen uns auf unseren neuen Mitbewohner. Bei Interesse gerne per email melden:",
-   "published": "2026-10-28T11:16:49.303668+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat",
-    "saniert"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 740.0,
-   "price_estimated": false,
-   "ppsqm": 33.64,
-   "score": 38,
-   "checked_at": "2026-11-01T08:00:58+00:00"
-  },
-  {
-   "id": "3468183d5601",
-   "keys": [
-    "wggesucht:11021178"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-03-Bezirk-Landstrasse.11021178.html"
-    }
-   ],
-   "first_seen": "2026-10-28T12:01:10+00:00",
-   "category": "wg",
-   "title": "schönes Altbauzimmer zu vermieten - ruhig, tolle Lage",
-   "price": 600.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1030",
-   "district": "Landstraße",
-   "area": 16.0,
-   "rooms": null,
-   "address": "Wien 03. Bezirk Landstraße · Krieglergasse 10",
-   "image": "https://img.wg-gesucht.de/media/up/2025/20/0c45eb8f6dd86915336aa2f6ea7351219a7e89d8470f656f72bcc5fa6fd551ef_174808542663094672902663020947.small.JPEG",
-   "description": "Hallo, ich vermiete ein ruhiges 16qm Altbauzimmer in einer toll gelegenen, schönen Wohnung in Wien gerne für 2-6 Monate. Ich, 38, Kunstlehrerin und ehemalige Bühnenbildnerin und mein 11jähriger Sohn wohnen in der Wohung. Mein Sohn liebt Fussball und ich Theater, Kunst und bouldern. Wir sind sehr unkompliziert, ich lege nur großen Wert auf einen guten gemeinsamen Putzplan und das Räume wie Bad und Küche immer für alle sauber und nutzbar bleiben. Wir hatten immer MitbewohnerInnen und nie Probleme. Da wir jetzt langfristig alleine wohnen möchten suche ich nur mehr für kurze Zeit eine UntermieterIn. Wenn du Interesse hast, schreib doch auch kurz etwas über dich, gerne auch Fragen, wir freuen uns dich kennenlernen und zu sehen ob es passen könnte. Die Lage könnte in Wien nicht besser sein. Neben dem Prater ums Eck, ist auch der erste Bezirk fußläufig erreichbar. Alle wichtigen Einkaufsmöglichkeiten, sowie ein tolles Cafe und Restaurant direkt ums Eck. Wichtig wären mir verlässliche, saubere UntermieterInnen, die die Zimmer sauberhalten und achtsam mit allem umgehen, was sich in der Wohnung befindet.",
-   "published": "2026-10-28T11:02:55.913629+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 600.0,
-   "price_estimated": false,
-   "ppsqm": 37.5,
-   "score": 24,
-   "checked_at": "2026-11-01T08:00:58+00:00"
-  },
-  {
-   "id": "f2cc1c4940b1",
-   "keys": [
-    "wggesucht:13369619"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-12-Bezirk-Meidling.13369619.html"
-    }
-   ],
-   "first_seen": "2026-10-28T12:01:10+00:00",
-   "category": "wg",
-   "title": "Zwischenmiete - helles WG-Zimmer",
-   "price": 185.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1120",
-   "district": "Meidling",
-   "area": 18.0,
-   "rooms": null,
-   "address": "Wien 12. Bezirk Meidling · Reschgasse",
-   "image": "https://img.wg-gesucht.de/media/up/2026/15/74c3c00c51467584fe1139e01f002be194570dc017502b317f7f3a3ff1040839_WhatsApp_Image_2026_04_19_at_11.44.06.small.jpeg",
-   "description": "Hallo!:) In unserer Wohnung steht ein Zimmer für kurzfristige Zwischenmiete (1-2 Wochen bis 1 Monat) ab 01. Nov. zur Verfügung. Das Zimmer ist ca. 20qm groß und voll ausgestattet. Ansonsten verfügt die Wohnung über eine Küche & Wohnraum, Badezimmer und WC. Wir sind zwei MitbewohnerInnen: ein Student und eine Absolventin. Wir suchen eine freundliche Person für die kurzfristige Zwischenmiete unseres freien Zimmers. Uns ist eine freundliche und unkomplizierte Wohnatmosphäre wichtig. (: Die Wohnung befindet sich im 12. Bezirk (Meidling) in unmittelbarer Nähe der U6-Station Niederhofstraße sowie Einkaufsmöglichkeiten (Lidl, Hofer, Interspar, DM,etc.). Die Miete beträgt 180 Euro pro Woche, 550 pro Monat. Für weitere Informationen meldet euch gerne bei mir! --------------------------------ENGLISH------------------------------------------ Hello! :) In our apartment, one room is available for short-term sublet (1–2 weeks up to 1 month) starting from Nov. 01. The room is about 20 m2 and fully furnished. The apartment also includes a kitchen and living area, a bathroom, and a separate toilet. We are two flatmates: one student and one recent graduate. We are looking for a friendly person to stay in our extra room for a short-term sublet. We value a respectful and easy-going living atmosphere. (: The apartment is located in the 12th district (Meidling), very close to the U6 station Niederhofstraße, as well as shops (Lidl, Hofer, Interspar, DM, etc.). The rent is €180 per week, 550 per month (max 1 month). Feel free to contact me for more information!",
-   "published": "2026-10-28T10:03:40.572748+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Zwischenmiete",
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 185.0,
-   "price_estimated": false,
-   "ppsqm": 10.28,
-   "score": 45,
-   "checked_at": "2026-11-01T08:00:58+00:00"
   },
   {
    "id": "f1bbfdd5c49d",
@@ -4474,52 +4128,11 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 26.63,
    "score": 9
-  },
-  {
-   "id": "bcd55ff9ef2d",
-   "keys": [
-    "wggesucht:14287754"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-07-Bezirk-Neubau.14287754.html"
-    }
-   ],
-   "first_seen": "2026-10-28T05:08:42+00:00",
-   "category": "wg",
-   "title": "Hübsches Zimmer plus Kabinett in Altbauwohnung",
-   "price": 671.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1070",
-   "district": "Neubau",
-   "area": 35.0,
-   "rooms": null,
-   "address": "Wien 07. Bezirk Neubau · Apollogasse",
-   "image": "https://www.wg-gesucht.de/img/placeholder/empty_state_offer.svg",
-   "description": "Die Zimmer-Kabinett-Einheit hat einen relativ frisch geschliffenen Parkettboden, alte Kastenfenster, die erhöhten Pflegebdarf haben (immer wieder abdichten), sonst zieht es. Eine schöne Doppelglastür zum Flur, eine Bogentür ins Kabinett. Geheizt wird mit 2 Nachtspeicheröfen, daher hoher Stromverbrauch, also Nebenkosten, aber gemütlich zum anlehnen, oder im Kabinett darauf sitzen als Fensterplatz. Ein 2-stöckiges Hochbett im Kabinett 120 breit, bietet Platz für flexible Nutzung und ist ablösefrei. Es gibt Sonne ab Mittag bis in den späten Abend, Bäume werden gerade vor der Haustür gepflanzt, das Eck in der Apollogasse wird eine Wohnstraße, die in den Sophieen-Park übergeht. Also ruhige, grüne Lage, trotz Gürtelnähe. Die gemeinsame Küche ist alt, aber gut erhaltene Tischlerarbeit, 1984 gebaut von unserem, meinem damaligen Tischlereikollektiv, ist aber mit total neuen, modernen Geräten ausgestattet. Da ist alles vorhanden, was man braucht um gut zu kochen. Mir, als Hauptmieterin, als diejenige, die seit 1984 in dieser Wohnung in unterschiedlichster Besetzung gelebt hat und lebt, ging es immer darum, zu erhalten (selbsttätig) was brauchbar ist und nicht darum auf Teufel komm raus zu modernisieren. Westbahnhof 3 min., S-Bahn, U6 und U3 , die Linien 6, 18, 9, 5, allles fast vor der Haustür. Mehrere Supermärkte, Trafiken, Apotheken in unmittelbarer Nähe. Mariahilferstraße Fußgängerzone und Einkaufsstraße. Theater, Restaurants, Bars, Kinos alles in Überfülle da. Und 15 min. Fußweg ins Zentrum. Besser geht`s fast nicht. Da ich 70 bin und ich, seit ich 20 war, immer eine andere Wohnform hatte als gewöhnlich, eigentlich schon als Kind gelebt habe, bin ich sehr direkt, wenn mir etwas nicht passt oder unvernüftig vorkommt. Die meisten MitbewohnerInnen haben es mit mir zumindest 5 Jahre ausgehalten, aber auch weil es dann für SIE andere Wege gab. Meinen ganz neuen Mitbewohner aus Malaysia, Singapur kenne ich noch nicht so gut. Er ist Musikstudent, spielt Viola, Orchestermitglied im Bratislava Symphonieorchester. Tatsache ist, ich bin halt die Chefin hier und die sachlichen Dinge, die ich vermittle, möchte ich ernstgenommen haben. Und wer das nicht tut, kriegt ein Problem mit mir. Da bin ich zuweilen autoritär. Wer sich deshalb persönlich abgekanzelt fühlt, ist dann sein oder ihr Problem. Ansonsten kann man mit mir, hoffentlich DIR, über alles reden, feiern, Musik machen, Leute einladen. Halligalli. Ich lebe Lebenskunst und liebe Kunst. Aber die Basis, saubere Wohnung, g",
-   "published": "2026-10-27T23:10:20.024466+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 671.0,
-   "price_estimated": false,
-   "ppsqm": 19.17,
-   "score": 45,
-   "checked_at": "2026-10-31T08:00:55+00:00"
   },
   {
    "id": "21562ca2196d",
@@ -4649,49 +4262,6 @@
    "checked_at": "2026-10-31T08:00:55+00:00"
   },
   {
-   "id": "ae21e507b89b",
-   "keys": [
-    "wggesucht:14284220"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.14284220.html"
-    }
-   ],
-   "first_seen": "2026-10-27T20:01:07+00:00",
-   "category": "wg",
-   "title": "Cozy Zimmer in Dachgeschoss-WG",
-   "price": 442.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 15.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Ullmannstraße",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/89ed9b2bcf30f933bf4957030944616949abd15ed7367e72f78a1615fe01e511_Esstisch.small.jpeg",
-   "description": "If you need an english version let us know and we'll send you one via message. Das Zimmer wird ab 7.12. frei. Wenn du schon zum 1.12. ausziehen musst, finden wir eine Lösung mit Zwischenlagerung deiner Sachen in unserem Wohnbereich und Schlafplatz schlafen. Wenn du ab 15.12. erst einziehen kannst, finden wir auch eine Lösung :) Das Zimmer ist mit 12qm + 4 qm Kammer das kleinste unserer schönen Dachgeschosswohnung. Dafür gehört dazu noch ein eigenes Bad das zusätzlich ca. 13qm groß ist. Außerdem haben wir in unserem großen Wohnbereich viel Platz für z.B. einen Schreibtisch und natürlich ordentlich Stauraum, der insbesondere für die Person vorbehalten ist, die in dem frei werdenden Zimmer wohnen wird. Das Zimmer ist ein bisschen dunkler als der Rest der Wohnung, dafür ist es im Sommer das kühlste. Im Winter ist es jedoch auch ein bisschen kälter, da es nicht wie die anderen Zimmer über eine Fußbodenheizung beheizt werden kann. In der Vergangenheit lies sich das jedoch gut mit elektrischen Heizlüftern lösen, Lena gibt ihren gern gegen eine kleine Ablöse ab! Außerdem ist der Rest der Wohnung gut beheizbar und kuschelig und lädt zum entspannen ein :) Es liegt direkt an der Küche. Da die Wohnung etwas hellhörig ist, gehen wir morgens und abends sehr achtsam mit der Lautstärke um. Außerdem hat Valentina Schaumstoff zur akustischen Abschirmung besorgt, wir helfen dir gern das anzubringen. Unsere großzügige WG befindet sich in einer insgesamt 192 m2 großen Altbauwohnung an der Grenze zum 6. Bezirk und bietet viel Platz zum Wohnen und Wohlfühlen. Zur Wohnung gehören eine große Wohnküche, die den Mittelpunkt des WG-Lebens bildet, ein Wohnzimmer sowie ein besonderes Highlight: ein Rooftop, das sich perfekt zum Entspannen, Sonnen oder für gemeinsame Abende eignet. Die Lage ist äußerst zentral: Die U6-Station Gumpendorfer Straße und die U4 Margaretengürtel sind jeweils nur wenige Gehminuten entfernt. Zahlreiche Einkaufsmöglichkeiten, Restaurants, Cafés sowie weitere öffentliche Verkehrsanbindungen befinden sich in unmittelbarer Nähe. Durch die Lage an der Grenze zum 6. Bezirk sind sowohl Mariahilf als auch die Innenstadt schnell erreichbar. Die Wohnung befindet sich im Dachgeschoss (3 Stockwerke) ohne Lift und hat einen großen Eingangsbereich mit einer Abstell-/Waschkammer und einer Wendeltreppe in einen großen, lichtdurchfluteten Wohn- und Essbereich. Da Valentina erst seit Oktober, Paula seit September und Tara seit März hier wohnen, müssen wir uns zusammen noch eingr",
-   "published": "2026-10-27T18:02:55.923774+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Ablöse",
-    "Altbau",
-    "Lift",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 4,
-   "price_total": 442.0,
-   "price_estimated": false,
-   "ppsqm": 29.47,
-   "score": 40,
-   "checked_at": "2026-10-31T08:00:55+00:00"
-  },
-  {
    "id": "eb238b8c54a5",
    "keys": [
     "willhaben:1862649361"
@@ -4723,7 +4293,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 15.19,
@@ -4762,7 +4332,7 @@
     "Zwischenmiete",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 490.0,
    "price_estimated": false,
    "ppsqm": 32.67,
@@ -4805,7 +4375,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 697,
    "price_estimated": true,
    "ppsqm": 20.56,
@@ -4844,7 +4414,7 @@
     "Balkon",
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 847,
    "price_estimated": true,
    "ppsqm": 19.79,
@@ -4882,7 +4452,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 729.0,
    "price_estimated": false,
    "score": 4
@@ -4920,7 +4490,7 @@
     "Ablöse",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 680.0,
    "price_estimated": false,
    "ppsqm": 10.79,
@@ -4994,7 +4564,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 14.9,
@@ -5083,12 +4653,12 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "wg_size": 2,
    "price_total": 400.0,
    "price_estimated": false,
    "ppsqm": 44.44,
-   "score": 43,
+   "score": 39,
    "checked_at": "2026-10-31T08:00:55+00:00"
   },
   {
@@ -5125,7 +4695,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 587.0,
    "price_estimated": false,
    "ppsqm": 11.51,
@@ -5213,45 +4783,6 @@
    "excluded": "nicht mehr online"
   },
   {
-   "id": "415490046f26",
-   "keys": [
-    "wggesucht:14284099"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-07-Bezirk-Neubau.14284099.html"
-    }
-   ],
-   "first_seen": "2026-10-26T20:01:04+00:00",
-   "category": "wg",
-   "title": "gemütkiches WG Zimmer",
-   "price": 495.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1070",
-   "district": "Neubau",
-   "area": 12.0,
-   "rooms": null,
-   "address": "Wien 07. Bezirk Neubau · Wimbergergasse 20",
-   "image": "https://img.wg-gesucht.de/media/up/2026/43/4b0a74f8359bcd9ca92b67205cc343f963fa95cc7906645ac53728cb1701bc31_179304067738494675267738472208.small.JPEG",
-   "description": "Das zimmer ist ein gemütliches zimmer mit eingebautem Hochbett. Es ist ausserdem ruhig, da das Fenster zum innenhof geht.",
-   "published": "2026-10-26T19:02:30.800095+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 5,
-   "price_total": 495.0,
-   "price_estimated": false,
-   "ppsqm": 41.25,
-   "score": 15
-  },
-  {
    "id": "617b2e7b470d",
    "keys": [
     "wggesucht:14283839",
@@ -5331,7 +4862,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "wg_size": 3,
    "price_total": 600.0,
    "price_estimated": false,
@@ -5370,7 +4901,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 480.0,
    "price_estimated": false,
    "ppsqm": 7.06,
@@ -5424,50 +4955,6 @@
    "excluded": "nicht mehr online"
   },
   {
-   "id": "d5e4e3827ba1",
-   "keys": [
-    "wggesucht:6954025"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.6954025.html"
-    }
-   ],
-   "first_seen": "2026-10-26T16:01:08+00:00",
-   "category": "wg",
-   "title": "Möbliertes Zimmer in 4er WG, Altbau 17 m2 für € 590,- Warmmiete",
-   "price": 590.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 17.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Dingelstedtgasse 11",
-   "image": "https://img.wg-gesucht.de/media/up/2018/40/e11c0709da4b578c9f86d192117db8356eaef9f7350652c5a965396314a02bd5_K_che_komp.small.jpg",
-   "description": "Zimmer Wir bieten ein möbliertes Zimmer im 15. Bezirk, sehr verkehrsgünstig zwischen U3 und U6 gelegen, 17 m2, um € 590- (warm) im Monat. Die Wohnung ist im 4. Stock ohne Lift. Die Wohnung ist insgesamt 104 m2groß, Wohnzimmer, Küche und Bad nützen wir gemeinsam. Kontakt: We can offer a furnished room in a shared flat in the 15th district, close to U6 and U3. The room (17 m2) is part of a 104 m2 appartement in the 4th floor (Altbau, no elevator). The rent including electricity and internet is € 590,--. We share living room, kitchen, and bathroom. Chambre meublée (17 m2) dans un appartement ancien et spacieux du 15. arrondissement, à proximité de la station U6 Gumpendorferstraße et U3 Westbahnhof, en colocation avec deux femmes et un homme. Salle de séjour, salle de bain et cuisine en commun. Prix tout compris avec internet €590,- 5 Minuten zur U6-Station Gumpendorferstraße (Straßenbahnen 18 und 6) 7 Minuten zur U3-Station Westbahnhof 10 Minuten zu den U4-Stationen Margarethengürtel oder Längenfeldgasse. Das Zentrum mit den Universitäten ist gerade 20 Minuten mit den Öffis entfernt; mit der U6 ist die wichtigste Nord-Süd-Achse in nur wenigen Minuten zu erreichen. Aber auch der 15. Bezirk ist ein sehr nettes Pflaster mit einer Menge von Lokalen, von Craft-Bier über Vegetarisch und allen möglichen Varianten asiatischer Küche bis zum urigen Wiener Gasthaus ist alles zu finden. Einkaufen ist auch kein Problem - für den täglichen Bedarf gibt es alle wichtigen Geschäfte in der Nähe; zwei der besonders guten, noch existierenden gewerblichen Bäckereien sind in 5 Minuten zu erreichen; wenn es spät wird, dann gibt es in der Shopping Mall am Westbahnhof bis 21 h geöffnete Geschäfte, und für die Mode ist die innere Mariahilferstraße, die Shoppingmeile schlechthin, fußläufig zu erreichen. Wir sind eine recht vielbeschäftigte Familie, tagsüber in Arbeit und Kindergarten. WG-Leben gibt esdaher nicht so viel, aber ab und zu freuen wir uns, wenn wir zusammen Essen.",
-   "published": "2026-10-26T09:04:07.779364+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "Garten",
-    "Lift",
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 4,
-   "price_total": 590.0,
-   "price_estimated": false,
-   "ppsqm": 34.71,
-   "score": 26,
-   "checked_at": "2026-10-29T12:01:10+00:00"
-  },
-  {
    "id": "76a3f7fed506",
    "keys": [
     "willhaben:1583903374"
@@ -5503,7 +4990,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 730.0,
    "price_estimated": false,
    "ppsqm": 24.33,
@@ -5542,7 +5029,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 430.0,
    "price_estimated": false,
    "ppsqm": 8.43,
@@ -5630,7 +5117,7 @@
     "privat",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 612,
    "price_estimated": false,
    "ppsqm": 10.93,
@@ -5673,52 +5160,12 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 695.52,
    "price_estimated": false,
    "ppsqm": 19.87,
    "score": 6,
    "excluded": "reserviert/vergeben"
-  },
-  {
-   "id": "5720899f9072",
-   "keys": [
-    "wggesucht:14252527"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.14252527.html"
-    }
-   ],
-   "first_seen": "2026-10-25T12:00:58+00:00",
-   "category": "wg",
-   "title": "🌷 WG room available in Vienna’s 15th district",
-   "price": 420.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 6.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Preysinggasse 34 10",
-   "image": "https://img.wg-gesucht.de/media/up/2026/41/8dde48ec39b5ea8d87a33b05408c53d6557169ff6c00b0605fbabf73db4ee376_179226962017094676282017041390.small.JPEG",
-   "description": "Looking for a new place to call home? 💗 I'm looking for a girl to take over my room in a cute, cosy and very quiet WG in Vienna's 15th district! It's a lovely place to come home to after a long day, whether you're studying, working or both. 📍 The location The WG is located on Preysinggasse, near Schweglerstraße, with great public transport connections(U3,49,9, 12A) You'll have shops, supermarkets(BILLA ,SPAR,LIDL, DM, PENNY, Usw.) , cafés and restaurants nearby, and Mariahilfer Straße is within easy reach (1 station) for shopping and everything else you might need. Westbahnhof (1 station away) connects you to the U3, U6, trams and trains, making it easy to get around 🏡 About the WG You'll be living with two other girls in a friendly, female-only shared flat. Two girls are moving out, which means two rooms are available — there's another post up for the second room, so feel free to check that one out too! The flat is very quiet and cosy, making it a nice place to relax, recharge and have your own space. 🛏️ The room Size: 6 m2 Monthly rent: €420 Furniture takeover: €150 Deposit (Kaution): €1,000 The furniture payment and deposit must be paid when moving in. 📅 Move-in date You can move in on either the 1st or the 15th of the month. Moving in on the 1st is also possible, but we'll need to discuss the details beforehand. 💌 A few things to know !! Be open as you may be the Hauptmieter Girls only 👭 No pets allowed 🐾 No smoking 🚭 Please send a picture of yourself along with your message when contacting us, so we can get to know who's interested. If you're interested or have any questions, feel free to send me a message! Looking forward to hearing from you. 🩷",
-   "published": "2026-10-25T11:02:30.090044+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 420.0,
-   "price_estimated": false,
-   "ppsqm": 70.0,
-   "score": 33,
-   "checked_at": "2026-10-29T05:08:52+00:00"
   },
   {
    "id": "393e937fd7c2",
@@ -5830,7 +5277,7 @@
     "Neubau/Erstbezug",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 795.0,
    "price_estimated": false,
    "ppsqm": 30.58,
@@ -5884,47 +5331,6 @@
    "price_estimated": false,
    "ppsqm": 12.97,
    "score": 33
-  },
-  {
-   "id": "6a6f0925769a",
-   "keys": [
-    "wggesucht:14277394"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-05-Bezirk-Margareten.14277394.html"
-    }
-   ],
-   "first_seen": "2026-10-25T08:00:57+00:00",
-   "category": "wg",
-   "title": "Großes, helles Zimmer in einer Wohnung für zwei Personen",
-   "price": 457.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1050",
-   "district": "Margareten",
-   "area": 18.0,
-   "rooms": null,
-   "address": "Wien 05. Bezirk Margareten · Siebenbrunnengasse 27",
-   "image": "https://img.wg-gesucht.de/media/up/2026/42/6fdc499a2b56bfcb9b689a4291bb2fa498a668f21b21274f8af98a9da56ae0fd_photo_2026_10_25_06_00_59.small.jpg",
-   "description": "Hello!! I’m looking for my perfect flatmate for the month of November! The apartment is located in the Margareten neighborhood and is bright, peaceful, and full of cozy charm. Since the two bedrooms are connected, the living situation is quite intimate, so I’m looking for a woman/flinta person. The apartment is currently going through a little transition, and some of the furniture in the shared spaces still needs to be bought. I’d love to find someone who’s excited about creating a warm, cozy home together and making it a lovely place to spend the winter months. <3 The available room even has its own fireplace! A little about me: I’m Chloé, a professional musician, and I already live in the apartment. I often need to practise at home during the day, so it’s important that you feel comfortable living with sound and sharing a home with someone who spends quite a bit of time there. I love people who enjoy sharing things, whether it’s good food, beautiful music, little everyday moments, or simply a cozy atmosphere. I’d be so happy to live with someone who loves creating a home that feels warm, welcoming, and full of life. For me, the most important thing is that we feel comfortable around each other, are considerate of one another, and still have space to be ourselves. Clear communication and sharing of feelings is also very important for me ! If this sounds like your kind of place and you feel we might get along well, I’d love to hear from you and get to know you! See you soon, Chloé ♡ -------------------------------------------------------------------------------------------- Hallo!! Ich suche für den Monat November mein perfekt Person, mit mir zu leben ! Die Wohnung befindet sich im Bezirk Margareten und ist hell, ruhig und voller gemütlichem Charme. Da die beiden Schlafzimmer miteinander verbunden sind, ist die Wohnsituation recht intim. Deshalb suche ich eine Frau oder eine FLINTA-Person. Die Wohnung befindet sich gerade in einer kleinen Übergangsphase, und einige Möbel für die Gemeinschaftsräume müssen noch angeschafft werden. Ich würde mich freuen, jemanden zu finden, der Lust hat, gemeinsam ein warmes, gemütliches Zuhause zu gestalten und es sich für die Wintermonate so richtig schön zu machen. <3 Das freie Zimmer hat sogar einen eigenen Kamin! Ein bisschen über mich: Ich bin Chloé, professionelle Musikerin, und wohne bereits in der Wohnung. Da ich tagsüber oft zu Hause üben muss, ist es wichtig, dass du dich mit Musik und Geräuschen wohlfühlst und ger",
-   "published": "2026-10-25T06:02:16.038353+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "nur Frauen/FLINTA*",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 2,
-   "price_total": 457.0,
-   "price_estimated": false,
-   "ppsqm": 25.39,
-   "score": 44,
-   "checked_at": "2026-10-28T12:01:10+00:00"
   },
   {
    "id": "69509e327631",
@@ -6010,54 +5416,6 @@
    "checked_at": "2026-10-30T08:01:05+00:00"
   },
   {
-   "id": "a22a52c1b3d5",
-   "keys": [
-    "wggesucht:14277235",
-    "wggesucht:13370815"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-06-Bezirk-Mariahilf.14277235.html"
-    }
-   ],
-   "first_seen": "2026-10-25T05:08:55+00:00",
-   "category": "wg",
-   "title": "wg-zimmer wird für einige zeit frei!",
-   "price": 650.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1060",
-   "district": "Mariahilf",
-   "area": 25.0,
-   "rooms": null,
-   "address": "Wien 06. Bezirk Mariahilf · Webgasse 37",
-   "image": "https://img.wg-gesucht.de/media/up/2026/42/68bf6bae5d38de9203d5222064cb49004bb2a753dc6c3b0fb62ed30dd36f478b_179287632243094676472243026190.small.JPEG",
-   "description": "Ich vermiete mein Zimmer in einer gemütlichen 2 Zimmer Altbauwohnung im 6. Bezirk (Mariahilf), nur 5 Gehminuten von der Mariahilfer Straße entfernt! 😊 Das Zimmer ist hell, geräumig und hat einen schönen Holzparkettboden. Die Möbel auf den Fotos nehme ich größtenteils mit. Im Zimmer bleiben nur die beiden grauen Schränke und ein Bettrahmen, der noch besorgt wird. Die Einrichtung im Vorraum und im Zimmer gehört dem Vermieter und bleibt in der Wohnung. Es fällt keine Ablöse an. Das WLAN mit 300 Mbit wird auch zur Verfügung gestellt. Das Zimmer kann mit einem eigenen Schlüssel abgesperrt werden. Bad und WC sind getrennt. Die Wohnung ist außerdem sehr ruhig, ich habe eigentlich noch nie etwas von den Nachbarn gehört. — I’m renting out my room in a cozy 2 room apartment in Vienna’s 6th district (Mariahilf), just a 5 minute walk from Mariahilfer Straße! 😊 The room is bright and spacious with beautiful wooden parquet flooring. I’ll be taking most of the furniture shown in the pictures with me. Only the two grey wardrobes will stay, and a bed frame will be provided. The furnishings in the hallway and room belong to the landlord and will remain in the apartment. There is no furniture takeover fee. The WiFi (300 Mbps) is provided. Your room can also be locked with your own key. The bathroom and toilet are separate. The apartment is also really quiet. I’ve honestly never heard any noise from the neighbours. Der nächste Supermarkt ist nur 3 Minuten zu Fuß entfernt. Die Mariahilferstraße ist ca 5 Minuten entfernt und mit dem gleichen Abstand bist du auch bei der U3 Zieglergasse. Zur Pilgramgasse U4 geht man ca 7 Minuten. Man kann aber auch eine Station mit dem Bus fahren. Büsse gibt es den 57A, 13A und 14A bei Esterhazygasse bzw Hirschengasse, das sind ca 3-5 Minuten bis zu den Stationen. Die nächsten Supermärkte in der Nähe sind Spar, Denn's und Billa. Es gibt 4min weg eine Poststation mit Wunschabholbox. Es gibt auch die Möglichkeit Räder im Hinterhof abzusperren. ---- The nearest supermarket is just a 3-minute walk away. Mariahilfer Straße is about 5 minutes away, and the U3 Zieglergasse station is roughly the same distance. To reach U4 Pilgramgasse, it’s about a 7-minute walk, or you can take the bus for one stop. The nearby bus lines are 57A, 13A, and 14A, with stops at Esterhazygasse or Hirschengasse, both about 3–5 minutes away. The closest supermarkets are Spar, Denn’s, and Billa. There’s also a post office with a pickup box just 4 minutes away, and bicycles can",
-   "published": "2026-10-24T22:11:03.072649+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "Zwischenmiete",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 2,
-   "price_total": 650.0,
-   "price_estimated": false,
-   "ppsqm": 26.0,
-   "score": 34,
-   "checked_at": "2026-10-27T16:01:48+00:00",
-   "price_drop": {
-    "from": 700.0,
-    "to": 650.0,
-    "at": "2026-10-28T16:01:08+00:00"
-   }
-  },
-  {
    "id": "d2686de7396a",
    "keys": [
     "immmo:1590605084"
@@ -6104,44 +5462,6 @@
    "score": 21
   },
   {
-   "id": "639825beb440",
-   "keys": [
-    "wggesucht:14277029"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wohnungen-in-Wien-12-Bezirk-Meidling.14277029.html"
-    }
-   ],
-   "first_seen": "2026-10-24T20:00:56+00:00",
-   "category": "wohnung",
-   "title": "Wohnung  mit Voraum,Bad,Wc, kleine Zimmer",
-   "price": 380.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1120",
-   "district": "Meidling",
-   "area": 20.0,
-   "rooms": null,
-   "address": "Wien 12. Bezirk Meidling · Rauchgasse",
-   "image": "https://www.wg-gesucht.de/img/placeholder/empty_state_offer.svg",
-   "description": "Die Wohnung hat eine komplette Küche mit Vorausstattung . Ein kleiner Vorraum mit Kasten, Bad mit WC und Dusche und kleines eingerichtetes Zimmer Die Meidlinger Hauptstrasse ist 5 eintfernt sowi U6,U4, Meidlinger Bahnhof ca 7min Gehweg.",
-   "published": "2026-10-24T19:04:28.780189+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "price_total": 380.0,
-   "price_estimated": false,
-   "ppsqm": 19.0,
-   "score": 28
-  },
-  {
    "id": "b80141a91e34",
    "keys": [
     "willhaben:1990037577"
@@ -6176,7 +5496,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 460.0,
    "price_estimated": false,
    "ppsqm": 24.21,
@@ -6233,7 +5553,7 @@
     "Garten",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 720.0,
    "price_estimated": false,
    "ppsqm": 25.71,
@@ -6281,7 +5601,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "wg_size": 3,
    "price_total": 558.0,
    "price_estimated": false,
@@ -6369,7 +5689,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "wg_size": 2,
    "price_total": 700.0,
    "price_estimated": false,
@@ -6505,7 +5825,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 3.0,
@@ -6543,7 +5863,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 14.71,
@@ -6647,7 +5967,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 495.0,
    "price_estimated": false,
    "ppsqm": 23.57,
@@ -6778,7 +6098,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "wg_size": 4,
    "price_total": 737.0,
    "price_estimated": false,
@@ -6820,7 +6140,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 10.67,
@@ -6859,7 +6179,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 490.0,
    "price_estimated": false,
    "ppsqm": 12.25,
@@ -6956,7 +6276,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 427.0,
    "price_estimated": false,
    "ppsqm": 18.57,
@@ -6995,143 +6315,12 @@
    "flags": [
     "Altbau"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 13.57,
    "excluded": "Wohnungstausch",
    "score": 39
-  },
-  {
-   "id": "c462759ebe38",
-   "keys": [
-    "wggesucht:14244543",
-    "wggesucht:13009545"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-08-Bezirk-Josefstadt.14244543.html"
-    }
-   ],
-   "first_seen": "2026-10-22T20:01:01+00:00",
-   "category": "wg",
-   "title": "OEAD Student Housing",
-   "price": 624.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1080",
-   "district": "Josefstadt",
-   "area": 13.0,
-   "rooms": null,
-   "address": "Wien 08. Bezirk Josefstadt · Tigergasse 23",
-   "image": "https://img.wg-gesucht.de/media/up/2026/41/4ac076b1bac379d8a110fcf7900850bc200173806671dc80c9916ae423521b07_IMG_8374.small.jpg",
-   "description": "Die Wohnung befindet sich in einem wunderschönen, 4-kant-artigen Altbau. Der Charme des Gebäudes ist super erhalten und gleichzeitig ist die Wohnung wie ein Neubau saniert. Der Zugang zur Wohnung ist über den Innenhof-seitigen Balkon im 1. Stock. Die Wohnung selbst zieht sich über diesen 1. Stock und das darüberliegende Dachgeschoss (siehe Fotos). Das freie Zimmer befindet sich im 1.Stock und hat auch eine Tür zu diesem Zugangsbalkon. Im unteren Stockwerk befinden sich: ein großzügiger Eingangsbereich inkl. Küche und Treppe zum Obergeschoss, Wohnzimmer, Badezimmer mit Dusche und Waschtrockner, separate Toilette, das freie Zimmer. Im oberen Stockwerk befinden sich: Philipps und Connys Zimmer und ein zusätzlicher offener Bereich mit Couch, Yogamatte und Connys und Philipps Arbeitsplätzen. Das Zimmer ist ca. 14m2 groß und wird unmöbliert übergeben. Die Wohnung liegt sehr zentral: Direkt an der Innenstadt beim Rathaus, zwischen dem Theater an der Josefstadt und dem English theatre. Es ist eine sehr einladende und belebte Gegend mit sämtlichen Einkaufsmöglichkeiten, Cafés, Bars, etc. Der Philipp meint, wir wohnen im Italienischen Viertel, weil es hier so viele Pizzarias, Italienische Feinkostläden und Eisgeschäfte gibt. Am Samstag ist ein Markt direkt vor der Haustür. Von dem ganzen Trubel draußen bekommt man bei uns drinnen nichts mit. Im Erdgeschoss des Gebäudes befindet sich allerdings ein Restaurant und im Sommer ist der Gastgarten im Innenhof gut besucht. Das ist das einzige, worauf man sich einstellen sollte. In wenigen Gehminuten ist man bei der U2 Station Rathaus, beim Bus 13A und der Straßenbahn 2. Mit dem Rad kommt man in der Gegend auch bequem herum. Wir wünschen uns eine Person für ein harmonisches Zusammenleben, in dem offene Kommunikation und ein sauberer Lebensstil selbstverständlich sind. Wichtig ist uns eine entspannte, ungezwungene Atmosphäre, in der jede Person mit ihren persönlichen Facetten ihren Platz findet. Schön wäre ein Miteinander, in dem man sich austauschen kann, gerne teilt, Interesse füreinander hat und aufeinander achtet. Es ist also keine Zweck-WG, gleichzeitig hat jede*r seinen eigenen Alltag und Rhythmus – deshalb gehört auch dazu, dass man sich phasenweise weniger sieht. Genauso ergeben sich aber auch spontane Film-, Spiele- oder sonstige Abende. Noch zu uns: Conny (29): Ich bin im Jänner eingezogen und habe mich gerade erst eingelebt, da ich die letzten 4-5 Jahre in Frankreich gelebt habe. Ich bin Wasserbau-Ingenieurin, ursp",
-   "published": "2026-10-22T18:02:23.984338+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Altbau",
-    "Balkon",
-    "Garten",
-    "Neubau/Erstbezug",
-    "möbliert",
-    "privat",
-    "saniert"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 2,
-   "price_total": 624.0,
-   "price_estimated": false,
-   "ppsqm": 48.0,
-   "score": 22,
-   "checked_at": "2026-10-28T08:01:06+00:00"
-  },
-  {
-   "id": "e84e8b08e815",
-   "keys": [
-    "wggesucht:10067555"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-08-Bezirk-Josefstadt.10067555.html"
-    }
-   ],
-   "first_seen": "2026-10-22T20:01:01+00:00",
-   "category": "wg",
-   "title": "Zentrale Wohnung mit Top Anbindung",
-   "price": 650.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1080",
-   "district": "Josefstadt",
-   "area": 15.0,
-   "rooms": null,
-   "address": "Wien 08. Bezirk Josefstadt · Josefstädterstraße 105",
-   "image": "https://img.wg-gesucht.de/media/up/2026/41/d9f8644997b06db58d472aa6ebd9152c57a1f1494238272083ac32539961ef89_WhatsApp_Image_2026_10_12_at_13.54.52.small.jpeg",
-   "description": "Veit (25), Meine Freundin (Rita, 25) und ich (Max, 27) suchen übergangsmäßig (ca für 6 Monate) 1 neues Wg-Mitglied. Wir studieren beide an der Vetmed Wien und haben einen Hund. Das Zimmer hat 15 m^2 und ist ab Ende Oktober bis Ende März 2027 frei. Die Miete beträgt 650 euro. Die U6, 2er, 5er und 33er sind praktisch direkt vor der Haustüre. Penny und Billa sind 2-3 Gehminuten entfernt. Wenn du gerne fortgehst ist auch dafür bestens gesorgt mit vielen Lokalen direkt am Gürtel. Waschküche ist im Keller. Natürlich ist keine Wohnung perfekt, darum hier die Minuspunkte: - kein Geschirrspüler - begrenzt Warmwasser (wir haben mitgestoppt - wenn man sich sehr heiß duscht, dann reicht es für 8min und füllt sich nach 5 Stunden wieder auf; je nachdem wie heiß man sich duscht, reicht es aber auch länger) - hat bis jetzt aber immer gut funktioniert, wenn man ein bisschen drauf achtet Falls du Interesse hast schreibe uns, damit wir eine Besichtigung ausmachen können. LG Max und Rita",
-   "published": "2026-10-22T17:02:57.724980+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Zwischenmiete",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 4,
-   "price_total": 650.0,
-   "price_estimated": false,
-   "ppsqm": 43.33,
-   "score": 0,
-   "checked_at": "2026-10-28T08:01:06+00:00"
-  },
-  {
-   "id": "b5575463b7ec",
-   "keys": [
-    "wggesucht:14270377"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wohnungen-in-Wien-03-Bezirk-Landstrasse.14270377.html"
-    }
-   ],
-   "first_seen": "2026-10-22T20:01:01+00:00",
-   "category": "wohnung",
-   "title": "Zimmer in einem schönen Duplex Apartment",
-   "price": 500.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1030",
-   "district": "Landstraße",
-   "area": 15.0,
-   "rooms": null,
-   "address": "Wien 03. Bezirk Landstraße · Hegergasse 24",
-   "image": "https://img.wg-gesucht.de/media/up/2026/42/aa689e52bb8418bb80d5b582c75f3a04d9f2fae73846af49ec993f9d5c878710_20748179269580180280800.small.JPEG",
-   "description": "Hey alle zusammen! Ich suche zwei freundliche, aufgeschlossene und energische Menschen, mit denen ich meine Wohnung teilen und eine schöne, positive Atmosphäre zu Hause schaffen kann Die Wohnung hat 3 Schlafzimmer + 1 Wohnzimmer 2 Schlafzimmer sind oben und mein Zimmer ist unten Ich würde gerne mitbewohner finden, die unbeschwert, respektvoll sind und gute gespräche genießen, lachen und die wohnung eher wie ein zuhause fühlen als nur ein schlafplatz. Ich mag es wirklich, eine wg zu haben, die sich für alle super wohl fühlt, mit einer freundlichen und schönen atmosphäre, in der wir uns alle zu hause fühlen. Ja, wir müssen die Wohnung liefern Deshalb suche ich nach Mitbewohnern, die lange bleiben wollen und gemeinsam ein Zuhause schaffen wollen 📍 Ansichten: Die Wohnung steht nach vorheriger Vereinbarung jederzeit zur Besichtigung zur Verfügung. Schicken Sie mir einfach eine Nachricht, und wir können eine bequeme Zeit vereinbaren Wenn sie möchten, habe ich ein video von flach für sie aufgenommen, damit sie es sehen können, bevor sie für visi kommen (fragen sie einfach danach). 📄 Finanzielle Anforderungen: Ich suche Mieter, die einen Einkommensnachweis (wie Gehaltsabrechnungen) oder eine finanzielle Garantie von ihrer Familie erbringen können Interesse? Schick mir eine nachricht und erzähl mir ein wenig über dich. Ich würde gerne von dir hören! Wenn Sie eine Gehaltsabrechnung oder eine Elterngarantie haben, beginnen Sie Ihre Nachricht mit Kaffee Freue mich darauf, dich zu treffen! 🤗 Hey everyone! I’m looking for two friendly, open-minded, and energetic people to share my apartment with and create a lovely, positive atmosphere at home The flat has 3 bedrooms + 1 Living room 2 Bedrooms are Upstairs and my Room is downstairs I’d love to find flatmates who are easygoing, respectful, and enjoy good conversations, sharing a laugh, and making the apartment feel like a home rather than just a place to sleep 🌿☕🎶 I really like to have a WG which feels super comfortable for all with a Friendly and Lovely atmosphere where we all feel Home ❤️ Yes we have to furnish the Flat that's why i'm looking for flatmates who wants to stay long and want to create a Home Together 📍 Viewings: The apartment is available for viewing at any time by prior arrangement. Just send me a message, and we can arrange a convenient time if you want, I have recorded a Video from flat for you so you can watch it before coming for visi ( Just ask for it ) 📄 Financial requirements: I’m looking for tenan",
-   "published": "2026-10-22T18:04:20.787728+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "price_total": 500.0,
-   "price_estimated": false,
-   "ppsqm": 33.33,
-   "score": 20,
-   "price_drop": {
-    "from": 500.0,
-    "to": 400.0,
-    "at": "2026-10-29T12:01:10+00:00"
-   }
   },
   {
    "id": "576a4b4e41d9",
@@ -7205,7 +6394,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 400.0,
    "price_estimated": false,
    "ppsqm": 36.36,
@@ -7244,7 +6433,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 16.67,
@@ -7284,7 +6473,7 @@
     "Garten",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 655,
    "price_estimated": true,
    "ppsqm": 16.84,
@@ -7332,7 +6521,7 @@
     "Neubau/Erstbezug",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 18.71,
@@ -7467,7 +6656,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 19.0,
@@ -7590,7 +6779,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 1024,
    "price_estimated": true,
    "ppsqm": 14.18,
@@ -7690,7 +6879,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 600.0,
    "price_estimated": false,
    "ppsqm": 46.15,
@@ -7824,7 +7013,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 650,
    "price_estimated": false,
    "ppsqm": 16.25,
@@ -7959,7 +7148,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 596.57,
    "price_estimated": false,
    "ppsqm": 18.64,
@@ -8118,7 +7307,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 749.0,
    "price_estimated": false,
    "ppsqm": 17.83,
@@ -8208,7 +7397,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 623.0,
    "price_estimated": false,
    "ppsqm": 10.56,
@@ -8247,7 +7436,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 377.0,
    "price_estimated": false,
    "ppsqm": 9.92,
@@ -8287,7 +7476,7 @@
     "Zwischenmiete",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 575.0,
    "price_estimated": false,
    "ppsqm": 38.33,
@@ -8331,7 +7520,7 @@
     "Lift",
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 613.02,
    "price_estimated": false,
    "ppsqm": 18.03,
@@ -8371,7 +7560,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 524.0,
    "price_estimated": false,
    "ppsqm": 6.72,
@@ -8457,53 +7646,11 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 21.43,
    "score": 36
-  },
-  {
-   "id": "bbd0fd69f0d8",
-   "keys": [
-    "wggesucht:10995514",
-    "wggesucht:14297223"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-07-Bezirk-Neubau.10995514.html"
-    }
-   ],
-   "first_seen": "2026-10-20T00:00:58+00:00",
-   "category": "wg",
-   "title": "as of December/girls only: Big Room in charming Biedermeier house, Vienna historic city centre",
-   "price": 655.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1070",
-   "district": "Neubau",
-   "area": 22.0,
-   "rooms": null,
-   "address": "Wien 07. Bezirk Neubau · Gutenberggasse 7",
-   "image": "https://img.wg-gesucht.de/media/up/2024/19/c8efc523d027750835f63dbd58faa16e1ed13534daf893b187ada1a48188e5e2_171517530284594673730284520944.small.JPEG",
-   "description": "Spacious room in a quiet shared apartment for young female professionals. Please note: the photos are outdated — all wall decorations have been removed and the room has been freshly painted. Looking for: • young working professionals with full-time employment or PhD students The apartment is very quiet and offers a high level of privacy, as all bedrooms are separated from each other and from the kitchen/common area. The apartment is fully equipped. Blankets, pillows, towels and bed linen are provided. The room is furnished and intended for one person only. Occasional guests are welcome. No smoking of any kind, including outdoor smoking. Unfortunately it is not possible to bring additional furniture, except for small personal items fitting into the room. Central, charming and historically beautiful. The apartment is located in Spittelberg, one of Vienna’s most sought-after and atmospheric neighbourhoods: historic, artistic and vibrant, often described as Vienna’s Montmartre. Quiet cobblestone pedestrian streets, beautifully preserved historic buildings and no car traffic directly in front or back of the house. Surrounded by trendy cafés, restaurants, galleries, vintage shops and concept stores, the area attracts an international and creative crowd. • directly behind MuseumsQuartier We share the apartment with a cat. About us: I’m 38 and work full-time as a project manager. Besides that, I sing professionally in an event band, so many weekends I’m away performing. Living with me is a 20-year-old female student from Poland, working on the side — very kind, respectful and easygoing. When time permits I enjoy bike rides, dancing, arts and cultural events, and would love to get into yoga. I love dancing salsa. I’ve travelled extensively and lived in different countries across three continents, so I’m very open-minded and always happy to exchange stories and experiences. My artist friends keep me updated about interesting cultural events in Vienna, and I’m always happy to share recommendations — many are free and nearby. I’m a relaxed vegetarian. I hardly ever cook and am honestly quite terrible at it. The apartment itself is tidy, organized and clutter-free, which we all appreciate and maintain together. The kitchen is large, warm and fully equipped — the main place for hanging out together. Since it is far away from the bedrooms, you still have plenty of privacy and quiet in your room. You’re welcome to invite friends over for dinner, drinks or small gatherings",
-   "published": "2026-10-19T22:02:39.732914+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "möbliert",
-    "nur Frauen/FLINTA*",
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 655.0,
-   "price_estimated": false,
-   "ppsqm": 29.77,
-   "score": 30
   },
   {
    "id": "78e976763a16",
@@ -8719,7 +7866,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 661.64,
    "price_estimated": false,
    "ppsqm": 22.05,
@@ -8764,7 +7911,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 693,
    "price_estimated": false,
    "ppsqm": 16.12,
@@ -8844,7 +7991,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 729.39,
    "price_estimated": false,
    "ppsqm": 21.45,
@@ -8897,7 +8044,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 699.0,
    "price_estimated": false,
    "ppsqm": 21.18,
@@ -8960,7 +8107,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 730.0,
    "price_estimated": false,
    "ppsqm": 20.86,
@@ -9045,7 +8192,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 630.0,
    "price_estimated": false,
    "ppsqm": 33.16,
@@ -9104,7 +8251,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 23.44,
@@ -9142,7 +8289,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 335.66,
    "price_estimated": false,
    "ppsqm": 10.17,
@@ -9191,7 +8338,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 25.0,
@@ -9338,7 +8485,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 522.9,
    "price_estimated": false,
    "ppsqm": 10.46,
@@ -9379,7 +8526,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 12.89,
@@ -9419,7 +8566,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 370.0,
    "price_estimated": false,
    "ppsqm": 9.25,
@@ -9459,7 +8606,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 795.0,
    "price_estimated": false,
    "ppsqm": 10.74,
@@ -9566,7 +8713,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 699.0,
    "price_estimated": false,
    "ppsqm": 15.2,
@@ -9605,7 +8752,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 740.0,
    "price_estimated": false,
    "ppsqm": 17.21,
@@ -9697,7 +8844,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 411.56,
    "price_estimated": false,
    "ppsqm": 10.83,
@@ -9736,7 +8883,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 37.5,
@@ -9776,7 +8923,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 460.0,
    "price_estimated": false,
    "ppsqm": 10.7,
@@ -9946,7 +9093,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 424.64,
    "price_estimated": false,
    "ppsqm": 11.48,
@@ -9994,7 +9141,7 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 45.0,
@@ -10034,7 +9181,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 520.0,
    "price_estimated": false,
    "ppsqm": 11.56,
@@ -10240,7 +9387,7 @@
     "Altbau",
     "befristet"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 922,
    "price_estimated": true,
    "ppsqm": 17.14,
@@ -10290,7 +9437,7 @@
     "befristet",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 734.0,
    "price_estimated": false,
    "ppsqm": 14.17,
@@ -10329,7 +9476,7 @@
    "flags": [
     "Loggia"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 903,
    "price_estimated": true,
    "ppsqm": 17.53,
@@ -10373,46 +9520,6 @@
    "score": 33
   },
   {
-   "id": "86ddd3261137",
-   "keys": [
-    "wggesucht:13630309"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.13630309.html"
-    }
-   ],
-   "first_seen": "2026-10-19T09:00:58+00:00",
-   "category": "wg",
-   "title": "von U4 Schönbrunn 1 Gehminute!",
-   "price": 397.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 26.0,
-   "rooms": null,
-   "address": "Wien 15. Bezirk Rudolfsheim-Fü... · Winckelmannstraße",
-   "image": "https://img.wg-gesucht.de/media/up/2026/25/c67a8e4a95d871b555c02759e527c12b4ad9aec58f25ccd428acb9a7dcea1caa_1000176503.small.jpg",
-   "description": "",
-   "published": "2026-10-22T11:02:41.690848+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "privat"
-   ],
-   "last_seen": "2026-10-30T12:01:04+00:00",
-   "wg_size": 3,
-   "price_total": 397.0,
-   "price_estimated": false,
-   "ppsqm": 15.27,
-   "score": 66,
-   "checked_at": "2026-10-20T16:01:05+00:00"
-  },
-  {
    "id": "445e733ec7fb",
    "keys": [
     "wggesucht:14254936",
@@ -10451,7 +9558,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 18.75,
@@ -11388,7 +10495,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 502.0,
    "price_estimated": false,
    "ppsqm": 11.67,
@@ -12094,7 +11201,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T08:01:03+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "wg_size": 2,
    "price_total": 797.0,
    "price_estimated": false,
@@ -12138,7 +11245,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 789.71,
    "price_estimated": false,
    "ppsqm": 17.55,
@@ -12177,7 +11284,7 @@
     "befristet",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 690.0,
    "price_estimated": false,
    "ppsqm": 18.65,
@@ -12261,7 +11368,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 615.0,
    "price_estimated": false,
    "ppsqm": 19.84,
@@ -12302,7 +11409,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 720.0,
    "price_estimated": false,
    "ppsqm": 18.95,
@@ -12567,7 +11674,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 745,
    "price_estimated": false,
    "ppsqm": 20.69,
@@ -12648,7 +11755,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 730,
    "price_estimated": false,
    "ppsqm": 20.86,
@@ -12689,7 +11796,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T11:49:23+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 780,
    "price_estimated": false,
    "ppsqm": 16.6,
@@ -12728,7 +11835,7 @@
    "flags": [
     "Loggia"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 884,
    "price_estimated": true,
    "ppsqm": 26.23,
@@ -12803,7 +11910,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 727,
    "price_estimated": true,
    "ppsqm": 16.16,
@@ -12851,7 +11958,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T11:01:05+00:00",
+   "last_seen": "2026-11-03T12:01:09+00:00",
    "price_total": 520.0,
    "price_estimated": false,
    "ppsqm": 13.27,
