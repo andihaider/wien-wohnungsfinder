@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-03T12:50:28+00:00",
- "fingerprint": "f99657eba1792b8b",
+ "updated": "2026-11-03T13:01:07+00:00",
+ "fingerprint": "07ff9b36126c147a",
  "sources": {
   "willhaben": {
    "ok": true,
-   "count": 81,
-   "last_ok": "2026-11-03T12:50:30+00:00",
-   "last_try": "2026-11-03T12:50:30+00:00",
+   "count": 82,
+   "last_ok": "2026-11-03T13:01:09+00:00",
+   "last_try": "2026-11-03T13:01:09+00:00",
    "last_attempt_ok": true,
    "empty_streak": 0
   },
@@ -23,19 +23,18 @@
   "immoscout24": {
    "ok": true,
    "count": 23,
-   "last_ok": "2026-11-03T12:50:48+00:00",
-   "last_try": "2026-11-03T12:50:48+00:00",
+   "last_ok": "2026-11-03T13:01:29+00:00",
+   "last_try": "2026-11-03T13:01:29+00:00",
    "last_attempt_ok": true,
    "empty_streak": 0
   },
   "immowelt": {
    "ok": true,
-   "count": 254,
-   "last_ok": "2026-11-03T12:02:53+00:00",
-   "last_try": "2026-11-03T12:02:53+00:00",
+   "count": 256,
+   "last_ok": "2026-11-03T13:02:31+00:00",
+   "last_try": "2026-11-03T13:02:31+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   },
   "wggesucht": {
    "ok": true,
@@ -49,12 +48,11 @@
   "makler": {
    "ok": true,
    "count": 2,
-   "last_ok": "2026-11-03T12:16:09+00:00",
-   "last_try": "2026-11-03T12:16:09+00:00",
+   "last_ok": "2026-11-03T13:02:43+00:00",
+   "last_try": "2026-11-03T13:02:43+00:00",
    "last_attempt_ok": true,
-   "raw": 205,
-   "empty_streak": 0,
-   "skipped": true
+   "raw": 204,
+   "empty_streak": 0
   },
   "gewofinder": {
    "ok": true,
@@ -69,24 +67,60 @@
   "immmo": {
    "ok": true,
    "count": 94,
-   "last_ok": "2026-11-03T12:18:39+00:00",
-   "last_try": "2026-11-03T12:18:39+00:00",
+   "last_ok": "2026-11-03T13:05:14+00:00",
+   "last_try": "2026-11-03T13:05:14+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   }
  },
  "excluded": {
-  "Gemeindebau (Wohn-Ticket nötig)": 11,
+  "Gemeindebau (Wohn-Ticket nötig)": 14,
   "reserviert/vergeben": 10,
-  "keine Küche": 1,
+  "keine Küche": 2,
   "Kurzzeitmiete": 1,
   "keine Wohnung": 2,
-  "Wohnungstausch": 8
+  "Wohnungstausch": 9,
+  "zu klein": 1
  },
- "last_push": "2026-11-03T12:50:48+00:00",
+ "last_push": "2026-11-03T13:05:19+00:00",
  "last_problem_push": null,
  "items": [
+  {
+   "id": "d037a529e18a",
+   "keys": [
+    "willhaben:2114700369"
+   ],
+   "links": [
+    {
+     "source": "willhaben",
+     "label": "willhaben",
+     "url": "https://www.willhaben.at/iad/immobilien/d/mietwohnungen/wien/wien-1040-wieden/sonnige-1-zimmerwohnung-naehe-hauptbahnhof-2114700369/"
+    }
+   ],
+   "first_seen": "2026-11-03T13:01:07+00:00",
+   "category": "wohnung",
+   "title": "Sonnige 1 Zimmerwohnung /Nähe Hauptbahnhof!",
+   "price": 544.89,
+   "price_note": "Gesamtmiete",
+   "zip": "1040",
+   "district": "Wieden",
+   "area": 41.0,
+   "rooms": 1.0,
+   "address": "Wien, 04. Bezirk, Wieden",
+   "image": "https://cache.willhaben.at/mmo/9/211/470/0369_1003628419.jpg",
+   "description": "Heizung: Etagenheizung Heizungsart: Gasheizung Keller: NEIN Nettomiete: 387,81 Eur Kaltmiete: 426,59 Eur Nebenkosten: 98,06 Eur Miete (exkl. MWSt): 387,81 Eur Gesamtbelastung (exkl. MWSt): 495,35 Eur Sonstige Kosten: 9,48 Eur Kaution: 1634.67 Anzahl Badezimmer: 1.00 Verfügbar ab: sofort Anzahl WC: 1",
+   "published": "2026-11-03T13:58:41Z",
+   "advertiser": "Rustler Immobilientreuhand GesmbH",
+   "email": "",
+   "phone": "004319042000",
+   "tags": [],
+   "flags": [],
+   "last_seen": "2026-11-03T13:01:07+00:00",
+   "price_total": 544.89,
+   "price_estimated": false,
+   "ppsqm": 13.29,
+   "score": 62
+  },
   {
    "id": "a55c5655fb12",
    "keys": [
@@ -363,7 +397,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 718.57,
    "price_estimated": false,
    "ppsqm": 12.18,
@@ -488,7 +522,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 28.57,
@@ -729,7 +763,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 579.0,
    "price_estimated": false,
    "ppsqm": 5.26,
@@ -904,7 +938,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 648.0,
    "price_estimated": false,
    "ppsqm": 23.14,
@@ -950,7 +984,7 @@
    "flags": [
     "Lift"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 778.99,
    "price_estimated": false,
    "ppsqm": 19.47,
@@ -1031,7 +1065,7 @@
    "price_total": 906,
    "price_estimated": true,
    "ppsqm": 17.66,
-   "score": 42
+   "score": 36
   },
   {
    "id": "a1ee1c12217f",
@@ -1111,7 +1145,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_key": "makler:justimmo-17278984",
    "price_total": 676.58,
    "price_estimated": false,
@@ -1148,7 +1182,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 639,
    "price_estimated": true,
    "ppsqm": 20.68,
@@ -1313,7 +1347,7 @@
    "flags": [
     "Garten"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 689.0,
    "price_estimated": false,
    "ppsqm": 22.23,
@@ -1393,7 +1427,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 435.0,
    "price_estimated": false,
    "ppsqm": 7.91,
@@ -1449,7 +1483,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 717.66,
    "price_estimated": false,
    "ppsqm": 10.11,
@@ -1495,7 +1529,7 @@
     "Garten",
     "Terrasse"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 748.0,
    "price_estimated": false,
    "score": 17
@@ -1618,7 +1652,7 @@
     "Neubau/Erstbezug",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 680,
    "price_estimated": false,
    "ppsqm": 20.81,
@@ -1660,7 +1694,7 @@
    "flags": [
     "Balkon"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 680,
    "price_estimated": false,
    "ppsqm": 12.83,
@@ -1954,7 +1988,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 17.44,
@@ -1992,7 +2026,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 674.25,
    "price_estimated": false,
    "ppsqm": 15.32,
@@ -2032,7 +2066,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 6.63,
@@ -2072,7 +2106,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 540.0,
    "price_estimated": false,
    "ppsqm": 10.38,
@@ -2112,7 +2146,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 21.43,
@@ -2193,7 +2227,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 600.0,
    "price_estimated": false,
    "ppsqm": 26.09,
@@ -2239,7 +2273,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 627.0,
    "price_estimated": false,
    "ppsqm": 14.58,
@@ -2571,7 +2605,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 45.0,
@@ -2611,7 +2645,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 719.0,
    "price_estimated": false,
    "ppsqm": 23.97,
@@ -2740,7 +2774,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 432.0,
    "price_estimated": false,
    "ppsqm": 9.82,
@@ -2907,7 +2941,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 699,
    "price_estimated": true,
    "ppsqm": 13.98,
@@ -3033,7 +3067,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 21.35,
@@ -3164,7 +3198,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 744.4,
    "price_estimated": false,
    "ppsqm": 27.57,
@@ -3289,7 +3323,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 500.0,
    "price_estimated": false,
    "ppsqm": 22.73,
@@ -3338,7 +3372,7 @@
     "Balkon",
     "Terrasse"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 230,
    "price_estimated": false,
    "ppsqm": 6.76,
@@ -3381,7 +3415,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 25.77,
@@ -3433,7 +3467,7 @@
    "price_estimated": false,
    "ppsqm": 13.97,
    "score": 49,
-   "checked_at": "2026-11-03T09:01:06+00:00",
+   "checked_at": "2026-11-03T13:01:07+00:00",
    "price_key": "immoscout24:6ae9aa3b16441879f269320b",
    "price_drop": {
     "from": 722,
@@ -3563,7 +3597,7 @@
     "Terrasse",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 590.0,
    "price_estimated": false,
    "ppsqm": 29.5,
@@ -3644,7 +3678,7 @@
     "befristet",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 350.0,
    "price_estimated": false,
    "ppsqm": 17.5,
@@ -3779,7 +3813,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 36.25,
@@ -3905,7 +3939,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 22.57,
@@ -3941,7 +3975,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 700,
    "price_estimated": false,
    "ppsqm": 18.42,
@@ -4081,7 +4115,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 449.84,
    "price_estimated": false,
    "ppsqm": 10.97,
@@ -4132,7 +4166,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 26.63,
@@ -4171,7 +4205,7 @@
     "Altbau",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_key": "makler:justimmo-17343115",
    "price_total": 713.39,
    "price_estimated": false,
@@ -4297,7 +4331,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 15.19,
@@ -4336,7 +4370,7 @@
     "Zwischenmiete",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 490.0,
    "price_estimated": false,
    "ppsqm": 32.67,
@@ -4379,7 +4413,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 697,
    "price_estimated": true,
    "ppsqm": 20.56,
@@ -4418,7 +4452,7 @@
     "Balkon",
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 847,
    "price_estimated": true,
    "ppsqm": 19.79,
@@ -4456,7 +4490,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 729.0,
    "price_estimated": false,
    "score": 4
@@ -4494,7 +4528,7 @@
     "Ablöse",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 680.0,
    "price_estimated": false,
    "ppsqm": 10.79,
@@ -4568,7 +4602,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 14.9,
@@ -4621,11 +4655,11 @@
     "Loggia",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 901,
    "price_estimated": true,
    "ppsqm": 17.91,
-   "score": 21
+   "score": 17
   },
   {
    "id": "12acafec391d",
@@ -4699,7 +4733,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 587.0,
    "price_estimated": false,
    "ppsqm": 11.51,
@@ -4905,7 +4939,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 480.0,
    "price_estimated": false,
    "ppsqm": 7.06,
@@ -4994,7 +5028,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 730.0,
    "price_estimated": false,
    "ppsqm": 24.33,
@@ -5033,7 +5067,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 430.0,
    "price_estimated": false,
    "ppsqm": 8.43,
@@ -5121,7 +5155,7 @@
     "privat",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 612,
    "price_estimated": false,
    "ppsqm": 10.93,
@@ -5164,7 +5198,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 695.52,
    "price_estimated": false,
    "ppsqm": 19.87,
@@ -5281,7 +5315,7 @@
     "Neubau/Erstbezug",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 795.0,
    "price_estimated": false,
    "ppsqm": 30.58,
@@ -5330,7 +5364,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 765.0,
    "price_estimated": false,
    "ppsqm": 12.97,
@@ -5459,7 +5493,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 586.0,
    "price_estimated": false,
    "ppsqm": 8.62,
@@ -5500,7 +5534,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 460.0,
    "price_estimated": false,
    "ppsqm": 24.21,
@@ -5557,7 +5591,7 @@
     "Garten",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 720.0,
    "price_estimated": false,
    "ppsqm": 25.71,
@@ -5651,7 +5685,7 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 430.0,
    "price_estimated": false,
    "ppsqm": 10.49,
@@ -5742,7 +5776,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 26.67,
@@ -5788,7 +5822,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 728.0,
    "price_estimated": false,
    "ppsqm": 9.22,
@@ -5829,7 +5863,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 3.0,
@@ -5867,7 +5901,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 14.71,
@@ -5971,7 +6005,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 495.0,
    "price_estimated": false,
    "ppsqm": 23.57,
@@ -6023,7 +6057,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 714.0,
    "price_estimated": false,
    "ppsqm": 11.16,
@@ -6144,7 +6178,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 10.67,
@@ -6183,7 +6217,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 490.0,
    "price_estimated": false,
    "ppsqm": 12.25,
@@ -6236,7 +6270,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 640.0,
    "price_estimated": false,
    "ppsqm": 49.23,
@@ -6280,7 +6314,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 427.0,
    "price_estimated": false,
    "ppsqm": 18.57,
@@ -6319,7 +6353,7 @@
    "flags": [
     "Altbau"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 13.57,
@@ -6398,7 +6432,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 400.0,
    "price_estimated": false,
    "ppsqm": 36.36,
@@ -6437,7 +6471,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 16.67,
@@ -6477,7 +6511,7 @@
     "Garten",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 655,
    "price_estimated": true,
    "ppsqm": 16.84,
@@ -6525,7 +6559,7 @@
     "Neubau/Erstbezug",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 18.71,
@@ -6579,7 +6613,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 18.16,
@@ -6660,7 +6694,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 19.0,
@@ -6707,7 +6741,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 630.0,
    "price_estimated": false,
    "ppsqm": 12.12,
@@ -6783,7 +6817,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 1024,
    "price_estimated": true,
    "ppsqm": 14.18,
@@ -6846,7 +6880,7 @@
     "to": 643.19,
     "at": "2026-10-23T11:30:50+00:00"
    },
-   "checked_at": "2026-11-03T09:01:06+00:00"
+   "checked_at": "2026-11-03T13:01:07+00:00"
   },
   {
    "id": "20b79a3fd242",
@@ -6883,7 +6917,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 600.0,
    "price_estimated": false,
    "ppsqm": 46.15,
@@ -6928,7 +6962,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 747.0,
    "price_estimated": false,
    "ppsqm": 8.59,
@@ -7017,7 +7051,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 650,
    "price_estimated": false,
    "ppsqm": 16.25,
@@ -7152,7 +7186,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 596.57,
    "price_estimated": false,
    "ppsqm": 18.64,
@@ -7201,7 +7235,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 592.0,
    "price_estimated": false,
    "ppsqm": 8.34,
@@ -7311,7 +7345,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 749.0,
    "price_estimated": false,
    "ppsqm": 17.83,
@@ -7362,7 +7396,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 730.0,
    "price_estimated": false,
    "ppsqm": 10.9,
@@ -7401,7 +7435,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 623.0,
    "price_estimated": false,
    "ppsqm": 10.56,
@@ -7440,7 +7474,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 377.0,
    "price_estimated": false,
    "ppsqm": 9.92,
@@ -7480,7 +7514,7 @@
     "Zwischenmiete",
     "möbliert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 575.0,
    "price_estimated": false,
    "ppsqm": 38.33,
@@ -7524,7 +7558,7 @@
     "Lift",
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 613.02,
    "price_estimated": false,
    "ppsqm": 18.03,
@@ -7564,7 +7598,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 524.0,
    "price_estimated": false,
    "ppsqm": 6.72,
@@ -7611,7 +7645,7 @@
     "Genossenschaft",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "excluded": "Wohnungstausch",
@@ -7650,7 +7684,7 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 21.43,
@@ -7870,7 +7904,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 661.64,
    "price_estimated": false,
    "ppsqm": 22.05,
@@ -7915,7 +7949,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 693,
    "price_estimated": false,
    "ppsqm": 16.12,
@@ -7995,7 +8029,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 729.39,
    "price_estimated": false,
    "ppsqm": 21.45,
@@ -8048,7 +8082,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 699.0,
    "price_estimated": false,
    "ppsqm": 21.18,
@@ -8111,7 +8145,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 730.0,
    "price_estimated": false,
    "ppsqm": 20.86,
@@ -8196,7 +8230,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 630.0,
    "price_estimated": false,
    "ppsqm": 33.16,
@@ -8255,7 +8289,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 23.44,
@@ -8293,7 +8327,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 335.66,
    "price_estimated": false,
    "ppsqm": 10.17,
@@ -8342,7 +8376,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 25.0,
@@ -8489,12 +8523,11 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 522.9,
    "price_estimated": false,
    "ppsqm": 10.46,
-   "score": 58,
-   "excluded": "Gemeindebau (Wohn-Ticket nötig)"
+   "score": 58
   },
   {
    "id": "c221f07d0c19",
@@ -8530,7 +8563,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 12.89,
@@ -8570,7 +8603,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 370.0,
    "price_estimated": false,
    "ppsqm": 9.25,
@@ -8610,7 +8643,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 795.0,
    "price_estimated": false,
    "ppsqm": 10.74,
@@ -8717,7 +8750,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 699.0,
    "price_estimated": false,
    "ppsqm": 15.2,
@@ -8756,7 +8789,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 740.0,
    "price_estimated": false,
    "ppsqm": 17.21,
@@ -8809,7 +8842,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 530.0,
    "price_estimated": false,
    "ppsqm": 10.6,
@@ -8848,7 +8881,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 411.56,
    "price_estimated": false,
    "ppsqm": 10.83,
@@ -8887,7 +8920,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 37.5,
@@ -8927,7 +8960,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 460.0,
    "price_estimated": false,
    "ppsqm": 10.7,
@@ -9097,7 +9130,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 424.64,
    "price_estimated": false,
    "ppsqm": 11.48,
@@ -9145,7 +9178,7 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 45.0,
@@ -9185,7 +9218,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 520.0,
    "price_estimated": false,
    "ppsqm": 11.56,
@@ -9242,7 +9275,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 590.0,
    "price_estimated": false,
    "ppsqm": 10.17,
@@ -9292,7 +9325,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 574.0,
    "price_estimated": false,
    "ppsqm": 17.93,
@@ -9352,7 +9385,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 348.0,
    "price_estimated": false,
    "ppsqm": 10.55,
@@ -9391,7 +9424,7 @@
     "Altbau",
     "befristet"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 922,
    "price_estimated": true,
    "ppsqm": 17.14,
@@ -9441,7 +9474,7 @@
     "befristet",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 734.0,
    "price_estimated": false,
    "ppsqm": 14.17,
@@ -9480,7 +9513,7 @@
    "flags": [
     "Loggia"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 903,
    "price_estimated": true,
    "ppsqm": 17.53,
@@ -9562,7 +9595,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 18.75,
@@ -9659,7 +9692,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 545.0,
    "price_estimated": false,
    "ppsqm": 11.35,
@@ -9705,7 +9738,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 742.0,
    "price_estimated": false,
    "ppsqm": 15.46,
@@ -9794,7 +9827,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 460.0,
    "price_estimated": false,
    "ppsqm": 13.94,
@@ -9841,7 +9874,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 433.0,
    "price_estimated": false,
    "ppsqm": 8.49,
@@ -9887,7 +9920,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 387.0,
    "price_estimated": false,
    "ppsqm": 10.75,
@@ -9931,7 +9964,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 724.0,
    "price_estimated": false,
    "ppsqm": 14.2,
@@ -9977,7 +10010,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 774.0,
    "price_estimated": false,
    "ppsqm": 9.92,
@@ -10019,7 +10052,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 655.0,
    "price_estimated": false,
    "ppsqm": 9.78,
@@ -10063,7 +10096,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 572.0,
    "price_estimated": false,
    "ppsqm": 11.92,
@@ -10109,7 +10142,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 410.0,
    "price_estimated": false,
    "ppsqm": 10.51,
@@ -10160,7 +10193,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 425.0,
    "price_estimated": false,
    "ppsqm": 10.62,
@@ -10208,7 +10241,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 615.0,
    "price_estimated": false,
    "ppsqm": 11.83,
@@ -10257,7 +10290,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 684.0,
    "price_estimated": false,
    "ppsqm": 9.37,
@@ -10299,7 +10332,7 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 520.0,
    "price_estimated": false,
    "ppsqm": 11.06,
@@ -10349,7 +10382,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 664.0,
    "price_estimated": false,
    "ppsqm": 12.07,
@@ -10396,7 +10429,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 395.0,
    "price_estimated": false,
    "ppsqm": 13.17,
@@ -10442,7 +10475,7 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 772.0,
    "price_estimated": false,
    "ppsqm": 8.48,
@@ -10499,7 +10532,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 502.0,
    "price_estimated": false,
    "ppsqm": 11.67,
@@ -10675,7 +10708,7 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 685.0,
    "price_estimated": false,
    "ppsqm": 8.46,
@@ -10722,7 +10755,7 @@
     "Garten",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 582.0,
    "price_estimated": false,
    "ppsqm": 8.69,
@@ -10768,7 +10801,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 560.0,
    "price_estimated": false,
    "ppsqm": 11.2,
@@ -10815,7 +10848,7 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 673.0,
    "price_estimated": false,
    "ppsqm": 8.86,
@@ -10860,7 +10893,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 765.0,
    "price_estimated": false,
    "ppsqm": 8.5,
@@ -10907,7 +10940,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 392.0,
    "price_estimated": false,
    "ppsqm": 11.53,
@@ -10951,7 +10984,7 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 592.0,
    "price_estimated": false,
    "ppsqm": 13.16,
@@ -10994,7 +11027,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 17.19,
@@ -11249,7 +11282,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 789.71,
    "price_estimated": false,
    "ppsqm": 17.55,
@@ -11288,7 +11321,7 @@
     "befristet",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 690.0,
    "price_estimated": false,
    "ppsqm": 18.65,
@@ -11372,7 +11405,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 615.0,
    "price_estimated": false,
    "ppsqm": 19.84,
@@ -11413,7 +11446,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 720.0,
    "price_estimated": false,
    "ppsqm": 18.95,
@@ -11561,7 +11594,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 631.87,
    "price_estimated": false,
    "ppsqm": 10.67,
@@ -11678,7 +11711,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 745,
    "price_estimated": false,
    "ppsqm": 20.69,
@@ -11759,7 +11792,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 730,
    "price_estimated": false,
    "ppsqm": 20.86,
@@ -11800,7 +11833,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-03T12:50:28+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 780,
    "price_estimated": false,
    "ppsqm": 16.6,
@@ -11839,7 +11872,7 @@
    "flags": [
     "Loggia"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 884,
    "price_estimated": true,
    "ppsqm": 26.23,
@@ -11914,7 +11947,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 727,
    "price_estimated": true,
    "ppsqm": 16.16,
@@ -11962,7 +11995,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:01:09+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 520.0,
    "price_estimated": false,
    "ppsqm": 13.27,
@@ -12014,7 +12047,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 786.0,
    "price_estimated": false,
    "ppsqm": 9.7,
@@ -12061,7 +12094,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 647.0,
    "price_estimated": false,
    "ppsqm": 11.55,
@@ -12107,7 +12140,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 747.0,
    "price_estimated": false,
    "ppsqm": 9.22,
@@ -12153,7 +12186,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 725.0,
    "price_estimated": false,
    "ppsqm": 11.89,
@@ -12203,7 +12236,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 675.0,
    "price_estimated": false,
    "ppsqm": 13.78,
@@ -12249,7 +12282,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 692.0,
    "price_estimated": false,
    "ppsqm": 14.12,
@@ -12293,7 +12326,7 @@
     "Bezahlportal",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 775.0,
    "price_estimated": false,
    "ppsqm": 10.47,
@@ -12390,7 +12423,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 672.0,
    "price_estimated": false,
    "ppsqm": 9.46,
@@ -12453,7 +12486,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 484.0,
    "price_estimated": false,
    "ppsqm": 11.8,
@@ -12501,7 +12534,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 656.0,
    "price_estimated": false,
    "ppsqm": 12.86,
@@ -12548,7 +12581,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 527.0,
    "price_estimated": false,
    "ppsqm": 11.71,
@@ -12596,7 +12629,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 643.0,
    "price_estimated": false,
    "ppsqm": 12.61,
@@ -12647,7 +12680,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 590.0,
    "price_estimated": false,
    "ppsqm": 8.31,
@@ -12693,7 +12726,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 412.0,
    "price_estimated": false,
    "ppsqm": 9.36,
@@ -12736,7 +12769,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 443.0,
    "price_estimated": false,
    "ppsqm": 8.69,
@@ -12781,7 +12814,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 433.0,
    "price_estimated": false,
    "ppsqm": 10.82,
@@ -12918,7 +12951,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 439.0,
    "price_estimated": false,
    "ppsqm": 12.54,
@@ -12969,7 +13002,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 759.0,
    "price_estimated": false,
    "ppsqm": 11.68,
@@ -13021,7 +13054,7 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 785.0,
    "price_estimated": false,
    "ppsqm": 10.61,
@@ -13067,7 +13100,7 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 535.0,
    "price_estimated": false,
    "ppsqm": 9.55,
@@ -13116,7 +13149,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 688.0,
    "price_estimated": false,
    "ppsqm": 13.23,
@@ -13159,7 +13192,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 728.0,
    "price_estimated": false,
    "ppsqm": 13.24,
@@ -13203,7 +13236,7 @@
     "Terrasse",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 612.0,
    "price_estimated": false,
    "ppsqm": 11.33,
@@ -13253,7 +13286,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 9.19,
@@ -13300,7 +13333,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 724.0,
    "price_estimated": false,
    "ppsqm": 10.2,
@@ -13352,7 +13385,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 715.0,
    "price_estimated": false,
    "ppsqm": 9.41,
@@ -13399,7 +13432,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 422.0,
    "price_estimated": false,
    "ppsqm": 11.11,
@@ -13443,7 +13476,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 656.0,
    "price_estimated": false,
    "ppsqm": 12.62,
@@ -13492,7 +13525,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 747.0,
    "price_estimated": false,
    "ppsqm": 11.15,
@@ -13538,7 +13571,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 746.0,
    "price_estimated": false,
    "ppsqm": 12.86,
@@ -13587,7 +13620,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 788.0,
    "price_estimated": false,
    "ppsqm": 10.37,
@@ -13632,7 +13665,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 778.0,
    "price_estimated": false,
    "ppsqm": 10.66,
@@ -13681,7 +13714,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 744.0,
    "price_estimated": false,
    "ppsqm": 13.78,
@@ -13733,7 +13766,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 486.0,
    "price_estimated": false,
    "ppsqm": 12.46,
@@ -13780,7 +13813,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 672.0,
    "price_estimated": false,
    "ppsqm": 14.3,
@@ -13824,7 +13857,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 475.0,
    "price_estimated": false,
    "ppsqm": 12.18,
@@ -13870,7 +13903,7 @@
     "befristet",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 789.0,
    "price_estimated": false,
    "ppsqm": 11.11,
@@ -13917,7 +13950,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 742.0,
    "price_estimated": false,
    "ppsqm": 10.31,
@@ -13968,7 +14001,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 483.0,
    "price_estimated": false,
    "ppsqm": 8.94,
@@ -14015,7 +14048,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-03T12:15:36+00:00",
+   "last_seen": "2026-11-03T13:01:07+00:00",
    "price_total": 646.0,
    "price_estimated": false,
    "ppsqm": 17.94,
