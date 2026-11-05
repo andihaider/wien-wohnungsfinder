@@ -45,7 +45,11 @@ SAVE_EVERY_MIN = 30         # ohne inhaltliche Änderung höchstens so oft speic
 
 GONE = "nicht mehr online"
 CHECK_LIMIT = 15            # direkte Link-Prüfungen pro Lauf
-CHECK_EVERY_H = 3           # dasselbe Inserat höchstens alle 3 Std. direkt prüfen
+CHECK_EVERY_H = 1           # dasselbe Inserat höchstens stündlich direkt prüfen
+GONE_UNVERIFIED_H = 2       # ohne verlässliche Link-Antwort erst nach so vielen Stunden ohne Fund offline
+GONE_MAX_H = 24             # fehlt es so lange in vollständigen Suchen, gilt es auch bei aktivem Link als offline
+RELIABLE_CHECK = {"willhaben", "immoscout24", "immowelt", "wggesucht"}  # Link-Check dieser Quellen ist aussagekräftig
+BACK_MIN_H = 2              # "Wieder online" nur, wenn es wirklich so lange weg war
 
 ENRICH_MAX_PRICE = 750      # nur für diese Inserate Detailseiten laden
 ENRICH_LIMIT = 60           # max. Detailseiten pro Lauf
@@ -63,7 +67,7 @@ WG_NOT = re.compile(
 
 EXCLUDE_TITLE = [
     (r"tausch", "Wohnungstausch"),
-    (r"kurzzeit|short[- ]?term|ferienwohnung|tageweise|wochenweise|monteur|airbnb", "Kurzzeitmiete"),
+    (r"kurzzeit|short[- ]?term|ferienwohnung|hotelzimmer|tageweise|wochenweise|monteur|airbnb", "Kurzzeitmiete"),
     (r"^\W*(reserviert|vergeben|vermietet)\b|\((reserviert|vergeben|vermietet)\)|\b(reserviert|vergeben|vermietet)\W*$",
      "reserviert/vergeben"),
     (r"studentenheim|wohnheim|heimplatz|doppelzimmer", "Wohnheim"),
@@ -164,29 +168,38 @@ def same_flat(a: dict, l: Listing) -> bool:
 def mark_gone(items, status, run_at):
     """Inserate, die nicht mehr online sind, als "nicht mehr online" aussortieren.
 
-    1. Eine Quelle hat diesmal ALLE Inserate geliefert und das Inserat fehlt darin → offline.
-    2. Sonst (z. B. WG-Gesucht liest nur die neuesten Seiten) → Link direkt prüfen.
-    Taucht es später wieder auf, hebt die normale Logik den Ausschluss automatisch auf.
+    Einmal in der Suche zu fehlen reicht nicht: Listen verschieben sich beim Blättern, Inserate fehlen
+    kurz. Deshalb zuerst den Link prüfen. Offline gilt es nur bei eindeutigem Signal, ohne verlässliche
+    Antwort nach GONE_UNVERIFIED_H und spätestens nach GONE_MAX_H ohne Fund in einer vollständigen Suche.
+    Fälschlich Aussortierte kommen still zurück, sobald der Link wieder als aktiv bestätigt ist.
     """
     complete = {n: bool(st.get("ok") and st.get("count") and not st.get("skipped")
                         and getattr(SOURCES[n], "STATE", {}).get("complete"))
                 for n, st in status.items()}
     wg_ran = bool(status.get("wggesucht", {}).get("count")) and not status.get("wggesucht", {}).get("skipped")
-    checks, gone = 0, 0
     skipped = {n for n, st in status.items() if st.get("skipped")}
+    checks, gone, restored = 0, 0, 0
+
+    def mark(it):
+        nonlocal gone
+        if not it.get("excluded"):
+            it["excluded"], it["gone_at"] = GONE, run_at
+            gone += 1
+
     for it in items.values():
-        if it.get("last_seen") == run_at or it.get("excluded"):
+        if it.get("last_seen") == run_at or it.get("excluded") not in (None, GONE):
             continue
         srcs = {l["source"] for l in it["links"]}
         if srcs & skipped:
             continue  # Quelle wurde diesmal nicht abgefragt – fehlt also nicht wirklich
         # IMMMO-Inserate von Portalen, die IMMMO diesmal übersprungen hat, sagen nichts aus
         skipped_host = "immmo" in srcs and any(h in (it.get("advertiser") or "") for h in immmo.SKIP_HOSTS)
-        if not skipped_host and all(complete.get(s) for s in srcs):
-            it["excluded"], it["gone_at"] = GONE, run_at
-            gone += 1
+        missing_everywhere = not skipped_host and all(complete.get(s) for s in srcs)
+        missing_h = _hours_since(it["last_seen"]) if it.get("last_seen") else 1e9
+        if missing_everywhere and missing_h >= GONE_MAX_H:
+            mark(it)
             continue
-        if checks >= CHECK_LIMIT or it.get("price_total", 9999) > COLLECT_MAX_PRICE:
+        if missing_h >= GONE_MAX_H or checks >= CHECK_LIMIT or it.get("price_total", 9999) > COLLECT_MAX_PRICE:
             continue
         if it.get("checked_at") and _hours_since(it["checked_at"]) < CHECK_EVERY_H:
             continue
@@ -195,10 +208,16 @@ def mark_gone(items, status, run_at):
             continue  # WG-Gesucht nur prüfen, wenn es diesmal ohnehin abgefragt wurde (Captcha-Schutz)
         checks += 1
         it["checked_at"] = run_at
-        if check_alive(link["url"], link["source"]) is False:
-            it["excluded"], it["gone_at"] = GONE, run_at
-            gone += 1
-    print(f"  Verfügbarkeit: {gone} nicht mehr online, {checks} Links direkt geprüft")
+        alive = check_alive(link["url"], link["source"])
+        if alive is False:
+            mark(it)
+        elif alive and link["source"] in RELIABLE_CHECK:
+            if it.get("excluded") == GONE:
+                it.pop("excluded")
+                restored += 1
+        elif missing_everywhere and missing_h >= GONE_UNVERIFIED_H:
+            mark(it)
+    print(f"  Verfügbarkeit: {gone} nicht mehr online, {restored} zu Unrecht aussortierte zurück, {checks} Links geprüft")
 
 
 def load():
@@ -364,8 +383,9 @@ def main():
     # Ausschluss pro Lauf neu bewerten: sobald eine Quelle das Inserat "sauber" liefert, gilt es
     for iid in run_ok | set(run_why):
         if iid in run_ok:
-            if items[iid].get("excluded") == GONE:
-                items[iid]["back_at"] = run_at   # war offline, ist wieder da
+            gone_at = items[iid].get("gone_at")
+            if items[iid].get("excluded") == GONE and gone_at and _hours_since(gone_at) >= BACK_MIN_H:
+                items[iid]["back_at"] = run_at   # war wirklich offline, ist wieder da
             items[iid].pop("excluded", None)
         else:
             items[iid]["excluded"] = run_why[iid]

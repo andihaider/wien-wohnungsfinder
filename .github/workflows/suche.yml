@@ -36,6 +36,8 @@ jobs:
           fi
       - uses: actions/checkout@v4
         if: steps.zeit.outputs.skip != 'true' || inputs.testmail
+        with:
+          ref: main   # neuester Stand beim Start, nicht der beim Anstoßen (wichtig für Läufe aus der Warteschlange)
       - uses: actions/setup-python@v5
         if: steps.zeit.outputs.skip != 'true' || inputs.testmail
         with:
@@ -60,5 +62,10 @@ jobs:
           git add docs/data/listings.json
           git diff --cached --quiet && exit 0
           git commit -m "Suche $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git pull --rebase -X theirs origin main  # bei Konflikt gewinnt die neue Suche
-          git push
+          # GitHub lehnt Pushes gelegentlich kurz ab – dann mit Pause erneut versuchen
+          for i in 1 2 3 4; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            echo "Speichern fehlgeschlagen (Versuch $i), neuer Versuch in 30 s"
+            sleep 30
+          done
+          exit 1
