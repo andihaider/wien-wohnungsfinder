@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-12T15:50:28+00:00",
- "fingerprint": "0423949eeb55123b",
+ "updated": "2026-11-12T16:01:03+00:00",
+ "fingerprint": "be4f67ac62ce75eb",
  "sources": {
   "willhaben": {
    "ok": true,
-   "count": 96,
-   "last_ok": "2026-11-12T15:50:31+00:00",
-   "last_try": "2026-11-12T15:50:31+00:00",
+   "count": 97,
+   "last_ok": "2026-11-12T16:01:07+00:00",
+   "last_try": "2026-11-12T16:01:07+00:00",
    "last_attempt_ok": true,
    "empty_streak": 0
   },
@@ -23,29 +23,26 @@
   "immoscout24": {
    "ok": true,
    "count": 25,
-   "last_ok": "2026-11-12T15:45:53+00:00",
-   "last_try": "2026-11-12T15:45:53+00:00",
+   "last_ok": "2026-11-12T16:01:21+00:00",
+   "last_try": "2026-11-12T16:01:21+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   },
   "immowelt": {
    "ok": true,
-   "count": 250,
-   "last_ok": "2026-11-12T15:02:27+00:00",
-   "last_try": "2026-11-12T15:02:27+00:00",
+   "count": 251,
+   "last_ok": "2026-11-12T16:02:27+00:00",
+   "last_try": "2026-11-12T16:02:27+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   },
   "wggesucht": {
    "ok": true,
-   "count": 26,
-   "last_ok": "2026-11-12T12:05:07+00:00",
-   "last_try": "2026-11-12T12:05:07+00:00",
+   "count": 22,
+   "last_ok": "2026-11-12T16:05:10+00:00",
+   "last_try": "2026-11-12T16:05:10+00:00",
    "last_attempt_ok": true,
-   "empty_streak": 0,
-   "skipped": true
+   "empty_streak": 0
   },
   "makler": {
    "ok": true,
@@ -78,15 +75,125 @@
   }
  },
  "excluded": {
-  "Gemeindebau (Wohn-Ticket nötig)": 16,
+  "Gemeindebau (Wohn-Ticket nötig)": 17,
   "reserviert/vergeben": 14,
   "zu klein": 1,
-  "Kurzzeitmiete": 3,
-  "keine Wohnung": 1
+  "Kurzzeitmiete": 4,
+  "keine Wohnung": 1,
+  "Wohnungstausch": 5,
+  "nur für bestimmte Mieter": 1
  },
- "last_push": "2026-11-12T15:50:31+00:00",
+ "last_push": "2026-11-12T16:05:45+00:00",
  "last_problem_push": null,
  "items": [
+  {
+   "id": "86ddd3261137",
+   "keys": [
+    "wggesucht:13630309"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.13630309.html"
+    }
+   ],
+   "first_seen": "2026-11-12T16:01:03+00:00",
+   "category": "wg",
+   "title": "von U4 Schönbrunn 1 Gehminute!",
+   "price": 398.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1150",
+   "district": "Rudolfsheim-Fünfhaus",
+   "area": null,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Frisch rennoviertes Zimmer mit einem sehr komfortablen Bett. Da die WG neu gegründet wird, muss einiges noch zusammengeschraubt werden. Die Wände wurden frisch gestrichen, die Fenster wurden vor nicht allzu langer Zeit getauscht, d.h. man hat nicht den Eindruck, man wäre in dem absoluten Budgetzimmer. Das Zimmer muss noch ausgemessen werden, aber es sind auf jeden Fall ca. 26 m2 drinnen. Mit einem Blick auf Schloss Schönbrunn aus dem Fenster könnte es kaum schöner sein! Man kann im touristenfreien Auer-Welsbach Park spazieren gehen, Basktetball oder Tischtennis spielen. Schönbrunn ist ja nur wenige min zu Fuß entfernt, ebenfalls ist Hofer innerhalb von ca. 2 min zu Fuß erreichbar! Auch Restaurants und Cafes sind nicht weit! Abgesehen von Ausflügen auf dem Kahlenberg und Treffen auf der TU oder der Hauptuni haben wir miteinander gekocht und geplaudert, je nachdem, was sich ergibt Wer sich für etwas Längerfristiges interessiert könnte hier fündig werden, wenn alles Zwischenmenschliche passt, aber Überbrückung bis zum nächsten Semester ist auch möglich",
+   "published": "2026-11-12T15:03:44.700984+00:00",
+   "advertiser": "",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [],
+   "last_seen": "2026-11-12T16:01:03+00:00",
+   "price_total": 398.0,
+   "price_estimated": false,
+   "score": 44
+  },
+  {
+   "id": "8dcacbac6104",
+   "keys": [
+    "wggesucht:14355446"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-15-Bezirk-Rudolfsheim-Fuenfhaus.14355446.html"
+    }
+   ],
+   "first_seen": "2026-11-12T16:01:03+00:00",
+   "category": "wg",
+   "title": "Bright 22 m2 Room in Vienna",
+   "price": 500.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1150",
+   "district": "Rudolfsheim-Fünfhaus",
+   "area": null,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "- Geräumiges 22 m2 Privatzimmer - Helle Wohnung im ersten Stock Komplett ausgestattete Gemeinschaftsküche Badezimmer mit allem, was Sie brauchen - Komfortabler gemeinsamer Wohnraum - Spacious 22 m2 private room - Bright apartment on the first floor - Fully equipped shared kitchen - Bathroom with everything you need - Comfortable shared living space Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen - 1 Gehminute zur nächsten Straßenbahnhaltestelle - 7 Minuten mit der Straßenbahn zum Westbahnhof - Rund 15 Minuten zu Fuß zum Westbahnhof (U3) - Rund 15 Minuten zu Fuß zur U4 in der Meidling Hauptstraße - 11 Minuten zu Fuß zum Schloss Schönbrunn - Schwendermarkt ist direkt vor der Tür, mit tollen Spots für Kaffee, Essen und einen schnellen Bissen. - 1-minute walk to the nearest tram stop - 7 minutes by tram to Westbahnhof - Around 15 minutes walking to Westbahnhof (U3) - Around 15 minutes walking to the U4 at Meidling Hauptstraße - 11 minutes walking to Schönbrunn Palace - Schwendermarkt is right outside, with great spots for coffee, food and a quick bite. Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen Sie werden die Wohnung mit einem Mitbewohner teilen, der als Koch arbeitet. Er ist freundlich, unbeschwert und normalerweise mit der Arbeit beschäftigt. Hin und wieder hängen wir rum und unterhalten uns in der küche, also ist es eine entspannte und einladende atmosphäre. weniger anzeigen You'll be sharing the apartment with one flatmate who works as a chef. He's friendly, easygoing and usually busy with work. Every now and then, we hang out and have a chat in the kitchen, so it's a relaxed and welcoming atmosphere. Show less Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen Wenn Sie auf der Suche nach einem geräumigen Zimmer in einer gut angebundenen Gegend von Wien sind, können Sie sich gerne erreichen! Senden Sie mir eine Nachricht für weitere Informationen oder um eine Anzeige zu arrangieren. If you're looking for a spacious room in a well-connected area of Vienna, feel free to reach out! Send me a message for more information or to arrange a viewing. Text automatisch übersetzt - Original anzeigen Übersetzung anzeigen",
+   "published": "2026-11-12T15:03:55.695836+00:00",
+   "advertiser": "",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [],
+   "last_seen": "2026-11-12T16:01:03+00:00",
+   "price_total": 500.0,
+   "price_estimated": false,
+   "score": 29
+  },
+  {
+   "id": "8f8df31b2467",
+   "keys": [
+    "wggesucht:7992205"
+   ],
+   "links": [
+    {
+     "source": "wggesucht",
+     "label": "WG-Gesucht",
+     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-08-Bezirk-Josefstadt.7992205.html"
+    }
+   ],
+   "first_seen": "2026-11-12T16:01:03+00:00",
+   "category": "wg",
+   "title": "Zwischenmiete im 8. Bezirk",
+   "price": 680.0,
+   "price_note": "Gesamtmiete",
+   "zip": "1080",
+   "district": "Josefstadt",
+   "area": null,
+   "rooms": null,
+   "address": "",
+   "image": "img/d.gif",
+   "description": "Bei uns wird ein gemütliches Zimmer frei. Das Zimmer selbst ist 17 m2 groß, hat einen schönen Parkettboden, ist möbliert mit Bett, Schrank, Schreibtisch und Bücherregal und ist nach Westen ausgerichtet, sodass nachmittags und abends die Sonne hereinscheint. Die Wohnung bietet ansonsten ein geräumiges Bad, separates Klo, eine kleine, gut ausgestattet Küche in der man gemütlich sitzen kann und ein großes Wohnzimmer mit Couch und großem Tisch zum Arbeiten, Essen und Zusammensitzen. Das Beste an der Wohnung ist die gute Anbindung. Die öffentlichen Verkehrsmittel U6, sowie die Straßenbahnlinien 2, 5 und 12 starten direkt vor der Haustür, somit ist alles einfach zu erreichen. Mit dem Rad ist man gefühlt fast überall in 10min. An Einkaufsmöglichkeiten gibt es fast alles in unmittelbarer Nähe. Besonders hervorzuheben ist der Brunnenmarkt, zu dem man in nur 3 Minuten Gehnähe gelangt. Am Yppenplatz, der direkt an den Brunnenmarkt anschließt, findet man zahlreiche Lokale um in der Sonne einen Kaffee zu trinken. Man kann dort sowohl gut Essen als auch gemütlich Bier und Spritzer trinken. Am direkt vor der Haustür gelegenen \"Gürtel\" gibt es zudem zahlreiche Bars. Die unmittelbare Lage zum Gürtel bedeutet aber auch, dass es draußen laut sein kann, das zu vermietende Zimmer geht direkt auf den Gürtel und ist nur für lärmresistente Leute geeignet. Hallo, wir sind Jakob und Jana, und bei uns wird vorübergehend ein Zimmer frei. Arbeitsleben nimmt viel Zeit in Anspruch, in unserer Freizeit wird viel Rad gefahren, mit Freund:innen essen gegangen oder wir probieren neue Lokale aus, sind für Partys und Tanzen genauso wie für Kino und Theater zu haben. Wir kochen gern, bestell aber auch gern mal Pizza und mögen gutes Essen. Wir sehen uns immer noch irgendwo zwischen jugendlichem Leichtsinn und erwachsenem Verantwortungsbewusstsein. Wir sind offene Mitbewohnis, die gerne Menschen um sich haben und Wert auf ein angenehmes Zusammenleben legen. Ein freundlicher Austausch in der WG ist uns wichtig, gleichzeitig finden wir es wichtig, dass alle ihren Rückzugsraum haben. Wir freuen uns über freundliche, interessante Nachrichten, in denen auch ein bisschen was über euch erfahren werden kann!",
+   "published": "2026-11-12T13:04:02.872491+00:00",
+   "advertiser": "",
+   "email": "",
+   "phone": "",
+   "tags": [],
+   "flags": [
+    "Zwischenmiete",
+    "möbliert"
+   ],
+   "last_seen": "2026-11-12T16:01:03+00:00",
+   "price_total": 680.0,
+   "price_estimated": false,
+   "score": 5
+  },
   {
    "id": "2e91deff8f08",
    "keys": [
@@ -126,7 +233,7 @@
     "Lift",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 794.69,
    "price_estimated": false,
    "ppsqm": 22.71,
@@ -164,7 +271,7 @@
    "flags": [
     "Garten"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 864,
    "price_estimated": true,
    "ppsqm": 19.03,
@@ -205,7 +312,8 @@
    "last_seen": "2026-11-12T12:01:01+00:00",
    "price_total": 550.0,
    "price_estimated": false,
-   "score": 12
+   "score": 12,
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "7bdc74fb7897",
@@ -237,7 +345,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 680.0,
    "price_estimated": false,
    "score": 15
@@ -280,7 +388,8 @@
    "last_seen": "2026-11-12T12:01:01+00:00",
    "price_total": 640.0,
    "price_estimated": false,
-   "score": 12
+   "score": 12,
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "1a0d0327a34a",
@@ -319,7 +428,8 @@
    "last_seen": "2026-11-12T12:01:01+00:00",
    "price_total": 720.0,
    "price_estimated": false,
-   "score": 22
+   "score": 22,
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "f795cb348b41",
@@ -360,7 +470,8 @@
    "last_seen": "2026-11-12T12:01:01+00:00",
    "price_total": 680.0,
    "price_estimated": false,
-   "score": 25
+   "score": 25,
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "6bd7a763859f",
@@ -396,7 +507,7 @@
     "Garten",
     "möbliert"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "score": 46
@@ -431,7 +542,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "score": 15
@@ -522,7 +633,7 @@
    "price_estimated": false,
    "ppsqm": 11.47,
    "score": 83,
-   "checked_at": "2026-11-12T15:01:06+00:00",
+   "checked_at": "2026-11-12T16:01:03+00:00",
    "excluded": "nicht mehr online",
    "gone_at": "2026-11-12T11:45:31+00:00"
   },
@@ -602,7 +713,7 @@
    "price_estimated": false,
    "ppsqm": 10.64,
    "score": 65,
-   "checked_at": "2026-11-12T15:01:06+00:00",
+   "checked_at": "2026-11-12T16:01:03+00:00",
    "excluded": "nicht mehr online",
    "gone_at": "2026-11-12T10:35:23+00:00"
   },
@@ -681,7 +792,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 200.0,
    "price_estimated": false,
    "ppsqm": 13.33,
@@ -722,7 +833,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 643,
    "price_estimated": false,
    "ppsqm": 10.72,
@@ -760,7 +871,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 695.0,
    "price_estimated": false,
    "score": 19
@@ -810,7 +921,7 @@
    "price_estimated": false,
    "ppsqm": 14.36,
    "score": 57,
-   "checked_at": "2026-11-12T15:01:06+00:00",
+   "checked_at": "2026-11-12T16:01:03+00:00",
    "gone_at": "2026-11-12T10:00:56+00:00",
    "back_at": "2026-11-12T09:45:33+00:00",
    "excluded": "nicht mehr online"
@@ -852,7 +963,7 @@
    "price_estimated": true,
    "ppsqm": 12.36,
    "score": 62,
-   "checked_at": "2026-11-12T15:01:06+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "a0217338baa8",
@@ -888,7 +999,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 722,
    "price_estimated": true,
    "ppsqm": 17.15,
@@ -928,7 +1039,7 @@
    "price_total": 690.0,
    "price_estimated": false,
    "score": 15,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "40c70a21dfa6",
@@ -966,7 +1077,7 @@
    "price_total": 482.0,
    "price_estimated": false,
    "score": 32,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "acdb5a14fbdd",
@@ -1004,7 +1115,7 @@
    "price_total": 780.0,
    "price_estimated": false,
    "score": 5,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "ea13ec5982d6",
@@ -1079,7 +1190,7 @@
    "price_total": 650.0,
    "price_estimated": false,
    "score": 5,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "955ef2fcf695",
@@ -1115,7 +1226,7 @@
    "price_total": 550.0,
    "price_estimated": false,
    "score": 22,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "be144af4a205",
@@ -1155,7 +1266,7 @@
    "price_total": 435.0,
    "price_estimated": false,
    "score": 45,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "f27a04e2cfab",
@@ -1194,7 +1305,7 @@
    "price_total": 650.0,
    "price_estimated": false,
    "score": 15,
-   "checked_at": "2026-11-12T12:01:01+00:00"
+   "checked_at": "2026-11-12T16:01:03+00:00"
   },
   {
    "id": "cdcbc1eedfa3",
@@ -1229,7 +1340,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 620,
    "price_estimated": false,
    "ppsqm": 20.67,
@@ -1268,7 +1379,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 680.0,
    "price_estimated": false,
    "ppsqm": 34.0,
@@ -1310,7 +1421,7 @@
     "Neubau/Erstbezug",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 25.77,
@@ -1448,11 +1559,11 @@
    "flags": [
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 767,
    "price_estimated": true,
    "ppsqm": 19.97,
-   "score": 21
+   "score": 15
   },
   {
    "id": "4837aa4fbbac",
@@ -1486,10 +1597,10 @@
    "flags": [
     "möbliert"
    ],
-   "last_seen": "2026-11-11T16:00:59+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 699.0,
    "price_estimated": false,
-   "score": 15,
+   "score": 9,
    "checked_at": "2026-11-12T12:01:01+00:00"
   },
   {
@@ -1528,7 +1639,7 @@
    "last_seen": "2026-11-11T16:00:59+00:00",
    "price_total": 579.0,
    "price_estimated": false,
-   "score": 22,
+   "score": 16,
    "checked_at": "2026-11-12T12:01:01+00:00"
   },
   {
@@ -1563,10 +1674,10 @@
    "flags": [
     "möbliert"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 560.0,
    "price_estimated": false,
-   "score": 21
+   "score": 15
   },
   {
    "id": "ec7efb1e8fc7",
@@ -1601,10 +1712,10 @@
     "Lift",
     "saniert"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 575.0,
    "price_estimated": false,
-   "score": 23
+   "score": 17
   },
   {
    "id": "6a2fa2b5b050",
@@ -1683,7 +1794,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 474.0,
    "price_estimated": false,
    "ppsqm": 11.29,
@@ -1809,7 +1920,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 625.0,
    "price_estimated": false,
    "ppsqm": 36.76,
@@ -1989,7 +2100,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 34.09,
@@ -2071,7 +2182,7 @@
     "Lift",
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 872,
    "price_estimated": true,
    "ppsqm": 16.18,
@@ -2314,7 +2425,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 423.0,
    "price_estimated": false,
    "ppsqm": 14.1,
@@ -2393,7 +2504,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 585.0,
    "price_estimated": false,
    "ppsqm": 58.5,
@@ -2436,7 +2547,7 @@
     "Neubau/Erstbezug",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "key_excl": {
     "willhaben:1988462329": "Gemeindebau (Wohn-Ticket nötig)"
    },
@@ -2687,7 +2798,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 749.35,
    "price_estimated": false,
    "ppsqm": 17.96,
@@ -3203,7 +3314,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 699,
    "price_estimated": false,
    "ppsqm": 22.55,
@@ -3366,7 +3477,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 484.0,
    "price_estimated": false,
    "ppsqm": 69.14,
@@ -3651,7 +3762,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 760.0,
    "price_estimated": false,
    "ppsqm": 54.29,
@@ -3898,7 +4009,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 565.0,
    "price_estimated": false,
    "ppsqm": 35.31,
@@ -3945,7 +4056,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 700.0,
    "price_estimated": false,
    "ppsqm": 21.21,
@@ -3991,7 +4102,7 @@
    "price_total": 817,
    "price_estimated": true,
    "ppsqm": 16.24,
-   "score": 34
+   "score": 29
   },
   {
    "id": "f6d70f0bd9cf",
@@ -4030,7 +4141,7 @@
    "price_total": 460.0,
    "price_estimated": false,
    "ppsqm": 21.9,
-   "score": 56,
+   "score": 51,
    "checked_at": "2026-11-10T12:01:04+00:00"
   },
   {
@@ -4072,7 +4183,7 @@
    "price_total": 650.0,
    "price_estimated": false,
    "ppsqm": 26.0,
-   "score": 43,
+   "score": 38,
    "checked_at": "2026-11-10T12:01:04+00:00"
   },
   {
@@ -4113,7 +4224,7 @@
    "price_total": 506.0,
    "price_estimated": false,
    "ppsqm": 23.0,
-   "score": 46,
+   "score": 41,
    "checked_at": "2026-11-10T20:00:59+00:00"
   },
   {
@@ -4154,7 +4265,7 @@
    "price_total": 500.0,
    "price_estimated": false,
    "ppsqm": 20.83,
-   "score": 51,
+   "score": 46,
    "checked_at": "2026-11-10T12:01:04+00:00"
   },
   {
@@ -4195,7 +4306,7 @@
    "price_total": 487.0,
    "price_estimated": false,
    "ppsqm": 28.65,
-   "score": 32,
+   "score": 27,
    "checked_at": "2026-11-10T20:00:59+00:00"
   },
   {
@@ -4234,7 +4345,7 @@
    "price_total": 530.0,
    "price_estimated": false,
    "ppsqm": 40.77,
-   "score": 21,
+   "score": 16,
    "checked_at": "2026-11-10T12:01:04+00:00"
   },
   {
@@ -4275,7 +4386,7 @@
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 25.0,
-   "score": 43,
+   "score": 38,
    "checked_at": "2026-11-10T20:00:59+00:00",
    "price_drop": {
     "from": 650.0,
@@ -4321,7 +4432,7 @@
    "price_total": 458.0,
    "price_estimated": false,
    "ppsqm": 18.32,
-   "score": 54,
+   "score": 49,
    "checked_at": "2026-11-10T16:01:06+00:00"
   },
   {
@@ -4362,7 +4473,7 @@
    "price_total": 530.0,
    "price_estimated": false,
    "ppsqm": 44.17,
-   "score": 25
+   "score": 20
   },
   {
    "id": "775600e91f88",
@@ -4444,7 +4555,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 183.0,
    "price_estimated": false,
    "ppsqm": 6.78,
@@ -4484,7 +4595,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 700.09,
    "price_estimated": false,
    "ppsqm": 10.15,
@@ -4526,7 +4637,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 420.0,
    "price_estimated": false,
    "ppsqm": 11.35,
@@ -4615,7 +4726,7 @@
     "Ablöse",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 656.35,
    "price_estimated": false,
    "ppsqm": 11.93,
@@ -4960,7 +5071,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 799.01,
    "price_estimated": false,
    "ppsqm": 17.0,
@@ -5009,7 +5120,7 @@
     "Neubau/Erstbezug",
     "Terrasse"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 674.88,
    "price_estimated": false,
    "ppsqm": 19.85,
@@ -5051,7 +5162,7 @@
     "Loggia",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 423,
    "price_estimated": false,
    "ppsqm": 13.65,
@@ -5634,7 +5745,7 @@
     "Ablöse",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 621.3,
    "price_estimated": false,
    "ppsqm": 13.81,
@@ -5766,46 +5877,6 @@
    "checked_at": "2026-11-09T20:01:07+00:00"
   },
   {
-   "id": "edf3e2e9094d",
-   "keys": [
-    "wggesucht:14215180"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-03-Bezirk-Landstrasse.14215180.html"
-    }
-   ],
-   "first_seen": "2026-11-08T16:00:58+00:00",
-   "category": "wg",
-   "title": "WG-Zimmer zur untermiete in Top-Lage ✨",
-   "price": 490.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1030",
-   "district": "Landstraße",
-   "area": 12.0,
-   "rooms": null,
-   "address": "",
-   "image": "img/d.gif",
-   "description": "Zum Zimmer: Das Zimmer ist möbliert und ca. 12 Quadratmeter groß. Die Kaltmiete beträgt 440 Euro, mit Strom und WLAN kommt man insgesamt auf ca. 500 Euro im Monat. Die Kaution entspricht zwei Monatsmieten. Einzug ist ab dem 01.01.2027 möglich. Waschmaschine und Trockner befinden sich im Keller. Toilette und Bad sind getrennt, außerdem gibt es eine Spülmaschine im Haushalt. Wir haben kein Wohnzimmer aber unten gibt es ein Gemeinschaftszimmer, das man reservieren kann, wenn man mal was mit einer größeren Freundesgruppe machen will. Die Lage ist super praktisch: Die U3-Station Schlachthausgasse ist quasi direkt vor der Haustür, und auch Bus und Straßenbahn fahren unmittelbar in der Nähe ab. So bist du schnell in der Innenstadt und kommst unkompliziert durch Wien. Gegenüber gibt es einen Billa und einen Bipa – Einkäufe und kleine Besorgungen lassen sich also ganz entspannt erledigen. Du hast eigentlich alles in der Nähe, was du im Alltag brauchst. :) Wir sind eine Dreier-WG und studieren alle. Da ich ab Januar für ein Auslandssemester weg bin, möchte ich mein Zimmer untervermieten. Die beiden anderen Mitbewohnerinnen bleiben hier – du würdest also mit zwei superlieben Mädels zusammenwohnen. :) Das Zimmer ist ab Januar bis mindestens Ende Mai frei. Am liebsten würde ich es für ungefähr ein halbes Jahr untervermieten, aber der Zeitraum ist flexibel: Da meine Sommerpläne noch offen sind, ist auch eine längere Untermiete möglich. Wir sind keine Zweck-WG und verbringen gerne Zeit miteinander – bei Kochabenden, beim gemeinsamen Joggen oder bei Museums- und Galeriebesuchen. Oft essen wir zusammen oder quatschen einfach über unseren Tag. Gleichzeitig kann sich natürlich jede jederzeit zurückziehen und ihre Ruhe haben – alles ganz entspannt. Wir wünschen uns deshalb eine offene Mitbewohnerin, die Lust auf ein gemeinsames WG-Leben hat und sich gerne einbringt. Einen Putzplan gibt es auch, damit alles fair bleibt. :) stell dich einf gerne kurz vor: was machst du gerne in deiner Freizeit; was ist die wichtig am WG-Leben,.. Gerne auch was zu deinen Werten. (wir kochen z.B. sehr viel vegan/vegetarisch) :)",
-   "published": "2026-11-08T15:15:24.538250+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-11-08T16:00:58+00:00",
-   "price_total": 490.0,
-   "price_estimated": false,
-   "ppsqm": 40.83,
-   "score": 20,
-   "checked_at": "2026-11-09T12:01:04+00:00"
-  },
-  {
    "id": "f323f8b1ff69",
    "keys": [
     "wggesucht:14336317"
@@ -5880,7 +5951,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 780.0,
    "price_estimated": false,
    "ppsqm": 9.29,
@@ -5922,7 +5993,7 @@
     "Terrasse",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 734.44,
    "price_estimated": false,
    "ppsqm": 10.06,
@@ -6255,7 +6326,7 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 455.0,
    "price_estimated": false,
    "ppsqm": 11.67,
@@ -6476,7 +6547,7 @@
     "befristet",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 640.0,
    "price_estimated": false,
    "ppsqm": 18.29,
@@ -6605,47 +6676,6 @@
    "checked_at": "2026-11-09T16:01:06+00:00"
   },
   {
-   "id": "b0dcafdc967d",
-   "keys": [
-    "wggesucht:14207112"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-04-Bezirk-Wieden.14207112.html"
-    }
-   ],
-   "first_seen": "2026-11-06T20:01:09+00:00",
-   "category": "wg",
-   "title": "Helles WG Zimmer in 4er WG | 4. Bezirk",
-   "price": 447.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1040",
-   "district": "Wieden",
-   "area": 21.0,
-   "rooms": null,
-   "address": "",
-   "image": "img/d.gif",
-   "description": "In unserer gemütlichen WG im vierten Bezirk (Wieden) wird ab 01.11.2026 ein ca. 20 m2 Zimmer frei. Daher sind wir ab sofort auf der Suche nach einem/einer aufgeschlossenen neuen Mitbewohner/in. Das Zimmer ist geräumig und getrennt begehbar und wird unmöbliert übergeben. Die Wohnung selbst liegt im dritten Stock und ist ca. 125 m2 groß. Sie besteht aus vier separat begehbaren Zimmern, einer geräumigen Küche inkl. Speis, einem Badezimmer mit Waschmaschine, sowie einer getrennt begehbaren Toilette. Das Zimmer liegt zentral im vierten Bezirk und ist drei Gehminuten vom Schloss Belvedere und sieben Minuten vom Hauptbahnhof entfernt. Entsprechend gut ist auch die Verkehrsanbindung. Die U1 Station Hauptbahnhof ist in 5 Minuten erreichbar, der Bus 13A fährt direkt vor der Haustür weg und gleich beim Schloss Belvedere fahren zahlreiche Straßenbahnen (D, O, 18) sowie die S-Bahn. Auch zahlreiche Einkaufsmöglichkeiten sind mit dem Hauptbahnhof gleich in der Nähe, ein Spar und ein Billa sind nur zwei Minuten entfernt. Zudem ist eine Pizzeria direkt gegenüber von der Wohnung. Der Schlosspark Belvedere und der angrenzende Schweizer Garten sind ideal zum Spazierengehen, Joggen etc. Zusammenwohnen würdest du mit Max (28), einem Steirer der nach dem Studium zum Arbeiten in der Energiebranche in Wien gelandet ist, Johannes (27), aus Osttirol, der ebenfalls für einen Job in der Energiebranche in Wien gelandet ist, und Kirsten (26), Physik-PhD-Studentin aus Deutschland. Alle drei sind sehr aufgeschlossen, gesellig und sitzen gerne in der Küche zusammen und reden über Gott und die Welt. Eine Party-WG sind wir nicht, da wir alle arbeiten, aber einem gelegentlichen Glas am Abend stehen wir nicht abweisend gegenüber. Insgesamt geht es bei uns eher ruhig und gemütlich zu. Jeder legt Wert auf Rückzugsmöglichkeiten und Zeit für sich, und es wird selbstverständlich respektiert, wenn du einmal deine Ruhe möchtest. Die Bruttomiete beträgt 447 Euro (inkl. 10€,- für den Fahrradraum), Betriebskosten und sonstige Kosten (Versicherung, Heizung, Strom, Internet, ORF-Abgabe, Versicherung) sind hier bereits enthalten. Waschmaschine, Geschirrspüler und zwei Kühlschränke gibt es auch. Wir freuen uns auf deine Anfrage und darauf, dich kennenzulernen. Erreichbar sind wir über WG-Gesucht. WICHTIG: Das Zimmer würde ich teilmöbliert übergeben, da ich selber erst im Juni eingezogen bin, ist alles noch so gut wie neu: -Bettgestell (exkl. Matratzen und Lattenrost) -Kleiderschrank -Aufsatzschrank -evtl. k",
-   "published": "2026-11-06T17:03:56.533308+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "Garten",
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-11-08T16:00:58+00:00",
-   "price_total": 447.0,
-   "price_estimated": false,
-   "ppsqm": 21.29,
-   "score": 53,
-   "checked_at": "2026-11-09T12:01:04+00:00"
-  },
-  {
    "id": "66b660249855",
    "keys": [
     "wggesucht:14328237"
@@ -6678,7 +6708,7 @@
     "Zwischenmiete",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 21.05,
@@ -6757,7 +6787,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 675.0,
    "price_estimated": false,
    "ppsqm": 30.68,
@@ -6796,7 +6826,7 @@
     "Lift",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 766,
    "price_estimated": true,
    "ppsqm": 13.8,
@@ -6842,7 +6872,7 @@
     "privat",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 606.0,
    "price_estimated": false,
    "ppsqm": 17.82,
@@ -6991,7 +7021,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 500.0,
    "price_estimated": false,
    "ppsqm": 125.0,
@@ -7071,7 +7101,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 770.0,
    "price_estimated": false,
    "ppsqm": 19.25,
@@ -7199,7 +7229,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 790,
    "price_estimated": false,
    "ppsqm": 23.24,
@@ -7411,11 +7441,11 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 590.0,
    "price_estimated": false,
    "ppsqm": 25.65,
-   "score": 11,
+   "score": 7,
    "excluded": "reserviert/vergeben"
   },
   {
@@ -7451,7 +7481,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 587.0,
    "price_estimated": false,
    "ppsqm": 39.13,
@@ -7503,47 +7533,6 @@
    "price_estimated": false,
    "ppsqm": 13.67,
    "score": 42
-  },
-  {
-   "id": "430798324dde",
-   "keys": [
-    "wggesucht:12161882",
-    "wggesucht:14328040"
-   ],
-   "links": [
-    {
-     "source": "wggesucht",
-     "label": "WG-Gesucht",
-     "url": "https://www.wg-gesucht.de/wg-zimmer-in-Wien-04-Bezirk-Wieden.12161882.html"
-    }
-   ],
-   "first_seen": "2026-11-05T08:01:09+00:00",
-   "category": "wg",
-   "title": "WG Zimmer in 2er Wg",
-   "price": 501.0,
-   "price_note": "Gesamtmiete",
-   "zip": "1040",
-   "district": "Wieden",
-   "area": 15.0,
-   "rooms": null,
-   "address": "",
-   "image": "img/d.gif",
-   "description": "Hallo :) Ich bin Greta, 24 Jahre alt, studiere Architektur an der TU Wien und suche eine*n Mitbewohner*in für eine gemütliche 2er-WG im 4. Bezirk. Die Wohnung ist ca. 60 m2 groß, besteht aus zwei getrennt begehbaren Zimmern, einem großzügigen Wohnzimmer, einer voll ausgestatteten Küche sowie Bad und separatem WC. Der Herd und Ofen funktionieren über Gas. Das zu vergebende Zimmer ist unmöbliert, der Rest der Wohnung ist bereits vollständig eingerichtet. Die Lage ist gut angebunden: Öffentliche Verkehrsmittel wie die Linien 1, 62, Badner Bahn, U1, U2 und U4 sowie Supermärkte und alles, was man sonst so braucht, sind in wenigen Minuten erreichbar.(min 2 min, max 10 min) Bei Interesse können einzelne Teile von meiner Mitbewohnerin abgekauft werden, gerne nach Absprache. In meiner Freizeit bin ich gerne draußen unterwegs, im Sommer oft an der Donau. Ansonsten verbringe ich meine Zeit mit kreativen Aktivitäten wie Malen, Häkeln, Lesen – oder einfach entspannt bei einem Film oder einer Serie. Mir ist ein ordentliches und zuverlässiges Zusammenleben besonders wichtig, vor allem was die Gemeinschaftsräume und die regelmäßige Mietzahlung angeht. Ansonsten bin ich unkompliziert und lege Wert darauf, dass jeder seinen Freiraum hat und seinen eigenen Alltag gestalten kann. Da ich selbst viel mit Arbeit und Lernen beschäftigt bin, ist mir ein entspanntes Zusammenleben wichtig, bei dem jeder seinen Freiraum hat. Wenn man sich gut versteht, freue ich mich natürlich auch über gelegentliche gemeinsame Kochabende oder bisschen Quatschen am Abend. Wenn du dich angesprochen fühlst, freue ich mich sehr über deine Nachricht! :)",
-   "published": "2026-11-05T08:01:32.998743+00:00",
-   "advertiser": "Privat",
-   "email": "",
-   "phone": "",
-   "tags": [],
-   "flags": [
-    "möbliert",
-    "privat"
-   ],
-   "last_seen": "2026-11-08T16:00:58+00:00",
-   "price_total": 501.0,
-   "price_estimated": false,
-   "ppsqm": 33.4,
-   "score": 21,
-   "checked_at": "2026-11-09T12:01:04+00:00"
   },
   {
    "id": "a23052b7831a",
@@ -7604,7 +7593,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 798.31,
    "price_estimated": false,
    "ppsqm": 14.26,
@@ -7654,12 +7643,11 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 738.24,
    "price_estimated": false,
    "ppsqm": 17.58,
-   "score": 20,
-   "excluded": "reserviert/vergeben"
+   "score": 20
   },
   {
    "id": "3cb335295650",
@@ -7823,7 +7811,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 606.0,
    "price_estimated": false,
    "ppsqm": 9.62,
@@ -7911,7 +7899,7 @@
     "Garten",
     "Lift"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 690.0,
    "price_estimated": false,
    "ppsqm": 31.36,
@@ -8047,7 +8035,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 665.0,
    "price_estimated": false,
    "ppsqm": 18.47,
@@ -8137,7 +8125,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 465.0,
    "price_estimated": false,
    "ppsqm": 35.77,
@@ -8181,7 +8169,7 @@
    "flags": [
     "Altbau"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 529.0,
    "price_estimated": false,
    "ppsqm": 13.92,
@@ -8224,7 +8212,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 690,
    "price_estimated": false,
    "ppsqm": 35.94,
@@ -8329,7 +8317,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 724.0,
    "price_estimated": false,
    "ppsqm": 16.84,
@@ -8370,7 +8358,7 @@
     "Balkon",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 700,
    "price_estimated": false,
    "ppsqm": 19.17,
@@ -8412,7 +8400,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 700.0,
    "price_estimated": false,
    "ppsqm": 14.0,
@@ -8500,7 +8488,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 600.0,
    "price_estimated": false,
    "ppsqm": 21.43,
@@ -8545,7 +8533,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 23.2,
@@ -8583,7 +8571,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 579.0,
    "price_estimated": false,
    "ppsqm": 5.26,
@@ -8732,7 +8720,7 @@
     "Neubau/Erstbezug",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_key": "makler:justimmo-17278984",
    "price_total": 676.58,
    "price_estimated": false,
@@ -8823,7 +8811,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 680,
    "price_estimated": false,
    "ppsqm": 20.81,
@@ -9003,7 +8991,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 6.63,
@@ -9043,7 +9031,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 540.0,
    "price_estimated": false,
    "ppsqm": 10.38,
@@ -9083,7 +9071,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 690.0,
    "price_estimated": false,
    "ppsqm": 19.71,
@@ -9229,7 +9217,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 45.0,
@@ -9269,7 +9257,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 698.0,
    "price_estimated": false,
    "ppsqm": 23.27,
@@ -9510,7 +9498,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 744.4,
    "price_estimated": false,
    "ppsqm": 27.57,
@@ -9552,7 +9540,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 25.77,
@@ -9596,7 +9584,7 @@
     "Terrasse",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 27.5,
@@ -9684,7 +9672,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 22.57,
@@ -9823,7 +9811,7 @@
     "Loggia",
     "möbliert"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_key": "makler:justimmo-17343115",
    "price_total": 713.39,
    "price_estimated": false,
@@ -9891,7 +9879,7 @@
     "provisionsfrei",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 790.0,
    "price_estimated": false,
    "ppsqm": 15.19,
@@ -9930,7 +9918,7 @@
     "Zwischenmiete",
     "möbliert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 490.0,
    "price_estimated": false,
    "ppsqm": 32.67,
@@ -9974,7 +9962,7 @@
     "Ablöse",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 680.0,
    "price_estimated": false,
    "ppsqm": 10.79,
@@ -10061,7 +10049,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 14.9,
@@ -10153,7 +10141,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 587.0,
    "price_estimated": false,
    "ppsqm": 11.51,
@@ -10192,7 +10180,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 689,
    "price_estimated": false,
    "ppsqm": 15.31,
@@ -10316,7 +10304,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 11.03,
@@ -10362,7 +10350,7 @@
     "Terrasse",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 515,
    "price_estimated": false,
    "ppsqm": 17.17,
@@ -10407,7 +10395,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 730.0,
    "price_estimated": false,
    "ppsqm": 24.33,
@@ -10446,7 +10434,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 430.0,
    "price_estimated": false,
    "ppsqm": 8.43,
@@ -10497,7 +10485,7 @@
     "Terrasse",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800,
    "price_estimated": false,
    "ppsqm": 12.7,
@@ -10542,7 +10530,7 @@
     "privat",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 612,
    "price_estimated": false,
    "ppsqm": 10.93,
@@ -10587,7 +10575,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 695.52,
    "price_estimated": false,
    "ppsqm": 19.87,
@@ -10634,7 +10622,8 @@
   {
    "id": "c554a9de6940",
    "keys": [
-    "willhaben:1383509528"
+    "willhaben:1383509528",
+    "willhaben:1922401773"
    ],
    "links": [
     {
@@ -10656,19 +10645,27 @@
    "image": "https://cache.willhaben.at/mmo/8/138/350/9528_-2106285597.png",
    "description": "Zur Vermietung gelangt ab 01.01.2027 eine stilvoll generalsanierten 1-Zimmer Erstbezugs-Wohnung in attraktiver Innenstadtlage am Südtiroler Platz im 4. Wiener Gemeindebezirk. Die Wohnung überzeugt durch ihre hervorragende öffentliche Anbindung, einen...",
    "published": "2026-10-25T09:59:40Z",
-   "advertiser": "",
+   "advertiser": "Privat",
    "email": "",
    "phone": "",
-   "tags": [],
+   "tags": [
+    "Balkon",
+    "Loggia"
+   ],
    "flags": [
+    "Altbau",
+    "Balkon",
+    "Loggia",
     "Neubau/Erstbezug",
+    "nur Frauen/FLINTA*",
+    "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 795.0,
    "price_estimated": false,
    "ppsqm": 30.58,
-   "score": 1
+   "score": 6
   },
   {
    "id": "65e9c9425a23",
@@ -10720,7 +10717,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 775.0,
    "price_estimated": false,
    "ppsqm": 13.14,
@@ -10824,7 +10821,7 @@
     "Garten",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 720.0,
    "price_estimated": false,
    "ppsqm": 25.71,
@@ -10917,7 +10914,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "wg_size": 2,
    "price_total": 700.0,
    "price_estimated": false,
@@ -11054,7 +11051,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 3.0,
@@ -11092,7 +11089,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 14.71,
@@ -11142,7 +11139,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 497.0,
    "price_estimated": false,
    "ppsqm": 23.67,
@@ -11274,7 +11271,7 @@
     "Balkon",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 10.67,
@@ -11327,7 +11324,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 490.0,
    "price_estimated": false,
    "ppsqm": 12.25,
@@ -11424,7 +11421,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 427.0,
    "price_estimated": false,
    "ppsqm": 18.57,
@@ -11507,7 +11504,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 400.0,
    "price_estimated": false,
    "ppsqm": 36.36,
@@ -11546,7 +11543,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 550.0,
    "price_estimated": false,
    "ppsqm": 16.67,
@@ -11586,7 +11583,7 @@
     "Garten",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 655,
    "price_estimated": true,
    "ppsqm": 16.84,
@@ -11644,7 +11641,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 18.71,
@@ -11706,7 +11703,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 799.0,
    "price_estimated": false,
    "ppsqm": 18.16,
@@ -11750,7 +11747,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 760,
    "price_estimated": false,
    "ppsqm": 19.0,
@@ -11928,7 +11925,7 @@
     "privat",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 643.19,
    "price_estimated": false,
    "ppsqm": 12.16,
@@ -12115,7 +12112,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800,
    "price_estimated": false,
    "ppsqm": 40.0,
@@ -12164,7 +12161,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 596.57,
    "price_estimated": false,
    "ppsqm": 18.64,
@@ -12270,7 +12267,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 749.0,
    "price_estimated": false,
    "ppsqm": 17.83,
@@ -12360,7 +12357,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 377.0,
    "price_estimated": false,
    "ppsqm": 9.92,
@@ -12400,7 +12397,7 @@
     "Zwischenmiete",
     "möbliert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 575.0,
    "price_estimated": false,
    "ppsqm": 38.33,
@@ -12487,7 +12484,7 @@
     "nur Frauen/FLINTA*",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 524.0,
    "price_estimated": false,
    "ppsqm": 6.72,
@@ -12574,7 +12571,7 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 21.43,
@@ -12662,7 +12659,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 790,
    "price_estimated": false,
    "ppsqm": 22.57,
@@ -12701,7 +12698,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 645,
    "price_estimated": false,
    "ppsqm": 10.08,
@@ -12754,7 +12751,7 @@
     "Lift",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 661.64,
    "price_estimated": false,
    "ppsqm": 22.05,
@@ -12799,7 +12796,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 693,
    "price_estimated": false,
    "ppsqm": 16.12,
@@ -12807,48 +12804,6 @@
    "gone_at": "2026-11-11T14:30:45+00:00",
    "back_at": "2026-11-12T05:01:02+00:00",
    "checked_at": "2026-11-11T13:35:30+00:00"
-  },
-  {
-   "id": "959b50c2d292",
-   "keys": [
-    "immoscout24:6ac12a011c24cd6720996f14"
-   ],
-   "links": [
-    {
-     "source": "immoscout24",
-     "label": "ImmoScout24",
-     "url": "https://www.immobilienscout24.at/expose/6ac12a011c24cd6720996f14"
-    }
-   ],
-   "first_seen": "2026-10-19T09:15:32+00:00",
-   "category": "wohnung",
-   "title": "NUR SOZIALBAU - MieterInnen",
-   "price": 513,
-   "price_note": "Gesamtmiete",
-   "zip": "1150",
-   "district": "Rudolfsheim-Fünfhaus",
-   "area": 52,
-   "rooms": 2,
-   "address": "Jurekgasse  27, 1150 Wien",
-   "image": "https://pictures.immobilienscout24.de/dims3/S3/quality/80/legacy_thumbnail/358x202/format/webp/https://s3-eu-west-1.amazonaws.com/prod.www.immobilienscout24.at/012.001P900000urZz3-63ffe6609a764b6db7c27794b95fe9aa",
-   "description": "",
-   "published": "2026-10-03T16:14:57.000Z",
-   "advertiser": "Privatanbieter Marcus Privatanbieter",
-   "email": "",
-   "phone": "",
-   "tags": [
-    "Garten"
-   ],
-   "flags": [
-    "Garten",
-    "privat"
-   ],
-   "last_seen": "2026-11-08T16:00:58+00:00",
-   "price_total": 513,
-   "price_estimated": false,
-   "ppsqm": 9.87,
-   "score": 72,
-   "excluded": "nur für bestimmte Mieter"
   },
   {
    "id": "11c289bf1d8b",
@@ -12880,7 +12835,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 729.39,
    "price_estimated": false,
    "ppsqm": 21.45,
@@ -12934,7 +12889,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 699.0,
    "price_estimated": false,
    "ppsqm": 21.18,
@@ -12977,7 +12932,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 630.0,
    "price_estimated": false,
    "ppsqm": 33.16,
@@ -13036,7 +12991,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 23.44,
@@ -13075,7 +13030,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 335.66,
    "price_estimated": false,
    "ppsqm": 10.17,
@@ -13124,12 +13079,11 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 25.0,
-   "score": 7,
-   "excluded": "Kurzzeitmiete"
+   "score": 7
   },
   {
    "id": "5a8ca6e06048",
@@ -13180,7 +13134,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 522.9,
    "price_estimated": false,
    "ppsqm": 10.46,
@@ -13221,7 +13175,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 580.0,
    "price_estimated": false,
    "ppsqm": 12.89,
@@ -13364,7 +13318,7 @@
     "saniert",
     "unbefristet"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 699.0,
    "price_estimated": false,
    "ppsqm": 15.2,
@@ -13501,7 +13455,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 800.0,
    "price_estimated": false,
    "ppsqm": 23.53,
@@ -13548,7 +13502,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 424.64,
    "price_estimated": false,
    "ppsqm": 11.48,
@@ -13596,7 +13550,7 @@
     "Garten",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 450.0,
    "price_estimated": false,
    "ppsqm": 45.0,
@@ -13805,7 +13759,7 @@
     "Altbau",
     "befristet"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 922,
    "price_estimated": true,
    "ppsqm": 17.14,
@@ -13935,7 +13889,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "wg_size": 4,
    "price_total": 390.0,
    "price_estimated": false,
@@ -13981,7 +13935,7 @@
     "Lift",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 750.0,
    "price_estimated": false,
    "ppsqm": 18.75,
@@ -14496,7 +14450,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 420.33,
    "price_estimated": false,
    "ppsqm": 10.51,
@@ -14840,7 +14794,7 @@
     "privat",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 502.0,
    "price_estimated": false,
    "ppsqm": 11.67,
@@ -15152,7 +15106,7 @@
    "flags": [
     "privat"
    ],
-   "last_seen": "2026-11-12T12:01:01+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "wg_size": 2,
    "price_total": 797.0,
    "price_estimated": false,
@@ -15199,7 +15153,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 789.71,
    "price_estimated": false,
    "ppsqm": 17.55,
@@ -15245,7 +15199,7 @@
     "möbliert",
     "privat"
    ],
-   "last_seen": "2026-11-12T15:50:28+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 690.0,
    "price_estimated": false,
    "ppsqm": 18.65,
@@ -15315,7 +15269,7 @@
     "provisionsfrei",
     "saniert"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 631.87,
    "price_estimated": false,
    "ppsqm": 10.67,
@@ -15448,7 +15402,7 @@
    "flags": [
     "Neubau/Erstbezug"
    ],
-   "last_seen": "2026-11-12T15:45:36+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 780,
    "price_estimated": false,
    "ppsqm": 16.6,
@@ -15487,7 +15441,7 @@
    "flags": [
     "Loggia"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 884,
    "price_estimated": true,
    "ppsqm": 26.23,
@@ -15524,7 +15478,7 @@
    "phone": "",
    "tags": [],
    "flags": [],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 727,
    "price_estimated": true,
    "ppsqm": 16.16,
@@ -16501,7 +16455,7 @@
     "möbliert",
     "provisionsfrei"
    ],
-   "last_seen": "2026-11-12T15:01:06+00:00",
+   "last_seen": "2026-11-12T16:01:03+00:00",
    "price_total": 688.0,
    "price_estimated": false,
    "ppsqm": 13.23,
