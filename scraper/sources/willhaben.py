@@ -86,9 +86,13 @@ def enrich(l: Listing):
     for cd in (ad.get("advertContactDetails") or {}).get("contactDetail", []):
         for f in cd.get("contactDetailField", []):
             contact[f.get("id")] = f.get("value")
-    l.phone = contact.get("phoneNo") or contact.get("phone") or contact.get("phoneNo2") or find_phone(l.description)
+    org = ad.get("organisationDetails") or {}
+    l.phone = (contact.get("phoneNo") or contact.get("phone") or contact.get("phoneNo2")
+               or find_phone(l.description) or org.get("orgPhone") or "")
     if contact.get("contactName") and not l.private:
-        l.advertiser = f"{l.advertiser} ({contact['contactName']})" if l.advertiser else contact["contactName"]
-    emails = find_emails(contact.get("email", "") + " " + l.description)
+        l.contact = contact["contactName"].strip()
+    if contact.get("websiteUrl") and not l.private:
+        l.website = contact["websiteUrl"].strip()
+    emails = find_emails(" ".join([contact.get("email", ""), org.get("orgEmail") or "", l.description]))
     if emails:
         l.email = emails[0]

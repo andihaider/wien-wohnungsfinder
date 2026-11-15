@@ -59,7 +59,7 @@ const DEFAULTS = {
   districts: Object.keys(DISTRICTS),
   hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
   name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE, docScript: "", docKey: "",
-  pJob: "", pMoveIn: "", pPersons: "1", pNonSmoker: false, pNoPets: false, pIncome: false, pLongTerm: true, tone: "personal",
+  pJob: "", pMoveIn: "", pPersons: "1", pNonSmoker: false, pNoPets: false, pNet: "", pGuarantor: "", pWorkZip: "", pLongTerm: true, tone: "personal",
   sort: "score", tab: "new",
 };
 const TABS = ["new", "flats", "wg", "mine", "out"];
@@ -240,6 +240,10 @@ function openAsk(it, onAsked) {
 
   if (it.email) btn("✉︎ Per Mail senden", "primary", () => { onAsked(); location.href = mailto(it, text.value); });
   btn("Text kopieren & Inserat öffnen", it.email ? "" : "primary", () => { copy(); onAsked(); open(it.links[0].url); });
+  if (it.phone) {
+    const tel = it.phone.replace(/[^\d+]/g, "").replace(/^00/, "+");
+    btn(`📞 ${it.contact || "Anbieter"} anrufen (${it.phone})`, "", () => { onAsked(); location.href = "tel:" + tel; });
+  }
 
   const docBtn = btn("", "", async () => {
     const a = addr.value.trim();
@@ -268,8 +272,11 @@ function openAsk(it, onAsked) {
   };
   syncDocBtn();
   btn("Nur Text kopieren", "ghost", e => { copy(); e.target.textContent = "✓ Kopiert"; });
-  hint.textContent = it.email ? "" :
-    "Dieses Portal zeigt keine Mail-Adresse: Text wird kopiert, im Kontaktformular einfach einfügen.";
+  hint.textContent = it.email_from === "website"
+    ? `Mail-Adresse von der Website des Maklers (${it.email}): landet direkt bei ${it.contact || "der Firma"} statt im Portal-Postfach.`
+    : it.email ? "" : it.phone
+    ? "Keine Mail-Adresse bekannt. Am schnellsten: kurz anrufen und danach den Text übers Kontaktformular schicken."
+    : "Dieses Portal zeigt keine Mail-Adresse: Text wird kopiert, im Kontaktformular einfach einfügen.";
   dlg.showModal();
 }
 
@@ -491,8 +498,8 @@ const RANGES = [
   ["#s-wgpeople", "wgMaxPeople", "#o-wgpeople", v => v >= 8 ? "egal" : "max. " + v + "er WG"],
   ["#s-eigen", "maxEigenmittel", "#o-eigen", v => v >= 50000 ? "egal" : v ? "bis " + eur(v) : "keine"],
 ];
-const CHECKS = { "#p-nonsmoker": "pNonSmoker", "#p-nopets": "pNoPets", "#p-income": "pIncome", "#p-longterm": "pLongTerm", "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
-const TEXTS = { "#p-docscript": "docScript", "#p-dockey": "docKey", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-job": "pJob", "#p-movein": "pMoveIn", "#p-persons": "pPersons", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
+const CHECKS = { "#p-nonsmoker": "pNonSmoker", "#p-nopets": "pNoPets", "#p-longterm": "pLongTerm", "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
+const TEXTS = { "#p-docscript": "docScript", "#p-dockey": "docKey", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-job": "pJob", "#p-movein": "pMoveIn", "#p-persons": "pPersons", "#p-net": "pNet", "#p-guarantor": "pGuarantor", "#p-workzip": "pWorkZip", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
 
 function bindSettings() {
   const dlg = $("#settings");
@@ -502,6 +509,11 @@ function bindSettings() {
   for (const [id, key, out, fmt] of RANGES) {
     const r = $(id);
     r.oninput = () => { S[key] = +r.value; $(out).textContent = fmt(S[key]); saveSettings(); };
+  }
+  const wz = $("#p-workzip");
+  for (let i = 1; i <= 23; i++) {
+    const z = "1" + String(i).padStart(2, "0") + "0";
+    wz.insertAdjacentHTML("beforeend", `<option value="${z}">${i}. Bezirk</option>`);
   }
   const chips = $("#s-districts");
   chips.innerHTML = Object.entries(DISTRICTS).map(([z, n]) =>

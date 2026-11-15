@@ -94,15 +94,17 @@
         <p class="muted small">Bleiben nur auf diesem Handy gespeichert.</p>
         <label>Name<input type="text" id="p-name" autocomplete="name"></label>
         <label>Telefon<input type="tel" id="p-phone" autocomplete="tel"></label>
-        <label>Was machst du? <span class="muted small">(„Ich …“)</span><input type="text" id="p-job" placeholder="z. B. arbeite selbstständig als Videograf und Content Creator"></label>
+        <label>Was machst du? <span class="muted small">(„Kurz zu mir: Ich …“)</span><input type="text" id="p-job" placeholder="z. B. bin festangestellt als Videograf und arbeite zusätzlich freiberuflich"></label>
+        <label>Nettoeinkommen pro Monat (€)<input type="text" inputmode="numeric" id="p-net" placeholder="z. B. 2600"></label>
+        <label>Bürgschaft von <span class="muted small">(leer lassen, wenn keine)</span><input type="text" id="p-guarantor" placeholder="z. B. meiner Mutter"></label>
+        <label>Arbeitsplatz im Bezirk<select id="p-workzip"><option value="">egal / nicht angeben</option></select></label>
         <label>Ein, zwei Sätze über dich – in deinen Worten<textarea id="p-about" rows="3" placeholder="z. B. Ich bin 24, ruhig, viel unterwegs und suche eine Wohnung, in der ich länger bleiben kann."></textarea></label>
         <label>Einzug ab<input type="text" id="p-movein" placeholder="z. B. sofort oder 1. Dezember"></label>
         <label>Einziehen würde ich<select id="p-persons"><option value="1">alleine</option><option value="2">zu zweit</option></select></label>
         <label class="check"><input type="checkbox" id="p-nonsmoker"> Nichtraucher*in</label>
         <label class="check"><input type="checkbox" id="p-nopets"> Keine Haustiere</label>
-        <label class="check"><input type="checkbox" id="p-income"> Festes, regelmäßiges Einkommen</label>
         <label class="check"><input type="checkbox" id="p-longterm"> Suche langfristig</label>
-        <p class="muted small">Daraus schreibt die App für jede Wohnung einen eigenen Text: mit Straße oder Bezirk, Ausstattung aus dem Inserat (Balkon, Altbau, U-Bahn …), Befristung und Ablöse.</p>
+        <p class="muted small">Daraus schreibt die App für jede Wohnung einen eigenen Text: mit Straße oder Bezirk, Ausstattung aus dem Inserat (Balkon, Altbau, U-Bahn …), Nähe zum Arbeitsplatz, Befristung und Ablöse. Alles bleibt nur auf diesem Handy, nichts davon landet im Internet.</p>
         <details>
           <summary>Eigene Vorlage statt automatischem Text</summary>
           <label>Vorlage für Wohnungen<textarea id="p-template" rows="10"></textarea></label>

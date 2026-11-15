@@ -112,6 +112,8 @@ class Listing:
     eigenmittel: Optional[float] = None  # Finanzierungsbeitrag / Eigenmittel (Genossenschaften)
     source_label: str = ""          # Anzeigename der Quelle, z. B. Maklername
     wg_size: Optional[int] = None   # Personen in der WG
+    contact: str = ""               # Ansprechpartner/in (z. B. beim Makler)
+    website: str = ""               # Firmenwebsite des Anbieters
 
     @property
     def key(self) -> str:

@@ -14,6 +14,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from common import COLLECT_MAX_PRICE, DISTRICTS, Listing, check_alive  # noqa: E402
 from scoring import FLAT_MAX_PRICE, matches_default, score  # noqa: E402
+import brokers  # noqa: E402
 from sources import derstandard, gewofinder, immmo, immoscout, immowelt, makler, wggesucht, willhaben  # noqa: E402
 
 SOURCES = {
@@ -333,15 +334,24 @@ def main():
             it["links"].append({"source": name, "label": l.source_label or SOURCE_LABELS[name], "url": l.url})
         it["last_seen"] = run_at
 
-        if not why and is_new_key and l.price <= ENRICH_MAX_PRICE and enrich_budget > 0 and not it.get("email"):
+        # willhaben-Makler: Ansprechpartner + Website einmalig nachladen (auch für ältere Inserate)
+        backfill = name == "willhaben" and "contact_checked" not in it and not it.get("excluded")
+        if (not why and (is_new_key or backfill) and l.price <= ENRICH_MAX_PRICE and enrich_budget > 0
+                and not it.get("email")):
             enrich_budget -= 1
             try:
                 SOURCES[name].enrich(l)
             except Exception:
                 traceback.print_exc()
+            if name == "willhaben":
+                it["contact_checked"] = True
             why = exclusion_reason(l)
             if why:
                 it.setdefault("key_excl", {})[l.key] = why
+            if not why and not l.email and l.website:
+                l.email = brokers.email_for(l.website, l.contact)
+                if l.email:
+                    it["email_from"] = "website"
 
         if why:
             run_why.setdefault(item_id, why)
@@ -355,7 +365,8 @@ def main():
             it["price"], it["price_note"], it["price_key"] = l.price, l.price_note, l.key
         elif it.get("price_key", it["keys"][0]) == l.key and l.price and abs(l.price - (it.get("price") or 0)) >= 1:
             it["price"] = l.price          # Preis hat sich im Inserat geändert
-        for k in ("area", "rooms", "image", "address", "advertiser", "published", "wg_size", "eigenmittel"):
+        for k in ("area", "rooms", "image", "address", "advertiser", "published", "wg_size", "eigenmittel",
+                  "contact", "website"):
             if not it.get(k) and getattr(l, k):
                 it[k] = getattr(l, k)
         if len(l.description or "") > len(it.get("description") or ""):
@@ -398,6 +409,7 @@ def main():
         it["score"] = score(it)
     kept.sort(key=lambda it: it["first_seen"], reverse=True)
 
+    brokers.save()
     fingerprint = hashlib.sha1(json.dumps(sorted(
         (it["id"], it.get("price_total"), it.get("excluded"), it.get("email"), len(it.get("links", [])))
         for it in kept), ensure_ascii=False).encode()).hexdigest()[:16]
