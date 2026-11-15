@@ -59,6 +59,7 @@ const DEFAULTS = {
   districts: Object.keys(DISTRICTS),
   hidePaywall: true, hideSublet: true, hideWomenOnly: false, hideBefristet: false, hideMoebliert: false, hideEstimated: false,
   name: "", phone: "", about: "", template: DEFAULT_TEMPLATE, wgTemplate: DEFAULT_WG_TEMPLATE, docScript: "", docKey: "",
+  pJob: "", pMoveIn: "", pPersons: "1", pNonSmoker: false, pNoPets: false, pIncome: false, pLongTerm: true, tone: "personal",
   sort: "score", tab: "new",
 };
 const TABS = ["new", "flats", "wg", "mine", "out"];
@@ -213,10 +214,20 @@ function openAsk(it, onAsked) {
   $(".ask-title", dlg).textContent = `${it.title} · ${eur(it.price_total)}`;
   addr.value = defaultAddress(it);
   const linkFor = () => docLinks[addr.value.trim()] || "";
-  text.value = fillTemplate(it, addr.value, linkFor());
-  let edited = false;
+  let variant = 0, edited = false;
+  const build = link => S.tone === "template" ? fillTemplate(it, addr.value, link)
+    : composeInquiry(it, { tone: S.tone, variant, address: addr.value, docLink: link });
+  const refresh = () => { text.value = build(linkFor()); edited = false; };
+  $("#a-tone").querySelectorAll("input").forEach(i => {
+    i.checked = i.value === (S.tone || "personal");
+    i.onchange = () => { S.tone = i.value; saveSettings(); refresh(); };
+  });
+  $("#a-reroll").onclick = () => { variant++; if (S.tone === "template") { S.tone = "personal"; $("#a-tone input[value=personal]").checked = true; saveSettings(); } refresh(); };
+  const miss = profileMissing();
+  $("#a-profile").textContent = miss.length ? "Tipp: In den Einstellungen fehlt noch " + miss.join(", ") + " – dann wird der Text persönlicher." : "";
+  refresh();
   text.oninput = () => { edited = true; };
-  addr.oninput = () => { if (!edited) text.value = fillTemplate(it, addr.value, linkFor()); syncDocBtn(); };
+  addr.oninput = () => { if (!edited) text.value = build(linkFor()); syncDocBtn(); };
 
   box.innerHTML = "";
   const btn = (label, cls, fn) => {
@@ -244,7 +255,7 @@ function openAsk(it, onAsked) {
       const res = await (await fetch(url, { redirect: "follow" })).json();
       if (!res.ok) throw new Error(res.error || "Unbekannter Fehler");
       docLinks[a] = res.pdfUrl; store.set("docLinks", docLinks);
-      text.value = edited ? insertDocLink(text.value, res.pdfUrl) : fillTemplate(it, a, res.pdfUrl);
+      text.value = edited ? insertDocLink(text.value, res.pdfUrl) : build(res.pdfUrl);
       hint.innerHTML = (res.platzhalter ? "" : "⚠︎ In deiner Vorlage fehlt {{ADRESSE}} – die Adresse wurde nicht eingesetzt. ") +
         `Link eingefügt. <a href="${escapeHtml(res.pdfUrl)}" target="_blank" rel="noopener">PDF ansehen</a>`;
     } catch (e) {
@@ -480,8 +491,8 @@ const RANGES = [
   ["#s-wgpeople", "wgMaxPeople", "#o-wgpeople", v => v >= 8 ? "egal" : "max. " + v + "er WG"],
   ["#s-eigen", "maxEigenmittel", "#o-eigen", v => v >= 50000 ? "egal" : v ? "bis " + eur(v) : "keine"],
 ];
-const CHECKS = { "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
-const TEXTS = { "#p-docscript": "docScript", "#p-dockey": "docKey", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
+const CHECKS = { "#p-nonsmoker": "pNonSmoker", "#p-nopets": "pNoPets", "#p-income": "pIncome", "#p-longterm": "pLongTerm", "#h-women": "hideWomenOnly", "#h-paywall": "hidePaywall", "#h-sublet": "hideSublet", "#h-befristet": "hideBefristet", "#h-moebliert": "hideMoebliert", "#h-estimated": "hideEstimated" };
+const TEXTS = { "#p-docscript": "docScript", "#p-dockey": "docKey", "#p-name": "name", "#p-phone": "phone", "#p-about": "about", "#p-job": "pJob", "#p-movein": "pMoveIn", "#p-persons": "pPersons", "#p-template": "template", "#p-wgtemplate": "wgTemplate" };
 
 function bindSettings() {
   const dlg = $("#settings");
@@ -498,7 +509,7 @@ function bindSettings() {
   chips.onchange = () => { S.districts = [...chips.querySelectorAll("input:checked")].map(i => i.value); saveSettings(); };
 
   for (const [id, key] of Object.entries(CHECKS)) $(id).onchange = e => { S[key] = e.target.checked; saveSettings(); };
-  for (const [id, key] of Object.entries(TEXTS)) $(id).oninput = e => { S[key] = e.target.value; saveSettings(); };
+  for (const [id, key] of Object.entries(TEXTS)) $(id).oninput = $(id).onchange = e => { S[key] = e.target.value; saveSettings(); };
   $("#btn-reset-template").onclick = () => {
     S.template = DEFAULT_TEMPLATE; S.wgTemplate = DEFAULT_WG_TEMPLATE;
     $("#p-template").value = S.template; $("#p-wgtemplate").value = S.wgTemplate; saveSettings();

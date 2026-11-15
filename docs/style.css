@@ -206,3 +206,10 @@ dialog::backdrop { background: rgba(0,0,0,.45); }
 }
 
 .eigenmittel { margin: 6px 0 0; font-size: 13px; font-weight: 600; color: var(--warn); }
+.tone { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; }
+.tone label { margin: 0; }
+.tone input { display: none; }
+.tone span { display: inline-block; padding: 6px 12px; border: 1px solid var(--line, #ccc); border-radius: 999px; font-size: 14px; }
+.tone input:checked + span { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tone .link-btn { margin-left: auto; }
+details summary { cursor: pointer; padding: 6px 0; }

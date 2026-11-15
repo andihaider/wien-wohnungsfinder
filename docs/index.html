@@ -94,11 +94,22 @@
         <p class="muted small">Bleiben nur auf diesem Handy gespeichert.</p>
         <label>Name<input type="text" id="p-name" autocomplete="name"></label>
         <label>Telefon<input type="tel" id="p-phone" autocomplete="tel"></label>
-        <label>Kurz über mich<textarea id="p-about" rows="3" placeholder="z. B. Student/in, Nichtraucher/in, unbefristetes Einkommen …"></textarea></label>
-        <label>Vorlage für Wohnungen<textarea id="p-template" rows="10"></textarea></label>
-        <label>Vorlage für WGs<textarea id="p-wgtemplate" rows="8"></textarea></label>
-        <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich} {mietervorstellung}</p>
+        <label>Was machst du? <span class="muted small">(„Ich …“)</span><input type="text" id="p-job" placeholder="z. B. arbeite selbstständig als Videograf und Content Creator"></label>
+        <label>Ein, zwei Sätze über dich – in deinen Worten<textarea id="p-about" rows="3" placeholder="z. B. Ich bin 24, ruhig, viel unterwegs und suche eine Wohnung, in der ich länger bleiben kann."></textarea></label>
+        <label>Einzug ab<input type="text" id="p-movein" placeholder="z. B. sofort oder 1. Dezember"></label>
+        <label>Einziehen würde ich<select id="p-persons"><option value="1">alleine</option><option value="2">zu zweit</option></select></label>
+        <label class="check"><input type="checkbox" id="p-nonsmoker"> Nichtraucher*in</label>
+        <label class="check"><input type="checkbox" id="p-nopets"> Keine Haustiere</label>
+        <label class="check"><input type="checkbox" id="p-income"> Festes, regelmäßiges Einkommen</label>
+        <label class="check"><input type="checkbox" id="p-longterm"> Suche langfristig</label>
+        <p class="muted small">Daraus schreibt die App für jede Wohnung einen eigenen Text: mit Straße oder Bezirk, Ausstattung aus dem Inserat (Balkon, Altbau, U-Bahn …), Befristung und Ablöse.</p>
+        <details>
+          <summary>Eigene Vorlage statt automatischem Text</summary>
+          <label>Vorlage für Wohnungen<textarea id="p-template" rows="10"></textarea></label>
+          <label>Vorlage für WGs<textarea id="p-wgtemplate" rows="8"></textarea></label>
+          <p class="muted small">Platzhalter: {titel} {adresse} {preis} {flaeche} {link} {name} {telefon} {ueber_mich} {mietervorstellung}</p>
         <button type="button" class="link-btn" id="btn-reset-template">Vorlagen zurücksetzen</button>
+        </details>
       </section>
 
       <section>
@@ -120,7 +131,14 @@
       </div>
       <p class="ask-title"></p>
       <label>Adresse der Wohnung<input type="text" id="a-address" autocomplete="off"></label>
-      <label>Nachricht<textarea id="a-text" rows="11"></textarea></label>
+      <div class="tone" id="a-tone">
+        <label><input type="radio" name="tone" value="personal"><span>Persönlich</span></label>
+        <label><input type="radio" name="tone" value="short"><span>Kurz</span></label>
+        <label><input type="radio" name="tone" value="template"><span>Meine Vorlage</span></label>
+        <button type="button" class="link-btn" id="a-reroll">🔀 Andere Formulierung</button>
+      </div>
+      <p class="muted small" id="a-profile"></p>
+      <label>Nachricht<textarea id="a-text" rows="13"></textarea></label>
       <div class="ask-actions"></div>
       <p class="muted small" id="a-hint"></p>
     </form>
@@ -154,6 +172,7 @@
     </article>
   </template>
 
+  <script src="texte.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
